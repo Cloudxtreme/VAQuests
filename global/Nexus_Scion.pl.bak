@@ -1,0 +1,18 @@
+sub EVENT_SAY { 
+	if ($text=~/Hail/i){
+		plugin::Whisper("Hello $name. I do not have much time to chat. I must concentrate on the portal that is due to open soon. If you wish to " . quest::saylink("journey to Luclin", 1) . ", tell me so."); 
+	} elsif ($text=~/journey to Luclin/i){
+		if (!$client->GetGroup() && !$client->GetRaid()) {
+			$member->Message(315, "Off you go!");
+			quest::zone("Nexus");
+		} elsif ($client->GetGroup() || $client->GetRaid()) {
+			my @group = plugin::GetGroupMembers($client);
+			foreach my $member (@group) {
+				if ($member->GetIP() == $client->GetIP()) {
+					$member->Message(315, "Off you go!");
+					$member->MovePC(152, 0, 0, 0, 0);
+				}
+			}
+		}
+	}
+}
