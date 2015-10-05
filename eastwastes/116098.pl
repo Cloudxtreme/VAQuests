@@ -21,7 +21,7 @@ sub EVENT_TIMER {
   }
   if($timer == 3) {
     quest::stoptimer(3);
-    quest::doanim(16);
+    quest::doanim(58);
     quest::settimer(4,5);
   }
   if($timer == 4) {
@@ -30,8 +30,7 @@ sub EVENT_TIMER {
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
 #    quest::spawn2(116573,0,0,$x,$y,$z,$h);
-#    quest::spawn2(116573,0,0,$x,$y,$z,$h);
-    quest::spawn_from_spawn2(232055);
+    quest::spawn2(116573,0,0,$x,$y,$z,$h);
     quest::depop_withtimer();
   }
 }
