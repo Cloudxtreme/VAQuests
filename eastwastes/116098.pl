@@ -1,8 +1,8 @@
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1459 => 1)) { #tainted avalanche ale
-    plugin::DiaWind("You gotta be kiddin me, Avalanche Ale? Haven't had a bottle a this stuff in ages. Brell bless you, $name!");
-    plugin::DiaWind("Glug, glug, glug...");
+    quest::say("You gotta be kiddin me, Avalanche Ale? Haven't had a bottle a this stuff in ages. Brell bless you, $name!");
+    quest::say("Glug, glug, glug...");
     quest::settimer(1,5);
   }
   plugin::return_items(\%itemcount);
@@ -21,7 +21,7 @@ sub EVENT_TIMER {
   }
   if($timer == 3) {
     quest::stoptimer(3);
-    quest::doanim(21);
+    quest::doanim(16);
     quest::settimer(4,5);
   }
   if($timer == 4) {
@@ -29,7 +29,9 @@ sub EVENT_TIMER {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    quest::spawn2(116573,0,0,$x,$y,$z,$h);
+#    quest::spawn2(116573,0,0,$x,$y,$z,$h);
+#    quest::spawn2(116573,0,0,$x,$y,$z,$h);
+    quest::spawn_from_spawn2(232055);
     quest::depop_withtimer();
   }
 }
