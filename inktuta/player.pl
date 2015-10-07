@@ -1,3 +1,7 @@
+sub EVENT_ENTERZONE {
+$client->BuffFadeByEffect(113);
+}
+
 sub EVENT_CLICKDOOR {
   if($doorid == 41) {
     my @npc_list = $entity_list->GetNPCList();

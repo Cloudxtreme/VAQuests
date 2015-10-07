@@ -4,6 +4,9 @@ my $SecondaryItemID = 0;
 my $instid = 0;
 
 sub EVENT_ENTERZONE {
+$client->BuffFadeByEffect(113);
+}
+
 	$instid = quest::GetInstanceID('uqua',0);
 	if (defined($qglobals{$instid."_spectre_door"})) {
 		$entity_list->FindDoor(4)->SetLockPick(0);

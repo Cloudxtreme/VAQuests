@@ -1,3 +1,7 @@
+sub EVENT_ENTERZONE {
+$client->BuffFadeByEffect(113);
+}
+
 sub EVENT_CLICKDOOR {
   if(($doorid == 3) && ($entity_list->IsMobSpawnedByNpcTypeID(228119) || $entity_list->IsMobSpawnedByNpcTypeID(228120))){
     $client->Message(0,"You got the door open.");

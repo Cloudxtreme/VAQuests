@@ -1,4 +1,7 @@
 sub EVENT_ENTERZONE {
+$client->BuffFadeByEffect(113);
+}
+
   $client->ClearCompassMark();
   my $instid = quest::GetInstanceID('mirb',50); #get the instance id
   # if the zone status is 5, set the lockout on the player.

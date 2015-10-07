@@ -47,6 +47,7 @@ sub EVENT_CONNECT {
 
 sub EVENT_ENTERZONE{
 	plugin::LeaderBoardsUpdate();
+	plugin::NoMount();
 }
 
 sub EVENT_POPUPRESPONSE{

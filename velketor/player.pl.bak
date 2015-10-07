@@ -1,0 +1,5 @@
+sub EVENT_ENTERZONE {
+$outdoorcast = ($zone->CanCastOutdoor());
+if($outdoorcast == 0) {
+$client->BuffFadeByEffect(113);
+}
