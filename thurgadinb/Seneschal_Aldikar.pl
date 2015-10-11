@@ -1,37 +1,24 @@
-#my $x = npc->GetX();
-#my $y = npc->GetY();
-#my $z = npc->GetZ();
 my $dainring = undef;
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-#		quest::moveto(5,780,38,130,1);
-		quest::stop();
-		quest::start(31);
-		$sig1 = 1;
-		$sig2 = 0;
-  $dainring = 0;
+		quest::moveto(5,780,38,130,1);
 	}
 	if($signal==2) {
-#		quest::moveto(-3,693,69,126,1);
-		quest::stop();
-		quest::start(30);
-		$sig1 = 0;
-		$sig2 = 1;
-  $dainring = 0;
+		quest::moveto(-3,693,69,126,1);
 	}
 }
 
-sub EVENT_SPAWN {
-  quest::stop();
-  if(quest::get_spawn_condition("thurgadinb",1) == 1) {
-  quest::start(32);
-  }
-  elsif (quest::get_spawn_condition("thurgadinb",2) == 1) {
-  quest::stop();
-  quest::start(30);
-  }
-}
+#sub EVENT_SPAWN {
+#  quest::stop();
+#    if(quest::get_spawn_condition("thurgadinb",1) == 1) {
+#    quest::start(32);
+#  }
+#    elsif (quest::get_spawn_condition("thurgadinb",2) == 1) {
+#    quest::stop();
+#    quest::start(30);
+#  }
+#}
 
 sub EVENT_SAY{
   if($text=~/I will accept this task/i && $dainring == 1){
@@ -106,13 +93,11 @@ sub EVENT_TIMER {
   elsif($timer == 15) {
     if(quest::get_spawn_condition("thurgadinb",2) == 1) {
     quest::stoptimer(15);
-    quest::start(30);
+    quest::moveto(-3,693,69,126,1);
     }
     elsif (quest::get_spawn_condition("thurgadinb",1) == 1) {
     quest::stoptimer(15);
-    quest::start(31);
+    quest::moveto(5,780,38,130,1);
     }
   }
 }
-
-#END of FILE Zone:thurgadinb  ID:Not_Found -- Seneschal_Aldikar 
