@@ -1,6 +1,11 @@
+sub EVENT_SPAWN {
+#  quest::castspell(116107,928); # Go perma invis
+  $npc->CastSpell(13219,116107);
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Oh, I uh... err, hello there. Umm, thank Brelll you're here, those bloody Kromrif were going to torture me! Yes, yes, and you've saved me! How can I ever repay you?");
+    quest::say("Oh, I uh... err, hello there. Umm, thank Brelll you're here, those bloody Kromrif were going to torture me! Yes, yes, and you've saved me! How can I ever repay you?");
   }
   if($text=~/murdrick/i) {
     quest::emote("looks away and stammers, Ehh, ahh, Mur who?");
@@ -12,9 +17,9 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 18171 => 1)) { #letter to peffin
-    quest::spawn2(116182,0,0,3364,-1579,163.8,35.8);
-    quest::spawn2(116182,0,0,3314,-1557,163.8,42.4);
-    quest::spawn2(116182,0,0,3355,-1625,163.8,36.9);
+#    quest::spawn2(116182,0,0,3364,-1579,163.8,35.8);
+#    quest::spawn2(116182,0,0,3314,-1557,163.8,42.4);
+#    quest::spawn2(116182,0,0,3355,-1625,163.8,36.9);
     quest::settimer(1,10);
     quest::moveto(3303,-1623,163.3);
   }
@@ -27,3 +32,4 @@ sub EVENT_TIMER {
     quest::depop_withtimer();
   }
 }
+
