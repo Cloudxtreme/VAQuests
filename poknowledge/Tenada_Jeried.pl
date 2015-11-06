@@ -5,10 +5,10 @@
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
-		plugin::DiaWind("I am afraid I have little that I can talk about right now.  If you like you may speak to my [instructor] he can probably tell you about our work.");
+		quest::say("I am afraid I have little that I can talk about right now.  If you like you may speak to my [instructor] he can probably tell you about our work.");
 	}
 	if($text=~/who is your instructor/i){
-		plugin::DiaWind("My instructor is Sage Balic; you will be able to find him upstairs.  Ask him about his research. I'm sure he would love to tell you about his work.");
+		quest::say("My instructor is Sage Balic; you will be able to find him upstairs.  Ask him about his research. I'm sure he would love to tell you about his work.");
 	}
 	if($text=~/interested in learning/i){
 		quest::emote("considers for a moment and continues, 'Very well, but first you must prove that you are a student of the advanced arts. In order to do this, you will need to collect each of the advanced manuals in combat, stealth, and magic. You will also need to seek out a prized possession known as a Hope Stone. I believe it currently lies somewhere in the elemental planes. Return to me with these four tools of learning, and only then will you be truly worthy of what secrets the planes have to offer.'");

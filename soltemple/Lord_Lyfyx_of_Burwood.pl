@@ -7,10 +7,10 @@ sub EVENT_SAY {
     quest::emote("bows as a courtesy. His face gleams as if tinged with red.  'Greetings, my friend. Welcome to the Temple of Ro, sanctuary to those who follow the words of the Burning Prince.' ");
   }
   if ($text=~/scale/i){
-    plugin::DiaWind("Tektite and peridot shall get you what you desire.");
+    quest::say("Tektite and peridot shall get you what you desire.");
   }
   if ($text=~/xyfyl/i){
-    plugin::DiaWind("So you can pronounce my name backwards..  Is that your lot in life?  Pronouncing names backwards?  Be gone with your silliness!  We need no court fool.");
+    quest::say("So you can pronounce my name backwards..  Is that your lot in life?  Pronouncing names backwards?  Be gone with your silliness!  We need no court fool.");
   }
 }
 

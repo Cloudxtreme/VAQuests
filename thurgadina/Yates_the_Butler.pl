@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("I'm terribly sorry, good fellow, but this residence is privately owned. Your presence here is quite disconcerting for my master. I implore you to take your leave. Thaaaaanks.");
+    quest::say("I'm terribly sorry, good fellow, but this residence is privately owned. Your presence here is quite disconcerting for my master. I implore you to take your leave. Thaaaaanks.");
   }
 }
 

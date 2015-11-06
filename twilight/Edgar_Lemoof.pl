@@ -1,30 +1,30 @@
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
-   plugin::DiaWind("Hiya, I be a fishin', what ya need somethin?");
+   quest::say("Hiya, I be a fishin', what ya need somethin?");
  }
  if($text =~ /armor/i) {
-   plugin::DiaWind("Oh ya want some of the druid equipment that Rilla and I make?");
+   quest::say("Oh ya want some of the druid equipment that Rilla and I make?");
  }
  if($text =~ /I am a druid/i) {
-   plugin::DiaWind("I can make ya a mask, cloak, gloves, talisman, belt, and a crook. Just ask about each one and I'll tell ya what ya need to bring so I can make it.");
+   quest::say("I can make ya a mask, cloak, gloves, talisman, belt, and a crook. Just ask about each one and I'll tell ya what ya need to bring so I can make it.");
  }
  if($text =~ /mask/i) {
-   plugin::DiaWind("'For the earth blessed mask you need to bring me a moon jewel, a mark of storms, and an etched fire opal of nature.");
+   quest::say("'For the earth blessed mask you need to bring me a moon jewel, a mark of storms, and an etched fire opal of nature.");
  }
  if($text =~ /cloak/i) {
-   plugin::DiaWind("For the earth blessed cloak you need to bring me a star jewel, a mark of the earth, an etched peridot of nature, and a tablet of wolves.");
+   quest::say("For the earth blessed cloak you need to bring me a star jewel, a mark of the earth, an etched peridot of nature, and a tablet of wolves.");
  }
  if($text =~ /gloves/i) {
-   plugin::DiaWind("'For the earth blessed gloves you need to bring me a cloud jewel, a mark of blossoms, and an etched pearl of nature.");
+   quest::say("'For the earth blessed gloves you need to bring me a cloud jewel, a mark of blossoms, and an etched pearl of nature.");
  }
  if($text =~ /talisman/i) {
-   plugin::DiaWind("For the earth blessed talisman you need to bring me a sky jewel, a mark of rain, and an etched opal of nature.");
+   quest::say("For the earth blessed talisman you need to bring me a sky jewel, a mark of rain, and an etched opal of nature.");
  }
  if($text =~ /belt/i) {
-   plugin::DiaWind("For the earth blessed belt you need to bring me a meteor jewel, a mark of flora, an etched onyx of nature, and an ancient writ of nature.");
+   quest::say("For the earth blessed belt you need to bring me a meteor jewel, a mark of flora, an etched onyx of nature, and an ancient writ of nature.");
  }
  if($text =~ /crook/i) {
-   plugin::DiaWind("For the earth blessed crook you need to bring me an astral jewel, mark of fauna, an etched fire emerald of nautre, and a vial of moon dew.");
+   quest::say("For the earth blessed crook you need to bring me an astral jewel, mark of fauna, an etched fire emerald of nautre, and a vial of moon dew.");
  }
 }
 

@@ -1,36 +1,36 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Well met friend lovely day isn't it?"); }
+quest::say("Well met friend lovely day isn't it?"); }
  if($text =~ /What armor/i) {
-	plugin::DiaWind("Yes Shelia told me I may have some people asking me about the armor I have. Are ya a bard?");
+	quest::say("Yes Shelia told me I may have some people asking me about the armor I have. Are ya a bard?");
  }
  if($text =~ /I am a bard./i) {
-   plugin::DiaWind("Good, I have a [mask], [cloak], [gauntlets], [gorget], [girdle], and a [sword].");
+   quest::say("Good, I have a [mask], [cloak], [gauntlets], [gorget], [girdle], and a [sword].");
  }
  if($text =~ /cloak/i) {
-   plugin::DiaWind("For the cloak you must gather these things. An Astral jewel, a mark of melody, an onyx studded medal, and a porous rock.");
+   quest::say("For the cloak you must gather these things. An Astral jewel, a mark of melody, an onyx studded medal, and a porous rock.");
  }
  if($text =~ /gauntlets/i) {
-   plugin::DiaWind("For the gauntlets you must gather these things. A sun jewel, a mark of anthems, and a fire emerald studded medal.");
+   quest::say("For the gauntlets you must gather these things. A sun jewel, a mark of anthems, and a fire emerald studded medal.");
  }
  if($text =~ /girdle/i) {
-   plugin::DiaWind("For the girdle you must gather these things. A star jewel, a mark of composition, a peridot studded medal, and a seared brand.");
+   quest::say("For the girdle you must gather these things. A star jewel, a mark of composition, a peridot studded medal, and a seared brand.");
  }
  if($text =~ /gorget/i) {
-   plugin::DiaWind("For the gorget you must gather these things a moon jewel, a mark of psalms, and a black pearl studded medal.");
+   quest::say("For the gorget you must gather these things a moon jewel, a mark of psalms, and a black pearl studded medal.");
  }
  if($text =~ /mask/i) {
-   plugin::DiaWind("For the mask you must gather these things a meteor jewel, a mark of tenor, and a star sapphire studded medal.");
+   quest::say("For the mask you must gather these things a meteor jewel, a mark of tenor, and a star sapphire studded medal.");
  }
  if($text =~ /sword/i) {
-   plugin::DiaWind("For the sword you must gather these things a cloud jewel, a mark of chants, a red stone idol, and a moonstone studded medal.");
+   quest::say("For the sword you must gather these things a cloud jewel, a mark of chants, a red stone idol, and a moonstone studded medal.");
  }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4494 => 1, 5393 => 1, 5394 => 1, 5395 => 1)) {
     quest::summonitem(3928); #cloak
-    plugin::DiaWind("Thank you. May your voice be ever true."); 
+    quest::say("Thank you. May your voice be ever true."); 
     quest::exp(50000); #exp amount?
   }
   elsif (plugin::check_handin(\%itemcount, 5397 => 1, 5396 => 1, 4488 => 1)) {

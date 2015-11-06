@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Welcome to Shandeling's Casino! If you would like to try your luck at a game of chance, I can offer you a game of King's Court with prizes best suited for any druid, shaman, or cleric. To play, buy a token from any of the waitresses and hand it to me when ready."); 
+quest::say("Welcome to Shandeling's Casino! If you would like to try your luck at a game of chance, I can offer you a game of King's Court with prizes best suited for any druid, shaman, or cleric. To play, buy a token from any of the waitresses and hand it to me when ready."); 
 }
  }
  

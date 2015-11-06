@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Hello, $name. I would be careful around the cubes. Rumor is they've gotten some kind of intelligence now.");
+    quest::say("Hello, $name. I would be careful around the cubes. Rumor is they've gotten some kind of intelligence now.");
   }
 }
 

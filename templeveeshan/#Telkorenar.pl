@@ -4,28 +4,28 @@
 sub EVENT_SAY {
   if ($faction == 1) { #req ally CoV
     if ($text=~/hail/i) {
-      plugin::DiaWind("The Strong seek me out, for one reason or another. It seems you have come here in peace. Perhaps you wish to prove yourself a mighty $class? I respect only might, $race.");
+      quest::say("The Strong seek me out, for one reason or another. It seems you have come here in peace. Perhaps you wish to prove yourself a mighty $class? I respect only might, $race.");
     }
     elsif ($text=~/wish to prove/i) {
-      plugin::DiaWind("For the mighty I have four tests. The test of the tooth, the
+      quest::say("For the mighty I have four tests. The test of the tooth, the
 test of the flame, the test of the fire storm, and the test of protection. Which
 test do you wish to undertake?");
     }
     elsif ($text=~/test of the tooth/i) {
-      plugin::DiaWind("With tooth and nail you must fight, deep into the halls of testing. Recover the white tear of power, the white symbol for purity, the silver symbol to calm ones self, and a glowing orb. If you can return these to me I will know you are a mighty fighter indeed.");
+      quest::say("With tooth and nail you must fight, deep into the halls of testing. Recover the white tear of power, the white symbol for purity, the silver symbol to calm ones self, and a glowing orb. If you can return these to me I will know you are a mighty fighter indeed.");
     }
     elsif ($text=~/test of the flame/i) {
-      plugin::DiaWind("Return the black tear, the black symbol, the poison symbol, and the serrated symbol to me and you will have completed the test of flame. Your reward will be quite suitable to one who enters the fray of battle.");
+      quest::say("Return the black tear, the black symbol, the poison symbol, and the serrated symbol to me and you will have completed the test of flame. Your reward will be quite suitable to one who enters the fray of battle.");
     }
     elsif ($text=~/test of the fire storm/i) {
-      plugin::DiaWind("Become like a fire storm and bring your wrath upon the inhabitants of the halls of testing. Return when you have the tear of poison and the serrated tear along with the a symbol kissed by flames and a ruby symbol.");
+      quest::say("Become like a fire storm and bring your wrath upon the inhabitants of the halls of testing. Return when you have the tear of poison and the serrated tear along with the a symbol kissed by flames and a ruby symbol.");
     }
     elsif ($text=~/test of protection/i) {
-      plugin::DiaWind("My fire will protect you if you are strong enough to endure this test. A ruby tear like my flames, an emerald tear like a forest ready to burn, an emerald symbol, and a platinum symbol are what I seek. With these I will forge pauldrons unlike any you have ever seen mortal. Go now and seek out what I desire.");
+      quest::say("My fire will protect you if you are strong enough to endure this test. A ruby tear like my flames, an emerald tear like a forest ready to burn, an emerald symbol, and a platinum symbol are what I seek. With these I will forge pauldrons unlike any you have ever seen mortal. Go now and seek out what I desire.");
     }
   }
   else {
-     plugin::DiaWind("I do not know you well enough to entrust you with such a quest, yet.");
+     quest::say("I do not know you well enough to entrust you with such a quest, yet.");
   }
 }
 
@@ -54,7 +54,7 @@ sub EVENT_ITEM {
     quest::exp(200000);
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust you with such an item, yet.");
+    quest::say("I do not know you well enough to entrust you with such an item, yet.");
   }
 }
 

@@ -5,5 +5,5 @@ sub EVENT_SPAWN {
 
 
 sub EVENT_TIMER { 
-	plugin::DiaWind("Guys, can I get down now please?"); 
+	quest::say("Guys, can I get down now please?"); 
 }

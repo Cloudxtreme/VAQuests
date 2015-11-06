@@ -2,11 +2,11 @@ sub EVENT_SAY {
  if($text=~/hail/i){
   # The New Worker [Part 1]
   quest::me("an undead foreman turns to face you. You can see a faint green glow emanating from his vacant eye sockets.");
-  plugin::DiaWind("Are you a [new worker]? Huh? Speak or go!!");
+  quest::say("Are you a [new worker]? Huh? Speak or go!!");
  }
  elsif($text=~/new worker/i){
   # The New Worker [Part 2]
-  plugin::DiaWind("Hmmph!! Too much flesh!! If you want to work, you must first fill my eye sockets with my favorite gem. This shall be your payment for your sledgehammer.");
+  quest::say("Hmmph!! Too much flesh!! If you want to work, you must first fill my eye sockets with my favorite gem. This shall be your payment for your sledgehammer.");
  }
 }
 
@@ -20,12 +20,12 @@ sub EVENT_ITEM {
     }
   # The New Worker [Part 3][End]
   quest::me("an undead foreman places the gem deep within his hollow eye socket. He pulls a giant sledgehammer from thin air and hands it to you.");
-  plugin::DiaWind("Here!! You shall be assigned to the lower decks of the Scaled Trident.");
+  quest::say("Here!! You shall be assigned to the lower decks of the Scaled Trident.");
   #Summon: a worker sledgemallet (12863)
   quest::summonitem(12863);
  }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust such an item to you, yet.");
+    quest::say("I do not know you well enough to entrust such an item to you, yet.");
   }
 }
 

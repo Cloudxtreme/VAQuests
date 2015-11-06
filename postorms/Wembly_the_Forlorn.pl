@@ -8,27 +8,27 @@ sub EVENT_SAY
 	}
 	
 	if ($text=~/done/i) {
-		plugin::DiaWind("Yes done! Weren't you paying attention? Once you've gathered all the pieces of the [" . quest::saylink("key") . "] bring it to me and I'll put them back together for you.");
+		quest::say("Yes done! Weren't you paying attention? Once you've gathered all the pieces of the [" . quest::saylink("key") . "] bring it to me and I'll put them back together for you.");
 	}
 	
 	if ($text=~/key/i) {
-		plugin::DiaWind("THE Key, you really are as thick skulled as you look. You [" . quest::saylink("agree to help") . "] me and you aren't even paying attention.");
+		quest::say("THE Key, you really are as thick skulled as you look. You [" . quest::saylink("agree to help") . "] me and you aren't even paying attention.");
 	}
 	
 	if ($text=~/agree to help/i) {
-		plugin::DiaWind("You agree to help? Great! I haven't even told you what I needed yet, or why. It is very noble of you to offer me your assistance. I've been trapped here for a little too long, I washed up on the shore still [" . quest::saylink("tied to the mast") . "] of my ship. Wonder that I even survived the storm.");
+		quest::say("You agree to help? Great! I haven't even told you what I needed yet, or why. It is very noble of you to offer me your assistance. I've been trapped here for a little too long, I washed up on the shore still [" . quest::saylink("tied to the mast") . "] of my ship. Wonder that I even survived the storm.");
 	}
 	
 	if ($text=~/tied to the mast/i) {
-		plugin::DiaWind("The Diaku Raiders, filthy sort if you ask me. I was out on a shipping run, when Diaku attacked, they pillaged all of my goods, then tied me to the mast and left me floating a sea. Then the storm came and ate my ship, and I woke up here, I swear that I saw some [" . quest::saylink("Diaku") . "] washed up on the shore with me.");
+		quest::say("The Diaku Raiders, filthy sort if you ask me. I was out on a shipping run, when Diaku attacked, they pillaged all of my goods, then tied me to the mast and left me floating a sea. Then the storm came and ate my ship, and I woke up here, I swear that I saw some [" . quest::saylink("Diaku") . "] washed up on the shore with me.");
 	}
 	
 	if ($text=~/Diaku/i) {
-		plugin::DiaWind("The Diaku that attacked me! Pay attention for Karana's sake! You appear to be the fighting sort. You can help me kill the Diaku at their source in [" . quest::saylink("Drunder") . "].");
+		quest::say("The Diaku that attacked me! Pay attention for Karana's sake! You appear to be the fighting sort. You can help me kill the Diaku at their source in [" . quest::saylink("Drunder") . "].");
 	}
 	
 	if ($text=~/Drunder/i) {
-		plugin::DiaWind("Drunder! The Fortress of Zek, the Zeks don't trust any one mortal to have free access to the fortress. The Diaku come and go in fours, and four parts are needed for entry. Of course they won't part with them easily. If you find four, and bring me four, I can make the four into one, and with one, you can get into Drunder without three more. Then, with your one, you can kill all of them. I would do it myself, but with my bad knee and all. . .");
+		quest::say("Drunder! The Fortress of Zek, the Zeks don't trust any one mortal to have free access to the fortress. The Diaku come and go in fours, and four parts are needed for entry. Of course they won't part with them easily. If you find four, and bring me four, I can make the four into one, and with one, you can get into Drunder without three more. Then, with your one, you can kill all of them. I would do it myself, but with my bad knee and all. . .");
 	}
 }
 
@@ -36,7 +36,7 @@ sub EVENT_ITEM
 {
 	if(plugin::check_handin(\%itemcount, 29216 => 1, 29217 => 1, 29218 => 1, 29219 => 1))
 	{
-		plugin::DiaWind("What's this? Four pieces of a Diaku Emblem? Why ever would you give these to me? Well I think I can get them to fit back together. You know, while you have this, I would be quite happy if you would avenge the loss of my dear ship and kill every Diaku you find? Yes that would be very good indeed. Here is your key, and a key for all your companions as well.");
+		quest::say("What's this? Four pieces of a Diaku Emblem? Why ever would you give these to me? Well I think I can get them to fit back together. You know, while you have this, I would be quite happy if you would avenge the loss of my dear ship and kill every Diaku you find? Yes that would be very good indeed. Here is your key, and a key for all your companions as well.");
 		my @grp = plugin::GetGroupMembers($client);
 		foreach $ent (@grp)
 		{

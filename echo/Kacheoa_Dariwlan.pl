@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("We know who you are.  Give me the slightest reason and I will call the scounds upon your head."); }
+quest::say("We know who you are.  Give me the slightest reason and I will call the scounds upon your head."); }
 }
 #END of FILE Zone:echo  ID:153034 -- Kacheoa_Dariwlan 
 

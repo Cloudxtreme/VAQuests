@@ -21,7 +21,7 @@ sub EVENT_WAYPOINT_DEPART {
 #	quest::pause(60);
 #	quest::doanim(36); # Kneel
 #	quest::castspell(278); # Spirit of wolf
-#	plugin::DiaWind("Sorry for the delay mistress, I ran into a spot of trouble on the way here. I am prepared to deliver your crate to the spiritualists back home."); # Reporting in.
+#	quest::say("Sorry for the delay mistress, I ran into a spot of trouble on the way here. I am prepared to deliver your crate to the spiritualists back home."); # Reporting in.
 #	quest::signalwith(160126,2,10000);  # Signal to have Rhorer respond with her first line
 	
 #}

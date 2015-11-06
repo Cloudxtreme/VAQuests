@@ -8,7 +8,7 @@
 
 sub EVENT_SPAWN {
   quest::emote("appears emanating a powerful yet ghastly aura."); #Text modified as quest::echo not working
-  plugin::DiaWind("Your kindness has given me a chance to finish that which I started. While I thank thee for restoring my blade and bringing it to me, I am not worthy to wield it until I have destroyed the one who killed me. Please hold my sword until I have redeemed myself by vanquishing the vile Troll Captain Krignok.");
+  quest::say("Your kindness has given me a chance to finish that which I started. While I thank thee for restoring my blade and bringing it to me, I am not worthy to wield it until I have destroyed the one who killed me. Please hold my sword until I have redeemed myself by vanquishing the vile Troll Captain Krignok.");
   quest::settimer(5,600); # 10 minute timer, then just depop
   quest::settimer(1,4); # 4s break for the text
   quest::settimer(2,10); # 15s break for the shouts
@@ -19,7 +19,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
 
   if ($timer == 1) {
-    plugin::DiaWind("Now, I must ask that you protect me, I can feel his presence close by and once again he is not alone.");
+    quest::say("Now, I must ask that you protect me, I can feel his presence close by and once again he is not alone.");
     quest::moveto(-1950.1,2713.3,3.3); # Wander over to spawnpoint This is slightly improvised as there is no mob location data.
     quest::stoptimer(1);
   }

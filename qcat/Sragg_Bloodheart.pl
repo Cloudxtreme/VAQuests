@@ -12,7 +12,7 @@ sub EVENT_ENTER {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 18706  => 1)) { #Stained Cloth Note
-		plugin::DiaWind("Ah, another would-be soldier for the army of the Plaguebringer. Unmuz has just lost a few of his men, he'll have plenty of work for you. I'm sure. Begone!");
+		quest::say("Ah, another would-be soldier for the army of the Plaguebringer. Unmuz has just lost a few of his men, he'll have plenty of work for you. I'm sure. Begone!");
 		quest::summonitem(13598); #Ruined Training Tunic*
 		quest::ding();
 		quest::faction(21,100); #Bloodsabers

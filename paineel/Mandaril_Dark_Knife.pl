@@ -12,21 +12,21 @@ sub EVENT_ENTER {
 
 sub EVENT_SAY { 
 	if($text=~/hail/i){
-		plugin::DiaWind("Desist in your prattle.  If you want idle chitchat. talk to someone else."); 
+		quest::say("Desist in your prattle.  If you want idle chitchat. talk to someone else."); 
 	}
 	if($text=~/trades/i) {
-		plugin::DiaWind("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
 		quest::summonitem(51121);
 	}
 	if($text=~/second book/i)	{
-		plugin::DiaWind("Here is the second volume of the book you requested, may it serve you well!");
+		quest::say("Here is the second volume of the book you requested, may it serve you well!");
 		quest::summonitem(51122);
 	}
 }
 
 sub EVENT_ITEM { 
 	if (plugin::check_handin(\%itemcount, 18017 => 1)) { # Fell Blade Guild Note
-		plugin::DiaWind("You are welcomed into the fold.  Now go out, and prove yourself, young one.  You have much to learn about the Dark Truth. Once you are ready to begin your training please make sure that you see Faratain, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+		quest::say("You are welcomed into the fold.  Now go out, and prove yourself, young one.  You have much to learn about the Dark Truth. Once you are ready to begin your training please make sure that you see Faratain, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13573); # Blood Splattered Tunic
 		quest::ding();
 		quest::faction(143,100); # Heretics

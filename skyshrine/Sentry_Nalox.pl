@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("I have no time to talk right now. I must keep watch for hostiles.");
+    quest::say("I have no time to talk right now. I must keep watch for hostiles.");
   }
 }
 

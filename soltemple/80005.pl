@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if ($text=~/solusek ro/i) {
-    plugin::DiaWind("Solusek Ro is the Master of Fire and the Keeper of Power.");
+    quest::say("Solusek Ro is the Master of Fire and the Keeper of Power.");
   }
 }
 

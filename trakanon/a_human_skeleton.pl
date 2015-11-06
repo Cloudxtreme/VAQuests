@@ -10,7 +10,7 @@
 
 sub EVENT_SAY {
   if ($text=~/Hail/i) {
-    plugin::DiaWind("Save my.. Soul.. Find.. Wizard.. Desp..");
+    quest::say("Save my.. Soul.. Find.. Wizard.. Desp..");
   }
 }
 

@@ -12,14 +12,14 @@ sub EVENT_ENTER {
 
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
-		plugin::DiaWind('If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that [tome] in your inventory as well.  It will help you greatly during your adventures.');
+		quest::say('If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that [tome] in your inventory as well.  It will help you greatly during your adventures.');
 	}
 	if(($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)) {
-		plugin::DiaWind("Luckily for you someone found it.");
+		quest::say("Luckily for you someone found it.");
 		quest::summonitem(2873);
 	}
 	if(($text=~/cloak/i) && ($qglobals{Shar_Vahl_Cit} == 7)){
-		plugin::DiaWind("Someone found this under a table at the one of the pubs. Try not to lose it this time.");
+		quest::say("Someone found this under a table at the one of the pubs. Try not to lose it this time.");
 		quest::summonitem(2878);
 	}
 	if($text =~/tome/i) {
@@ -42,15 +42,15 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount,36004 => 1)){ # Shimmering Cloth Note
-		plugin::DiaWind("I am so thrilled you have chosen to join this regal and fearsome crew.  You will find that as a member of the Ireblood Ragers, you have a strong and proud force backing you. Now you must complete your first task.  Take this application to Registrar Bindarah and return to me with proof of your citizenship.");
-		plugin::DiaWind("I know that you may be nervous right now... after all, this should be a very exciting first step for you.  If you happen to get lost while looking for the registrar, just ask one of the other citizens or guards for directions.  They will most likely know where to find the place or person that you are looking for.");
+		quest::say("I am so thrilled you have chosen to join this regal and fearsome crew.  You will find that as a member of the Ireblood Ragers, you have a strong and proud force backing you. Now you must complete your first task.  Take this application to Registrar Bindarah and return to me with proof of your citizenship.");
+		quest::say("I know that you may be nervous right now... after all, this should be a very exciting first step for you.  If you happen to get lost while looking for the registrar, just ask one of the other citizens or guards for directions.  They will most likely know where to find the place or person that you are looking for.");
 		quest::ding();
 		quest::exp(100);
 		quest::setglobal("Shar_Vahl_Cit",1,5,"F");
 		quest::summonitem(2873); # Application for Citizenship
 	}
 	elsif (plugin::check_handin(\%itemcount, 2897 => 1)) {
-		plugin::DiaWind("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Pashir.  Farewell.");
+		quest::say("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Pashir.  Farewell.");
 		quest::summonitem(2878);
 		quest::ding();
 		quest::exp(100);

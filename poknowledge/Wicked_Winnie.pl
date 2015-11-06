@@ -2,22 +2,22 @@ sub EVENT_SAY {
   	if(!quest::istaskactive(214)){
 		if(!defined $qglobals{halloween_winnie}){
   			if($text=~/hail/i) {
-      				plugin::DiaWind("Salutations, are you enjoying the [festivities]? I know I am.");
+      				quest::say("Salutations, are you enjoying the [festivities]? I know I am.");
       			}
   			if($text=~/festivities/i) {
-      				plugin::DiaWind("This is my favorite time of year! Little hobgoblins running around, candy, and spooky hauntings. If I had some of my [Wicked Liquid Caramel] I could really dress up some apples. Divine!");
+      				quest::say("This is my favorite time of year! Little hobgoblins running around, candy, and spooky hauntings. If I had some of my [Wicked Liquid Caramel] I could really dress up some apples. Divine!");
       			}
  			if($text=~/Wicked liquid caramel/i) {
-				plugin::DiaWind("Oh yes. Haunted Jack has some Haunted Candy Apples he is carting around, but those are nothing compared to my concoctions. Unfortunately, the caramel I use is very special and I've been so busy helping Sally out with her costumes this year that I haven't had time to [track it down].");
+				quest::say("Oh yes. Haunted Jack has some Haunted Candy Apples he is carting around, but those are nothing compared to my concoctions. Unfortunately, the caramel I use is very special and I've been so busy helping Sally out with her costumes this year that I haven't had time to [track it down].");
 			}
   			if($text=~/track it down/i) {
-				plugin::DiaWind("Well, last time I ran across it through a gnome named Finkel. It's possible that he still has some. I believe he is doing business in Steamfont this time of year.");
+				quest::say("Well, last time I ran across it through a gnome named Finkel. It's possible that he still has some. I believe he is doing business in Steamfont this time of year.");
                                 quest::assigntask(219);
 				quest::assigntask(214);
 			}
 		}
 		else {
-			plugin::DiaWind("Enjoy your apples!");
+			quest::say("Enjoy your apples!");
 		}		
 	}	
 }

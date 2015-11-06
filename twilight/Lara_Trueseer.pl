@@ -1,30 +1,30 @@
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
-   plugin::DiaWind("Hey there!");
+   quest::say("Hey there!");
  }
  if($text =~ /armor/i) {
    quest::emote("Lara Trueseer grimaces in pain. 'The visions are so strong they hurt...please make them stop..'");
  }
  if($text =~ /I am an enchanter/i) {
-   plugin::DiaWind("Very good. I have a cap, robe, sleeves, pants, shawl, and bracer. My friend Xavier has the rest just ask him about armor. ");
+   quest::say("Very good. I have a cap, robe, sleeves, pants, shawl, and bracer. My friend Xavier has the rest just ask him about armor. ");
  }
  if($text =~ /cap/i) {
-   plugin::DiaWind("For the cap I will need an astral jewel, a golden flower, a grail of enchantment, and a mark of beauty.");
+   quest::say("For the cap I will need an astral jewel, a golden flower, a grail of enchantment, and a mark of beauty.");
  }
  if($text =~ /robe/i) {
-   plugin::DiaWind("For the robe I will need a sun jewel, the eye of the enraptured, a mark of affection, and a book of inspiration.");
+   quest::say("For the robe I will need a sun jewel, the eye of the enraptured, a mark of affection, and a book of inspiration.");
  }
  if($text =~ /sleeves/i) {
-   plugin::DiaWind("For the sleeves I will need a moon jewel, a page of prose, a mark of reality, and a truncated ring.");
+   quest::say("For the sleeves I will need a moon jewel, a page of prose, a mark of reality, and a truncated ring.");
  }
  if($text =~ /pants/i) {
-   plugin::DiaWind("For the pants I will need a star jewel, a mark of passion, an adamantium quill, and pristine shik-nar claws.");
+   quest::say("For the pants I will need a star jewel, a mark of passion, an adamantium quill, and pristine shik-nar claws.");
  }
  if($text =~ /shawl/i) {
-   plugin::DiaWind("For the shawl I will need a cloud jewel, a mark of understanding, and a hope emerald.");
+   quest::say("For the shawl I will need a cloud jewel, a mark of understanding, and a hope emerald.");
  }
  if($text =~ /bracer/i) {
-   plugin::DiaWind("For the bracer I will need a sky jewel, a mark of elegance, and a hope sapphire.");
+   quest::say("For the bracer I will need a sky jewel, a mark of elegance, and a hope sapphire.");
  }
 }
 

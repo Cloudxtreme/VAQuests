@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 
   if(plugin::check_handin(\%itemcount, 28057 => 1)) {
 
-    plugin::DiaWind("The General will take care of you!");
+    quest::say("The General will take care of you!");
 
     quest::ding();
 

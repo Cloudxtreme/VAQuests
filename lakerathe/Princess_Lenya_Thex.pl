@@ -13,22 +13,22 @@ sub EVENT_TIMER {
 
 sub EVENT_SAY {
 	if($text=~/hail/i) {
-		plugin::DiaWind("I am rescued from the hands of the Teir'Dal! I am grateful.  Show me your [proof of allegiance] along with a key to remove these [dark shackles] and I shall reward thee.");
+		quest::say("I am rescued from the hands of the Teir'Dal! I am grateful.  Show me your [proof of allegiance] along with a key to remove these [dark shackles] and I shall reward thee.");
 	}
 	if($text=~/proof of allegiance/i) {
-		plugin::DiaWind("When I speak of proof of allegiance, I speak of proof you were sent by one of the [Silent Watch].");
+		quest::say("When I speak of proof of allegiance, I speak of proof you were sent by one of the [Silent Watch].");
 	}
 	if($text=~/dark shackles/i) {
-		plugin::DiaWind("My Teir'Dal captors have placed magical shackles upon me.  The shackles prevent me from using my magic to transport myself home nor do they allow me to venture far from Lake Rathetear.  I will require special shackle keys from Highkeep.");
+		quest::say("My Teir'Dal captors have placed magical shackles upon me.  The shackles prevent me from using my magic to transport myself home nor do they allow me to venture far from Lake Rathetear.  I will require special shackle keys from Highkeep.");
 	}
 	if($text=~/silent watch/i) {
-		plugin::DiaWind("The Silent Watch are the Royal Family's guardians. If you run into one, maybe he'll teach you a lesson or two!");
+		quest::say("The Silent Watch are the Royal Family's guardians. If you run into one, maybe he'll teach you a lesson or two!");
 	}	
 }
 
 sub EVENT_ITEM { 
 	if(plugin::check_handin(\%itemcount, 20008 => 1, 13108 => 1)){
-		plugin::DiaWind("You have saved me!!  $name, you are my hero!!  Take my amulet and the royal suite key to Tearon in Highkeep.  Help put his soul at ease and he shall reward you.  Now I must go.. I am sorry I cannot transport you as well, but my powers are weak from much swimming.  Farewell, brave soul!");
+		quest::say("You have saved me!!  $name, you are my hero!!  Take my amulet and the royal suite key to Tearon in Highkeep.  Help put his soul at ease and he shall reward you.  Now I must go.. I am sorry I cannot transport you as well, but my powers are weak from much swimming.  Farewell, brave soul!");
 		quest::summonitem(13109);
 		quest::ding();
 		quest::faction( 8, 10);
@@ -38,7 +38,7 @@ sub EVENT_ITEM {
 		quest::depop();
 	}
 	else {
-		plugin::DiaWind("I will require both the shackle key for the [dark shackles] and some [proof of allegiance].");
+		quest::say("I will require both the shackle key for the [dark shackles] and some [proof of allegiance].");
 	}
 	plugin::return_items(\%itemcount);
 }

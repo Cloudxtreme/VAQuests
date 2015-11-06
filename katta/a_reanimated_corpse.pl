@@ -11,5 +11,5 @@ sub EVENT_COMBAT {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	plugin::DiaWind("Destroy my master and end my suffering");
+	quest::say("Destroy my master and end my suffering");
 }

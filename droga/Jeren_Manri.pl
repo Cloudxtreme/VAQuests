@@ -4,7 +4,7 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {
-    plugin::DiaWind("Shhh, be quiet! The goblins may hear you.");
+    quest::say("Shhh, be quiet! The goblins may hear you.");
   }
 }
  

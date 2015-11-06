@@ -5,15 +5,15 @@ sub EVENT_SAY {
   my $TrueRace = $client->GetBaseRace();
 
   if($text=~/hail/i) {
-    plugin::DiaWind("Hello, $name. Feel free to browse my wares. Unless you are looking to make a special Cabilisan robe. If so, just let me know that you want a [robe pattern]."); #Still need real text
+    quest::say("Hello, $name. Feel free to browse my wares. Unless you are looking to make a special Cabilisan robe. If so, just let me know that you want a [robe pattern]."); #Still need real text
   }
   if($text=~/robe pattern/i) {
     if ($TrueRace==128) { #Iksar
-      plugin::DiaWind("Very well. Take this pattern, and good luck to you Iksar."); #Still need real text
+      quest::say("Very well. Take this pattern, and good luck to you Iksar."); #Still need real text
       quest::summonitem(65256); #Cabilisan Robe Pattern
     }
     else {
-      plugin::DiaWind("You are not an Iksar! Who are you trying to fool?"); #Still need real text
+      quest::say("You are not an Iksar! Who are you trying to fool?"); #Still need real text
     }
   }
 }

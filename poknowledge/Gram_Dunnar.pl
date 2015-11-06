@@ -8,7 +8,7 @@ sub EVENT_SAY
 	}
 	
 	elsif($text=~/Hail/i){
-		plugin::DiaWind("The old dwarf looks up at you slowly, his wrinkled hands continuing to carve a small wooden object. He grins as he eyes your dust-covered outfit and well-used equipment. 'Ahh, a young adventurer,' he says. 'Warms my heart to see the spirit I once had still going strong. Got too old, you see. He strokes his beard. 'Tried taking up a [craft], but it just isn't the same. Sure would be nice to hear some [stories] about those new places I'll never get to see.");
+		quest::say("The old dwarf looks up at you slowly, his wrinkled hands continuing to carve a small wooden object. He grins as he eyes your dust-covered outfit and well-used equipment. 'Ahh, a young adventurer,' he says. 'Warms my heart to see the spirit I once had still going strong. Got too old, you see. He strokes his beard. 'Tried taking up a [craft], but it just isn't the same. Sure would be nice to hear some [stories] about those new places I'll never get to see.");
 	}
 	elsif($text=~/craft/i && $ulevel > 50){
 		quest::emote("Gram Dunnar stops carving and holds up the object between his short fingers. It is a figurine of a swordsman with many intricate details. 'No one really wants to buy them, these days. If there's no magic in it...' he shrugs. 'Still, something to take up some time.' He rummages through some finished pieces on the floor around him, picks up one, and tosses it to you. 'Here,' he says. 'Maybe it'll bring you some luck.");

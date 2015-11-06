@@ -19,13 +19,13 @@ sub	EVENT_WAYPOINT_ARRIVE
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Welcome to our humble outpost. traveller. Let me know if you see anything you need. I consider it an honor to sell here, for doing so enables Vah Shir in training to stay in the field.");
+    quest::say("Welcome to our humble outpost. traveller. Let me know if you see anything you need. I consider it an honor to sell here, for doing so enables Vah Shir in training to stay in the field.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,5566 => 1)) {
-    plugin::DiaWind("Thanks $name! That was delicious. Here is the empty bowl.");
+    quest::say("Thanks $name! That was delicious. Here is the empty bowl.");
     quest::summonitem(5567);
   }
   plugin::return_items(\%itemcount);

@@ -21,7 +21,7 @@ sub EVENT_SAY {
 
 	if ($text =~/unnoticed/i){
 	
-	plugin::DiaWind("Foolish mortal! You've come this far and you don't realize greater powers are at work! The realm of Norrath owes an unpayable debt to the great Terralox, and sadly, his identity remains a mystery to those outside of the realm of Crystallos. Terralox is the creation lord of the earth, and reports directly to Aunopia. He noticed early on, the abilities of this great magician. With knowledge passed down to Ponz From the might Terralox himself, the great magician now has the ability to command several pets at once to gaurd the realm beyond.");
+	quest::say("Foolish mortal! You've come this far and you don't realize greater powers are at work! The realm of Norrath owes an unpayable debt to the great Terralox, and sadly, his identity remains a mystery to those outside of the realm of Crystallos. Terralox is the creation lord of the earth, and reports directly to Aunopia. He noticed early on, the abilities of this great magician. With knowledge passed down to Ponz From the might Terralox himself, the great magician now has the ability to command several pets at once to gaurd the realm beyond.");
 	quest::settimer("Start",5);
 	}
 	

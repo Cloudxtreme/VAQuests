@@ -3,6 +3,6 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_SIGNAL {
-  plugin::DiaWind("What a glorious machine the cargo clockwork is!!");
+  quest::say("What a glorious machine the cargo clockwork is!!");
   quest::signal(448111,1);
 }

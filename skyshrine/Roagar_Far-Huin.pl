@@ -10,35 +10,35 @@
 sub EVENT_SAY {
    if ($faction == 1) { #req ally CoV
       if($text=~/hail/i) {
-         plugin::DiaWind("I seek one who fights with rage in their eyes and fury in their arms, are you such a Berserker?");
+         quest::say("I seek one who fights with rage in their eyes and fury in their arms, are you such a Berserker?");
       }
       if ($text=~/i am a berserker/i) {
-         plugin::DiaWind("I will aid you with armor befitting one of your temperment. I have a helm, leggings, tunic, bracer, boots, sleeves, and gauntlets that can be yours if you complete my tasks");
+         quest::say("I will aid you with armor befitting one of your temperment. I have a helm, leggings, tunic, bracer, boots, sleeves, and gauntlets that can be yours if you complete my tasks");
       }
       if ($text=~/helm/i) {
-         plugin::DiaWind("Your enemies shall shake with fear at the sight of the helm I shall forge.  I only require you to obtain three Crushed Corals and an Unadorned Chain Helm.");
+         quest::say("Your enemies shall shake with fear at the sight of the helm I shall forge.  I only require you to obtain three Crushed Corals and an Unadorned Chain Helm.");
       }
       if ($text=~/tunic/i) {
-         plugin::DiaWind("I shall forge a tunic and infuse it with the rage of Dozekar the Cursed.  You must bring me three Flawless Diamonds and an Unadorned Chain Tunic.");
+         quest::say("I shall forge a tunic and infuse it with the rage of Dozekar the Cursed.  You must bring me three Flawless Diamonds and an Unadorned Chain Tunic.");
       }
       if ($text=~/sleeves/i) {
-         plugin::DiaWind("Your fury shall be unmatched when wearing the sleeves I shall create.  Provide me with three Flawed Emeralds and a pair of Unadorned Chain Vambraces.");
+         quest::say("Your fury shall be unmatched when wearing the sleeves I shall create.  Provide me with three Flawed Emeralds and a pair of Unadorned Chain Vambraces.");
       }
       if ($text=~/bracer/i) {
-         plugin::DiaWind("To forge a mighty bracer, I will need three Crushed Flame Emeralds and an Unadorned Chain Bracer.");
+         quest::say("To forge a mighty bracer, I will need three Crushed Flame Emeralds and an Unadorned Chain Bracer.");
       }
       if ($text=~/gauntlets/i) {
-         plugin::DiaWind("You shall crush the life from your enemies while wearing the gauntlets I can create from three Crushed Topazes and a pair of Unadorned Chain Gauntlets.");
+         quest::say("You shall crush the life from your enemies while wearing the gauntlets I can create from three Crushed Topazes and a pair of Unadorned Chain Gauntlets.");
       }
       if ($text=~/leggings/i) {
-         plugin::DiaWind("Fury and swiftness shall be your ally while wearing leggings of my forging.  Bring me three Flawed Sea Sapphires and a pair of Unadorned Chain Leggings and they shall be yours");
+         quest::say("Fury and swiftness shall be your ally while wearing leggings of my forging.  Bring me three Flawed Sea Sapphires and a pair of Unadorned Chain Leggings and they shall be yours");
       }
       if ($text=~/boots/i) {
-         plugin::DiaWind("To better pursue those who flee before you, wear these boots.  I will need three Crushed Black Marbles and a pair of Unadorned Chain Boots to complete them.");
+         quest::say("To better pursue those who flee before you, wear these boots.  I will need three Crushed Black Marbles and a pair of Unadorned Chain Boots to complete them.");
       }
    }
    else {
-      plugin::DiaWind("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
+      quest::say("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
    }
 }
 
@@ -70,14 +70,14 @@ sub EVENT_ITEM {
          return 1;
       }
       quest::emote("smiles wildly as he hands you your reward.");
-      plugin::DiaWind("Well done, $name.");
+      quest::say("Well done, $name.");
       quest::exp(175000);
       quest::faction(42,30); # CoV
       quest::faction(362,30); # Yelinak
       quest::faction(189,-60); # Kromzek
    }
    else {
-      plugin::DiaWind("I do not know you well enough to entrust such an item to you, yet.");
+      quest::say("I do not know you well enough to entrust such an item to you, yet.");
    }
 }
 

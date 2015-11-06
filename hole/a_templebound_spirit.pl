@@ -8,7 +8,7 @@ sub EVENT_AGGRO {
 		quest::emote("drifts threateningly toward its enemies.");
 	}
 	if(($mclass==3) && ($mgender==1)){	
-		plugin::DiaWind("You will be enveloped by the arms of death!");
+		quest::say("You will be enveloped by the arms of death!");
 	}
 	if(($mclass==1) && ($mgender==1)){	
 		quest::emote("attacks with her arms outstretched.");

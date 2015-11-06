@@ -1,19 +1,19 @@
 sub EVENT_SAY {
  if($text=~/hail/i){
-  plugin::DiaWind("Hail to yourself fool. Leave me be. I have [matters of importance] to ponder.");
+  quest::say("Hail to yourself fool. Leave me be. I have [matters of importance] to ponder.");
  }
  elsif($text=~/matters of importance/i){
-  plugin::DiaWind("If you are so greatly interested in my affairs then so be it. I have lost my skeleten servant. He now wanders the yard, taking his pain out on the new apprentices of our guild. I cannot return to my guild without ridding the yard of that menace for my mistake will cost me dearly if it is brought to the attention of my masters. Hrm. Perhaps you could destroy my pet for me and bring me proof of his removal. If you do I may even grace you with a [reward].");
+  quest::say("If you are so greatly interested in my affairs then so be it. I have lost my skeleten servant. He now wanders the yard, taking his pain out on the new apprentices of our guild. I cannot return to my guild without ridding the yard of that menace for my mistake will cost me dearly if it is brought to the attention of my masters. Hrm. Perhaps you could destroy my pet for me and bring me proof of his removal. If you do I may even grace you with a [reward].");
  }
  elsif($text=~/reward/i){
-  plugin::DiaWind("Speak not of reward when you have not even finished this simple task! Now leave me be.");
+  quest::say("Speak not of reward when you have not even finished this simple task! Now leave me be.");
  }
 }
 
 sub EVENT_ITEM {
  #Handin: 1x Rotting Femur (7107)
  if(plugin::check_handin(\%itemcount, 7107 => 1)){
-  plugin::DiaWind("Ah! You found him and obviously removed his presence from the yard. You have my thanks, small as it is for such a menial task. Here. Keep this worthless bit of bone for your labors.");
+  quest::say("Ah! You found him and obviously removed his presence from the yard. You have my thanks, small as it is for such a menial task. Here. Keep this worthless bit of bone for your labors.");
   quest::summonitem('7106'); #Noclin's Femur (7106)
   quest::faction(143,1);  # +Heretics
   quest::faction(79,-1);  # -Deepwater Knights

@@ -1,13 +1,13 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Well hello there. I don't mean to be rude but I am trying to enjoy a short break alone and enjoy my favorite Ale.");
+    quest::say("Well hello there. I don't mean to be rude but I am trying to enjoy a short break alone and enjoy my favorite Ale.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 67010 => 1)) { #Mug of Poisoned Ale
     quest::me("You hand Guib the mug of ale laced with Froglok's Bane. He grins and downs the deadly syrup in one gulp.");
-    plugin::DiaWind("Thanks young one, that was just what I needed. Take this as a token of my gratitude. Perhaps you will join our ranks when you get older.");
+    quest::say("Thanks young one, that was just what I needed. Take this as a token of my gratitude. Perhaps you will join our ranks when you get older.");
     quest::summonitem(67009); #Insignia of the Gukta Knights
     quest::faction(264,-25);
     quest::exp(100000);

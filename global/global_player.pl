@@ -51,6 +51,6 @@ sub EVENT_ENTERZONE{
 }
 
 sub EVENT_POPUPRESPONSE{
-    #::: plugin::DiaWind response subroutine
-    plugin::DiaWind_Process_Response();
+    #::: quest::say response subroutine
+    quest::say_Process_Response();
 }

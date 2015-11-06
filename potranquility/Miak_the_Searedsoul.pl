@@ -3,21 +3,21 @@ sub EVENT_SAY {
 	if ($pop_sol_ro_solusk == 1) {
 	
 		if ($text=~/hail/i) {
-			plugin::DiaWind("So, you actually defeated Solusek Ro. Impressive, for a mortal. Enjoy your stay in the Burning Lands. It has been a while since I smelt a burning $race .");
+			quest::say("So, you actually defeated Solusek Ro. Impressive, for a mortal. Enjoy your stay in the Burning Lands. It has been a while since I smelt a burning $race .");
 		}
 
 	} else {
 
 		if ($text=~/hail/i) {
-			plugin::DiaWind("Greetings mortal. Are you here about this [" . quest::saylink("portal's destination") . "]? I have been getting a lot of questions about it lately.");
+			quest::say("Greetings mortal. Are you here about this [" . quest::saylink("portal's destination") . "]? I have been getting a lot of questions about it lately.");
 		}
 
 		if ($text=~/portal's destination/i) {
-			plugin::DiaWind("As I suspected. This portal leads to Doomfire, the Burning Lands, home to Fennin Ro, the Tyrant of Fire. Or rather, it used to. His son, [" . quest::saylink("Solusek Ro") . "], disapproved of the number of you mortals entering his father's plane, and so he sealed it. It's a shame really, I was starting to enjoy the sounds you mortals make when you fall into the lava.");
+			quest::say("As I suspected. This portal leads to Doomfire, the Burning Lands, home to Fennin Ro, the Tyrant of Fire. Or rather, it used to. His son, [" . quest::saylink("Solusek Ro") . "], disapproved of the number of you mortals entering his father's plane, and so he sealed it. It's a shame really, I was starting to enjoy the sounds you mortals make when you fall into the lava.");
 		}
 
 		if ($text=~/solusek ro/i) {
-			plugin::DiaWind("So I've got another one eh? Alright, well if you really want to enter the relm of the flame, you're going to have to 'convince' the Burning Prince to remove his seal. He has been staying in his tower lately, so you will be able to find him there. Not that it matters. Nobody ever makes it to see him anyways.");
+			quest::say("So I've got another one eh? Alright, well if you really want to enter the relm of the flame, you're going to have to 'convince' the Burning Prince to remove his seal. He has been staying in his tower lately, so you will be able to find him there. Not that it matters. Nobody ever makes it to see him anyways.");
 		}
 	}
 {

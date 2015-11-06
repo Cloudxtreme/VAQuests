@@ -1,12 +1,12 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Well met friend. I am sorry but I musn't converse while I am on duty."); }
+quest::say("Well met friend. I am sorry but I musn't converse while I am on duty."); }
 }
 
 sub EVENT_ITEM
 {
   if (plugin::check_handin(\%itemcount, 3881 => 1)) {
-    plugin::DiaWind("gasps silently for air and the falls completely still! No one seems to have heard you.");
+    quest::say("gasps silently for air and the falls completely still! No one seems to have heard you.");
     quest::summonitem(3883);
     quest::faction(350,2); #Validus Custodus
     quest::faction(168,2); #Katta Castellum Citizens

@@ -1,16 +1,16 @@
 sub EVENT_SAY {
  if($text=~/hail/i){
-  plugin::DiaWind("Have you been sent by the War Baron to [assist]? The explorers from Firiona Vie draw closer.");
+  quest::say("Have you been sent by the War Baron to [assist]? The explorers from Firiona Vie draw closer.");
  }
  elsif($text=~/assist/i){
-  plugin::DiaWind("That is good, I will stay here to halt any advances. Head out near the lake and destroy the trespassers on our land! Bring me four of their knives that they carry for survival. Prove your allegiance to the Legion of Cabilis.");
+  quest::say("That is good, I will stay here to halt any advances. Head out near the lake and destroy the trespassers on our land! Bring me four of their knives that they carry for survival. Prove your allegiance to the Legion of Cabilis.");
  }
 }
 
 sub EVENT_ITEM {
  #Handin: 4x Explorer Survival Knife (8004)
  if(plugin::check_handin(\%itemcount, 8004 => 4)){
-  plugin::DiaWind("Great work, the Legion of Cabilis will not soon forget your dedication. The trespassers shall all be dealt with.");
+  quest::say("Great work, the Legion of Cabilis will not soon forget your dedication. The trespassers shall all be dealt with.");
   quest::faction(193,10); # +Legion of Cabilis
   quest::faction(30,10); # +Cabilis Residents
   quest::faction(282,10); # +Scaled Mystics

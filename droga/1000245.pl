@@ -8,7 +8,7 @@ sub EVENT_SAY{
   if ($RegalBandBathezid==1) { # we handed the Signet of Service yet
     # the goblin won't talk to the player unless we did the beginning of the quest
     if ($text=~/hail/i){
-      plugin::DiaWind("'Go away, my life is miserable enough!' The angry goblin looks at you more closely, his rage fading for a moment. 'Are you here with the evidence I was promised? Give it to me if you have it.'");
+      quest::say("'Go away, my life is miserable enough!' The angry goblin looks at you more closely, his rage fading for a moment. 'Are you here with the evidence I was promised? Give it to me if you have it.'");
     }
   }
 }

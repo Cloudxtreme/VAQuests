@@ -4,49 +4,49 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i){
 
-plugin::DiaWind("Sarah Jelnen closes her eyes and sighs wistfully as if remembering some long forgotten bittersweet memory. 'Hafron must have told you about our dearly missed friend Hadon. Very well, are you a [shaman]?");
+quest::say("Sarah Jelnen closes her eyes and sighs wistfully as if remembering some long forgotten bittersweet memory. 'Hafron must have told you about our dearly missed friend Hadon. Very well, are you a [shaman]?");
 
 }
 
 if($text=~/shaman/i){
 
-plugin::DiaWind("Aye you have the look of one who communes with spirits. The pieces that I have are the [mask], [cloak], [gauntlets], [talisman], [girdle] and [spear].");
+quest::say("Aye you have the look of one who communes with spirits. The pieces that I have are the [mask], [cloak], [gauntlets], [talisman], [girdle] and [spear].");
 
 }
 
 if($text=~/what cloak/i){
 
-plugin::DiaWind("For the cloak you must get me a cloud jewel, mark of auspice, an avatar's tome, and a rockhopper spirit fetish.");
+quest::say("For the cloak you must get me a cloud jewel, mark of auspice, an avatar's tome, and a rockhopper spirit fetish.");
 
 }
 
 if($text=~/what gauntlets/i){
 
-plugin::DiaWind("For the gauntlets you must get me a sky jewel, a mark of guidance, and a vitality gem.");
+quest::say("For the gauntlets you must get me a sky jewel, a mark of guidance, and a vitality gem.");
 
 }
 
 if($text=~/what girdle/i){
 
-plugin::DiaWind("For the girdle you must get me an astral jewel, a mark of augury, an aged runic crutch, and a lined towel.");
+quest::say("For the girdle you must get me an astral jewel, a mark of augury, an aged runic crutch, and a lined towel.");
 
 }
 
 if($text=~/what mask/i){
 
-plugin::DiaWind("For the mask you must get me a star jewel, the mark of the oracle, and an aged bone fetish.");
+quest::say("For the mask you must get me a star jewel, the mark of the oracle, and an aged bone fetish.");
 
 }
 
 if($text=~/what spear/i){
 
-plugin::DiaWind("For the spear you must get me a sun jewel, a mark of premonition, a darkened shaft, and an oracle orb.");
+quest::say("For the spear you must get me a sun jewel, a mark of premonition, a darkened shaft, and an oracle orb.");
 
 }
 
 if($text=~/what talisman/i){
 
-plugin::DiaWind("For the talisman you must get me a meteor jewel, a mark of rage, and a spirit marked ornament.");
+quest::say("For the talisman you must get me a meteor jewel, a mark of rage, and a spirit marked ornament.");
 
  }
 

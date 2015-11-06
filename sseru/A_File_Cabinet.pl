@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     }
     plugin::return_items(\%itemcount); # return unused items
   } else { # not at least indiff, he will say this
-    plugin::DiaWind("I will do nothing to aid beings like you.");
+    quest::say("I will do nothing to aid beings like you.");
   }
 }
 

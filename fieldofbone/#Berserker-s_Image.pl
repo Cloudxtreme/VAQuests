@@ -16,5 +16,5 @@ quest::setnexthpevent(50);
 sub EVENT_HP
 
 {
-plugin::DiaWind("You cannot overcome my infinite rage!");
+quest::say("You cannot overcome my infinite rage!");
 }

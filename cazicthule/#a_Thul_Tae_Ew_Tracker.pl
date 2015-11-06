@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-  plugin::DiaWind("So, there you are, little Gnome. Thought you evaded us? Your friends will never protect you. You will all fall before our power!");
+  quest::say("So, there you are, little Gnome. Thought you evaded us? Your friends will never protect you. You will all fall before our power!");
 }
 
 sub EVENT_DEATH_COMPLETE {

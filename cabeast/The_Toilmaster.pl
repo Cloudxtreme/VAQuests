@@ -2,7 +2,7 @@
 
 sub EVENT_SAY {
  if($text=~/hail/i){
-  plugin::DiaWind("Do not bother me unless you wish to join the chain gang. Now go away or I shall have my slaves chop you as they chop this granite!");
+  quest::say("Do not bother me unless you wish to join the chain gang. Now go away or I shall have my slaves chop you as they chop this granite!");
   }
  elsif($text=~/hammer of exoneration/i){ #The Penance quest
   quest::emote("hands you a massive hammer and says, 'So, you can read. Good for you. Don't think that you're going to make an impression on me with that rubbish. Let's see if you can handle this hammer like you can that book, whelp.'");
@@ -13,13 +13,13 @@ sub EVENT_SAY {
   quest::summonitem(17091);
   }
  elsif($text=~/granite pebbles/i){ #Granite Pebbles quest
-  plugin::DiaWind("Ah. Looking for granite pebbles, are we? You must be a Swifttail. I am tired of doing your caste's work when you give nothing in return. Tell you what, I have lost many slaves to escape. If you bash their heads in with your many skills and return at least two busted froglok shackles I will give you one pile of granite pebbles.");
+  quest::say("Ah. Looking for granite pebbles, are we? You must be a Swifttail. I am tired of doing your caste's work when you give nothing in return. Tell you what, I have lost many slaves to escape. If you bash their heads in with your many skills and return at least two busted froglok shackles I will give you one pile of granite pebbles.");
   }
 }
 
 sub EVENT_ITEM { 
  if(plugin::check_handin(\%itemcount, 12660 => 2)){
-  plugin::DiaWind("A deal is a deal. Here is one pile of granite pebbles. I hope you need more because I know there are more escaped froglok slaves.");
+  quest::say("A deal is a deal. Here is one pile of granite pebbles. I hope you need more because I know there are more escaped froglok slaves.");
   quest::summonitem(12689);
   quest::faction(193,2);
   quest::faction(30,2);

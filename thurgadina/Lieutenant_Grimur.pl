@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("You got a dispute to settle or are ya here to yap it up?");
+    quest::say("You got a dispute to settle or are ya here to yap it up?");
   }
 }
 

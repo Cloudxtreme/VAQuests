@@ -8,35 +8,35 @@
 sub EVENT_SAY {
   if ($faction == 1) { #req ally CoV
     if($text=~/hail/i) {
-      plugin::DiaWind("Hail, most pious one. I sense the aura of your devotion and conviction and it is strong about you. A shame you are so short lived, mortal. But I see potential in you and for that I shall aid you in your calling if you are a cleric. Do you wish my aid?");
+      quest::say("Hail, most pious one. I sense the aura of your devotion and conviction and it is strong about you. A shame you are so short lived, mortal. But I see potential in you and for that I shall aid you in your calling if you are a cleric. Do you wish my aid?");
     }
     if ($text=~/i wish your aid/i) {
-      plugin::DiaWind("Then I have a set of goals for you. Once you have achieved them, you shall be rewarded with a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots. May they protect you from your enemies.");
+      quest::say("Then I have a set of goals for you. Once you have achieved them, you shall be rewarded with a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots. May they protect you from your enemies.");
     }
     if ($text=~/helm/i) {
-      plugin::DiaWind("I shall craft a helm for you but you must seek these items out for me first. I have need of an unadorned plate helmet and three pieces of crushed onyx sapphire.");
+      quest::say("I shall craft a helm for you but you must seek these items out for me first. I have need of an unadorned plate helmet and three pieces of crushed onyx sapphire.");
     }
     if ($text=~/breastplate/i) {
-      plugin::DiaWind("As your faith protects you, so shall this breastplate. I must have an unadorned breastplate and three pieces of black marble.");
+      quest::say("As your faith protects you, so shall this breastplate. I must have an unadorned breastplate and three pieces of black marble.");
     }
     if ($text=~/armplate/i) {
-      plugin::DiaWind("Such lofty goals your kind sets for yourselves. But, that is the way of your kind, I suppose - to seek that which is the most difficult to attain. Bring to me a set of unadorned vambraces and three jaundice gems and you will receive your reward.");
+      quest::say("Such lofty goals your kind sets for yourselves. But, that is the way of your kind, I suppose - to seek that which is the most difficult to attain. Bring to me a set of unadorned vambraces and three jaundice gems and you will receive your reward.");
     }
     if ($text=~/bracer/i) {
-      plugin::DiaWind("For the bracers, faithful one, I shall require the acquisition of an unadorned plate bracer as well as three crushed opals.");
+      quest::say("For the bracers, faithful one, I shall require the acquisition of an unadorned plate bracer as well as three crushed opals.");
     }
     if ($text=~/gauntlet/i) {
-      plugin::DiaWind("I will need a pair of unadorned gauntlets as well as three crushed lava rubies, so that I may make your reward.");
+      quest::say("I will need a pair of unadorned gauntlets as well as three crushed lava rubies, so that I may make your reward.");
     }
     if ($text=~/greaves/i) {
-      plugin::DiaWind("You shall acquire a pair of unadorned plate greaves and three chipped onyx sapphires for me. I await your return.");
+      quest::say("You shall acquire a pair of unadorned plate greaves and three chipped onyx sapphires for me. I await your return.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("With your aid, I shall make a pair of fine boots for you. All that is needed are a pair of unadorned plate boots and three crushed flame emeralds.");
+      quest::say("With your aid, I shall make a pair of fine boots for you. All that is needed are a pair of unadorned plate boots and three crushed flame emeralds.");
     }
   }
   else {
-    plugin::DiaWind("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
+    quest::say("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
   }
 }
 
@@ -68,14 +68,14 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::emote("smiles warmly as he hands you your reward.");
-    plugin::DiaWind("Well done, $name.");
+    quest::say("Well done, $name.");
     quest::exp(175000);
     quest::faction(42,30); # CoV
     quest::faction(362,30); # Yelinak
     quest::faction(189,-60); # Kromzek
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust such an item to you, yet.");
+    quest::say("I do not know you well enough to entrust such an item to you, yet.");
     plugin::return_items(\%itemcount);
   }
 }

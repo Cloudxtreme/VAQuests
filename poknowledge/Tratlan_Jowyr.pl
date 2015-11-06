@@ -12,7 +12,7 @@ sub EVENT_SAY {
     quest::emote("glances up at you like he just noticed your presence, 'This pool. There is supposed to be strong [magic] in it.'");
   }
   if($text=~/magic/i) {
-    plugin::DiaWind("Scrying magic. These pools can supposedly glance into all of the knowledge past, present, and future.");
+    quest::say("Scrying magic. These pools can supposedly glance into all of the knowledge past, present, and future.");
     #Need to trigger Wicas to say: "I think we should just do what [Tarerd] wants us to do."
     quest::signalwith(202301, 2, 1000);
   }

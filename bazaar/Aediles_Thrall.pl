@@ -59,96 +59,96 @@ sub EVENT_SAY {
       if(($ulevel >= $firstbotlevel) && ($qglobals{bot_spawn_limit} <= 0)) {
          quest::settimer("face", 25);
          if($text=~/Hail/i) {
-            plugin::DiaWind("Hey der youngster.  Lookin' fer a bit o' [help] with yer adventurin'?");
+            quest::say("Hey der youngster.  Lookin' fer a bit o' [help] with yer adventurin'?");
          }
          if($text=~/Help/i) {
             quest::emote("looks around the room and pauses a few seconds");
-            plugin::DiaWind("Well, I kin sell ye a [product] ye can't find no place else.");
+            quest::say("Well, I kin sell ye a [product] ye can't find no place else.");
          }
          if($text=~/Product/i) {
             quest::emote("looks around the room again");
-            plugin::DiaWind("Shhh, i'm involved in wut I like ta call A.I.D., I kin [AID] ye in yer adventurin'");
+            quest::say("Shhh, i'm involved in wut I like ta call A.I.D., I kin [AID] ye in yer adventurin'");
          }
          if($text=~/AID/i) {
             quest::emote("looks around the room again");
-            plugin::DiaWind("It be 'Acquired Individuals Delivery' and it means I kin supply ye with [Individuals].");
+            quest::say("It be 'Acquired Individuals Delivery' and it means I kin supply ye with [Individuals].");
          }
          if($text=~/Individuals/i) {
             quest::emote("looks around the room again");
-            plugin::DiaWind("Shhh, not too loud... I kin deliver ye an Individual if yer [interested]?");
+            quest::say("Shhh, not too loud... I kin deliver ye an Individual if yer [interested]?");
          }
          if($text=~/Interested/i) {
-            plugin::DiaWind("Let me tell ye, keepin' up a supply o' Individuals can be a costly endeavor and so's I kin feed 'em I need ye ta be collectin' up sum [supplies] fer me.");
+            quest::say("Let me tell ye, keepin' up a supply o' Individuals can be a costly endeavor and so's I kin feed 'em I need ye ta be collectin' up sum [supplies] fer me.");
          }
          if($text=~/Supplies/i) {
-            plugin::DiaWind("The Individual will cost ye $firstbotcost platinum pieces an' 4 o' dem Fish Rolls.");
+            quest::say("The Individual will cost ye $firstbotcost platinum pieces an' 4 o' dem Fish Rolls.");
          }
       }
       elsif(($ulevel >= $secondbotlevel) && ($qglobals{bot_spawn_limit} <= 1)) {
          if($text=~/Hail/i) {
-            plugin::DiaWind("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
+            quest::say("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
          }
          if($text=~/Interested/i) {
             quest::emote("looks around the room");
-            plugin::DiaWind("Shhh, I kin deliver ye another Individual for $secondbotcost platinum an' 4 o' dem Gnomish Spirits... heh, dey gets thirsty ya knows.");
+            quest::say("Shhh, I kin deliver ye another Individual for $secondbotcost platinum an' 4 o' dem Gnomish Spirits... heh, dey gets thirsty ya knows.");
          }
       }
       elsif(($ulevel >= $thirdbotlevel) && ($qglobals{bot_spawn_limit} <= 2)) {
          if($text=~/Hail/i) {
-            plugin::DiaWind("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
+            quest::say("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
          }
          if($text=~/Interested/i) {
             quest::emote("looks around the room");
-            plugin::DiaWind("Shhh, I kin deliver ye another Individual for $thirdbotcost platinum an' 4 o' dem Small Bowls... heh, dey needs ta eat outta sumtin' ya knows.");
+            quest::say("Shhh, I kin deliver ye another Individual for $thirdbotcost platinum an' 4 o' dem Small Bowls... heh, dey needs ta eat outta sumtin' ya knows.");
          }
       }
       elsif(($ulevel >= $fourthbotlevel) && ($qglobals{bot_spawn_limit} <= 3)) {
          if($text=~/Hail/i) {
-            plugin::DiaWind("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
+            quest::say("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
          }
          if($text=~/Interested/i) {
             quest::emote("looks around the room");
-            plugin::DiaWind("Shhh, I kin deliver ye another Individual for $fourthbotcost platinum an' 4 o' dem Studded Tunics ta keeps da Individuals warm.");
+            quest::say("Shhh, I kin deliver ye another Individual for $fourthbotcost platinum an' 4 o' dem Studded Tunics ta keeps da Individuals warm.");
          }
       }
       elsif(($ulevel >= $fifthbotlevel) && ($qglobals{bot_spawn_limit} <= 4)) {
          if($text=~/Hail/i) {
-            plugin::DiaWind("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
+            quest::say("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
          }
          if($text=~/Interested/i) {
             quest::emote("looks around the room");
-            plugin::DiaWind("Shhh, I kin deliver ye another Individual for $fifthbotcost platinum an' 4 o' dem Banded Bracers ta keeps da Individuals protected.");
+            quest::say("Shhh, I kin deliver ye another Individual for $fifthbotcost platinum an' 4 o' dem Banded Bracers ta keeps da Individuals protected.");
          }
       }
       elsif(($ulevel >= $nextbotlevel) && ($qglobals{bot_spawn_limit} <= 5)) {
          if($text=~/Hail/i) {
-            plugin::DiaWind("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
+            quest::say("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
          }
          if($text=~/Interested/i) {
             quest::emote("looks around the room");
-            plugin::DiaWind("Shhh, I kin deliver ye another Individual for $nextbotcost platinum an' 4 o' dem Small Nock Class 4 Ceramic Hooked Arrows for shootin' at dem runaway Individuals.");
+            quest::say("Shhh, I kin deliver ye another Individual for $nextbotcost platinum an' 4 o' dem Small Nock Class 4 Ceramic Hooked Arrows for shootin' at dem runaway Individuals.");
          }
       }
       elsif(($ulevel >= $nextbotlevel) && ($qglobals{bot_spawn_limit} >= 6)) {
          if($text=~/Hail/i) {
-            plugin::DiaWind("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
+            quest::say("Ahh, a returnin' customer. Are ye [interested] in another Individual?");
          }
          if($text=~/Interested/i) {
             quest::emote("looks around the room");
-            plugin::DiaWind("Shhh, I kin deliver ye another Individual for $nextbotcost platinum an' 4 o' dem Small Nock Class 4 Ceramic Hooked Arrows for shootin' at dem runaway Individuals.");
-            plugin::DiaWind("If ye dun have dem arrows, ye can just pay me $nextextracost platinum.");
+            quest::say("Shhh, I kin deliver ye another Individual for $nextbotcost platinum an' 4 o' dem Small Nock Class 4 Ceramic Hooked Arrows for shootin' at dem runaway Individuals.");
+            quest::say("If ye dun have dem arrows, ye can just pay me $nextextracost platinum.");
          }
       }
       else {
          if($text=~/Hail/i) {
-            plugin::DiaWind("eh? Come back when yer a bit older. I kin help ye then.");
+            quest::say("eh? Come back when yer a bit older. I kin help ye then.");
             quest::settimer("face", 5);
          }
       }
    }
    else {
       if($text=~/Hail/i) {
-         plugin::DiaWind("eh? Mind yer own business, go away!");
+         quest::say("eh? Mind yer own business, go away!");
          quest::settimer("face", 5);
          my $sbcount = quest::spawnbotcount();
          $client->Message(6,"You have $qglobals{bot_spawn_limit} out of $sbcount possible Individuals.");
@@ -203,7 +203,7 @@ sub EVENT_ITEM {
          }
       }
       if($success > 0) {
-         plugin::DiaWind("Thanks $name!");
+         quest::say("Thanks $name!");
          quest::setglobal("bot_spawn_limit", $success, 5, "F");
          $client->Message(6,"You receive a character flag!");
          $client->Message(6,"You can now create and spawn an Individual! See: '#bot help create' and '#bot spawn' commands.");
@@ -241,7 +241,7 @@ sub EVENT_ENTER {
 sub EVENT_SIGNAL {
    if($signal == 1) {
       if((defined $qglobals{bot_spawn_limit}) && ($qglobals{bot_spawn_limit} > 0)) {
-         plugin::DiaWind("Hey! No talkin' to da merchandise!");
+         quest::say("Hey! No talkin' to da merchandise!");
       }
    }
 }

@@ -2,7 +2,7 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i) {
 
-plugin::DiaWind("You there! Had enough yet? . . . Aah, never mind, just tell me when you want to [leave].");
+quest::say("You there! Had enough yet? . . . Aah, never mind, just tell me when you want to [leave].");
 
 }
 

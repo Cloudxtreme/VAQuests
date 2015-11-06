@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("We were created to protect the Kin and the shrine from attack. This is what we've always done. Do not try to alter this.");
+    quest::say("We were created to protect the Kin and the shrine from attack. This is what we've always done. Do not try to alter this.");
   }
 }
 

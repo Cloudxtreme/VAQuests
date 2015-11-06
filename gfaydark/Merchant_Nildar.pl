@@ -1,6 +1,6 @@
 sub EVENT_ITEM{
   if($item1 == 18903){
-    plugin::DiaWind("My brother still lives? Thank you for this news. Please, take this with my deepest thanks.");
+    quest::say("My brother still lives? Thank you for this news. Please, take this with my deepest thanks.");
     quest::exp(30000);
     quest::ding();
     my $random = int(rand(5));

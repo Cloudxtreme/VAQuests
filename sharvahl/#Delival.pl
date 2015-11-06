@@ -29,13 +29,13 @@ sub EVENT_SIGNAL {
 
 sub EVENT_SAY {
 	if($text=~/Hail/i) {
-		plugin::DiaWind("Hello there, $name. I do not suppose you have seen a little girl running around with a box of [buttons]? I sent [Shainai] over to Master Barkhem's place so I can finish these uniforms I am working on.");
+		quest::say("Hello there, $name. I do not suppose you have seen a little girl running around with a box of [buttons]? I sent [Shainai] over to Master Barkhem's place so I can finish these uniforms I am working on.");
 	}
 	if($text=~/Shainai/i) {
-		plugin::DiaWind("Shainai is my little girl. While I am [inactive] I would like to see her as much as possible so I brought her with me here. I am starting to worry that she may have gotten lost near the palace. If you see her and have the time to escort her back here I would be indebted to you, friend.");
+		quest::say("Shainai is my little girl. While I am [inactive] I would like to see her as much as possible so I brought her with me here. I am starting to worry that she may have gotten lost near the palace. If you see her and have the time to escort her back here I would be indebted to you, friend.");
 	}
 	if($text=~/buttons/i) {
-		plugin::DiaWind("I need the buttons to finish making uniforms for the officers that live upstairs.  When I was injured in the field, this was the best way for me to help out.  My mum used to make uniforms for the Royal Khala Dun when I was a child and I guess I picked up a thing or two.  Still, it will be nice when I am able to get back out there and fight.");
+		quest::say("I need the buttons to finish making uniforms for the officers that live upstairs.  When I was injured in the field, this was the best way for me to help out.  My mum used to make uniforms for the Royal Khala Dun when I was a child and I guess I picked up a thing or two.  Still, it will be nice when I am able to get back out there and fight.");
 	}
 	if($text=~/inactive/i) {
 		quest::emote("averts his eyes, 'I was on a raid in the forest that went bad.  That was when we lost Shainai's mother.  Truth be told, as much as I am eager to get back out in the field, the opportunity to spend this little bit of extra time with Shainai is priceless.'");

@@ -4,49 +4,49 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i){
 
-plugin::DiaWind("Can't ya see I'm busy working.  Leave me be."); 
+quest::say("Can't ya see I'm busy working.  Leave me be."); 
 
 }
 
 if($text=~/what armor/i){
 
-plugin::DiaWind("Bah, Brodlan should know better than opening his big mouth. Anyway this looks like armor for a dark knight if ye want to trade for it.");
+quest::say("Bah, Brodlan should know better than opening his big mouth. Anyway this looks like armor for a dark knight if ye want to trade for it.");
 
 }
 
 if($text=~/what trade/i){
 
-plugin::DiaWind("Good ya want to trade. I have the mask, cloak, gauntlets, gorget, girdle, and mace. Just tell me what piece you want to trade for and Ill tell ya what I want.")
+quest::say("Good ya want to trade. I have the mask, cloak, gauntlets, gorget, girdle, and mace. Just tell me what piece you want to trade for and Ill tell ya what I want.")
 
 }
 
 if($text=~/cloak/i){
 
-plugin::DiaWind("For the darkened knight's cloak you'll have to bring me a cloud jewel, a mark of twisted souls, a chilled brazier, and a gem of blue skies.");
+quest::say("For the darkened knight's cloak you'll have to bring me a cloud jewel, a mark of twisted souls, a chilled brazier, and a gem of blue skies.");
 
 }
  
 if($text=~/gauntlets/i){
 
-plugin::DiaWind("For the darkened knight's gauntlets you'll have bring me a sky jewel, a mark of fright, and a true silver idol");
+quest::say("For the darkened knight's gauntlets you'll have bring me a sky jewel, a mark of fright, and a true silver idol");
 
 }
 
 if($text=~/girdle/i){
 
-plugin::DiaWind("For the darkened knight's girdle you'll have to bring me an astral jewel, a mark of gloom, some gilded beads, and an etched tablet.");
+quest::say("For the darkened knight's girdle you'll have to bring me an astral jewel, a mark of gloom, some gilded beads, and an etched tablet.");
 
 }
 
 if($text=~/girdle/i){
 
-plugin::DiaWind("For the darkened knigh's gorget you'll have to bring me a meteor jewel, a mark of darkness, a runed stone brazier.");
+quest::say("For the darkened knigh's gorget you'll have to bring me a meteor jewel, a mark of darkness, a runed stone brazier.");
 
 }
 
 if($text=~/mace/i){
 
-plugin::DiaWind("For the darkened knight's mace you'll have to bring me a sun jewel, a mark of night, a beaded circlet, and a heating stone.");
+quest::say("For the darkened knight's mace you'll have to bring me a sun jewel, a mark of night, a beaded circlet, and a heating stone.");
 
 }
 

@@ -10,7 +10,7 @@ sub EVENT_SAY
 {   
 	if ($text=~ /Hail/i)
 	{
-		plugin::DiaWind("Greetings and welcome. I have been compiling reports from all over Norrath! There are many odd jobs to be done by someone like you. Would you be interested in such a [quest]?");  
+		quest::say("Greetings and welcome. I have been compiling reports from all over Norrath! There are many odd jobs to be done by someone like you. Would you be interested in such a [quest]?");  
 	}
     if ($text=~ /quest/i)
 	{

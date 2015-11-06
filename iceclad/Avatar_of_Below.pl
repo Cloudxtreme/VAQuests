@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
    if ($text=~/runed coldain prayer shawl/i) {
-      plugin::DiaWind("So it is the sacred rune of Coldain. Let me have a closer look at it.");
+      quest::say("So it is the sacred rune of Coldain. Let me have a closer look at it.");
    }
 }
 

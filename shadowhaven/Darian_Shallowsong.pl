@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Hello $name. it seems that you have caught me relaxing a bit on my off time at the tavern here. No matter. though if you are a bard in need of assistance. just let me know and we will get right to work."); }
+quest::say("Hello $name. it seems that you have caught me relaxing a bit on my off time at the tavern here. No matter. though if you are a bard in need of assistance. just let me know and we will get right to work."); }
 }
 
 sub EVENT_ITEM {

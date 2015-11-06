@@ -15,10 +15,10 @@ sub EVENT_SAY {
 		quest::emote('shows no reaction to your greeting.');
 	}
 	if($text=~/trial of agility/i){
-		plugin::DiaWind('I knew you were not the whiff others claimed you to be, are you sure you are [ready] to be tested in agility?');
+		quest::say('I knew you were not the whiff others claimed you to be, are you sure you are [ready] to be tested in agility?');
 	}
 	if($text=~/ready/i){
-		plugin::DiaWind('We shall spar then, I hope you are as prepared as you think you are.');
+		quest::say('We shall spar then, I hope you are as prepared as you think you are.');
 		quest::movepc(106,-190.9,1089.8,-25.2);
 	}
 }

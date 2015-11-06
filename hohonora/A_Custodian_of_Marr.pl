@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-plugin::DiaWind("Fool!");
+quest::say("Fool!");
 quest::settimer(1,7200);
 }
 

@@ -15,26 +15,26 @@ if($clientver > 2){
 				quest::updatetaskactivity(213,1);
 			}
 			else {
-      			plugin::DiaWind("That's the spirit! Help out as many of those poor souls as you can.");
+      			quest::say("That's the spirit! Help out as many of those poor souls as you can.");
 			}
       		}
 	}
   	elsif(!quest::istaskactive(213)){
 		if(!defined $qglobals{halloween_cure}){
   			if($text=~/hail/i) {
-      				plugin::DiaWind("Howdy. You venturing out into the [forest]? I have a quick favor to ask if you're heading out that way already..");
+      				quest::say("Howdy. You venturing out into the [forest]? I have a quick favor to ask if you're heading out that way already..");
       			}
   			if($text=~/forest/i) {
-      				plugin::DiaWind("Well, this lycanthropy stuff is pretty serious. It would be easy for me to reconcile just wiping them out if they weren't normal folks most of the time. Just doesn't sit well with me to be out there bashing people's skulls in that can't help themselves, you know? So, I've been working on a [cure].");
+      				quest::say("Well, this lycanthropy stuff is pretty serious. It would be easy for me to reconcile just wiping them out if they weren't normal folks most of the time. Just doesn't sit well with me to be out there bashing people's skulls in that can't help themselves, you know? So, I've been working on a [cure].");
       			}
  			if($text=~/cure/i) {
-				plugin::DiaWind("I think I have the formula nearly right. I wouldn't recommend approaching any werewolves at full strength, but I see enough injured ones here and there to make it worth my while for [testing].");
+				quest::say("I think I have the formula nearly right. I wouldn't recommend approaching any werewolves at full strength, but I see enough injured ones here and there to make it worth my while for [testing].");
 			}
   			if($text=~/testing/i) {
-				plugin::DiaWind("It's easy, you just hit them with the cure and back off. Keep an eye out for creepy crawlers nearby, if you get my drift. The forest is packed with them this time of year. Are you [up for it]?");
+				quest::say("It's easy, you just hit them with the cure and back off. Keep an eye out for creepy crawlers nearby, if you get my drift. The forest is packed with them this time of year. Are you [up for it]?");
  			}
   			if($text=~/up for it/i) {
-				plugin::DiaWind("That's the spirit! Take these cures and help out as many of those poor souls as you can.");
+				quest::say("That's the spirit! Take these cures and help out as many of those poor souls as you can.");
                                 quest::assigntask(219);
 				quest::assigntask(213);
 				quest::summonitem(87310);

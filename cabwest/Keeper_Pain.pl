@@ -17,7 +17,7 @@ sub EVENT_ITEM {
     quest::faction(193,2); #Legion of Cabilis
   }
   if (plugin::check_handin(\%itemcount, 12885 => 1)) {
-    plugin::DiaWind("Yes this is exactly what i wanted. Here is your spell.");
+    quest::say("Yes this is exactly what i wanted. Here is your spell.");
     quest::summonitem(15444); #Spell Renew Bones
     quest::faction(24,2); #Brood of Kotiz
     quest::faction(193,2); #Legion of Cabilis

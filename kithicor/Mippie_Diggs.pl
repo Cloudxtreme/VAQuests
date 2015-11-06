@@ -11,19 +11,19 @@ sub EVENT_SAY {
                         quest::updatetaskactivity(19,4);
 		}
 		else {
-		plugin::DiaWind("The Hungry Halfling is already in progress.");
+		quest::say("The Hungry Halfling is already in progress.");
 		}
       	}
        	elsif(!quest::istaskactive(19)){
        		if(!defined $qglobals{halloween_hungry}){
   			if($text=~/hail/i) {
-      				plugin::DiaWind("Hail to you too. You wouldn't happen to have any of those wondrous [pumpkiny foods] on you would you? I'm not really feel my best and nothing perks you up better than a nice bit of tasty pumpkin.");
+      				quest::say("Hail to you too. You wouldn't happen to have any of those wondrous [pumpkiny foods] on you would you? I'm not really feel my best and nothing perks you up better than a nice bit of tasty pumpkin.");
       			}
   			if($text=~/Pumpkiny foods/i) {
-      				plugin::DiaWind("The best of the best pumpkiny foods can be found in my personal book of home remedies. They may be a bit complicated to make, but you've never had anything tastier. I'd be happy to give you a copy of my book if you'd be [willing] to bring me the first couple of snacks you make.");
+      				quest::say("The best of the best pumpkiny foods can be found in my personal book of home remedies. They may be a bit complicated to make, but you've never had anything tastier. I'd be happy to give you a copy of my book if you'd be [willing] to bring me the first couple of snacks you make.");
       			}
   			if($text=~/willing/i) {
-        			plugin::DiaWind("Thank you so much. Here is the book, now see what sort of things you can come up with.");
+        			quest::say("Thank you so much. Here is the book, now see what sort of things you can come up with.");
         			quest::summonitem(84097);
         			quest::assigntask(219);
       			        quest::assigntask(19); #Task: The Hungry Halfling

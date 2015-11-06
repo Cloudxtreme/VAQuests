@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 		(plugin::check_handin(\%itemcount, 7833 => 1)) ||
 		(plugin::check_handin(\%itemcount, 7834 => 1)) ||
 		(plugin::check_handin(\%itemcount, 7835 => 1))) {#Anthemion Armor
-    	plugin::DiaWind("Thank you, $name.");#Text made up
+    	quest::say("Thank you, $name.");#Text made up
     	quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     	quest::exp(698775);
   }

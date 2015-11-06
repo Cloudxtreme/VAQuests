@@ -4,13 +4,13 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
     if(defined($qglobals{NecroPre}) && ($qglobals{NecroPre} == 1)) {
-      plugin::DiaWind("So you have come to stop me?");
+      quest::say("So you have come to stop me?");
       quest::emote("throws a magnificent, yet evil looking staff into the water.");
-      plugin::DiaWind("The precious staff you seek is now lost in the lake for all eternity!");
+      quest::say("The precious staff you seek is now lost in the lake for all eternity!");
       quest::attack($name);
     }
     else {
-      plugin::DiaWind("I am busy."); #Real text still needed
+      quest::say("I am busy."); #Real text still needed
     }
   }
 }

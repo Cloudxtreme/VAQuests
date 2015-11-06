@@ -3,7 +3,7 @@
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1724 => 1)) {
-    plugin::DiaWind("Ahh, thank you, $name. I've been waiting for these supplies for ages."); #generic reward text
+    quest::say("Ahh, thank you, $name. I've been waiting for these supplies for ages."); #generic reward text
     quest::faction(42,-30); #CoV
     quest::faction(188,10); #k-rif
     quest::faction(189,10); #k-zek

@@ -24,7 +24,7 @@ sub EVENT_SAY {
       }
     }
     else {
-      plugin::DiaWind("Good luck, if you get hit with any pies, come back and I'll help you get get cleaned up and [try] again.");
+      quest::say("Good luck, if you get hit with any pies, come back and I'll help you get get cleaned up and [try] again.");
     }
   }
   if($clientver > 2){
@@ -51,7 +51,7 @@ sub EVENT_SAY {
         quest::summonitem(80038, 999);
       }
       if($text=~/try/i) {
-        plugin::DiaWind("Good luck, if you get hit with any pies, come back and I'll help you get get cleaned up and [try] again.");
+        quest::say("Good luck, if you get hit with any pies, come back and I'll help you get get cleaned up and [try] again.");
         quest::assigntask(219);
         quest::assigntask(218);
         quest::playerrace(82);

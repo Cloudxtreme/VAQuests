@@ -7,16 +7,16 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Well met, friend. May I be of assistance?");
+    quest::say("Well met, friend. May I be of assistance?");
   }
 ##Non-canon, for fixmes if you lose certain items (which are needed for this quest line and others).
 ##No idea if Live does this now or not. If these do exist there, feel free to adjust it.
   if (($text=~/application/i) && ($qglobals{Shar_Vahl_Cit} == 1)) {
-    plugin::DiaWind("Luckily for you someone found it.");
+    quest::say("Luckily for you someone found it.");
     quest::summonitem(2873);
   }
   if (($text=~/cloak/i) && ($qglobals{Shar_Vahl_Cit} == 7)) {
-    plugin::DiaWind("Someone found this in a scorpion nest down in the pit. Try not to lose it this time.");
+    quest::say("Someone found this in a scorpion nest down in the pit. Try not to lose it this time.");
     quest::summonitem(2878);
   }
 }
@@ -33,7 +33,7 @@ sub EVENT_ITEM {
     quest::summonitem(2873); #Application for Citizenship
   }
   if (plugin::check_handin(\%itemcount, 2897 => 1)) { #Notorized Application
-    plugin::DiaWind("Allow me to be the first to welcome you. Accept this cloak, young initiate. It is a symbol of your loyalty to our noble people. May it serve you as you serve us all. Present your acrylia slate to Harbin Gernawl and he will give you instruction. May the spirits of the beasts guide you and keep you safe.");
+    quest::say("Allow me to be the first to welcome you. Accept this cloak, young initiate. It is a symbol of your loyalty to our noble people. May it serve you as you serve us all. Present your acrylia slate to Harbin Gernawl and he will give you instruction. May the spirits of the beasts guide you and keep you safe.");
     quest::summonitem(2878);
     quest::setglobal("Shar_Vahl_Cit", 7, 5, "F");
   }

@@ -4,26 +4,26 @@ sub EVENT_SAY {
   # Require Indifferent and better faction
   if ($faction <= 5) {
     if ($text=~/hail/i) {
-      plugin::DiaWind("Hello there, $race. I am Slaggak, the trainer. The Kromrif here will soon be ready to serve the great and honorable King Tormax.");
+      quest::say("Hello there, $race. I am Slaggak, the trainer. The Kromrif here will soon be ready to serve the great and honorable King Tormax.");
     }
     if ($text=~/serve/i) {
-      plugin::DiaWind("So you say, little one. Why are you here, then? You should be out slaying those pestering little Coldain or maybe those damnable shard wurms and wyverns.");
+      quest::say("So you say, little one. Why are you here, then? You should be out slaying those pestering little Coldain or maybe those damnable shard wurms and wyverns.");
     }
     if ($text=~/coldain/i) {
-      plugin::DiaWind("The Coldain are the ice dwarves. They have defiled our lands for long enough. Thinking of them makes my blood run hot. With my new position as trainer, I am not allowed to roam the lands and slaughter their kind as I once did.' Slaggak sighs. 'I long for the days when I could fashion necklaces from their skulls.");
+      quest::say("The Coldain are the ice dwarves. They have defiled our lands for long enough. Thinking of them makes my blood run hot. With my new position as trainer, I am not allowed to roam the lands and slaughter their kind as I once did.' Slaggak sighs. 'I long for the days when I could fashion necklaces from their skulls.");
     }
     if ($text=~/skulls/i) {
-      plugin::DiaWind("Go from here and seek out the Coldain, slay them, and return to me with their heads. I wish to fashion four skull talismans as I once did. If you can do this for me, I will surely let King Tormax know of your deeds and reward you with a piece of armor from the Militia armory.");
+      quest::say("Go from here and seek out the Coldain, slay them, and return to me with their heads. I wish to fashion four skull talismans as I once did. If you can do this for me, I will surely let King Tormax know of your deeds and reward you with a piece of armor from the Militia armory.");
     }
     if ($text=~/shard wurm/i) {
-      plugin::DiaWind("You must have seen the shard wurms by now! The lizards that roam the lands eating whatever they can find? They can grow to be quite ferocious! Not nearly as ferocious as their ancient cousins, the dragons, but a nuisance nonetheless. We have a bounty on those beasts here in Kael Drakkel.");
+      quest::say("You must have seen the shard wurms by now! The lizards that roam the lands eating whatever they can find? They can grow to be quite ferocious! Not nearly as ferocious as their ancient cousins, the dragons, but a nuisance nonetheless. We have a bounty on those beasts here in Kael Drakkel.");
     }
     if ($text=~/bounty/i) {
-      plugin::DiaWind("If you think you have what it takes to slay the shard wurms or their relatives, the wyverns, bring back proof of your exploits. For every four shard wurm fang you bring me, I am authorized to reward you with a pair of cerulean greaves. Every fourth ice wyvern stinger will grant you a pair of vambraces.");
+      quest::say("If you think you have what it takes to slay the shard wurms or their relatives, the wyverns, bring back proof of your exploits. For every four shard wurm fang you bring me, I am authorized to reward you with a pair of cerulean greaves. Every fourth ice wyvern stinger will grant you a pair of vambraces.");
     }
   }
   else {
-    plugin::DiaWind("Your loyalty to our ideals has yet to be proven.");
+    quest::say("Your loyalty to our ideals has yet to be proven.");
   }
 }
 
@@ -52,7 +52,7 @@ sub EVENT_ITEM {
       return 1;
     }
 
-    plugin::DiaWind("You are truly a worthy little $race. I hope this armor serves you well. If it does not, I am sure a mercenary such as yourself could find a buyer.");
+    quest::say("You are truly a worthy little $race. I hope this armor serves you well. If it does not, I am sure a mercenary such as yourself could find a buyer.");
 
     quest::faction(188, 20);  # +Kromrif
     quest::faction(189, 20);  # +Kromzek
@@ -63,7 +63,7 @@ sub EVENT_ITEM {
 
   }
   else {
-    plugin::DiaWind("I will do nothing to aid the likes of you.");
+    quest::say("I will do nothing to aid the likes of you.");
   }
 }
 

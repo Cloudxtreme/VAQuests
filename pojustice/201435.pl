@@ -9,12 +9,12 @@ sub EVENT_SAY
 		}
 		
 		elsif($text=~/prepared/i) {
-			plugin::DiaWind("Very well. When you are ready, you may begin the trial of lashing. You must protect the victims from their tormentors. Be wary of the scourge of honor - you cannot fight it directly. You must find and destroy its life force to defeat it. We shall judge the mark of your success.");
+			quest::say("Very well. When you are ready, you may begin the trial of lashing. You must protect the victims from their tormentors. Be wary of the scourge of honor - you cannot fight it directly. You must find and destroy its life force to defeat it. We shall judge the mark of your success.");
 		}
 
 		elsif($text=~/begin the trial of lashing/i) {
 			if (!defined $lashing) {
-				plugin::DiaWind("Then begin.");
+				quest::say("Then begin.");
 				#Cast Penance of the Whip 
 				$npc->CastSpell(1125, $userid);
 				quest::settimer(401,30);
@@ -25,12 +25,12 @@ sub EVENT_SAY
 			else {
 				if (($lashing > 0) && ($lashing < 6)) {
 					$npc->CastSpell(1125, $userid);
-					plugin::DiaWind("Then begin.");		
+					quest::say("Then begin.");		
 					$lashing++;
 				}
 				
 				else {
-					plugin::DiaWind("I'm sorry, the Trial of Lashing is currently unavilable to you.");
+					quest::say("I'm sorry, the Trial of Lashing is currently unavilable to you.");
 				}
 			}
 		}

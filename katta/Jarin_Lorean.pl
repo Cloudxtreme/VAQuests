@@ -5,7 +5,7 @@ my $shipment;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Can't you see I'm, eh, busy here? Leave me be.");
+    quest::say("Can't you see I'm, eh, busy here? Leave me be.");
   }
   elsif ($text=~/i will deliver the goods/i) {
     if ($shipment == 1) {

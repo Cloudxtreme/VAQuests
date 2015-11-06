@@ -1,16 +1,16 @@
 sub EVENT_SAY {
   if (($text=~/hail/i) && plugin::check_hasitem($client, 3659)) { #Buckler of the Jharin Recruit
-    plugin::DiaWind("Very well met, young friend. I assume that Gherik has sent you to me for the purpose of training you. Unforunately, I will not be doing any formal training for the several days. I'm taking a bit of a holiday to celebrate my wife's birthday. If you could take this receipt to the [merchant] for me before my wife gets home, I'd appreciate it. I'll place you at the top of my training list as well.");
+    quest::say("Very well met, young friend. I assume that Gherik has sent you to me for the purpose of training you. Unforunately, I will not be doing any formal training for the several days. I'm taking a bit of a holiday to celebrate my wife's birthday. If you could take this receipt to the [merchant] for me before my wife gets home, I'd appreciate it. I'll place you at the top of my training list as well.");
     quest::summonitem(5954); #Gawfed's Receipt
   }
   if ($text=~/merchant/i) {
-    plugin::DiaWind("Gah... I'm losing my wits. I didn't tell you which merchant. Well, the fur is the first thing to go, and the mind is a close second. My wife's birthday is usually quite a large event in my household and I've been trying to make this one extra special. I'm lucky I can still find my tail. Take the note to Jihli Mahej. He's an importer who lives near the... gah! I can't remember the address. I'm sure you'll find him though. Good luck!");
+    quest::say("Gah... I'm losing my wits. I didn't tell you which merchant. Well, the fur is the first thing to go, and the mind is a close second. My wife's birthday is usually quite a large event in my household and I've been trying to make this one extra special. I'm lucky I can still find my tail. Take the note to Jihli Mahej. He's an importer who lives near the... gah! I can't remember the address. I'm sure you'll find him though. Good luck!");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 3659 => 1)) { #Buckler of the Jharin Recruit
-    plugin::DiaWind("Very well met, young friend. I assume that Gherik has sent you to me for the purpose of training you. Unforunately, I will not be doing any formal training for the several days. I'm taking a bit of a holiday to celebrate my wife's birthday. If you could take this receipt to the [merchant] for me before my wife gets home, I'd appreciate it. I'll place you at the top of my training list as well.");
+    quest::say("Very well met, young friend. I assume that Gherik has sent you to me for the purpose of training you. Unforunately, I will not be doing any formal training for the several days. I'm taking a bit of a holiday to celebrate my wife's birthday. If you could take this receipt to the [merchant] for me before my wife gets home, I'd appreciate it. I'll place you at the top of my training list as well.");
     quest::summonitem(3659); #Buckler of the Jharin Recruit
     quest::summonitem(5954); #Gawfed's Receipt
   }
@@ -20,23 +20,23 @@ sub EVENT_ITEM {
     quest::summonitem(17611); #Large Cloth Sack
   }
   elsif (plugin::check_handin(\%itemcount, 5959 => 1)) { #Bag of Feathers
-    plugin::DiaWind("It looks like you're all set. I'll have this sent over to my brother at once. Thank you again for fetching the vase for me. I can't wait to give it to the missus. I just know that she's going to love it. I have another task for you. It shouldn't take much time at all. Your cloak won't be done for a while, so you can do this while you wait. Take this piece of parchment to Jangle. He'll give you a bag of lute strings. I'm restringing all of my instruments before the party. Please be quick. Thank you again.");
+    quest::say("It looks like you're all set. I'll have this sent over to my brother at once. Thank you again for fetching the vase for me. I can't wait to give it to the missus. I just know that she's going to love it. I have another task for you. It shouldn't take much time at all. Your cloak won't be done for a while, so you can do this while you wait. Take this piece of parchment to Jangle. He'll give you a bag of lute strings. I'm restringing all of my instruments before the party. Please be quick. Thank you again.");
     quest::summonitem(5960); #Note for Jangle
     quest::exp(1000);
     quest::faction(132,10); #Guardians of Shar Vahl
   }
   elsif (plugin::check_handin(\%itemcount, 5962 => 1)) { #Note from Jangle
-    plugin::DiaWind("I really must be losing my mind. I could have sworn I specified the quantities. Oh well, I apologize for the confusion. Please take this back to him with my apologies.");
+    quest::say("I really must be losing my mind. I could have sworn I specified the quantities. Oh well, I apologize for the confusion. Please take this back to him with my apologies.");
     quest::summonitem(5963); #Gawfed's Request
   }
   elsif (plugin::check_handin(\%itemcount, 5965 => 1)) { #Bag of Lute Strings
-    plugin::DiaWind("My dear friend, $name, you have been a wondrous help! Though we have not had an opportunity to work on the more refined Jharin teachings, you have definitely proven yourself to be an honorable citizen and worthy apprentice. My brother has returned with your cloak. Please take it along with the title of Jharin Apprentice. To further demonstrate my appreciation of your work for me, please take this lute.");
+    quest::say("My dear friend, $name, you have been a wondrous help! Though we have not had an opportunity to work on the more refined Jharin teachings, you have definitely proven yourself to be an honorable citizen and worthy apprentice. My brother has returned with your cloak. Please take it along with the title of Jharin Apprentice. To further demonstrate my appreciation of your work for me, please take this lute.");
     quest::faction(132,10); #Guardians of Shar Vahl
     quest::summonitem(5966); #Cloak of the Jharin Apprentice
     quest::summonitem(5967); #Lute of the Jharin Apprentice
     quest::exp(3000);
     quest::shout("Everyone, please welcome my student and friend, $name, to the rank of Jharin Apprentice!");
-    plugin::DiaWind("Now, please meet with Aljuum Mohim. He will be responsible for your training during my holiday. Please show him the lute that I just gave you. He'll most likely be in a tavern somewhere. I just hope that he is sober. Take care, friend!");
+    quest::say("Now, please meet with Aljuum Mohim. He will be responsible for your training during my holiday. Please show him the lute that I just gave you. He'll most likely be in a tavern somewhere. I just hope that he is sober. Take care, friend!");
   }
   plugin::return_items(\%itemcount);
 }

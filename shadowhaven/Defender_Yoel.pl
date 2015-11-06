@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Greetings friend. and welcome to the Commons quarter of the Shadowhaven."); }
+quest::say("Greetings friend. and welcome to the Commons quarter of the Shadowhaven."); }
 }
 #END of FILE Zone:shadowhaven  ID:150011 -- Defender_Yoel 
 

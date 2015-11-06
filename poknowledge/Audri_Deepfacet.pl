@@ -7,12 +7,12 @@
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Greetings. traveler. and welcome to New Tanaan. You will find that there is much to be gained in the way of knowledge here. Knowledge not only of the mind. but of skill. I am an adept jeweler and have offered my services to the city to repay its gracious host to me over the years. Please. feel free to search my inventory and purchase that which you might fancy."); }
+quest::say("Greetings. traveler. and welcome to New Tanaan. You will find that there is much to be gained in the way of knowledge here. Knowledge not only of the mind. but of skill. I am an adept jeweler and have offered my services to the city to repay its gracious host to me over the years. Please. feel free to search my inventory and purchase that which you might fancy."); }
 }
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 22121 => 1)) {#Permafrost crystal
-    plugin::DiaWind("It is so lovely, just as I saw before! I believe I can fashion something quite nice for you out of it. I need only a chip to study for myself. Thanks so much! ");
+    quest::say("It is so lovely, just as I saw before! I believe I can fashion something quite nice for you out of it. I need only a chip to study for myself. Thanks so much! ");
   }
 }
 

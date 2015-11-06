@@ -14,7 +14,7 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("shivers and growls to itself.");
-    plugin::DiaWind("Much thanks must I give, $name. Furless one still wants magic thing, after all the troubles? Say quickly. Much pain from attack. Must go, shaman help.");
+    quest::say("Much thanks must I give, $name. Furless one still wants magic thing, after all the troubles? Say quickly. Much pain from attack. Must go, shaman help.");
   }
   if ($text=~/magic thing/i) {
     quest::summonitem(30042);

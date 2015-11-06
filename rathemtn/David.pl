@@ -8,25 +8,25 @@
 sub EVENT_SAY { 
 
    if($text=~/Hail/i){
-      plugin::DiaWind("I, the keeper of the [Bracers of Ro],  welcome you.  Come and rest within our camp.  You have nothing to fear while such righteous might is gathered.");
+      quest::say("I, the keeper of the [Bracers of Ro],  welcome you.  Come and rest within our camp.  You have nothing to fear while such righteous might is gathered.");
    }
    if($text=~/bracers of ro/i){
       if ($faction <= 4) {
-         plugin::DiaWind("When you can swim the waters of Rathe and return two goblin nets from the elusive goblin net masters. then you will be rewarded the bracer mold.");
+         quest::say("When you can swim the waters of Rathe and return two goblin nets from the elusive goblin net masters. then you will be rewarded the bracer mold.");
       } else {
-         plugin::DiaWind("We, the Deepwater Knights, know of your vile ways. You had best leave while you can."); 
+         quest::say("We, the Deepwater Knights, know of your vile ways. You had best leave while you can."); 
       }
    }
 }
 sub EVENT_ITEM { 
    if(plugin::check_handin(\%itemcount,12311 => 2) && $faction <= 4) {
-     plugin::DiaWind("You have done well. Take the mold for the bracer.  Go forth to speak with Thomas of [Lord Searfire].  Then all components shall be known.");
+     quest::say("You have done well. Take the mold for the bracer.  Go forth to speak with Thomas of [Lord Searfire].  Then all components shall be known.");
      quest::summonitem("12301");
      quest::faction("45","1");
      quest::faction("79","1");
      quest::faction("143","-1"); 
    } elsif (plugin::check_handin(\%itemcount,12311=>1) && $faction <= 4) {
-     plugin::DiaWind("Two Deepwater goblin nets are required.");
+     quest::say("Two Deepwater goblin nets are required.");
      quest::return_items(\%itemcount);
    }
    quest::return_items(\%itemcount);

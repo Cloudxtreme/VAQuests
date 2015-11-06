@@ -4,67 +4,67 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i){
 
-plugin::DiaWind("Har there lad! Ye be sure 'nuff to tell em all that Brewmaster Latrag is [retiring].");
+quest::say("Har there lad! Ye be sure 'nuff to tell em all that Brewmaster Latrag is [retiring].");
 
 }
 
 if($text=~/retiring/i){
 
-plugin::DiaWind("Ya got that right. I'm goin' to concentrate more on me devotion to Brell as a [holy knight]!");
+quest::say("Ya got that right. I'm goin' to concentrate more on me devotion to Brell as a [holy knight]!");
 
 }
 
 if($text=~/holy knoght/i){
 
-plugin::DiaWind("I be a paladin of Brell thar Daias . Might ye be a [paladin] yerself?");
+quest::say("I be a paladin of Brell thar Daias . Might ye be a [paladin] yerself?");
 
 }
 
 if($text=~/paladin/i){
 
-plugin::DiaWind("That's good. Ya know I have some armor ye might be interested in.");
+quest::say("That's good. Ya know I have some armor ye might be interested in.");
 
 }
 
 if($text=~/what armor/i){
 
-plugin::DiaWind("Yar! I have me a [helm], [breastplate], [vambraces], [greaves], [pauldrons], and a [bracer]. If ye want the rest talk to the mighty holy warrior Trallen over there about armor.");
+quest::say("Yar! I have me a [helm], [breastplate], [vambraces], [greaves], [pauldrons], and a [bracer]. If ye want the rest talk to the mighty holy warrior Trallen over there about armor.");
 
 }
 
 if($text=~/what breastplate/i){
 
-plugin::DiaWind("For the breastplate ye gotta bring me a star jewel, a mark of courage, a white marble bowl, and a jagged reed.");
+quest::say("For the breastplate ye gotta bring me a star jewel, a mark of courage, a white marble bowl, and a jagged reed.");
 
 }
 
 if($text=~/what vambracers/i){
 
-plugin::DiaWind("For the vambraces ye gotta bring me a cloud jewel, a mark of righteousness, a runed card, and a pristine ebony idol");
+quest::say("For the vambraces ye gotta bring me a cloud jewel, a mark of righteousness, a runed card, and a pristine ebony idol");
 
 }
 
 if($text=~/what greaves/i){
 
-plugin::DiaWind("For the greaves ye gotta bring me a sky jewel, a mark of bravery, a sunflower fruit, and a weathered bundle of wood");
+quest::say("For the greaves ye gotta bring me a sky jewel, a mark of bravery, a sunflower fruit, and a weathered bundle of wood");
 
 }
 
 if($text=~/what pauldrons/i){
 
-plugin::DiaWind("For the pauldrons ye gotta bring me a meteor jewel, a mark of daring, and a life gem.");
+quest::say("For the pauldrons ye gotta bring me a meteor jewel, a mark of daring, and a life gem.");
 
 }
 
 if($text=~/what bracer/i){
 
-plugin::DiaWind("For the bracer ye gotta bring me an astral jewel, a mark of reliance, and some blessed water");
+quest::say("For the bracer ye gotta bring me an astral jewel, a mark of reliance, and some blessed water");
 
 }
 
 if($text=~/what helm/i){
 
-plugin::DiaWind("For the helm ye gotta bring me a moon jewel, a mark of valor, a withered branch, and a pale pearl.");
+quest::say("For the helm ye gotta bring me a moon jewel, a mark of valor, a withered branch, and a pale pearl.");
 
  }
 

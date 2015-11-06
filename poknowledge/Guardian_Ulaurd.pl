@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Welcome to the Kartis district of [New Tanaan]. comrade.  May you gain power through knowledge."); }
+quest::say("Welcome to the Kartis district of [New Tanaan]. comrade.  May you gain power through knowledge."); }
 }
 sub EVENT_SPAWN
 {

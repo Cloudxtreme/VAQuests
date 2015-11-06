@@ -12,28 +12,28 @@
 
 sub EVENT_SAY {
  if($text =~ /hail/i) {
-	plugin::DiaWind("'The armor that I have to reward you is a headband, gi, arm wraps, leggings, shawl, wrist wraps, and sandals. My friend and guard Allise has the rest if you wish to speak with her, just ask about armor.");
+	quest::say("'The armor that I have to reward you is a headband, gi, arm wraps, leggings, shawl, wrist wraps, and sandals. My friend and guard Allise has the rest if you wish to speak with her, just ask about armor.");
  } # This hail text is current coppied from the mage version of twilight armor as i could not find the monk hail texts
  if($text =~ /headband/i) {
-	plugin::DiaWind("For the headband you must retrieve for me a sun jewel, a mark of peace, an oblong clay bowl, and a great gem.");
+	quest::say("For the headband you must retrieve for me a sun jewel, a mark of peace, an oblong clay bowl, and a great gem.");
  }
  if($text =~ /gi/i) {
-	plugin::DiaWind("For the gi you must retrieve for me a moon jewel, a mark of tranquility, sharpened rock hopper claws, and some etched steel shavings.");
+	quest::say("For the gi you must retrieve for me a moon jewel, a mark of tranquility, sharpened rock hopper claws, and some etched steel shavings.");
  }
  if($text =~ /arm wraps/i) {
-	plugin::DiaWind("For the arm wraps you must retrieve for me a star jewel, a mark of harmony, a triple beaded circlet, and some fresh spring water.");
+	quest::say("For the arm wraps you must retrieve for me a star jewel, a mark of harmony, a triple beaded circlet, and some fresh spring water.");
  }
  if($text =~ /leggings/i) {
-	plugin::DiaWind("For the leggings you must retrieve for me a cloud jewel, a mark of meditation, Ralcom's Writ, and a jar of ointment.");
+	quest::say("For the leggings you must retrieve for me a cloud jewel, a mark of meditation, Ralcom's Writ, and a jar of ointment.");
  }
  if($text =~ /shawl/i) {
-	plugin::DiaWind("For the shawl you must retrieve for me a sky jewel, a mark of unity and a pewter figurine.");
+	quest::say("For the shawl you must retrieve for me a sky jewel, a mark of unity and a pewter figurine.");
  }
  if($text =~ /wrist wraps/i) {
-	plugin::DiaWind("For the wrist wraps you must retrieve for me a meteor jewel, a mark of true self, and a coiled steel wire.");
+	quest::say("For the wrist wraps you must retrieve for me a meteor jewel, a mark of true self, and a coiled steel wire.");
  }
  if($text =~ /sandals/i) {
-	plugin::DiaWind("For the sandals you must retrieve for me an astral jewel, a mark of form, and some spire spirit dust.");
+	quest::say("For the sandals you must retrieve for me an astral jewel, a mark of form, and some spire spirit dust.");
  }
 }
 

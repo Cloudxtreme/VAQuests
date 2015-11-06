@@ -1,18 +1,18 @@
 sub EVENT_SAY {
 if($text=~/Hail/i){
-plugin::DiaWind("Welcome! I am Vurgo, follower of Solusek Ro and holder of the [harvester] and the [Words of Darkness].");
+quest::say("Welcome! I am Vurgo, follower of Solusek Ro and holder of the [harvester] and the [Words of Darkness].");
 }
 if($text=~/what harvester/i){
-plugin::DiaWind("I can forge you one, but you will need to bring me the correct [scythe components].");
+quest::say("I can forge you one, but you will need to bring me the correct [scythe components].");
 }
 if($text=~/what scythe components/i){
-plugin::DiaWind("The first thing I need is a shadowed scythe from our mortal enemies, the shadowed men.");
+quest::say("The first thing I need is a shadowed scythe from our mortal enemies, the shadowed men.");
 }
 if($text=~/what words of darkness/i){
-plugin::DiaWind("I can scribe for you the Words of Darkness, but you will need to bring me the correct [word components].");
+quest::say("I can scribe for you the Words of Darkness, but you will need to bring me the correct [word components].");
 }
 if($text=~/what word components/i){
-plugin::DiaWind("The first thing that I need is a shadowed book from our mortal enemies, the shadowed men.");
+quest::say("The first thing that I need is a shadowed book from our mortal enemies, the shadowed men.");
 }
 }
 sub EVENT_ITEM {
@@ -21,7 +21,7 @@ sub EVENT_ITEM {
 	} elsif($itemcount{10536} == 1 && $itemcount{10537} == 1 && $itemcount{10529} == 1) { # Book of Darkness, Book of Frost, Shadowed Book
 		quest::summonitem("10527"); # Words of Darkness
 	} else {
-		plugin::DiaWind("I don't need this.");
+		quest::say("I don't need this.");
 		if($item1 > 0){quest::summonitem("$item1");} 
 		if($item2 > 0){quest::summonitem("$item2");} 
 		if($item3 > 0){quest::summonitem("$item3");} 

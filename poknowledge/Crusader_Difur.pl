@@ -16,7 +16,7 @@ sub EVENT_ITEM {
 		(plugin::check_handin(\%itemcount, 4856 => 1)) ||
 		(plugin::check_handin(\%itemcount, 4857 => 1))) {#Valorium Armor
     	
-    	plugin::DiaWind("Thank you, $name.");#Text made up
+    	quest::say("Thank you, $name.");#Text made up
     	quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     	quest::exp(698775);
   }

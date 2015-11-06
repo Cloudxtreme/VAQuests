@@ -20,7 +20,7 @@ sub EVENT_SAY {
 			quest::emote("doesn't move, but struggles to whisper, '...help ...end this torment ...will you come? I can show you the pain... it moves in the shadows of my mind... will you assist me?'");
 		}
 		if ($text=~/will assist you/i) {
-			plugin::DiaWind("I..I don't want anyone else to suffer my fate... If you are certain you can help, show me your Screaming Sphere as proof of your strength.");
+			quest::say("I..I don't want anyone else to suffer my fate... If you are certain you can help, show me your Screaming Sphere as proof of your strength.");
 		}
 		if ($text=~/ready/i && $sphere == 1) {
 			$raid = $entity_list->GetRaidByClient($client);
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
 
 	if ($pop_pot_shadyglade == 1 && plugin::check_handin(\%itemcount, 22954 => 1)) {
 		quest::summonitem(22954);
-		plugin::DiaWind("Please tell me when you are ready. I do not know if I have enough energy to channel all of you, but I can try. When you are ready, I will channel you into my pain.");
+		quest::say("Please tell me when you are ready. I do not know if I have enough energy to channel all of you, but I can try. When you are ready, I will channel you into my pain.");
 		quest::settimer(1,300);
 		$sphere = 1;
 	}

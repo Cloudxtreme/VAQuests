@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
   if($text=~/hail/i && ($class eq "Enchanter")) {
-    plugin::DiaWind("Take this final piece and hurry, my power gets weaker by the moment.");
+    quest::say("Take this final piece and hurry, my power gets weaker by the moment.");
     quest::summonitem(67014); # Tarnished Cross-Guard
     quest::emote("fades away.");
     quest::stoptimer(1);

@@ -26,7 +26,7 @@ sub EVENT_COMBAT {
 
 
   if ($combat_state == 1)  {
-  plugin::DiaWind("For the honor of the Dragorn!");
+  quest::say("For the honor of the Dragorn!");
   quest::settimer("Slow", 55 );
   quest::settimer("Dark_Bal", 32 );
   quest::settimer("AE_Ice", 75 );
@@ -160,7 +160,7 @@ quest::emote("swipes his left claw at your arm.");
 }
 
 sub EVENT_DEATH {
-plugin::DiaWind("I have sacraficed myself for the honor of the Dragorn! Reverend smite these foes!");
+quest::say("I have sacraficed myself for the honor of the Dragorn! Reverend smite these foes!");
 quest::signalwith(859011,1,0);
 quest::emote("armor lets out a loud clank as it hits the ground.");
 }

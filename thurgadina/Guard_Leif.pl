@@ -3,12 +3,12 @@
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1415 => 1, 1425 => 1)) {
-    plugin::DiaWind("Well I'll be derned. An outlander that can make a good Bearmeat 'n Bread! Thank ye, $name.");
+    quest::say("Well I'll be derned. An outlander that can make a good Bearmeat 'n Bread! Thank ye, $name.");
     quest::summonitem(1419);
     quest::exp(50000);
   }
   elsif (plugin::check_handin(\%itemcount, 1425 => 1)) {
-    plugin::DiaWind("Well I'll be derned. An outlander that can make a good Bearmeat 'n Bread! Thank ye, $name.");
+    quest::say("Well I'll be derned. An outlander that can make a good Bearmeat 'n Bread! Thank ye, $name.");
     quest::exp(5000);
   }
   else {

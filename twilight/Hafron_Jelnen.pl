@@ -2,54 +2,54 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i){
 
-plugin::DiaWind("Hail and well met friend.  I'm one of master Vornol's four apprentices.  I am being trained to be an expert on all things dealing with the element of fire.'"); 
+quest::say("Hail and well met friend.  I'm one of master Vornol's four apprentices.  I am being trained to be an expert on all things dealing with the element of fire.'"); 
 
 }
 if($text=~/what armor/i){
 
-plugin::DiaWind("This armor is indeed mighty if you wish to have it you must do some tasks for me. I have the coif, mail, vambraces, greaves, pauldrons, bracer, and boots. My sister, Sarah, has the rest just ask her about armor and she will help you.");
+quest::say("This armor is indeed mighty if you wish to have it you must do some tasks for me. I have the coif, mail, vambraces, greaves, pauldrons, bracer, and boots. My sister, Sarah, has the rest just ask her about armor and she will help you.");
 
 }
 
 if($text=~/what boots/i){
 
-plugin::DiaWind("To get the boots you must fetch for me a moon jewel, a mark of the seer, and a hewed augury stone.");
+quest::say("To get the boots you must fetch for me a moon jewel, a mark of the seer, and a hewed augury stone.");
 
 }
 
 if($text=~/what bracer/i){
 
-plugin::DiaWind("To get the bracer you must fetch for me a sun jewel, a mark of soul, and a spirit gem.");
+quest::say("To get the bracer you must fetch for me a sun jewel, a mark of soul, and a spirit gem.");
 
 }
 
 if($text=~/what coif/i){
 
-plugin::DiaWind("To get the coif you must fetch for me a star jewel, a mark of sight, an ancient sun fetish, and the tablet of spirits.");
+quest::say("To get the coif you must fetch for me a star jewel, a mark of sight, an ancient sun fetish, and the tablet of spirits.");
 
 }
 
 if($text=~/what greaves/i){
 
-plugin::DiaWind("To get the greaves you must fetch for me a meteor jewel, a mark of omens, a pouch of false gems, and an adorned cap");
+quest::say("To get the greaves you must fetch for me a meteor jewel, a mark of omens, a pouch of false gems, and an adorned cap");
 
 }
 
 if($text=~/what mail/i){
 
-plugin::DiaWind("To get the mail you must fetch for me a cloud jewel, a mark of vision, a writ of safid, and some throwing bones.");
+quest::say("To get the mail you must fetch for me a cloud jewel, a mark of vision, a writ of safid, and some throwing bones.");
 
 }
 
 if($text=~/what pauldrons/i){
 
-plugin::DiaWind("To get the pauldrons you must fetch for me a astral jewel, a mark of spirit, and Genalan's Chronicle.");
+quest::say("To get the pauldrons you must fetch for me a astral jewel, a mark of spirit, and Genalan's Chronicle.");
 
 }
 
 if($text=~/what vambraces/i){
 
-plugin::DiaWind("To get the vambraces you must fetch for me a sky jewel, a mark of prophecy, a polished stone fetish, and a woven anklet.");
+quest::say("To get the vambraces you must fetch for me a sky jewel, a mark of prophecy, a polished stone fetish, and a woven anklet.");
 
 }
 

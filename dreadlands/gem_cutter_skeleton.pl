@@ -29,19 +29,19 @@ sub EVENT_SAY {
     quest::settimer("distracted",2);
   }
   if($text=~/green gem/i){
-    plugin::DiaWind("The greenest of gems I seek! Jade too brittle, emerald too hard, but [dufrenite]! Ahh, now there is a gem amongst gems.");
+    quest::say("The greenest of gems I seek! Jade too brittle, emerald too hard, but [dufrenite]! Ahh, now there is a gem amongst gems.");
   }
   if($text=~/dufrenite/i){
-    plugin::DiaWind("Yes, dufrenite! Find me a dufrenite to replace the one you made me break. Now go!");
+    quest::say("Yes, dufrenite! Find me a dufrenite to replace the one you made me break. Now go!");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,10073=>1)) {
     quest::emote("eyes sparkle as you hand it the gem.");
-    plugin::DiaWind("Yes! Yes! This is the greenest of gems!");
+    quest::say("Yes! Yes! This is the greenest of gems!");
     quest::summonitem("12946");
-    plugin::DiaWind("Worth more to you crushed, that is! Find a spectral pestle, and crush it to dust!");
+    quest::say("Worth more to you crushed, that is! Find a spectral pestle, and crush it to dust!");
     quest::exp("3000");
     quest::settimer("cutting",4);
   }
@@ -51,7 +51,7 @@ sub EVENT_ITEM {
 sub EVENT_TIMER {
   if ($timer eq "distracted") {
     quest::doanim(20);
-    plugin::DiaWind("Blast it! Distracted me you have! Now I need a new [green gem]!");
+    quest::say("Blast it! Distracted me you have! Now I need a new [green gem]!");
     quest::stoptimer("distracted");
   }
   if ($timer eq "cutting") {

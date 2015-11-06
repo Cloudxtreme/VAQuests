@@ -1,12 +1,12 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hello $name. It is my pleasure to meet you.");
+    quest::say("Hello $name. It is my pleasure to meet you.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 2877 => 1)) {
-    plugin::DiaWind("Ahh, $name, I was told you'd be coming. I am Harbin, and I will oversee the next bit of your progress in the Taruun. You have bravely chosen a path that will put your every skill to the test. May your abilities be honed in the service of the noble Vah Shir. To begin, bring me the soft chitin of three of the Rhinobeetles that dwell in the crater surrounding our city.");
+    quest::say("Ahh, $name, I was told you'd be coming. I am Harbin, and I will oversee the next bit of your progress in the Taruun. You have bravely chosen a path that will put your every skill to the test. May your abilities be honed in the service of the noble Vah Shir. To begin, bring me the soft chitin of three of the Rhinobeetles that dwell in the crater surrounding our city.");
     quest::summonitem(2877);
   }
   elsif (plugin::check_handin(\%itemcount, 3455 => 3)) {
@@ -14,11 +14,11 @@ sub EVENT_ITEM {
     quest::summonitem(3456);
   }
   elsif (plugin::check_handin(\%itemcount, 3459 => 1)) {
-    plugin::DiaWind("Your progress will be rewarded, $name. Soon all will recognize you as a recruit of the cunning Taruun! Speak with Merchant Rytan. When he is through with you return to me with his seal, your buckler, your initiate's cloak and this seal.");
+    quest::say("Your progress will be rewarded, $name. Soon all will recognize you as a recruit of the cunning Taruun! Speak with Merchant Rytan. When he is through with you return to me with his seal, your buckler, your initiate's cloak and this seal.");
     quest::summonitem(3460);
   }
   elsif (plugin::check_handin(\%itemcount, 3460 => 1, 3464 => 1,  2878 => 1, 3456 => 1)) {
-    plugin::DiaWind("Your hard work is pleasing to the Taruun, $name, which now accepts you as an official recruit. Wear this cloak with pride. Your buckler has been treated with a special epoxy and should protect you more effectively now. Show the buckler to Taruun Joharr and he will continue to guide you on your sacred path. I sense a strong spirit in you, young one. May it guide you to greatness!");
+    quest::say("Your hard work is pleasing to the Taruun, $name, which now accepts you as an official recruit. Wear this cloak with pride. Your buckler has been treated with a special epoxy and should protect you more effectively now. Show the buckler to Taruun Joharr and he will continue to guide you on your sacred path. I sense a strong spirit in you, young one. May it guide you to greatness!");
     quest::summonitem(3466);
     quest::summonitem(3465);
   }

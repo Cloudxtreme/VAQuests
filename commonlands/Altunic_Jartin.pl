@@ -11,12 +11,12 @@ sub EVENT_SAY
 {
 	if($text=~/Hail/i)
 	{
-		plugin::DiaWind("Greetings, traveler! Have you need of provisions or perhaps other wares? I sell what I find upon the battlegrounds of the Commonlands.");
+		quest::say("Greetings, traveler! Have you need of provisions or perhaps other wares? I sell what I find upon the battlegrounds of the Commonlands.");
 	}
 
 	if($text=~/Where is your house/i)
 	{
-		plugin::DiaWind("Follow me.");
+		quest::say("Follow me.");
 		quest::moveto(4791.06,-83.55,-51.47);
 		quest::spawn(22196, 0, 0, 4707.63, -105.49, -51.47);
 	}
@@ -27,12 +27,12 @@ sub EVENT_ITEM
 	# Check for "A Note (Note To Altunic)".
 	if(plugin::check_handin(\%itemcount, 18896 => 1))
 	{
-		plugin::DiaWind("You are the one they have sent? A squire?!! I hope you can help me. I gather items strewn upon the grounds of the Commonlands. I sell them at good prices. Lately, I have been terrorized by a human rogue named Narl. He will no doubt appear at my [house] soon. Bring his head to me.");
+		quest::say("You are the one they have sent? A squire?!! I hope you can help me. I gather items strewn upon the grounds of the Commonlands. I sell them at good prices. Lately, I have been terrorized by a human rogue named Narl. He will no doubt appear at my [house] soon. Bring his head to me.");
 	}
 
 	if(plugin::check_handin(\%itemcount, 13867 => 1))
 	{
-		plugin::DiaWind("You have performed a great service to me, but I fear others will attack me while I stroll the countryside. It would be very noble of you to fetch me a cloth shirt for protection from wicked creatures. It is not much, but it will help.");
+		quest::say("You have performed a great service to me, but I fear others will attack me while I stroll the countryside. It would be very noble of you to fetch me a cloth shirt for protection from wicked creatures. It is not much, but it will help.");
 
 		quest::givecash("7","0","0","0");
 
@@ -46,7 +46,7 @@ sub EVENT_ITEM
 
 	if(plugin::check_handin(\%itemcount, 1004 => 1))
 	{
-		plugin::DiaWind("Thank you. You are very noble for a squire. I can see you becoming a very valuable asset to the Hall of Truth. Take this token. Tell Merko that you have [earned the Token of Generosity].");
+		quest::say("Thank you. You are very noble for a squire. I can see you becoming a very valuable asset to the Hall of Truth. Take this token. Tell Merko that you have [earned the Token of Generosity].");
 
 		# Give player the "Token of Generosity".
 		quest::summonitem("13865");

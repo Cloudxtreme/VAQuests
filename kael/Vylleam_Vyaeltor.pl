@@ -10,38 +10,38 @@ sub EVENT_SAY {
     if ($text=~/hail/i) {
       quest::emote("bows.");
       quest::doanim(24);
-      plugin::DiaWind("Greetings to you. You are far away from your homelands, stranger. I am looking for someone. Someone that the outlanders call a cleric. Are you a cleric?");
+      quest::say("Greetings to you. You are far away from your homelands, stranger. I am looking for someone. Someone that the outlanders call a cleric. Are you a cleric?");
     }
     if ($text=~/i am a cleric/i) {
-      plugin::DiaWind("Ahhh... most pious one. I sense the aura of your devotion and conviction and it is strong about you. A shame you are so short lived, mortal. But I see potential in you and for that I shall aid you in your calling. Do you wish my aid?");
+      quest::say("Ahhh... most pious one. I sense the aura of your devotion and conviction and it is strong about you. A shame you are so short lived, mortal. But I see potential in you and for that I shall aid you in your calling. Do you wish my aid?");
     }
     if ($text=~/i wish your aid/i) {
-      plugin::DiaWind("Then I have a set of goals for you. Once you have achieved them, you shall be rewarded with such as these; a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots. May they protect you from your enemies.");
+      quest::say("Then I have a set of goals for you. Once you have achieved them, you shall be rewarded with such as these; a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots. May they protect you from your enemies.");
     }
     if ($text=~/helm/i) {
-      plugin::DiaWind("I shall craft a helm for you but you must seek these items out for me first. I have need of an ancient tarnished plate helmet and three crushed onyx sapphires.");
+      quest::say("I shall craft a helm for you but you must seek these items out for me first. I have need of an ancient tarnished plate helmet and three crushed onyx sapphires.");
     }
     if ($text=~/breastplate/i) {
-      plugin::DiaWind("Such as your faith protects you so shall this breastplate. I must have an ancient tarnished breastplate and three pieces of black marble.");
+      quest::say("Such as your faith protects you so shall this breastplate. I must have an ancient tarnished breastplate and three pieces of black marble.");
     }
     if ($text=~/armplate/i) {
-      plugin::DiaWind("For the armplates, I shall require a pair of an ancient tarnished plate armplates as well as three jaundice gems. Go forth and seek these out.");
+      quest::say("For the armplates, I shall require a pair of an ancient tarnished plate armplates as well as three jaundice gems. Go forth and seek these out.");
     }
     if ($text=~/bracer/i) {
-      plugin::DiaWind("For the bracers, faithful one, I shall require the acquisition of an ancient tarnished plate bracer and three crushed opals.");
+      quest::say("For the bracers, faithful one, I shall require the acquisition of an ancient tarnished plate bracer and three crushed opals.");
     }
     if ($text=~/gauntlet/i) {
-      plugin::DiaWind("I will need a pair of a ancient tarnished gauntlets three crushed lava rubys, so that I may make your reward.");
+      quest::say("I will need a pair of a ancient tarnished gauntlets three crushed lava rubys, so that I may make your reward.");
     }
     if ($text=~/greaves/i) {
-      plugin::DiaWind("You shall acquire a pair of an ancient tarnished plate greaves and three chipped onyx sapphires for me. I await your return.");
+      quest::say("You shall acquire a pair of an ancient tarnished plate greaves and three chipped onyx sapphires for me. I await your return.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("With your aid I shall make a pair of fine boots for you. All that is needed is a pair of an ancient tarnished plate boots and a trilogy of crushed flame emeralds.");
+      quest::say("With your aid I shall make a pair of fine boots for you. All that is needed is a pair of an ancient tarnished plate boots and a trilogy of crushed flame emeralds.");
     }
   }
   else {
-    plugin::DiaWind("You must prove your dedication to Kael Drakkal and the Kromzek clan before I will speak to you.");
+    quest::say("You must prove your dedication to Kael Drakkal and the Kromzek clan before I will speak to you.");
   }
 }
 
@@ -55,7 +55,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25805 => 3, 24900 => 1)) { # bp
       quest::summonitem(25392);
@@ -65,7 +65,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25815 => 3, 24902 => 1)) { # sleeves
       quest::summonitem(25393);
@@ -75,7 +75,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as she hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25836 => 3, 24904 => 1)) { # wrist
       quest::summonitem(25394);
@@ -85,7 +85,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25840 => 3, 24906 => 1)) { # gloves
       quest::summonitem(25395);
@@ -95,7 +95,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24901 => 1)) { # legs
       quest::summonitem(25396);
@@ -105,7 +105,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24903 => 1)) { # boots
       quest::summonitem(25397);
@@ -115,14 +115,14 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     else {
       plugin::return_items(\%itemcount); 
     }
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust you with such an item, yet.");
+    quest::say("I do not know you well enough to entrust you with such an item, yet.");
   }
 }
 

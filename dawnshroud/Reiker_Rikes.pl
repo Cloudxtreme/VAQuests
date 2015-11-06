@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("I be Reiker Rikes! The fastest gnome in the woods!");
+    quest::say("I be Reiker Rikes! The fastest gnome in the woods!");
   }
 }
 

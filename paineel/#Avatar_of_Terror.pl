@@ -14,7 +14,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 14106 => 1)) { #Mundane Mask
-    plugin::DiaWind("A desciple of Cazic-Thule! Take this forged item as a gift."); #Text made up
+    quest::say("A desciple of Cazic-Thule! Take this forged item as a gift."); #Text made up
     quest::summonitem(14108); #Terror Forged Mask
 #    quest::faction(???,??); #
     quest::exp(10000); 

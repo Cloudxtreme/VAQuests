@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/Hail/i){
-    plugin::DiaWind("Lower your voice, $race. These tomes hold many secrets as well as curses. Say the wrong word loudly enough and you may end up a frog, dead, or worse. Heed my warning for I will not repeat it.");
+    quest::say("Lower your voice, $race. These tomes hold many secrets as well as curses. Say the wrong word loudly enough and you may end up a frog, dead, or worse. Heed my warning for I will not repeat it.");
   }
 
 # Quest for The Visiting Priestess
@@ -14,16 +14,16 @@ sub EVENT_SAY {
     quest::emote("'s face twists into an expression of complete confusion. The librarian says, 'The Ritual? Of the Blue Flame? Yes I know of it. But why you..never mind. The ritual is fairly simple. The sacrifice is [flayed] and thrown into the fire just before death overcomes it. The flaying brings out an almost euphoric state of hatred and despisal. It's this that feeds the flame. The influence of our Father blues the flame and allows it to melt our adamantium.");
   }
   if($text=~/flayed/i) {
-    plugin::DiaWind("The flaying is done by our priests and the Denouncer. Flaying itself is used in many other rituals as well. For instance, the skin of a flayed goblin can be used to record a misdeed. The perpetrator records the misdeed upon the skin, an ancient practice which allows the victim to wreak [vengeance] upon the one who wronged them, or their ancestors. The perpetrator shows strength by allowing the victim a chance at vengeance, even though the victim is usually dead.");
+    quest::say("The flaying is done by our priests and the Denouncer. Flaying itself is used in many other rituals as well. For instance, the skin of a flayed goblin can be used to record a misdeed. The perpetrator records the misdeed upon the skin, an ancient practice which allows the victim to wreak [vengeance] upon the one who wronged them, or their ancestors. The perpetrator shows strength by allowing the victim a chance at vengeance, even though the victim is usually dead.");
   }
   if($text=~/vengeance/i) {
-    plugin::DiaWind("Vengeance can only be wrought if the victim is given the goblin skin. Since the victim is usually dead it's not much of a danger. But..it has been known to happen. Ironically, this vengeance is possible through the use of the Blue Flame. This flame can act as a doorway to the nether realm, to [summon] the spirit of a victim. On the skin is recorded the House name of the victim and the reason for the deed.");
+    quest::say("Vengeance can only be wrought if the victim is given the goblin skin. Since the victim is usually dead it's not much of a danger. But..it has been known to happen. Ironically, this vengeance is possible through the use of the Blue Flame. This flame can act as a doorway to the nether realm, to [summon] the spirit of a victim. On the skin is recorded the House name of the victim and the reason for the deed.");
   }
   if($text=~/summon/i) {
-    plugin::DiaWind("Only the Denouncer can call forth a vengeful spirit from the flames. But before he can do so, he'll need blood from a member of the victim's House. Once the blood is cast into the flames, the spirit will emerge only for a short time before the negative pull of the other world draws it back. Why do you ask so many questions on this? Do you have one of these skins?");
+    quest::say("Only the Denouncer can call forth a vengeful spirit from the flames. But before he can do so, he'll need blood from a member of the victim's House. Once the blood is cast into the flames, the spirit will emerge only for a short time before the negative pull of the other world draws it back. Why do you ask so many questions on this? Do you have one of these skins?");
   }
   if($text=~/yes/i) {
-    plugin::DiaWind("Ahh, well I'll assume if you could read it you wouldn't be asking these questions. Fortunately for you I do have the ability to read these skins and will do so for only one star ruby. These spirits will often reward those who give them their vengeance. With my translation you may find the name of the House. Hand me the skin and a star ruby and we'll see.");
+    quest::say("Ahh, well I'll assume if you could read it you wouldn't be asking these questions. Fortunately for you I do have the ability to read these skins and will do so for only one star ruby. These spirits will often reward those who give them their vengeance. With my translation you may find the name of the House. Hand me the skin and a star ruby and we'll see.");
   }
 }
 

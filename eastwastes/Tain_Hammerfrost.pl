@@ -9,12 +9,12 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("The bloody Kromrif ambushed me! I escaped, but I am near death. They'll be tracking me down to finish me off at any moment. Without [help], I'm as good as dead.");
+    quest::say("The bloody Kromrif ambushed me! I escaped, but I am near death. They'll be tracking me down to finish me off at any moment. Without [help], I'm as good as dead.");
   }
   if ($text=~/help/i && $flag == 0) {
     $flag = 1;
     quest::settimer(3, 600);
-    plugin::DiaWind("Thank Brell! I hear them approaching from just over that hill! Slay the leader, Ghrek, and give me his elixir.");
+    quest::say("Thank Brell! I hear them approaching from just over that hill! Slay the leader, Ghrek, and give me his elixir.");
     my $mobid1 = quest::spawn2(116560, 0, 0, -2991, -4837, 229, 65);
     my $mobid2 = quest::spawn2(116030, 0, 0, -2991, -4815, 229, 65);
     my $mobid3 = quest::spawn2(116030, 0, 0, -2991, -4793, 229, 65);
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30138 => 1)) {
     quest::stoptimer(1);
     $npc->SetAppearance(0);
-    plugin::DiaWind("I will report your selfless actions when I return to Thurgadin. Take this for your troubles, friend. I hope you find it useful. Fare thee well.");
+    quest::say("I will report your selfless actions when I return to Thurgadin. Take this for your troubles, friend. I hope you find it useful. Fare thee well.");
     quest::summonitem(30140);
     quest::settimer(2,15);
 
@@ -72,7 +72,7 @@ sub EVENT_ITEM {
 sub EVENT_TIMER {
   if ($timer == 1) {
     $npc->SetAppearance(3);
-    plugin::DiaWind("Ohhhh, someone... help, please...");
+    quest::say("Ohhhh, someone... help, please...");
   }
   elsif ($timer == 2) {
     quest::depop_withtimer();

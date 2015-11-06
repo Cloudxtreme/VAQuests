@@ -33,13 +33,13 @@
 sub EVENT_SAY {
     if(($faction < 4)&&($class eq "Monk")) {
         if($text=~/Hail/i) {
-            plugin::DiaWind("It is good to finally meet one who respects the disciplines of the Ashen Order.  All I have met are rangers.  They have interfered with my [mission in the woods].");
+            quest::say("It is good to finally meet one who respects the disciplines of the Ashen Order.  All I have met are rangers.  They have interfered with my [mission in the woods].");
         }
         if($text=~/mission in the woods/i) {
-            plugin::DiaWind("I have come here to avenge my family.  One season past, they were attacked by a trio of deadly tigers.  I came here to hunt the beasts down, but then I found the local rangers and residents here protect the tigers.  They seem to be legends in these parts.  The tigers even have name's!!  They call them Eenot, Reggit and Kobb.  I wish I had help from a [fellow monk].");
+            quest::say("I have come here to avenge my family.  One season past, they were attacked by a trio of deadly tigers.  I came here to hunt the beasts down, but then I found the local rangers and residents here protect the tigers.  They seem to be legends in these parts.  The tigers even have name's!!  They call them Eenot, Reggit and Kobb.  I wish I had help from a [fellow monk].");
         }
         if($text=~/fellow monk/i) {
-            plugin::DiaWind("Good!! The rangers are watching me so you must go alone.  I can only wait until the morning, then I must go.  If you find all three tigers, return their pelts to me and I shall reward you with something discovered for monks only.");
+            quest::say("Good!! The rangers are watching me so you must go alone.  I can only wait until the morning, then I must go.  If you find all three tigers, return their pelts to me and I shall reward you with something discovered for monks only.");
             # Spawn Eenot
             quest::unique_spawn(20276, 137, 0, 1499.47, -22.75, 168.35);
             # Spawn Reggit
@@ -48,7 +48,7 @@ sub EVENT_SAY {
             quest::unique_spawn(20278, 139, 0, 3741.9, 256.5, 496.2);
         }
         if($text=~/treant fists/i) {
-            plugin::DiaWind("The treant fists were created by great craftsmen.  They are for the fists of a monk and offer greater dexterity and increase the durability of one's soul.  My last pair were given to Master Puab of the Ashen House training grounds.");
+            quest::say("The treant fists were created by great craftsmen.  They are for the fists of a monk and offer greater dexterity and increase the durability of one's soul.  My last pair were given to Master Puab of the Ashen House training grounds.");
             quest::depop_withtimer();
         }
     }
@@ -57,7 +57,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
     if(plugin::check_handin(\%itemcount, 12341 => 1,  12342 => 1,  12343 => 1))
     {
-        plugin::DiaWind("Good work.  I hope you had no run ins with the local rangers.  Here is my reward.  An object from the past which I found in my journeys.  Wish that I could reward you also with [treant fists].");
+        quest::say("Good work.  I hope you had no run ins with the local rangers.  Here is my reward.  An object from the past which I found in my journeys.  Wish that I could reward you also with [treant fists].");
         # Collar of Neshika ID-12367
         quest::summonitem("12367");
         quest::exp("100");

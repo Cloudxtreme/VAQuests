@@ -9,7 +9,7 @@ sub EVENT_TIMER {
 		quest::stoptimer("onset");
 	}
 	if(($timer=="readygo") && ($x==-4341 && $y==-748)) {
-		plugin::DiaWind("Onward men, the eyes of Zek are upon us.");
+		quest::say("Onward men, the eyes of Zek are upon us.");
 		quest::stoptimer("readygo");
 		quest::signalwith(119167,1,300);
 		quest::signalwith(119166,1,300);
@@ -19,7 +19,7 @@ sub EVENT_TIMER {
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp == 5) {
-		plugin::DiaWind("Hold here squad");
+		quest::say("Hold here squad");
 		quest::signal(119050,300);
 	}
 }
@@ -37,7 +37,7 @@ sub EVENT_SIGNAL {
 		quest::start(23);
 	}
 	if ($signal == 2) {
-		plugin::DiaWind("Grraaaggh! AMBUSH!! Die well!");  
+		quest::say("Grraaaggh! AMBUSH!! Die well!");  
 		quest::spawn2(119174,0,0,-146,1703,-192,187);  # a_sifaye_defender
 		quest::spawn2(119174,0,0,-149,1731,-192,187);  # a_sifaye_defender
 		quest::spawn2(119174,0,0,-162,1738,-192,187);  # a_sifaye_defender

@@ -1,9 +1,9 @@
 sub EVENT_SAY {
 if($text=~/hail/i){
-plugin::DiaWind("The feeling of freedom is good indeed, greetings wanderer. Having escaped the clutches of the drogan goblins I desire for them to know the true meaning of fear. Will you help teach them the meaning of [fear]?");
+quest::say("The feeling of freedom is good indeed, greetings wanderer. Having escaped the clutches of the drogan goblins I desire for them to know the true meaning of fear. Will you help teach them the meaning of [fear]?");
 }
 if($text=~/fear/i){
-plugin::DiaWind("Very well head to the Temple of Droga and seek out the so called goblin bone depredators. Slaughter them until you have three Blades of the Depredator and bring those back. Also seek out the Jailor Maufan and bring back the Mark of Imprisonment. Do this and I shall reward you well.");
+quest::say("Very well head to the Temple of Droga and seek out the so called goblin bone depredators. Slaughter them until you have three Blades of the Depredator and bring those back. Also seek out the Jailor Maufan and bring back the Mark of Imprisonment. Do this and I shall reward you well.");
 }
  }
 sub EVENT_ITEM {

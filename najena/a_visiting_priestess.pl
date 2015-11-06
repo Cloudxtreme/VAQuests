@@ -9,16 +9,16 @@ my $facval;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hail, $name! Are you the champion Najena sent for?");
+    quest::say("Hail, $name! Are you the champion Najena sent for?");
   }
   if ($text=~/champion of Najena/i) {
-    plugin::DiaWind("Very well champion.  Have you heard of The Staff of Ankexfen?"); # Not real text
+    quest::say("Very well champion.  Have you heard of The Staff of Ankexfen?"); # Not real text
   }
   if ($text=~/not heard of the staff/i) {
-    plugin::DiaWind("No? Why am I not surprised? You look too weak and frail to be of any use. You probably could not even best one of those intoxicated, weak-minded goblins controlled by that pathetic eye called Xxorb. Away with you, useless creature!");
+    quest::say("No? Why am I not surprised? You look too weak and frail to be of any use. You probably could not even best one of those intoxicated, weak-minded goblins controlled by that pathetic eye called Xxorb. Away with you, useless creature!");
   }
   if ($text=~/happened to the Ankexfen/i) {
-    plugin::DiaWind("The wrath of the unnamed gods was grim. Thousands of ogres were instantly slain - their empire left to crumble under the hand of retribution. The giants were flung across the face of Norrath like seeds to the wind. The Ankexfen's fates were more severe. The entire race was exterminated, but from the ashes were born the four goblin races. What is known is that each goblin clan was stripped of any knowledge and was neither informed of the other clans nor of their own origins. Each clan was then transported to a separate environment to help preserve the gods' will. However, the gods were not without mercy and each clan was granted a section of the staff. Upon each staff, a crystal was placed. These staves served to aid the goblin clans in understanding their environments. These remnants of the staff of Ankexfen are what I desire. Bring them to me and the Priests of Innoruuk shall reward you.");
+    quest::say("The wrath of the unnamed gods was grim. Thousands of ogres were instantly slain - their empire left to crumble under the hand of retribution. The giants were flung across the face of Norrath like seeds to the wind. The Ankexfen's fates were more severe. The entire race was exterminated, but from the ashes were born the four goblin races. What is known is that each goblin clan was stripped of any knowledge and was neither informed of the other clans nor of their own origins. Each clan was then transported to a separate environment to help preserve the gods' will. However, the gods were not without mercy and each clan was granted a section of the staff. Upon each staff, a crystal was placed. These staves served to aid the goblin clans in understanding their environments. These remnants of the staff of Ankexfen are what I desire. Bring them to me and the Priests of Innoruuk shall reward you.");
   }
 }
 

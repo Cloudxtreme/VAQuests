@@ -1,7 +1,7 @@
 sub EVENT_SAY {
   if($text=~/hail/i){
   # Catfish Croak Sandwich [Part 1]
-    plugin::DiaWind("Buy, buy, buy. Go ahead, make a purchase. I am not here to talk. Go to Cabilis for talk. Come to Foob for armor. Now hurry and.. Ooh.. Foob is starvings. Foob wish he had his [munch break favorite].");
+    quest::say("Buy, buy, buy. Go ahead, make a purchase. I am not here to talk. Go to Cabilis for talk. Come to Foob for armor. Now hurry and.. Ooh.. Foob is starvings. Foob wish he had his [munch break favorite].");
   }
   elsif($text=~/munch break favorite/i){
   # Catfish Croak Sandwich [Part 2]
@@ -9,7 +9,7 @@ sub EVENT_SAY {
   }
   elsif($text=~/fetch.*sandwich/i){
   # Catfish Croak Sandwich [Part 3]
-    plugin::DiaWind("What?!! You dus gets Foob his sandwich for his munch break!! You be a good tail. Gets me two sandwiches, one fer break and one fer work, then me pay you something for the troubles. But it be no trouble. Foob is sure you know [how to make sandwich].");
+    quest::say("What?!! You dus gets Foob his sandwich for his munch break!! You be a good tail. Gets me two sandwiches, one fer break and one fer work, then me pay you something for the troubles. But it be no trouble. Foob is sure you know [how to make sandwich].");
   }
   elsif($text=~/how.*sandwich/i){
   # Catfish Croak Sandwich [Part 4]
@@ -21,7 +21,7 @@ sub EVENT_ITEM {
  #Handin: 2x Catfish Croak Sandwich (12451)
   if(plugin::check_handin(\%itemcount, 12451 => 2)){
   # Catfish Croak Sandwich [Part 8][End]
-    plugin::DiaWind("Me thanks you very much!! Now me stop da tummy grumbles. You have this. And you takes dis. Foob make special, not sold yet, you test it. It is not toughest, but it take a little bashing just like you. It is called Foobscale!!");
+    quest::say("Me thanks you very much!! Now me stop da tummy grumbles. You have this. And you takes dis. Foob make special, not sold yet, you test it. It is not toughest, but it take a little bashing just like you. It is called Foobscale!!");
   #Summon: Foobscale Coif (12448)
     quest:summonitem(12448);
   }

@@ -4,67 +4,67 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i){
 
-plugin::DiaWind("Why hello. I'm in charge of the fishing operations here on Jern's Isle.  [Fish] are my area of expertise.'");
+quest::say("Why hello. I'm in charge of the fishing operations here on Jern's Isle.  [Fish] are my area of expertise.'");
 
 }
 
 if($text=~/what fish/i){
 
-plugin::DiaWind("We have fish come in here all the time. Sometimes we catch an [oddity] now and again.");
+quest::say("We have fish come in here all the time. Sometimes we catch an [oddity] now and again.");
 
 }
 
 if($text=~/what oddity/i){
 
-plugin::DiaWind("Once we pulled up this ancient chest filled with this [dark plate armor].");
+quest::say("Once we pulled up this ancient chest filled with this [dark plate armor].");
 
 }
 
 if($text=~/what dark plate armor/i){
 
-plugin::DiaWind("Looked the like kind of armor a dark knight would wear. if ya want it I'm sure we could arrange a [trade] of some sort.");
+quest::say("Looked the like kind of armor a dark knight would wear. if ya want it I'm sure we could arrange a [trade] of some sort.");
 
 }
 
 if($text=~/what trade/i){
 
-plugin::DiaWind("Since Trevor and I are the ones that found it we split it between ourselves. I have a [helm], [breastplate], [vambraces], [greaves], [pauldrons], [bracer], and [boots]. Ask Trevor about the rest of the armor.");
+quest::say("Since Trevor and I are the ones that found it we split it between ourselves. I have a [helm], [breastplate], [vambraces], [greaves], [pauldrons], [bracer], and [boots]. Ask Trevor about the rest of the armor.");
 
 }
 
 if($text=~/what breastplate/i){
 
-plugin::DiaWind("For the darkened knight's breastplate fetch me a cloud jewel. a mark of fear. a delicate glass sculpture. and a painted ornament.");
+quest::say("For the darkened knight's breastplate fetch me a cloud jewel. a mark of fear. a delicate glass sculpture. and a painted ornament.");
 
 }
 
 if($text=~/what vambracers/i){
 
-plugin::DiaWind("For the darkened knight's vambraces fetch me a sky jewel. a mark of terror. a runed ornamental mace. and an ancient tablet.");
+quest::say("For the darkened knight's vambraces fetch me a sky jewel. a mark of terror. a runed ornamental mace. and an ancient tablet.");
 
 }
 
 if($text=~/what greaves/i){
 
-plugin::DiaWind("For the darkened knight's greaves fetch me a meteor jewel. a mark of dread. the King's Tome. and a polished ivory idol.");
+quest::say("For the darkened knight's greaves fetch me a meteor jewel. a mark of dread. the King's Tome. and a polished ivory idol.");
 
 }
 
 if($text=~/what pauldrons/i){
 
-plugin::DiaWind("For the darkened knight's pauldrons fetch me an astral jewel. a mark of hatred. and an ancient petrified tulip.");
+quest::say("For the darkened knight's pauldrons fetch me an astral jewel. a mark of hatred. and an ancient petrified tulip.");
 
 }
 
 if($text=~/what bracer/i){
 
-plugin::DiaWind("For the darkened knight's bracer fetch me a sun jewel. a mark of intimidation. and a small rough marble figurine.");
+quest::say("For the darkened knight's bracer fetch me a sun jewel. a mark of intimidation. and a small rough marble figurine.");
 
 }
 
 if($text=~/what boots/i){
 
-plugin::DiaWind("For the darkened knight's boots fetch me a moon jewel. a mark of horror. and a fanged talisman.");
+quest::say("For the darkened knight's boots fetch me a moon jewel. a mark of horror. and a fanged talisman.");
 
  }
 

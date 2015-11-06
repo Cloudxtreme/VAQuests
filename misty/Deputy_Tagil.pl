@@ -3,14 +3,14 @@ sub EVENT_COMBAT {
 	my $cur_target = $npc->GetHateTop();
 		if($cur_target) {
 		my $target_name = $cur_target->GetCleanName();
-		plugin::DiaWind("Time to die $target_name!");
+		quest::say("Time to die $target_name!");
 		}
 	}
 }
 
 sub EVENT_ITEM { 
 if($itemcount{18013} == 1){
-plugin::DiaWind("What's this?  Oh dear.  I am very sorry.  Please take this to Uner with my apologies.");
+quest::say("What's this?  Oh dear.  I am very sorry.  Please take this to Uner with my apologies.");
 quest::summonitem(13240); }
 }
 

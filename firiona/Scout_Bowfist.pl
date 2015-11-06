@@ -9,7 +9,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Halt!! This tunnel is used primarily for the forces of the Union of Vie. Citizens and adventurers are to use the main entrance.");
+    quest::say("Halt!! This tunnel is used primarily for the forces of the Union of Vie. Citizens and adventurers are to use the main entrance.");
   }
 }
 

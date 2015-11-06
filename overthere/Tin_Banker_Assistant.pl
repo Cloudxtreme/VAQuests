@@ -10,7 +10,7 @@ sub EVENT_SAY {
 
   if ($text=~/hail/i) {
 
-    plugin::DiaWind("Insert Metal Key *whirrrr*."); 
+    quest::say("Insert Metal Key *whirrrr*."); 
 
   }
 
@@ -22,7 +22,7 @@ sub EVENT_ITEM {
 
   if ($itemcount{12849}==1) {
 
-    plugin::DiaWind("*Whirrrr*");
+    quest::say("*Whirrrr*");
 
     quest::summonitem(55978);
 

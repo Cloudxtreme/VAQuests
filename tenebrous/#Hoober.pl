@@ -11,7 +11,7 @@ sub EVENT_TIMER {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5994 =>1 )) {
-    plugin::DiaWind("$name, you have bested me, here is a locket.  My potion!");
+    quest::say("$name, you have bested me, here is a locket.  My potion!");
     quest::summonitem(5996);
     quest::depop();
   }

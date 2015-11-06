@@ -8,11 +8,11 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i){
-    plugin::DiaWind("Well met. Friend.  May I be of assistance?");
+    quest::say("Well met. Friend.  May I be of assistance?");
   }
 ## Fixme for lost stamped certificate.
   if(($text=~/certificate/i) && ($qglobals{Shar_Vahl_Cit}  == 3)){
-    plugin::DiaWind("I suppose I can issue another one. Just give me a second.");
+    quest::say("I suppose I can issue another one. Just give me a second.");
     quest::summonitem(2875);}
 }
 
@@ -20,7 +20,7 @@ sub EVENT_ITEM {
   #Certificate of Taxability OR Application for Citizenship
   if(plugin::check_handin(\%itemcount, 2874 => 1)) {
     quest::emote("places his seal on the certificate before returning it to you.");
-    plugin::DiaWind("Ahh, a new taxpayer, wonderful! You must always remember that it is a distinct privilege to contribute to the upkeep of our noble society and not merely a duty or a burden. I look forward to collecting your honorable taxes in the future. May the spirits prosper you, $name.'");
+    quest::say("Ahh, a new taxpayer, wonderful! You must always remember that it is a distinct privilege to contribute to the upkeep of our noble society and not merely a duty or a burden. I look forward to collecting your honorable taxes in the future. May the spirits prosper you, $name.'");
 		quest::ding();
 		quest::exp(100);
     # Stamped Certificate of Taxability

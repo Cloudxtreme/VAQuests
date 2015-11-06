@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("I would be careful wandering the maze. Many have gotten lost and never come out the other end.");
+    quest::say("I would be careful wandering the maze. Many have gotten lost and never come out the other end.");
   }
 }
 

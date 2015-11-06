@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Well met, friend. May I be of assistance?");
+    quest::say("Well met, friend. May I be of assistance?");
   }
 }
 

@@ -14,7 +14,7 @@ sub EVENT_SAY {
   
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 28088 => 1)) {#Onirelin's Jewel
-    plugin::DiaWind("How did you get this away from Narik? Oh never mind, I'm just happy to have it back. I shall give you what Cador desires now, keep it secure and deliver it to him.");
+    quest::say("How did you get this away from Narik? Oh never mind, I'm just happy to have it back. I shall give you what Cador desires now, keep it secure and deliver it to him.");
     quest::summonitem(28089);#Cador's Artifact
     quest::exp(250);
   }

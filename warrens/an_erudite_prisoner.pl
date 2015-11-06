@@ -12,13 +12,13 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("angrily rattles his shackles.");
-    plugin::DiaWind("Damned Kobolds!! Some day I will return and these filthy warrens will be littered with their dog faced corpses! You wouldn't happen to have a key for these shackles would you?");
+    quest::say("Damned Kobolds!! Some day I will return and these filthy warrens will be littered with their dog faced corpses! You wouldn't happen to have a key for these shackles would you?");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6923 => 1)) {
-    plugin::DiaWind("I say we round up the Furballs AND the Dog Faces and let them kill each other off! Then we can easily finish off the survivors!");
+    quest::say("I say we round up the Furballs AND the Dog Faces and let them kill each other off! Then we can easily finish off the survivors!");
     quest::exp(300);
     quest::depop_withtimer();
   }

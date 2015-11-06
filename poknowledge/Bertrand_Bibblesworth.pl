@@ -9,13 +9,13 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i) {
-    plugin::DiaWind("Yes, hello to you as well. I have recently come here in search of some more curious [crystals].");
+    quest::say("Yes, hello to you as well. I have recently come here in search of some more curious [crystals].");
   }
   if($text=~/crystals/i) {
-    plugin::DiaWind("These are no ordinary crystals. They are known as frozen crystal shards and burning crystal shards. I believe they are made by the gelidrans and pyrilens, chaotic elemental creatures composed of fire and ice. I encountered a couple of these fierce creatures in the Realm of Discord and managed to, um, procure quite a collection of crystals. Hey, if you would like to [trade], I might be interested.");
+    quest::say("These are no ordinary crystals. They are known as frozen crystal shards and burning crystal shards. I believe they are made by the gelidrans and pyrilens, chaotic elemental creatures composed of fire and ice. I encountered a couple of these fierce creatures in the Realm of Discord and managed to, um, procure quite a collection of crystals. Hey, if you would like to [trade], I might be interested.");
   }
   if($text=~/trade/i) {
-    plugin::DiaWind("I can trade you a frozen crystal for a burning crystal or vice versa. Just hand one to me if you are interested!");
+    quest::say("I can trade you a frozen crystal for a burning crystal or vice versa. Just hand one to me if you are interested!");
   }
 }
   

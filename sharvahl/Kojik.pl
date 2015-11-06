@@ -3,5 +3,5 @@ sub EVENT_SPAWN {
 	}
 	
 sub EVENT_TIMER {
-	plugin::DiaWind("Bags! Chests! You'll need to carry your treasures, come see what I have for sale.");
+	quest::say("Bags! Chests! You'll need to carry your treasures, come see what I have for sale.");
 }

@@ -28,16 +28,16 @@ my $wrath = quest::saylink("wrath",1);
  
  
     if ($text =~/Hail/i){
-    plugin::DiaWind("What brings mortals this deep into the realm of the earth keepers? Ponz Knows better than to let anyone get by. Very well then, off you go. You have no [$business] here."); 
+    quest::say("What brings mortals this deep into the realm of the earth keepers? Ponz Knows better than to let anyone get by. Very well then, off you go. You have no [$business] here."); 
     }
 
 	if ($text =~/business/i){
 	quest::emote ("roars with laughter.");
-	plugin::DiaWind("You dare threaten me? The great keeper of earth! Foolish mortals, be off with you I don't have time for this. [$Storm_of_the_Elements] should have stopped you at the gate");
+	quest::say("You dare threaten me? The great keeper of earth! Foolish mortals, be off with you I don't have time for this. [$Storm_of_the_Elements] should have stopped you at the gate");
 	}
 
 	if ($text =~/Storm of the Elements/i){
-	plugin::DiaWind("Storm of the Elements sent you, you say?. How dare you attempt to decieve me! Storm of the Elements does not send anyone into our realm. This is not the place for mortals. I've asked you to leave, now my patience has grown thin! Leave at once, or deal with my [$wrath]!");
+	quest::say("Storm of the Elements sent you, you say?. How dare you attempt to decieve me! Storm of the Elements does not send anyone into our realm. This is not the place for mortals. I've asked you to leave, now my patience has grown thin! Leave at once, or deal with my [$wrath]!");
 	}
 
 	if ($text =~/wrath/i){
@@ -185,7 +185,7 @@ sub EVENT_TIMER
 	
 	if ($timer eq "tykes")
 	{
-	plugin::DiaWind("come forth little ones, and feast on the mortals!");
+	quest::say("come forth little ones, and feast on the mortals!");
 	quest::spawn2(1000014,0,0,$x+10,$y,$z,$h);
 	quest::spawn2(1000014,0,0,$x-10,$y,$z,$h);
 	quest::spawn2(1000014,0,0,$x,$y+10,$z,$h);
@@ -200,7 +200,7 @@ sub EVENT_TIMER
 	if ($timer eq "END1")
 	{
 	quest::stoptimer("END1");
-	plugin::DiaWind("You have bested me this day!");
+	quest::say("You have bested me this day!");
 	quest::settimer("END2",2);
 	plugin::Debug("TIMER $timer started");
 	}
@@ -208,7 +208,7 @@ sub EVENT_TIMER
 	if ($timer eq "END2")
 	{
 	quest::stoptimer("END2");
-	plugin::DiaWind("I shall sacrifice myself to the Earthen Gods as to not bring anymore shame to them");
+	quest::say("I shall sacrifice myself to the Earthen Gods as to not bring anymore shame to them");
 	#$npc->Kill;
 	quest::settimer("END3",2);
 	plugin::Debug("TIMER $timer started");

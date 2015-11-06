@@ -10,7 +10,7 @@ sub EVENT_TIMER {
 
 sub EVENT_SAY {
 	if ($text=~/Hail/i) {
-		plugin::DiaWind("I must thank you for your kind efforts friends. This place has laid claim to me for far too long. Please take care and offer the dark wench my best. I am off... and I suggest you not stray to far from that route yourselves. Please tell me when you are ready to return and may your blades strike true!");
+		quest::say("I must thank you for your kind efforts friends. This place has laid claim to me for far too long. Please take care and offer the dark wench my best. I am off... and I suggest you not stray to far from that route yourselves. Please tell me when you are ready to return and may your blades strike true!");
 		quest::setglobal("pop_pot_newleaf",1,5,"F");
 		$client->Message(4,"You receive a character flag!");
 	}

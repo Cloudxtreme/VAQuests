@@ -2,7 +2,7 @@
 # 
 
 sub EVENT_AGGRO {
-  plugin::DiaWind("Hatred is the Universal Truth.");
+  quest::say("Hatred is the Universal Truth.");
 }
 
 # EOF Zone: neriakc ID: 42112 NPC: Verina_Tomb

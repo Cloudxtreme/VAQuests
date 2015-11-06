@@ -14,7 +14,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30146 => 1)) {
-    plugin::DiaWind("Well, as promised, here's your Foot of the candlestick.");
+    quest::say("Well, as promised, here's your Foot of the candlestick.");
     quest::summonitem(12852);
   }
   if (plugin::check_handin(\%itemcount, 12609 => 4)) {

@@ -10,25 +10,25 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("squints at you through one eye, the other covered by a metallic eyepatch.");
-    plugin::DiaWind("Garrr. What `ave we here? Another beller yellied land blubber, eh? By the looks of ye someones mudder didn't know when ta throw a bad fish back. HAR HAR!");
+    quest::say("Garrr. What `ave we here? Another beller yellied land blubber, eh? By the looks of ye someones mudder didn't know when ta throw a bad fish back. HAR HAR!");
   }
   if ($text=~/bad fish/i) {
-    plugin::DiaWind("That means I'm callin ya ugly as a piece o' whale blubber but twice as bad smellin, ya son of a water treadin $race. Yer about as smart as the slime we use ta patch our boat hull, aren't ya?");
+    quest::say("That means I'm callin ya ugly as a piece o' whale blubber but twice as bad smellin, ya son of a water treadin $race. Yer about as smart as the slime we use ta patch our boat hull, aren't ya?");
   }
   if ($text=~/boat/i) {
-    plugin::DiaWind("'Arrrr. So we ain't got a boat right now. What's that got ta do with anythin'? Just cause we ain't got a boat, or a way to sail the waters, or even know how ta sail, don't mean we aren't crusty and dangerous. Just watch yerself cause we're mean.");
+    quest::say("'Arrrr. So we ain't got a boat right now. What's that got ta do with anythin'? Just cause we ain't got a boat, or a way to sail the waters, or even know how ta sail, don't mean we aren't crusty and dangerous. Just watch yerself cause we're mean.");
   }
   if ($text=~/mean/i) {
-    plugin::DiaWind("Thats right! We're mean, nasty, devious 'n cruel. We'll knock ya down, bite yer knees, and steal yer money. Arrr. We won't always say please and thank you either! Just remember that and don't be tryin' anyhin' funny.");
+    quest::say("Thats right! We're mean, nasty, devious 'n cruel. We'll knock ya down, bite yer knees, and steal yer money. Arrr. We won't always say please and thank you either! Just remember that and don't be tryin' anyhin' funny.");
   }
   if ($text=~/funny/i) {
-    plugin::DiaWind("Uh, I dunno what funny stuff. No one's ever asked that one. You know, just be nice ta everyone I guess. Think ya can do that?");
+    quest::say("Uh, I dunno what funny stuff. No one's ever asked that one. You know, just be nice ta everyone I guess. Think ya can do that?");
   }
   if ($text=~/map/i) {
-    plugin::DiaWind("The map? What map? Oh wait, that thing I made ol' what's-his-name do ta get los... uh adventure. Uh, sure. If yer wantin' we've got a job for ya. If ya do it ya get ta be a real member o' me crew.");
+    quest::say("The map? What map? Oh wait, that thing I made ol' what's-his-name do ta get los... uh adventure. Uh, sure. If yer wantin' we've got a job for ya. If ya do it ya get ta be a real member o' me crew.");
   }
   if ($text=~/real member of your crew/i) {
-    plugin::DiaWind("That means ya get ta take orders from me and ya get ta use fancy words like bilge hoistin' land blubbing beller yellied, and more. Anyways, we needed a map so me lads would stop gettin' lost, but the lad I sent out ain't come back with it. I even sent out a search party but I ain't heard from them either. If ya find 'im get the map and get back 'ere.");
+    quest::say("That means ya get ta take orders from me and ya get ta use fancy words like bilge hoistin' land blubbing beller yellied, and more. Anyways, we needed a map so me lads would stop gettin' lost, but the lad I sent out ain't come back with it. I even sent out a search party but I ain't heard from them either. If ya find 'im get the map and get back 'ere.");
   }
 }
 
@@ -51,11 +51,11 @@ sub EVENT_SIGNAL {
       $shawlsignal = 1;
    }
    elsif ($signal == 3) {
-      plugin::DiaWind("Arrrrrr what is it ye want?");
+      quest::say("Arrrrrr what is it ye want?");
       quest::signalwith(110118, 3, 500);
    }
    elsif ($signal == 4) {
-      plugin::DiaWind("Velium eh? Well there matey lets hear what you have got to say!");
+      quest::say("Velium eh? Well there matey lets hear what you have got to say!");
       quest::signalwith(110118, 4, 500);
    }
    elsif ($signal == 10) {
@@ -67,7 +67,7 @@ sub EVENT_SIGNAL {
 sub EVENT_WAYPOINT_ARRIVE {
    if ($shawlsignal == 1) {
       $shawlsignal = 0;
-      plugin::DiaWind("Hrm? Who is scuffin' around out here?");
+      quest::say("Hrm? Who is scuffin' around out here?");
       quest::settimer("sigone",5);
       #quest::signalwith(110118, 2, 5);
    }

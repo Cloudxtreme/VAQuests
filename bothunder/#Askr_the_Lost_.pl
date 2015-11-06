@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-plugin::DiaWind("All to me!");
+quest::say("All to me!");
 quest::settimer(1,600);
 }
 

@@ -12,7 +12,7 @@ sub EVENT_ENTER {
 
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
-		plugin::DiaWind("Why, as I live and breathe this frigid air, have ye come to join our fine guild of berserkers?  The Bloodrage Brawlers are a fearsome collection of berserkers, indeed, me friend.  If ye be interested in joinin' up with us, read the note in yer inventory and then hand it to me!  Oh, and don't ye be forgetin' to ask me about that [tome] in yer inventory if ye want ta learn to use it!");
+		quest::say("Why, as I live and breathe this frigid air, have ye come to join our fine guild of berserkers?  The Bloodrage Brawlers are a fearsome collection of berserkers, indeed, me friend.  If ye be interested in joinin' up with us, read the note in yer inventory and then hand it to me!  Oh, and don't ye be forgetin' to ask me about that [tome] in yer inventory if ye want ta learn to use it!");
 	}
 	if($text =~/tome/i) {
 		my $Indent = plugin::PWIndent();
@@ -34,7 +34,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 36003 => 1)) {  # Frost-Covered Note
-		plugin::DiaWind("I was hoping ye would see the wisdom of joining our fine guild. Now before ye take off on some fool quest and get yerself killed, take this tunic -- it's not much, but it will keep yer bones from freezing and give you a wee bit o' protection. There's much to be done in and around our fine city. I suggest that ye talk to Haladorf over there. Ye best get to work! Come back and see me as you gain experience and I'll train ye in our way. Oh, and one more thing. You might be wonderin' what that Tome of Corroded Axe be for. Hand it to me and I will grant you your first skill with throwin axes!");
+		quest::say("I was hoping ye would see the wisdom of joining our fine guild. Now before ye take off on some fool quest and get yerself killed, take this tunic -- it's not much, but it will keep yer bones from freezing and give you a wee bit o' protection. There's much to be done in and around our fine city. I suggest that ye talk to Haladorf over there. Ye best get to work! Come back and see me as you gain experience and I'll train ye in our way. Oh, and one more thing. You might be wonderin' what that Tome of Corroded Axe be for. Hand it to me and I will grant you your first skill with throwin axes!");
 		quest::ding();
 		quest::summonitem(36009); # Furless Bearskin Tunic
 		quest::exp(100);        # Give exp for turning in quest

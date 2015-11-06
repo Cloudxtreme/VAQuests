@@ -3,19 +3,19 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Hello, $name. Would you be interested in assisting me in a special [task]?"); #Text made up
+    quest::say("Hello, $name. Would you be interested in assisting me in a special [task]?"); #Text made up
   }
   if($text=~/task/i) {
     if(($ulevel > 15) && ($ulevel < 25)) {
       if(quest::istaskactive(14)) {
-        plugin::DiaWind("Tour of the Castle is already in progress.");
+        quest::say("Tour of the Castle is already in progress.");
       }
       else {
         quest::taskselector(14); #Task: Tour of the Castle
       }
     }
     else {
-      plugin::DiaWind("I don't have any tasks suitable to one of your experience.");
+      quest::say("I don't have any tasks suitable to one of your experience.");
     }
   }
 }

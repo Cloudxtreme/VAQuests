@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i){
-    plugin::DiaWind("Traveler, you must help me. I have been tortured in this city for generations. The mark of Kylong adorns the walls of the theater that houses my remains. These markings are preventing me from passing into the theater and rejoining with my body so that I may pass on in peace. If you can reclaim four samples and return them to me, it may be enough to draw power from. With this power I will pass into the theater and rejoin my body and rest in peace. You do this for me, the torture of eternal capture is more than I can bear.");
+    quest::say("Traveler, you must help me. I have been tortured in this city for generations. The mark of Kylong adorns the walls of the theater that houses my remains. These markings are preventing me from passing into the theater and rejoining with my body so that I may pass on in peace. If you can reclaim four samples and return them to me, it may be enough to draw power from. With this power I will pass into the theater and rejoin my body and rest in peace. You do this for me, the torture of eternal capture is more than I can bear.");
   }
 }
 

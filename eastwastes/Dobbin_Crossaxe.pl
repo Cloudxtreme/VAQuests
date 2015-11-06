@@ -3,8 +3,8 @@ sub EVENT_SIGNAL {
 	if($signal == 1)
 	{
 	$ring_seven_final=1;
-	plugin::DiaWind("We thought it was too late, the Dain will be very pleased!");
-	plugin::DiaWind("Please friend, show me your Mithril ring and I will show you our gratitude.");
+	quest::say("We thought it was too late, the Dain will be very pleased!");
+	quest::say("Please friend, show me your Mithril ring and I will show you our gratitude.");
 	}
 
 	if($signal == 2)
@@ -17,7 +17,7 @@ sub EVENT_SIGNAL {
 sub EVENT_ITEM { 
 		if($itemcount{30162} == 1 && $ring_seven_final == 1){
 
-			plugin::DiaWind("Thank you. $name. your deeds will be mentioned to  the Dain. Please take this note from Corbin to Garadain. it may help him to achieve victory over the enemy.");
+			quest::say("Thank you. $name. your deeds will be mentioned to  the Dain. Please take this note from Corbin to Garadain. it may help him to achieve victory over the enemy.");
 			$ring_seven_final=undef;
 			quest::summonitem(1047);
 			quest::faction(49,5);

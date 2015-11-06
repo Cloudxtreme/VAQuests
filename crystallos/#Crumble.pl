@@ -26,7 +26,7 @@ my $Ulissa = quest::saylink("Ulissa", 1);
 
 	if ($text =~/ready/i)
 	{
-	plugin::DiaWind("Very well!");
+	quest::say("Very well!");
 	quest::settimer("golems",5);
 	quest::settimer("despawn",8);
 	quest::settimer("attack",8);

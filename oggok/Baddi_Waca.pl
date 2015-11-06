@@ -12,7 +12,7 @@ sub EVENT_ENTER {
 
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
-		plugin::DiaWind("You want join us?  Read dat note you have and den give to me.  I decide if you be strong enough to join us.  Umm...sumting else I supposed to tell you...Oh ya!  Ask me dat [tome] you have there in yer inventory.");
+		quest::say("You want join us?  Read dat note you have and den give to me.  I decide if you be strong enough to join us.  Umm...sumting else I supposed to tell you...Oh ya!  Ask me dat [tome] you have there in yer inventory.");
 	}
 	if($text =~/tome/i) {
 		my $Indent = plugin::PWIndent();
@@ -34,7 +34,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {  
 	if(plugin::check_handin(\%itemcount, 36001 =>1)) { #Gore-Splattered Note
-		plugin::DiaWind("Gud!  Gud!  Me gots some clothes for you.  Now that yous a Bonecutter, yous need to start choppins things.  Me gots a few friends dat needs help too.  If you want sumtin to do, talk to Ogomok over dere.  Come see me again when yous got some experience and are ready to learn more."); 
+		quest::say("Gud!  Gud!  Me gots some clothes for you.  Now that yous a Bonecutter, yous need to start choppins things.  Me gots a few friends dat needs help too.  If you want sumtin to do, talk to Ogomok over dere.  Come see me again when yous got some experience and are ready to learn more."); 
 		quest::summonitem(36007); # Torn Bonecutter Tunic
 		quest::ding();
 		quest::exp(100);

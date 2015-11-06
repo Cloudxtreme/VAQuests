@@ -8,9 +8,9 @@ sub EVENT_TIMER {
 
 sub EVENT_COMBAT {
 	if($combat_state == 1) {
-		plugin::DiaWind("Don't think you'll get away from me so easily!");
+		quest::say("Don't think you'll get away from me so easily!");
 	}
 	if($combat_state == 0) {
-		plugin::DiaWind("Serves you right, knave.  This is what happens to those who break the law.");
+		quest::say("Serves you right, knave.  This is what happens to those who break the law.");
 	}
 }

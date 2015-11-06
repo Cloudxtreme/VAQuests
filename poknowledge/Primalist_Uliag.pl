@@ -4,6 +4,6 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Hello $name!"); # TODO: update text
+    quest::say("Hello $name!"); # TODO: update text
   }
 }

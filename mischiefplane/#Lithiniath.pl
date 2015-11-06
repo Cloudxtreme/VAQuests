@@ -6,7 +6,7 @@ quest::emote("lowers his horn towards $name. The air around you begins to waver 
 }
 
 if($text=~/ph4t l3wtz/i) {
-plugin::DiaWind("Prince Thirneg of the Tunarean Court has amassed a vast supply of phat lewts! Perhaps you should ask him for some!");
+quest::say("Prince Thirneg of the Tunarean Court has amassed a vast supply of phat lewts! Perhaps you should ask him for some!");
 }
 
 }

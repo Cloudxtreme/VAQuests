@@ -9,7 +9,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 30856 => 1, 30853 => 3)){#The Champion's Cape, 3x Drop of Loda Kai Blood 
-		plugin::DiaWind("You are indeed a friend to us and have earned a place of high honor among our people and our four-legged cousins. Wear this robe with pride and none will ever doubt your conviction for the honor of the felidae.");
+		quest::say("You are indeed a friend to us and have earned a place of high honor among our people and our four-legged cousins. Wear this robe with pride and none will ever doubt your conviction for the honor of the felidae.");
 		quest::summonitem(30857);#Blessed Champion's Cape
 		quest::faction(132, 30);#Guardians of Shar Vahl faction
 	}

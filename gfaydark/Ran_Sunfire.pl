@@ -14,18 +14,18 @@ sub DoRandomPatchwork {
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Hail. $name! I trust you are not afraid of heights. Kelethin is a grand city. but it is also a safe haven from predators and evil beings. About the only thing to fear are the [pixie tricksters].");
+quest::say("Hail. $name! I trust you are not afraid of heights. Kelethin is a grand city. but it is also a safe haven from predators and evil beings. About the only thing to fear are the [pixie tricksters].");
 }
 if($text=~/pixie tricksters/i){
-plugin::DiaWind("An irritating lot of fairy folk. They have been starting fires in our great forest. They may just burn our grand community down. We will have to [exterminate the pixies]. It is unfortunate. but it is for the good of the entire forest.");
+quest::say("An irritating lot of fairy folk. They have been starting fires in our great forest. They may just burn our grand community down. We will have to [exterminate the pixies]. It is unfortunate. but it is for the good of the entire forest.");
 }
 if($text=~/exterminate the pixies/i){
-plugin::DiaWind("Faydark's Champions cannot call you foe. but you have yet to earn our trust."); }
+quest::say("Faydark's Champions cannot call you foe. but you have yet to earn our trust."); }
 }
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 12109 => 1)) {#Pouch of Pixie Dust
-		plugin::DiaWind("Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
+		quest::say("Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
 		&DoRandomPatchwork();
 		quest::givecash("0","2","0","0");
 		quest::faction(283, 10);#Scouts of Tunare

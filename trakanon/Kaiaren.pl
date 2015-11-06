@@ -3,10 +3,10 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("AHHH get it away from me go away .. leave me alone");
+    quest::say("AHHH get it away from me go away .. leave me alone");
   }
   if($text=~/celestial fists/i) {
-    plugin::DiaWind("Eh? What's that? Bah! That was destroyed long ago. Don't waste my time with fairy taAAAAAGGHHH GET IT AWAY!!!! HELP!!! They're all over MEHEHEHEHEEEEEEee!!");
+    quest::say("Eh? What's that? Bah! That was destroyed long ago. Don't waste my time with fairy taAAAAAGGHHH GET IT AWAY!!!! HELP!!! They're all over MEHEHEHEHEEEEEEee!!");
   }
 }
 
@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::spawn(95183,0,0,2470,306,-339); #Kaiaren (True)
   }
   elsif((plugin::check_handin(\%itemcount, 1684 => 1)) && ($ulevel>=46) && ($class=="Monk")) { #Charred Scale
-    plugin::DiaWind("Ahhh, impressive indeed! Now that you have broken the chain of the Fists, the others may come toppling down if you persevere. The Fist of Air is now the weakest, then Earth, and finally Water before the master of them all, Vorash. You must defeat them in order, proving the demise of the last to draw out the one you are after. The task before you now is to take this scale and show it to the Fist of Air wherever he may be. Good luck.");
+    quest::say("Ahhh, impressive indeed! Now that you have broken the chain of the Fists, the others may come toppling down if you persevere. The Fist of Air is now the weakest, then Earth, and finally Water before the master of them all, Vorash. You must defeat them in order, proving the demise of the last to draw out the one you are after. The task before you now is to take this scale and show it to the Fist of Air wherever he may be. Good luck.");
     quest::summonitem(1684); #Charred Scale
   }
   elsif((plugin::check_handin(\%itemcount, 1688 => 1, 1689 => 1)) && ($ulevel>=46) && ($class=="Monk")) { #Demon Fangs and Book of Celestial Fists
@@ -30,6 +30,6 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  plugin::DiaWind("Not bad.. Now lets see if you can find my trueform if you do we discuss this further.");
+  quest::say("Not bad.. Now lets see if you can find my trueform if you do we discuss this further.");
 }
 #EndFile trakanon\Kaiaren.pl (95105)

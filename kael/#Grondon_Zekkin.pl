@@ -1,5 +1,5 @@
 sub EVENT_AGGRO {
-  plugin::DiaWind("You have stuck yer nose where it don't belong fool, I'll show ya the error of yer ways!");
+  quest::say("You have stuck yer nose where it don't belong fool, I'll show ya the error of yer ways!");
 }
 
 sub EVENT_DEATH_COMPLETE {

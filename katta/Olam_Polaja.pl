@@ -1,12 +1,12 @@
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
-		plugin::DiaWind("Greetings stranger. A word of advice if I may. Don't get yourself suckered into a game of coppers with this woman. she has an iron gullet!"); 
+		quest::say("Greetings stranger. A word of advice if I may. Don't get yourself suckered into a game of coppers with this woman. she has an iron gullet!"); 
 	}
 }
 
 sub EVENT_SIGNAL {
 	if($signal == 1) {
-		plugin::DiaWind("All right you begin, I am going to beat you this time!");
+		quest::say("All right you begin, I am going to beat you this time!");
 		quest::signalwith(160219,1,8000);
 	}
 	if($signal == 2) {
@@ -37,7 +37,7 @@ sub EVENT_SIGNAL {
 		quest::signalwith(160219,8,8000);
 	}
 	if($signal == 9) {
-		plugin::DiaWind("I'll...be...fine....uhn..");
+		quest::say("I'll...be...fine....uhn..");
 		$npc->SetAppearance(3); 
 		$npc->SetAppearance(0);
 		quest::signal(160257,8000);

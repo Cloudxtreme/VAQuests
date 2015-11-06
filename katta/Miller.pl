@@ -1,25 +1,25 @@
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
-		plugin::DiaWind("Ho there.  Whatcha want?  Yer interruptin' Arboast's story- he was just in the middle of laying some truth on me."); 
+		quest::say("Ho there.  Whatcha want?  Yer interruptin' Arboast's story- he was just in the middle of laying some truth on me."); 
 	}
 }
 
 sub EVENT_SIGNAL {
 	if($signal == 1) {
-		plugin::DiaWind("Yeah, you tell 'em Arbogast!  I bet this one doesn't even know what's going on right under his nose in this here city.  Like for example, you probably don't even know the truth about about his importantness Phenic Dionicas do you?");
+		quest::say("Yeah, you tell 'em Arbogast!  I bet this one doesn't even know what's going on right under his nose in this here city.  Like for example, you probably don't even know the truth about about his importantness Phenic Dionicas do you?");
 	}
 	if($signal == 2) {
-		plugin::DiaWind("Yeah, splash it right in his unliving face!");
+		quest::say("Yeah, splash it right in his unliving face!");
 	}
 	if($signal == 3) {
-		plugin::DiaWind("Ooh! I know, I know!  Nathyn Illuminious!!!");
+		quest::say("Ooh! I know, I know!  Nathyn Illuminious!!!");
 		quest::signalwith(160112,1,2500);
 	}
 	if($signal == 4) {
 		quest::emote("beams a smile your way.");
 	}
 	if($signal == 5) {
-		plugin::DiaWind("A bloody, boldfaced lie!");
+		quest::say("A bloody, boldfaced lie!");
 		quest::signalwith(160112,2,2500);
 	}
 	if($signal == 6) {
@@ -34,7 +34,7 @@ sub EVENT_SIGNAL {
 		quest::signalwith(160112,5,2500);
 	}
 	if($signal == 9) {
-		plugin::DiaWind("Wait for me!");
+		quest::say("Wait for me!");
 		quest::spawn2(160376,26,0,$x,$y,$z,$h);
 		quest::depop_withtimer();
 	}

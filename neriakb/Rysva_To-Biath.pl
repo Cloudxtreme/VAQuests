@@ -3,19 +3,19 @@
 
 sub EVENT_SAY { 
 	if($text=~/hail/i){
-		plugin::DiaWind("Hello.  Let me know if I can get you a drink.");
+		quest::say("Hello.  Let me know if I can get you a drink.");
 	}
 }
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 18200 => 1)){#
-		plugin::DiaWind("Take this note and be gone with you.");
+		quest::say("Take this note and be gone with you.");
 		quest::summonitem(18201);#a note (book of Turmoil, Text: TomeOfAges2)
 		quest::faction(87, 10);#Dreadguard Inner
 		quest::faction(88, 10);#Dreadguard Outer
 		quest::faction(69, 10);#Dark Bargainers
 	}
 	elsif(plugin::check_handin(\%itemcount, 13846 => 1)){#Dark Elf Decapitated Head
-		plugin::DiaWind("Take this book and be gone with you.");
+		quest::say("Take this book and be gone with you.");
 		quest::summonitem(18202);#Book of Turmoil
 		quest::faction(87, 10);#Dreadguard Inner
 		quest::faction(88, 10);#Dreadguard Outer

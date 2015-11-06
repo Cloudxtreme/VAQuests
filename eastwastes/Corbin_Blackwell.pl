@@ -16,7 +16,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY { 
   if($text=~/hail/i && !defined($event_spawn) && !defined($ring_seven_start)) {
-    plugin::DiaWind("Hurry! There's not much time. Give me the key and show me proof that you are a friend sent to rescue me...");
+    quest::say("Hurry! There's not much time. Give me the key and show me proof that you are a friend sent to rescue me...");
   }
 }
 
@@ -25,7 +25,7 @@ sub EVENT_TIMER {
     quest::stoptimer(1);
     $event_spawn=1;			
     $ring_seven_start=undef;
-    plugin::DiaWind("Uh oh, looks like they were tipped off somehow... I hope you can handle them.");
+    quest::say("Uh oh, looks like they were tipped off somehow... I hope you can handle them.");
     quest::spawn2(116119, 0,0, $x, $y, $z, $h);
     quest::spawn2(116569, 0,0, -2139, 168, 150, 57);
     quest::depop_withtimer();
@@ -37,7 +37,7 @@ sub EVENT_TIMER {
     $final_path=undef;
     $turnin=1;
     quest::spawn2(116119, 0, 0, $x, $y, $z, 9);
-    plugin::DiaWind("I have escaped! With the help of our friends here I was saved from certain death. We are in their debt.");
+    quest::say("I have escaped! With the help of our friends here I was saved from certain death. We are in their debt.");
     quest::signalwith(116118, 1, 1000);
     quest::depop_withtimer();
   }
@@ -59,7 +59,7 @@ sub EVENT_TIMER {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1046 => 1, 30162 => 1) && !defined($ring_seven_start) && !defined($final_path)) {
-    plugin::DiaWind("I thought I was a dwarfskin rug there for a minute! Thank Brell for your help stranger! Now cover me while I make good my escape. I am weakened and cannot endure much more.");
+    quest::say("I thought I was a dwarfskin rug there for a minute! Thank Brell for your help stranger! Now cover me while I make good my escape. I am weakened and cannot endure much more.");
     quest::summonitem(30162);
     $ring_seven_start=1;
     $event_spawn=undef;

@@ -1,27 +1,27 @@
 sub EVENT_SAY {
  if ($text=~/Hail/i) {
-        plugin::DiaWind("You must have been speaking to Derron, a mightier cleric ye couldnt find. Except for Donal the Wise of course. So tell me are ye also a cleric like Derron?");
+        quest::say("You must have been speaking to Derron, a mightier cleric ye couldnt find. Except for Donal the Wise of course. So tell me are ye also a cleric like Derron?");
  }
  if($text =~ /I am a cleric/i) {
-	plugin::DiaWind("Ah then you must want the mask, cloak, gauntlets, talisman, girdle, and hammer that I be holdin'.");
+	quest::say("Ah then you must want the mask, cloak, gauntlets, talisman, girdle, and hammer that I be holdin'.");
  }
  if($text =~ /cloak/i) {
-	plugin::DiaWind("To get the cloak you must bring me a sky jewel, a mark of credence, a light etched fire opal, and a polished stone statuette.");
+	quest::say("To get the cloak you must bring me a sky jewel, a mark of credence, a light etched fire opal, and a polished stone statuette.");
  }
  if($text =~ /gauntlets/i) {
-	plugin::DiaWind("To get the gauntlets you must bring me a meteor jewel, a mark of piety, and a light etched opal.");
+	quest::say("To get the gauntlets you must bring me a meteor jewel, a mark of piety, and a light etched opal.");
  }
  if($text =~ /girdle/i) {
-	plugin::DiaWind("To get the girdle you must bring me a sun jewel, a mark of grace, a light etched diamond, and a dark eyed iris.");
+	quest::say("To get the girdle you must bring me a sun jewel, a mark of grace, a light etched diamond, and a dark eyed iris.");
  }
  if($text =~ /hammer/i) {
-	plugin::DiaWind("To get the hammer you must bring me a moon jewel, a mark of salvation, a light etched emerald, and the writ of distance.");
+	quest::say("To get the hammer you must bring me a moon jewel, a mark of salvation, a light etched emerald, and the writ of distance.");
  }
  if($text =~ /mask/i) {
-	plugin::DiaWind("To get the mask you must bring me a cloud jewel, a mark of hope, and a light etched star ruby.");
+	quest::say("To get the mask you must bring me a cloud jewel, a mark of hope, and a light etched star ruby.");
  }
  if($text =~ /talisman/i) {
-	plugin::DiaWind("To get the talisman you must bring me an astral jewel, a mark of affirmation, and a light etched peridot.");
+	quest::say("To get the talisman you must bring me an astral jewel, a mark of affirmation, and a light etched peridot.");
  }
 }
 

@@ -16,34 +16,34 @@
 
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
-	plugin::DiaWind("Hi Hi, Im one of master Vornol's four apprentices. My specialty is with all things concerning the element of air.");
+	quest::say("Hi Hi, Im one of master Vornol's four apprentices. My specialty is with all things concerning the element of air.");
  }
  if($text =~ /armor/i) {
-	plugin::DiaWind("You must have spoken with master Vornol. He has me keeping this armor for him and various tasks for those to do who wish to wear it. Tell me are you a magician?");
+	quest::say("You must have spoken with master Vornol. He has me keeping this armor for him and various tasks for those to do who wish to wear it. Tell me are you a magician?");
  }
  if($text =~ /i am a magician/i) {
-	plugin::DiaWind("Very good, the pieces that I have are the sandals, mask, cloak, gloves, choker, belt, and a staff.");
+	quest::say("Very good, the pieces that I have are the sandals, mask, cloak, gloves, choker, belt, and a staff.");
  }
  if($text =~ /sandals/i) {
-	plugin::DiaWind("For the sandals you must bring me an astral jewel, a talisman of wind, and a mark of aeration.");
+	quest::say("For the sandals you must bring me an astral jewel, a talisman of wind, and a mark of aeration.");
  }
  if($text =~ /mask/i) {
-	plugin::DiaWind("For the mask you must bring me a sun jewel, a talisman of earth, and a sack of shadowed soil.");
+	quest::say("For the mask you must bring me a sun jewel, a talisman of earth, and a sack of shadowed soil.");
  }
  if($text =~ /cloak/i) {
-	plugin::DiaWind("For the cloak you must bring me a moon jewel, a water idol, a water marked scroll, and a runed ring of water.");
+	quest::say("For the cloak you must bring me a moon jewel, a water idol, a water marked scroll, and a runed ring of water.");
  }
  if($text =~ /gloves/i) {
-	plugin::DiaWind("For the gloves you must bring me a star jewel, petrified bones, and a vial of dark earth.");
+	quest::say("For the gloves you must bring me a star jewel, petrified bones, and a vial of dark earth.");
  }
  if($text =~ /choker/i) {
-	plugin::DiaWind("For the choker you must bring me a cloud jewel, fiery gourd, and a flaming candle.");
+	quest::say("For the choker you must bring me a cloud jewel, fiery gourd, and a flaming candle.");
  }
  if($text =~ /belt/i) {
-	plugin::DiaWind("For the belt you must bring me a sky jewel, a vial of the morning mist, fastened links and a water etched wand.");
+	quest::say("For the belt you must bring me a sky jewel, a vial of the morning mist, fastened links and a water etched wand.");
  }
  if($text =~ /staff/i) {
-	plugin::DiaWind("For the staff you must me a meteor jewel, a fire etched wand, an earth etched wand, and an air etched wand.");
+	quest::say("For the staff you must me a meteor jewel, a fire etched wand, an earth etched wand, and an air etched wand.");
  }
 }
 

@@ -1,6 +1,6 @@
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6883 => 1)) {
-    plugin::DiaWind("Oh wow! A rabbits foot!! Thank you so much. Here take this, I won't need this smelly thing any more.");
+    quest::say("Oh wow! A rabbits foot!! Thank you so much. Here take this, I won't need this smelly thing any more.");
     quest::summonitem(3190);
     quest::faction(391,51);
     quest::exp(100);

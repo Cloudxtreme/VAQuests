@@ -1,18 +1,18 @@
 sub EVENT_SAY { 
 	if($text=~/hail/i){
-		plugin::DiaWind("Unless you intend to [make yourself useful], do not bother me.  I await the return of our Lord, Cazic-Thule.  He comes, and I shall be the first to greet Him.  I will train you, if need be, for He looks upon those who aid Him kindly.  If you are not here for training, return to your meditations or bother someone else.");
+		quest::say("Unless you intend to [make yourself useful], do not bother me.  I await the return of our Lord, Cazic-Thule.  He comes, and I shall be the first to greet Him.  I will train you, if need be, for He looks upon those who aid Him kindly.  If you are not here for training, return to your meditations or bother someone else.");
 	}
 	if($text=~/make myself useful/i){
-		plugin::DiaWind("One of our spies has reported a sighting of Malik Zaren, a courier of [the High Council].  He was seen resting at an inn called 'Golden Roosters' in High Pass Hold and is en route to Erudin Palace. He may be carrying a message containing information of great value to us.  Hunt him down and return to me with the letter he carries. I will reward you for this task.");
+		quest::say("One of our spies has reported a sighting of Malik Zaren, a courier of [the High Council].  He was seen resting at an inn called 'Golden Roosters' in High Pass Hold and is en route to Erudin Palace. He may be carrying a message containing information of great value to us.  Hunt him down and return to me with the letter he carries. I will reward you for this task.");
 	}
 	if($text=~/the high council/i){
-		plugin::DiaWind("The High Council is the governing board of Erudin, our sworn enemies.  Beware of these types, they will not look upon you warmly.");
+		quest::say("The High Council is the governing board of Erudin, our sworn enemies.  Beware of these types, they will not look upon you warmly.");
 	}
 }
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 12270 => 1)) { #sealed letter
-		plugin::DiaWind("Ah, excellent work.  I certainly had my doubts about you, $name.  Wear this well.");
+		quest::say("Ah, excellent work.  I certainly had my doubts about you, $name.  Wear this well.");
 		quest::ding();
 		quest::summonitem(quest::ChooseRandom(3040,3042,3043,3044,3046,3047,3048,3049,3050,3051)); #random blackened iron
 		quest::faction(143,5);  #Heretics

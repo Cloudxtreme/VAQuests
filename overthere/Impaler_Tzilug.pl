@@ -3,7 +3,7 @@
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10634 => 1)) {
-    plugin::DiaWind("Your bidding has been done, now leave this land and never return.");
+    quest::say("Your bidding has been done, now leave this land and never return.");
     quest::exp(10000);
     quest::summonitem(10621);
   }

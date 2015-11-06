@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if ($text=~/compromise/i) {
-    plugin::DiaWind("A compromise? Zabaltin has fought me in every request asking for help protecting the delivery caravans! I will never work with him. Say what is that in your hand? The label looks like it is a bottle of my favorite ale. It's from Zabaltin you say? Maybe he really is trying to work things out. Well then let's open the bottle and have a drink!");
+    quest::say("A compromise? Zabaltin has fought me in every request asking for help protecting the delivery caravans! I will never work with him. Say what is that in your hand? The label looks like it is a bottle of my favorite ale. It's from Zabaltin you say? Maybe he really is trying to work things out. Well then let's open the bottle and have a drink!");
   }
 }
 

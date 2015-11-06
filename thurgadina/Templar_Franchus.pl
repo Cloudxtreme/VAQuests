@@ -5,5 +5,5 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  plugin::DiaWind("Ok lads, remember what I taught you now. Thrust, block, slash...");
+  quest::say("Ok lads, remember what I taught you now. Thrust, block, slash...");
 }

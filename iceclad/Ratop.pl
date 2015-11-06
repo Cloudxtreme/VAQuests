@@ -1,6 +1,6 @@
 sub EVENT_SIGNAL {
   if ($signal == 1) {
-    plugin::DiaWind("Squawk! Pieces of eight! Pieces of eight!");
+    quest::say("Squawk! Pieces of eight! Pieces of eight!");
 
     my $mobid = $entity_list->GetMobByNpcTypeID(110053);
     if ($mobid) {
@@ -15,11 +15,11 @@ sub EVENT_SIGNAL {
     }
   }
   if ($signal == 2) {
-    plugin::DiaWind("We be out. You'll be needin to make more. Arg!");
+    quest::say("We be out. You'll be needin to make more. Arg!");
   }
     # shawl signal
   if ($signal == 101) {
-    plugin::DiaWind("Yar ye scruvy bearded dwarf, just over tha hill there.");
+    quest::say("Yar ye scruvy bearded dwarf, just over tha hill there.");
     quest::signalwith(110053,101,5); # signal Ritap
   } 
 }

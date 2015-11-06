@@ -13,7 +13,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  plugin::DiaWind("Please, somebody help me. This bear won't let me leave.");
+  quest::say("Please, somebody help me. This bear won't let me leave.");
   quest::emote("tries to hide from Bloodmaw deeper in the cave.");
   quest::clear_proximity();
   quest::depop();

@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Hellooo!!  My name is Jogl, master engineer with the Eldrithch Collective.  And this here is Charlotte.  Pay no mind to her, She won't bite unless you attack me.");
+    quest::say("Hellooo!!  My name is Jogl, master engineer with the Eldrithch Collective.  And this here is Charlotte.  Pay no mind to her, She won't bite unless you attack me.");
 	quest::signalwith(56108,1,1);
   }
 }
@@ -16,7 +16,7 @@ sub EVENT_WAYPOINT_ARRIVE{
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13209 =>1 )) {
-    plugin::DiaWind("Hmmm. Here you go. Take this log to Drekon Vebnebber. He is the in-house merchant at Gemchoppers Hall. It is his duty to file away all these logs.");
+    quest::say("Hmmm. Here you go. Take this log to Drekon Vebnebber. He is the in-house merchant at Gemchoppers Hall. It is his duty to file away all these logs.");
     quest::summonitem(quest::ChooseRandom(18837,18838));  #see not below
     quest::faction( 91,1 );
     quest::faction( 176,1 );

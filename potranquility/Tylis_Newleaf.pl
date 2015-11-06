@@ -2,7 +2,7 @@
 sub EVENT_SAY {
 	if ($pop_pot_saryrn == 1) {
 		if ($text=~/Hail/i) {
-			plugin::DiaWind("Thank you for rescuing me. I am forever in your debt. For now, I just need to recover.");
+			quest::say("Thank you for rescuing me. I am forever in your debt. For now, I just need to recover.");
 		}
 	}
 {

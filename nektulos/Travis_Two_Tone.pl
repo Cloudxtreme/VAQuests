@@ -7,19 +7,19 @@
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Hail, $name - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
+quest::say("Hail, $name - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
 }
 
 if($text=~/what mail/i){
-plugin::DiaWind("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices.  Are you [interested]?");
+quest::say("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices.  Are you [interested]?");
 }
 
 if($text=~/i am interested/i){
-plugin::DiaWind("I have messages that need to go to - well, right now I have one that needs to go to Freeport.  Will you [deliver] mail to [Freeport] for me?");
+quest::say("I have messages that need to go to - well, right now I have one that needs to go to Freeport.  Will you [deliver] mail to [Freeport] for me?");
 }
 
 if($text=~/deliver to Freeport/i){
-plugin::DiaWind("Take this letter to Felisity Starbright in Freeport.  You can find her at the bard guild hall.  I am sure she will compensate you for your troubles."); 
+quest::say("Take this letter to Felisity Starbright in Freeport.  You can find her at the bard guild hall.  I am sure she will compensate you for your troubles."); 
 quest::summonitem("18158");
 }
 

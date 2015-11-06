@@ -9,12 +9,12 @@ sub EVENT_SAY
 		}
 		
 		elsif($text=~/prepared/i) {
-			plugin::DiaWind("Very well. When you are ready, you may begin the trial of stoning. The archers will not cease their punishment until nothing else stands. Do not let the prisoners take more than they can bear. We shall judge the mark of your success.");
+			quest::say("Very well. When you are ready, you may begin the trial of stoning. The archers will not cease their punishment until nothing else stands. Do not let the prisoners take more than they can bear. We shall judge the mark of your success.");
 		}
 	
 		elsif($text=~/begin the trial of stoning/i) {
 			if (!defined $stoning) {
-				plugin::DiaWind("Then begin.");
+				quest::say("Then begin.");
 				#Cast Penance of Stone 
 				$npc->CastSpell(1128, $userid);
 				quest::settimer(501,30);
@@ -25,12 +25,12 @@ sub EVENT_SAY
 			else {
 				if (($stoning > 0) && ($stoning < 6)) {
 					$npc->CastSpell(1128, $userid);
-					plugin::DiaWind("Then begin.");		
+					quest::say("Then begin.");		
 					$stoning++;
 				}
 				
 				else {
-					plugin::DiaWind("I'm sorry, the Trial of Stoning is currently unavilable to you.");
+					quest::say("I'm sorry, the Trial of Stoning is currently unavilable to you.");
 				}
 			}
 		}

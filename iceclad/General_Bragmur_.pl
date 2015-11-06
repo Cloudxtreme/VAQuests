@@ -9,7 +9,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 8897 => 1)) {
     # Expedition Orders
-    plugin::DiaWind("The final orders, follow me closely! I pray that the Kromrif have not learned of our plans to allign with the gnomes.");
+    quest::say("The final orders, follow me closely! I pray that the Kromrif have not learned of our plans to allign with the gnomes.");
     my $x = $npc->GetX();
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
@@ -23,20 +23,20 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
    # 10 is from the Avatar that the shawl was handed in
    if ($signal == 10) {
-      plugin::DiaWind("I must go tell the Dain of these events immediately!");
+      quest::say("I must go tell the Dain of these events immediately!");
       quest::signalwith(110069, 10, 1000);
       quest::settimer("bragmur4", 5);
    }
    elsif($signal == 2) {
-      plugin::DiaWind("Greetings Captain Nalot, I have come to you with a proposition to make.");
+      quest::say("Greetings Captain Nalot, I have come to you with a proposition to make.");
       quest::signalwith(110069, 3, 1000);
    }
    elsif($signal == 3) {
-      plugin::DiaWind("Well ya see sir, we have a surplus of Velium that we would not mind sharing with you for yer tinkerin' but would ask a favor in return for it.");
+      quest::say("Well ya see sir, we have a surplus of Velium that we would not mind sharing with you for yer tinkerin' but would ask a favor in return for it.");
       quest::signalwith(110069, 4, 1000);
    }
    elsif($signal == 4) {
-      plugin::DiaWind("I represent the Dain in this matter, we would like for you to use yer Icebreaker there to head to Antonica and bring reinforcements for the war that is preparing to ensue. We are needin' all the help we can get against the Kromrif.");
+      quest::say("I represent the Dain in this matter, we would like for you to use yer Icebreaker there to head to Antonica and bring reinforcements for the war that is preparing to ensue. We are needin' all the help we can get against the Kromrif.");
       quest::settimer("bragmur3", 3);
    }
 }
@@ -91,7 +91,7 @@ sub EVENT_WAYPOINT_ARRIVE {
    }
    # Hail gnome camp
    elsif($wp eq "91") {
-      plugin::DiaWind("Lo there gnomes! Tell me is your camp nearby?");
+      quest::say("Lo there gnomes! Tell me is your camp nearby?");
       # signal Ratop
       quest::signalwith(110052, 101, 500);
    }

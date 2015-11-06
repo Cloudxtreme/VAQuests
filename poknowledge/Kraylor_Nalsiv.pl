@@ -3,10 +3,10 @@
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
-		plugin::DiaWind("Greetings $name! I've heard tell of powerful items unique to your profession. If you happen to come into possession of one [return] to me and tell me the tale behind it.");
+		quest::say("Greetings $name! I've heard tell of powerful items unique to your profession. If you happen to come into possession of one [return] to me and tell me the tale behind it.");
 	}
 	else {
-		plugin::DiaWind("Hmmm, it doesn't look like you have any items I haven't seen before.");
+		quest::say("Hmmm, it doesn't look like you have any items I haven't seen before.");
 	}
 }
 

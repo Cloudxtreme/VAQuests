@@ -2,12 +2,12 @@
 
 sub EVENT_SAY {
  if($text=~/hail/i){
-  plugin::DiaWind("That took you long enough. Well then, are you ready to prove your agility to me?");
+  quest::say("That took you long enough. Well then, are you ready to prove your agility to me?");
   }
 }
 
 sub EVENT_DEATH_COMPLETE {
- plugin::DiaWind("You have come into your own. Spread the pain you have shown me to all of your foes.");
+ quest::say("You have come into your own. Spread the pain you have shown me to all of your foes.");
 }
 
 #Submitted by Jim Mills

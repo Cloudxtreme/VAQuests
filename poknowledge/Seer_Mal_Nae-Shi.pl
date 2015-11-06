@@ -8,7 +8,7 @@ if($text=~/Hail/i) {
 
 
 
-		plugin::DiaWind("Greetings, $name. I can provide you information upon your travels through the planes by [guided meditation].");
+		quest::say("Greetings, $name. I can provide you information upon your travels through the planes by [guided meditation].");
 
 		}
 

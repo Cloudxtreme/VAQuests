@@ -9,7 +9,7 @@
 sub EVENT_SAY
 {
   if($text=~/hail/i){ 
-plugin::DiaWind("Come to look at my animals, have you? I have managed to capture and 
+quest::say("Come to look at my animals, have you? I have managed to capture and 
 
 train some of the finest specimens in all of Norrath. Do you have any [skill with 
 
@@ -17,7 +17,7 @@ animals] yourself?");
   }
   if($text=~/skill with animals/i)
   {
-  plugin::DiaWind("Those blasted Trolls caused me to lose one of my finest specimens! I 
+  quest::say("Those blasted Trolls caused me to lose one of my finest specimens! I 
 
 had captured a beautiful giant water moccasin while studying the swamplands. I did 
 
@@ -27,7 +27,7 @@ her.");
   }
   if($text=~/snake/i)
   {
-  plugin::DiaWind("There was a band of Troll invaders moving through our supply line one 
+  quest::say("There was a band of Troll invaders moving through our supply line one 
 
 day, while I was attempting to calm one of the spiderlings they struck. My crates 
 
@@ -41,7 +41,7 @@ surroundings that I find myself lacking the time to go [look for her].");
   }
   if($text=~/look for her/i)
   {
-plugin::DiaWind("She answers to the name of Sethena when she is in the mood. She wore a 
+quest::say("She answers to the name of Sethena when she is in the mood. She wore a 
 
 trinket around her neck that she was rather fond of. If you could bring her back to 
 
@@ -57,7 +57,7 @@ sub EVENT_ITEM
 {
 if(plugin::check_handin(\%itemcount, 54001 => 1))
   {
-  plugin::DiaWind("Alas, my poor Sethena! Thank you for this trinket, $name. Please, take 
+  quest::say("Alas, my poor Sethena! Thank you for this trinket, $name. Please, take 
 
 this as a token of my gratitude.");
   quest::ding();

@@ -1,12 +1,12 @@
 sub EVENT_SAY { 
   if($text=~/hail/i){
-    plugin::DiaWind("Welcome $name! Have you been sent to speak with me by [Captain Alim]?");
+    quest::say("Welcome $name! Have you been sent to speak with me by [Captain Alim]?");
   }
   if($text=~/captain alim/i){
-    plugin::DiaWind("Excellent, I presume you wish to speak with me about the [Firefall Club]?");
+    quest::say("Excellent, I presume you wish to speak with me about the [Firefall Club]?");
   }
   if($text=~/firefall club/i){
-    plugin::DiaWind("If you provide me with three firefall claws, and a wooden practice flail, I am able to fashion them together into a Firefall Claw Club, for you to use.");
+    quest::say("If you provide me with three firefall claws, and a wooden practice flail, I am able to fashion them together into a Firefall Claw Club, for you to use.");
   }
 }
 

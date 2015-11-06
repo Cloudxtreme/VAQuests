@@ -2,61 +2,61 @@ sub EVENT_SAY {
 
  if($text =~ /Hail/i) {
 
-   plugin::DiaWind("Hey there!");
+   quest::say("Hey there!");
 
  }
 
  if($text =~ /armor/i) {
 
-   plugin::DiaWind("Oh, youve decided your going to help Lara out with her visions? If so I can reward you with armor if you happen to be an enchanter.");
+   quest::say("Oh, youve decided your going to help Lara out with her visions? If so I can reward you with armor if you happen to be an enchanter.");
 
  }
 
  if($text =~ /I am an enchanter/i) {
 
-   plugin::DiaWind("I have the sandals, mask, cloak, gloves, choker, belt, and staff. ");
+   quest::say("I have the sandals, mask, cloak, gloves, choker, belt, and staff. ");
 
  }
 
  if($text =~ /sandals/i) {
 
-   plugin::DiaWind("For the sandals you must get for me a meteor jewel, a mark of refinement, and a hope onyx.");
+   quest::say("For the sandals you must get for me a meteor jewel, a mark of refinement, and a hope onyx.");
 
  }
 
  if($text =~ /mask/i) {
 
-   plugin::DiaWind("For the mask you must get for me an astral jewel, a mark of charm, and a hope pearl.");
+   quest::say("For the mask you must get for me an astral jewel, a mark of charm, and a hope pearl.");
 
  }
 
  if($text =~ /cloak/i) {
 
-   plugin::DiaWind("For the cloak you must get for me a sun jewel, a mark of desire, a hope diamond, and a tarnished silver nugget.");
+   quest::say("For the cloak you must get for me a sun jewel, a mark of desire, a hope diamond, and a tarnished silver nugget.");
 
  }
 
  if($text =~ /gloves/i) {
 
-   plugin::DiaWind("For the gloves you must get for me a moon jewel, a mark of intellect, and a tarnished gold nugget.");
+   quest::say("For the gloves you must get for me a moon jewel, a mark of intellect, and a tarnished gold nugget.");
 
  }
 
  if($text =~ /choker/i) {
 
-   plugin::DiaWind("For the choker you must get for me a star jewel, a mark of thought, and a tarnished platinum nugget.");
+   quest::say("For the choker you must get for me a star jewel, a mark of thought, and a tarnished platinum nugget.");
 
  }
 
  if($text =~ /belt/i) {
 
-   plugin::DiaWind("For the belt you must get for me a cloud jewel, a mark of reason, a tarnished electrum nugget, and a friendship bracelet.");
+   quest::say("For the belt you must get for me a cloud jewel, a mark of reason, a tarnished electrum nugget, and a friendship bracelet.");
 
  }
 
 if($text =~ /staff/i) {
 
-   plugin::DiaWind("For the staff you must get for me a sky jewel, a mark of mind, an enchanted bundle of wood, and a shadow crystal.");
+   quest::say("For the staff you must get for me a sky jewel, a mark of mind, an enchanted bundle of wood, and a shadow crystal.");
 
  }
 

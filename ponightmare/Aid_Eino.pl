@@ -4,7 +4,7 @@ my $wave;
 
 sub EVENT_SPAWN {
   $wave = 0;
-  plugin::DiaWind("Well, well! I was not sure if you would show. I hope you and your friends are strong enough to help me while I search for these new research components.");
+  quest::say("Well, well! I was not sure if you would show. I hope you and your friends are strong enough to help me while I search for these new research components.");
   quest::emote("looks around. 'Looks like the way is safe. Let's go before we are noticed by the creatures of the night.'");
   quest::start(124);
 }
@@ -87,7 +87,7 @@ sub EVENT_WAYPOINT_ARRIVE {
     $wave = 4;
   }
   if ($wp == 25) {
-    plugin::DiaWind("What a tiring evening. Perhaps we should rest here for a while?");
+    quest::say("What a tiring evening. Perhaps we should rest here for a while?");
     $npc->SetAppearance(1);
   }
   if (($wp == 26) && ($wave == 4)) {
@@ -98,24 +98,24 @@ sub EVENT_WAYPOINT_ARRIVE {
     $wave = 5;
   }
   if ($wp == 27) {
-    plugin::DiaWind("We made it! No doubt I could not have made it without you. Did you find something useful during our trip? May I have it?");
+    quest::say("We made it! No doubt I could not have made it without you. Did you find something useful during our trip? May I have it?");
   }
 }
 
 sub EVENT_WAYPOINT_DEPART {
   if ($wp == 25) {
-    plugin::DiaWind("We should get moving.");
+    quest::say("We should get moving.");
     $npc->SetAppearance(0);
   }
   if ($wp == 27) {
-    plugin::DiaWind("I must leave this place now.");
+    quest::say("I must leave this place now.");
     quest::depop();
   }
 }
 
 sub EVENT_ITEM {
   if (($x == 1690) && ($y == 285) && ($wave == 5) && plugin::check_handin(\%itemcount, 16261 => 1)) {
-    plugin::DiaWind("Excellent work, $name. That is exactly why I came to this dreadful place. Thank you for your help. Here, take this. I must get back to the Plane of Knowledge. Come and see me when you get a chance.");
+    quest::say("Excellent work, $name. That is exactly why I came to this dreadful place. Thank you for your help. Here, take this. I must get back to the Plane of Knowledge. Come and see me when you get a chance.");
     quest::summonitem(16260); #Tiny Gold Fist
     quest::setglobal("AidEinoDone",1,5,"F");
     quest::depop();

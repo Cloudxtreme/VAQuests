@@ -4,17 +4,17 @@ sub EVENT_SPAWN {
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp==21) {
-		plugin::DiaWind("Yup yup, I definitely know the way from here.");
+		quest::say("Yup yup, I definitely know the way from here.");
 	}
 	if($wp==36) {
-		plugin::DiaWind("Ahhh, home at last.");
+		quest::say("Ahhh, home at last.");
 		quest::signalwith(155041,1,10);
 	}
 }
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		plugin::DiaWind("Daddy I'm sleepy, could you come tuck me in ?");
+		quest::say("Daddy I'm sleepy, could you come tuck me in ?");
 		quest::signalwith(155340,1,10);
                 $npc->SetAppearance(3);
 	}

@@ -7,11 +7,11 @@ sub EVENT_SAY {
 }
 
 sub EVENT_AGGRO {  
-  plugin::DiaWind("Die by the power of Greenmist!!");
+  quest::say("Die by the power of Greenmist!!");
 }
 
 sub EVENT_DEATH_COMPLETE {
-  plugin::DiaWind("You shall now be a wanted man.. The Union of Vie shall punish you.");
+  quest::say("You shall now be a wanted man.. The Union of Vie shall punish you.");
 }
 
 #Submitted by Jim Mills

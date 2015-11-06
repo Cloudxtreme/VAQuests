@@ -1,12 +1,12 @@
 sub EVENT_SPAWN {
   my $talk1=undef;
-  plugin::DiaWind("It is worse than I thought. Not only are they prepared for an attack, but they have the Kromrif here to help them. Our steel will be tested today. Be sure not to show the troops any fear.");
+  quest::say("It is worse than I thought. Not only are they prepared for an attack, but they have the Kromrif here to help them. Our steel will be tested today. Be sure not to show the troops any fear.");
   quest::pause(2);
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1092 => 1)) {
-    plugin::DiaWind("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
+    quest::say("Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you ever stop in our fine city. Farewell, $name, it has been my pleasure knowing you.");
     quest::summonitem(30164);
 #Factions: +Coldain, +Dain Frostreaver IV, -Kromrif, -Kromzek
     quest::faction(49,30);
@@ -34,38 +34,38 @@ sub EVENT_WAYPOINT_DEPART {
 sub EVENT_TIMER {
   if($timer == 30) {
     quest::stoptimer(30);
-    plugin::DiaWind("TROOPS! FALL IN!!");
+    quest::say("TROOPS! FALL IN!!");
     quest::settimer(31,10);
   }
   elsif($timer == 31) {
     quest::stoptimer(31);
-    plugin::DiaWind("Listen up men!");
+    quest::say("Listen up men!");
     quest::settimer(32,20);
   }
   elsif ($timer == 32) {
     quest::stoptimer(32);
-    plugin::DiaWind("You all know why we're here. For decades these savages have menaced our people. Recent events have been too much to bear and the Dain has declared war! We will stop at nothing short of the Ry`gorr's annihilation!");
+    quest::say("You all know why we're here. For decades these savages have menaced our people. Recent events have been too much to bear and the Dain has declared war! We will stop at nothing short of the Ry`gorr's annihilation!");
     quest::settimer(33,20);
   }
   elsif($timer == 33) {
     quest::stoptimer(33);
-    plugin::DiaWind("No longer will we tolerate their heathen presence in our lands! Never again will we mourn the loss of a Coldain to these pawns of the Kromrif! Our deeds here today shall make this land safe for Coldain for all time!");
+    quest::say("No longer will we tolerate their heathen presence in our lands! Never again will we mourn the loss of a Coldain to these pawns of the Kromrif! Our deeds here today shall make this land safe for Coldain for all time!");
     quest::settimer(34,20);
   }
   elsif($timer == 34) {
     quest::stoptimer(34);
-    plugin::DiaWind("Today the Ry`gorr fall! Tomorrow the Kromrif!!");
-    plugin::DiaWind("Fall out men!!");
+    quest::say("Today the Ry`gorr fall! Tomorrow the Kromrif!!");
+    quest::say("Fall out men!!");
     quest::settimer(35,45);
   }
   elsif($timer == 35) {
     quest::stoptimer(35);
-    plugin::DiaWind("Stay back from the initial charge, my friend. We will go directly for the chief once the troops are engaged. Follow me closely!");
+    quest::say("Stay back from the initial charge, my friend. We will go directly for the chief once the troops are engaged. Follow me closely!");
     quest::settimer(36,30);
   }
   elsif($timer == 36) {
     quest::stoptimer(36);
-    plugin::DiaWind("For the Glory of Thurgadin! CHARGE!!");
+    quest::say("For the Glory of Thurgadin! CHARGE!!");
     quest::settimer(37,65);
   }
   elsif($timer == 37) {

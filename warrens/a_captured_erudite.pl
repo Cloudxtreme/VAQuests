@@ -12,13 +12,13 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("bats her eye lashes seductively.");
-    plugin::DiaWind("I would be immensely pleased if someone would free me from these shackles.");
+    quest::say("I would be immensely pleased if someone would free me from these shackles.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6923 => 1)) {
-    plugin::DiaWind("I thank you for freeing me from my dog faced captors.");
+    quest::say("I thank you for freeing me from my dog faced captors.");
     quest::exp(300);
     quest::depop_withtimer();
   }

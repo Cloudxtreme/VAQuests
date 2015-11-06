@@ -7,6 +7,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	plugin::DiaWind("DAMN YOU CHARLIE BROWN! YOU RATTED ME OUT!");
+	quest::say("DAMN YOU CHARLIE BROWN! YOU RATTED ME OUT!");
 	quest::signalwith(20260,6);
 }

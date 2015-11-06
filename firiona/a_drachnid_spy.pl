@@ -4,7 +4,7 @@ sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote("looks upon you with evil eyes and you hear a horrid chatter. Hairs rise from the spider's thorax. 'Greetings, creature. What a fine meal you would make!'");
   quest::attack($name);
-  plugin::DiaWind("You shall not take the tome from me!! I shall snack upon your blood-drained corpse.");
+  quest::say("You shall not take the tome from me!! I shall snack upon your blood-drained corpse.");
   }
 }
 

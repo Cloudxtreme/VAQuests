@@ -9,13 +9,13 @@
 
 sub EVENT_SAY { 
   if($text=~/Hail/i) {
-    plugin::DiaWind("Greetings, $name.  I hope you are having a fine day.");
+    quest::say("Greetings, $name.  I hope you are having a fine day.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20532 => 1)) {
-    plugin::DiaWind("Run onward, my friend, to the far off Desert of Ro and give this torch to Andad Filla.");
+    quest::say("Run onward, my friend, to the far off Desert of Ro and give this torch to Andad Filla.");
     quest::summonitem(20533);
   }
   plugin::return_items(\%itemcount);

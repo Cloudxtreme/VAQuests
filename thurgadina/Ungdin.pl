@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Uuuuhhh, how goes it, $race? Oh, I'm doin' jest fine down here, just hanging around... Mining! Yes mining for our fearless leader, the Dain. Yessiree... sssoooooo...");
+    quest::say("Uuuuhhh, how goes it, $race? Oh, I'm doin' jest fine down here, just hanging around... Mining! Yes mining for our fearless leader, the Dain. Yessiree... sssoooooo...");
   }
 }
 

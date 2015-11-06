@@ -10,7 +10,7 @@ sub EVENT_TIMER {
 sub EVENT_SIGNAL {
 	if($signal == 1) {
 		quest::start(3);
-		plugin::DiaWind("Johanius my love! You and your companions have rescued us from those horrible creatures!");
+		quest::say("Johanius my love! You and your companions have rescued us from those horrible creatures!");
 	}
 	if($signal == 2) {
 		quest::depop();
@@ -19,6 +19,6 @@ sub EVENT_SIGNAL {
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp == 21) {
-		plugin::DiaWind("We will see you at home Johanius, please hurry.");
+		quest::say("We will see you at home Johanius, please hurry.");
 	}
 }

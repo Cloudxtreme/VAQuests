@@ -7,12 +7,12 @@
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Hail. $name - If you are interested in helping the League of Antonican Bards by delivering some mail then you should talk to Idia."); }
+quest::say("Hail. $name - If you are interested in helping the League of Antonican Bards by delivering some mail then you should talk to Idia."); }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18161 => 1)) {
-    plugin::DiaWind("Incoming mail - very good!  Please take this gold for your troubles.");
+    quest::say("Incoming mail - very good!  Please take this gold for your troubles.");
     quest::givecash(0,0,quest::ChooseRandom(3,4,5,6),0);
     quest::exp(50);
     quest::faction(192,10); #league of antonican bards
@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   }
   
   if(plugin::check_handin(\%itemcount, 18160 => 1) || plugin::check_handin(\%itemcount, 18162 => 1) || plugin::check_handin(\%itemcount, 18163 => 1)) {
-    plugin::DiaWind("Incoming mail - very good!  Please take this gold for your troubles.");
+    quest::say("Incoming mail - very good!  Please take this gold for your troubles.");
     quest::givecash(0,0,quest::ChooseRandom(6,7,8,9),0);
     quest::exp(80);
     quest::faction(192,10); #league of antonican bards

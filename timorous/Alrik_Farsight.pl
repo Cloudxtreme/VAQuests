@@ -4,29 +4,29 @@
 sub EVENT_SAY {
   if ($faction < 5) { #amiable or better Keepers of the Art
     if ($text=~/hail/i) {
-      plugin::DiaWind("Ah. Hello there, adventurer. Come to search for ancient artifacts with Fizzlebik and myself?");
+      quest::say("Ah. Hello there, adventurer. Come to search for ancient artifacts with Fizzlebik and myself?");
     }
     if ($text=~/ancient artifact/i) {
-      plugin::DiaWind("Oh. All types of things. This area is great. So many artifacts and remains of things all over. It's starting to fall into the pattern of things.");
+      quest::say("Oh. All types of things. This area is great. So many artifacts and remains of things all over. It's starting to fall into the pattern of things.");
     }
     if ($text=~/ancient bowl/i) {
       quest::emote("rummages through his tattered bag and throws aside a towel. 'Too many towels. Oh well, someone told me they were good to have once. Here it is, a bowl pattern. Interesting bowl. Looks almost like a magical bowl but I'm no potter. You need it, you say? Well, it is interesting. Part of my research here is for the wizard guild in Felwithe. I'm sure they'd put a high price on this one, the enchanters guild being so interested in trading for magical paraphernalia and all. Of course if you helped me out on a chore I have, I'd be happy to give it to you. I need to deliver an artifact to the guild and I'd much rather stay here exploring. If you wish, you can take the artifact and return with the receipt and I'll give you the pattern.'");
     }
     if ($text=~/take the artifact/i) {
-      plugin::DiaWind("Hah! Okay, then. Here take this to Farios Elianos in Felwithe. He will give you the receipt.");
+      quest::say("Hah! Okay, then. Here take this to Farios Elianos in Felwithe. He will give you the receipt.");
       quest::summonitem(20457);
     }
   }
   if ($faction > 4) {
 	my $random = int(rand(3));
 	if ($random == 0) {
-		plugin::DiaWind("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.");
+		quest::say("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.");
 	}
 	if ($random == 1) {
-		plugin::DiaWind("Is that your BREATH, or did something die in here?  Now go away!");
+		quest::say("Is that your BREATH, or did something die in here?  Now go away!");
 	}
 	if ($random == 2) {
-		plugin::DiaWind("I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.");
+		quest::say("I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.");
 	}
   }
 }
@@ -47,7 +47,7 @@ sub EVENT_ITEM {
 sub EVENT_WAYPOINT_ARRIVE {
 
 	if ($wp == 8) {
-		plugin::DiaWind("Hey there again, Xib!  Still a great day, isn't it?");
+		quest::say("Hey there again, Xib!  Still a great day, isn't it?");
 		quest::signalwith(96035,1,30);
 	}
 	if ($wp == 14) {
@@ -56,7 +56,7 @@ sub EVENT_WAYPOINT_ARRIVE {
 }
 
 sub EVENT_SIGNAL {
-	plugin::DiaWind("What was that, Xib?");
+	quest::say("What was that, Xib?");
 	quest::signalwith(96035,3,30);
 }
 

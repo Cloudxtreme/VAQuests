@@ -4,13 +4,13 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::signalwith(160208,100,0);
-    plugin::DiaWind("Sure'n this one came from Norrath, eh Tack? One wonders if'n a bottle o' one on o' the finer things in life might be in our 
+    quest::say("Sure'n this one came from Norrath, eh Tack? One wonders if'n a bottle o' one on o' the finer things in life might be in our 
 
 future, if we were to ask politely?");
     quest::signalwith(160208,101,0);
   }
   if ($text=~/share a pint/i) {
-    plugin::DiaWind("That'd be great! By Brell, a short beer or a honey mead'd be a nice change from?");
+    quest::say("That'd be great! By Brell, a short beer or a honey mead'd be a nice change from?");
     quest::signalwith(160208,102,0);
   }
   if ($text=~/trouble/i) {

@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("There is rumor that a young N`Ogard is lost in the maze. Perhaps you should go find the father and see if you can help.");
+    quest::say("There is rumor that a young N`Ogard is lost in the maze. Perhaps you should go find the father and see if you can help.");
   }
 }
 

@@ -16,38 +16,38 @@ quest::emote("works at skinning and cleaning the raw furs around him.");
 
 if($text=~/what armor/i){
 
-plugin::DiaWind("Many armors.  All of animal hides from the islands.  If you wanting armor then I can make for you.  All I ask is you do me favor."); 
+quest::say("Many armors.  All of animal hides from the islands.  If you wanting armor then I can make for you.  All I ask is you do me favor."); 
 }
 
 if($text=~/what favor/i){
 
-plugin::DiaWind("Snowfangs in need of much help lately.  Once we mighty but now weak.  You help us get stronger.  If you want armor of wolves or cougar then I need you bring twice as many materials.  For each thing you wanting I need thing.  Just tell me what furs you have and I tell you what I need."); 
+quest::say("Snowfangs in need of much help lately.  Once we mighty but now weak.  You help us get stronger.  If you want armor of wolves or cougar then I need you bring twice as many materials.  For each thing you wanting I need thing.  Just tell me what furs you have and I tell you what I need."); 
 }
 
 if($text=~/medium quality dire wolf fur/i){ 
 
-plugin::DiaWind("Good wolf fur I make you cloak.  All it take for cloak is fur and skinning rock.  I need two skinning rock though.  I very low on rocks."); 
+quest::say("Good wolf fur I make you cloak.  All it take for cloak is fur and skinning rock.  I need two skinning rock though.  I very low on rocks."); 
 
 }
 
 if($text=~/low quality dire wolf fur/i){  
 
-plugin::DiaWind("Bad fur I make into cap for head.  Keep your small furless skull warm.  You bring me two bark bindings for that.  Bindings for sewing."); 
+quest::say("Bad fur I make into cap for head.  Keep your small furless skull warm.  You bring me two bark bindings for that.  Bindings for sewing."); 
 }
 
 #if($text=~/low quality cougarskin/i){ # Cougarskin Sleeves - Not in DB yet.
 
-#plugin::DiaWind("More cat skin. You bring more meat but this time bring fatty walrus meat.  Many gnolls need for winter fat.  Keeps gnolls healthy."); 
+#quest::say("More cat skin. You bring more meat but this time bring fatty walrus meat.  Many gnolls need for winter fat.  Keeps gnolls healthy."); 
 #}
 
 if($text=~/medium quality cougarskin/i){ 
 
-plugin::DiaWind("Grrrrr.  More cat.  All I need for this is cutting shells.  We not get them much but I need."); 
+quest::say("Grrrrr.  More cat.  All I need for this is cutting shells.  We not get them much but I need."); 
 }
 
 if($text=~/high quality cougarskin/i){
 
-plugin::DiaWind("I not like making things of cat fur.  Smells bad, hurts nose.  You want me to work with that you bring food, lots of food.  You bring me mammoth meats."); 
+quest::say("I not like making things of cat fur.  Smells bad, hurts nose.  You want me to work with that you bring food, lots of food.  You bring me mammoth meats."); 
 
 }
 }

@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
   if($text=~/hail/i) { 
-    plugin::DiaWind("Greetings and welcome to Thurgadin, $name. Ye best watch yer step on the bridge there, it can be a bit slippery."); 
+    quest::say("Greetings and welcome to Thurgadin, $name. Ye best watch yer step on the bridge there, it can be a bit slippery."); 
     if (defined($entity_list->IsMobSpawnedByNpcTypeID(115132))) { #Make sure the mob is there or you get an undefined error. 
        $entity_list->GetMobByNpcTypeID(115132)->Say("Aye, we wouldn't want ye fallin into the pit now would we."); #Make Guard Baldvin also talk. 
     } 

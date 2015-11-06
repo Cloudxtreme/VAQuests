@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Move along.");
+    quest::say("Move along.");
   }
 }
 

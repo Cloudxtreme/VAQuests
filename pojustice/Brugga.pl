@@ -9,12 +9,12 @@ sub EVENT_SAY
 		}
 		elsif($text=~/Rare disease/i)
 		{
-			plugin::DiaWind("You have someone that needs killing, or someone that needs saving? It not matter to Brugga, but you smell of a hero, so Brugga think there someone need saving. Well Brugga have time, so you give Brugga the disease and Brugga see.", 19);
+			quest::say("You have someone that needs killing, or someone that needs saving? It not matter to Brugga, but you smell of a hero, so Brugga think there someone need saving. Well Brugga have time, so you give Brugga the disease and Brugga see.", 19);
 		}
 	}
 	else
 	{
-		plugin::DiaWind("I wont deal with one such as you...", 19);
+		quest::say("I wont deal with one such as you...", 19);
 	}
 }
 
@@ -31,9 +31,9 @@ sub EVENT_ITEM
 		
 		if(plugin::check_handin(\%itemcount, 29297 => 1, 29298 => 1, 29299 => 1))
 		{
-			plugin::DiaWind("Yes, Brugga work with this.", 19);
+			quest::say("Yes, Brugga work with this.", 19);
 			quest::emote("Brugga chants and makes strange gestures while mixing the objects in his mortar and pestle.");
-			plugin::DiaWind("Ok, Brugga finished now. You have your cure, give cure with the bile and that will heal. You go now, Brugga done talking.", 19);
+			quest::say("Ok, Brugga finished now. You have your cure, give cure with the bile and that will heal. You go now, Brugga done talking.", 19);
 			$client->SummonItem(29295);
 		}
 	}

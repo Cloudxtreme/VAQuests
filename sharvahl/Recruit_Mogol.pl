@@ -1,6 +1,6 @@
 sub EVENT_SIGNAL {
 	if ($signal == 1) {
-		plugin::DiaWind("Aye. Sir!");
+		quest::say("Aye. Sir!");
 		plugin::DoAnim("nodyes");
 		quest::signalwith(155126,1,15);
 	}

@@ -32,7 +32,7 @@ sub EVENT_DEATH_COMPLETE {
 }
 
 sub EVENT_SLAY {
-  plugin::DiaWind("Your god has found you lacking.");
+  quest::say("Your god has found you lacking.");
 }
 
 sub EVENT_AGGRO {

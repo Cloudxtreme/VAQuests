@@ -1,4 +1,4 @@
 sub EVENT_SIGNAL {
-  plugin::DiaWind("Your servos belong to me!");
+  quest::say("Your servos belong to me!");
   quest::depop();
 }

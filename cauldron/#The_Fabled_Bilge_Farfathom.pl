@@ -11,16 +11,16 @@ sub EVENT_DEATH_COMPLETE{
  my $c=70061; #npc - #aqua_goblin_shaman
  my $d=70063; #npc - #a_cauldron_rat
  if($random_result<25){
-   #plugin::DiaWind("Spawning mariner trigger1");
+   #quest::say("Spawning mariner trigger1");
    quest::spawn2($a,5,0,-296.37,-122.31,-349.32,122);
   }elsif(($random_result>=25) && ($random_result<50)){
-     #plugin::DiaWind("Spawning skeleton trigger2");
+     #quest::say("Spawning skeleton trigger2");
      quest::spawn2($b,6,0,-974.5,436.4,-343.8,29);
   }elsif(($random_result>=50) && ($random_result<75)){
-     #plugin::DiaWind("Spawning shaman trigger3");
+     #quest::say("Spawning shaman trigger3");
      quest::spawn2($c,7,0,-848.3,-184.8,216.3,37.3);
   }else{
-    #plugin::DiaWind("Spawning rat trigger4");
+    #quest::say("Spawning rat trigger4");
     quest::spawn2($d,8,0,612.6,625.2,209.0,175.6);
   };
 };

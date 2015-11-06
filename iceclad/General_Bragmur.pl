@@ -6,7 +6,7 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Please keep yer voice down I am busy here. If you do not mind I would ask that ya kindly leave.");
+    quest::say("Please keep yer voice down I am busy here. If you do not mind I would ask that ya kindly leave.");
   }
 }
 

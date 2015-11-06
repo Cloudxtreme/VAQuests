@@ -1,13 +1,13 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Welcome! Welcome to Shandeling's, the gaming hall of chance! The game room is downstairs. If you are lucky enough to get a Gold Ticket, be sure to bring it to me for a spin on the big wheel of prizes! Make sure to tip your waitress well!"); 
+quest::say("Welcome! Welcome to Shandeling's, the gaming hall of chance! The game room is downstairs. If you are lucky enough to get a Gold Ticket, be sure to bring it to me for a spin on the big wheel of prizes! Make sure to tip your waitress well!"); 
 }
  }
  
 sub EVENT_ITEM {
 $item = quest::ChooseRandom(11668,59509,24890,2469,10895,59504,4164,11604,6631,5667);
 if($itemcount{66615} && plugin::check_hasitem($client, $item)){ 
-plugin::DiaWind("I don't have any prizes for you at this time.");
+quest::say("I don't have any prizes for you at this time.");
 quest::summonitem(66615);
 }
 elsif($itemcount{66615}){

@@ -1,9 +1,9 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hail, citizen! Keep clear of the waterways which run through this grand city. For swimming they are not. Many times have playful broodlings fallen prey to the sharp teeth of barracudas.");
+    quest::say("Hail, citizen! Keep clear of the waterways which run through this grand city. For swimming they are not. Many times have playful broodlings fallen prey to the sharp teeth of barracudas.");
   }
   if ($text=~/sign the restraining order/i) {
-    plugin::DiaWind("So the legion has sent you to have me sign this order, eh? Nay. I shall not do so unless the messenger, you, gathers two barracuda teeth for me. Hand me the legion order when you hand me the two barracuda teeth and then your task shall be complete.");
+    quest::say("So the legion has sent you to have me sign this order, eh? Nay. I shall not do so unless the messenger, you, gathers two barracuda teeth for me. Hand me the legion order when you hand me the two barracuda teeth and then your task shall be complete.");
   }
 }
 
@@ -19,15 +19,15 @@ sub EVENT_ITEM {
     quest::exp(800);
   }
   elsif (plugin::check_handin(\%itemcount, 18244 => 1)) {
-    plugin::DiaWind("You shall get my signature when I have the legion order and two barracuda teeth.");
+    quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
     quest::summonitem(18244);
   }
   elsif (plugin::check_handin(\%itemcount, 12465 => 2)) {
-    plugin::DiaWind("You shall get my signature when I have the legion order and two barracuda teeth.");
+    quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
     quest::summonitem(12465,2);
   }
   elsif (plugin::check_handin(\%itemcount, 12465 => 1)) {
-    plugin::DiaWind("You shall get my signature when I have the legion order and two barracuda teeth.");
+    quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
     quest::summonitem(12465);
   }
   plugin::return_items(\%itemcount);

@@ -31,25 +31,25 @@ sub EVENT_SAY {
    # You must be flagged by Seta_Bakindo for this quest
    if($FindTomer == 1) {
       if($text=~/Hail/i) {
-         plugin::DiaWind("Ahhhgggg.. Those mangy [dogs] put up a tough fight.. If I don't make it back to the [Clan House] soon, it'll all be over for me.");
+         quest::say("Ahhhgggg.. Those mangy [dogs] put up a tough fight.. If I don't make it back to the [Clan House] soon, it'll all be over for me.");
       }
       if($text=~/dogs/i or $text=~/mutts/i) {
-         plugin::DiaWind("It's those Darkpaws.. They've beat me pretty badly.. but they'll get theirs soon enough!");
+         quest::say("It's those Darkpaws.. They've beat me pretty badly.. but they'll get theirs soon enough!");
       }
       if($text=~/clan house/i) {
-         plugin::DiaWind("I am a new member of the Silent Fist Clan.. I need someone from my guild to help me find my way back.");
+         quest::say("I am a new member of the Silent Fist Clan.. I need someone from my guild to help me find my way back.");
       }
       if($text=~/Seta sent me to find you/i) {
-         plugin::DiaWind("Oh.. Thank goodness you found me.. I'm lost and weak, those [mutts] are a vicious lot.. an you carry my [backpack] for me?");
+         quest::say("Oh.. Thank goodness you found me.. I'm lost and weak, those [mutts] are a vicious lot.. an you carry my [backpack] for me?");
       }
       if($text=~/backpack/i) {
          # This flag is set by Seta_Bakindo
-         plugin::DiaWind("Thank you, friend.. Now, can you [lead me back to Master Seta] of the Silent Fist Clan? ");
+         quest::say("Thank you, friend.. Now, can you [lead me back to Master Seta] of the Silent Fist Clan? ");
          # Bag of Provisions ID-20456
          quest::summonitem("20459");
       }
       if($text=~/lead you back to master seta/i) {
-         plugin::DiaWind("Lead the way, and I shall follow. When we make it back, please inform Seta that you have rescued me.");
+         quest::say("Lead the way, and I shall follow. When we make it back, please inform Seta that you have rescued me.");
          # Initialize flag to Seta_Bakindo for this player
          quest::targlobal("SetaTomer", 1, "M30", 2086, $charid, $zoneid);
          # Have Tomer follow this player
@@ -59,7 +59,7 @@ sub EVENT_SAY {
    # You must have the updated flag from Seta_Bakindo for this part quest
    elsif($FindTomer == 2) {
       if($text=~/Hail/i) {
-         plugin::DiaWind("Yes, he saved my life.. I owe him much thanks. Please return my pack to me now, good friend.");
+         quest::say("Yes, he saved my life.. I owe him much thanks. Please return my pack to me now, good friend.");
       }
    }
 }
@@ -68,7 +68,7 @@ sub EVENT_ITEM {
    # You must have the updated flag by Seta_Bakindo and have Tomer's Bag of Provisious ID-20459 to complete this quest
    if($FindTomer == 2 && plugin::check_handin(\%itemcount, 20459 => 1)) {
       quest::ding();
-      plugin::DiaWind("Oh, you have the makings of a true hero.. The Silent Fist Clan is proud to have you as ally. May your soul guide and protect you through these chaotic times.");
+      quest::say("Oh, you have the makings of a true hero.. The Silent Fist Clan is proud to have you as ally. May your soul guide and protect you through these chaotic times.");
       quest::exp("100");
       
       quest::faction(300,35); # Silent Fist Clan faction

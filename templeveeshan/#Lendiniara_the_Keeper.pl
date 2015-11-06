@@ -1,35 +1,35 @@
 sub EVENT_SAY {
   if ($faction == 1) {
     if ($text=~/hail/i) {
-      plugin::DiaWind("Greetings, $name. I am the keeper of relics. If you are brave I have tasks to test your might and perhaps rewards.");
+      quest::say("Greetings, $name. I am the keeper of relics. If you are brave I have tasks to test your might and perhaps rewards.");
     }
     elsif ($text=~/rewards/i) {
-      plugin::DiaWind("One should ask of the tasks before worrying about rewards, $race.");
+      quest::say("One should ask of the tasks before worrying about rewards, $race.");
     }
     elsif ($text=~/tasks/i) {
-      plugin::DiaWind("Enter into the halls of testing to complete these tasks. Seek out the ancient ones inside and see if your might is as great as theirs and fear not, those who you slay will be returned to the temple by the gift of Veeshan's great power. I have three tasks, which any may complete, as well as a request of both the arcane and the strong.");
+      quest::say("Enter into the halls of testing to complete these tasks. Seek out the ancient ones inside and see if your might is as great as theirs and fear not, those who you slay will be returned to the temple by the gift of Veeshan's great power. I have three tasks, which any may complete, as well as a request of both the arcane and the strong.");
     }
     elsif ($text=~/request of the arcane/i) {
-      plugin::DiaWind("Those who seek knowledge, will seek this task out for its reward is great. Three tears and a glowing orb will garner one an ancient mask. The White tear and the black tear for balance the runed tear to hold the balance and a glowing orb to return raw energy to the ancient mask.");
+      quest::say("Those who seek knowledge, will seek this task out for its reward is great. Three tears and a glowing orb will garner one an ancient mask. The White tear and the black tear for balance the runed tear to hold the balance and a glowing orb to return raw energy to the ancient mask.");
     }
     elsif ($text=~/request of the strong/i) {
-      plugin::DiaWind("Those who believe they are strong may be surprised after such a task. Seek out the cursed one and slay him, return to me when you have gathered a silver tear, a poison tear, a flame kissed tear and a serrated tear. End the cursed ones torment for a short time, before the high priest raises him to continue his suffering for eternity.");
+      quest::say("Those who believe they are strong may be surprised after such a task. Seek out the cursed one and slay him, return to me when you have gathered a silver tear, a poison tear, a flame kissed tear and a serrated tear. End the cursed ones torment for a short time, before the high priest raises him to continue his suffering for eternity.");
     }
     elsif ($text=~/request of the three/i) {
-    plugin::DiaWind("Tears from the cursed you much seek for each task. The test of the Ruby Tear, the test of the Platinum Tear and the test of the Emerald Tear await all who wish to partake of them.");
+    quest::say("Tears from the cursed you much seek for each task. The test of the Ruby Tear, the test of the Platinum Tear and the test of the Emerald Tear await all who wish to partake of them.");
     }
     elsif ($text=~/test of the ruby tear/i) {
-    plugin::DiaWind("The test of the ruby tear sounds simple enough, enter the halls of testing, secure a ruby tear, a white symbol, a silver symbol and a ruby symbol. I warn you mortal, those who walk the halls will rend your body and mind if you are not worthy.");
+    quest::say("The test of the ruby tear sounds simple enough, enter the halls of testing, secure a ruby tear, a white symbol, a silver symbol and a ruby symbol. I warn you mortal, those who walk the halls will rend your body and mind if you are not worthy.");
     }
     elsif ($text=~/test of the platinum tear/i) {
-    plugin::DiaWind("Seek the platinum tear and three symbols to bind its powers to a bracelet. The black symbol to add raw power, the serrated symbol to enchant its powers and the runed symbol to hold the powers to the bracelet.");
+    quest::say("Seek the platinum tear and three symbols to bind its powers to a bracelet. The black symbol to add raw power, the serrated symbol to enchant its powers and the runed symbol to hold the powers to the bracelet.");
     }
     elsif ($text=~/test of the emerald tear/i) {
-    plugin::DiaWind("The emerald tear of Veeshan entrusted to the cursed one. Return this tear to me so I may return the powers of an ancient shield. Three symbols you must also seek. Emerald like the tear, one kissed by the flames of the elder wurms and one made of the ancient wyverns venomous poison.");
+    quest::say("The emerald tear of Veeshan entrusted to the cursed one. Return this tear to me so I may return the powers of an ancient shield. Three symbols you must also seek. Emerald like the tear, one kissed by the flames of the elder wurms and one made of the ancient wyverns venomous poison.");
     }
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust you with such a quest, yet.");
+    quest::say("I do not know you well enough to entrust you with such a quest, yet.");
   }
 }
 
@@ -76,7 +76,7 @@ sub EVENT_ITEM {
       quest::exp(200000);
     }
     elsif (plugin::check_handin(\%itemcount, 69333 => 1)) { ## Note from Xygoz
-      plugin::DiaWind("What is this? A letter from Xygoz, my student? I am impressed you have been able to take this dangerous journey from Veeshan's Peak to here without any conflict. Oh, and he scribed it with our magic. Thank you for this letter. Now, take this trinket. It's a gift I would like you to bestow upon Xygoz for me. He was my favorite student, yet I never told him that directly. This trinket will surely deliver that message to him. However, there is one problem. The trinket has been damaged slightly because of an attack in Western Wastes. The magic from this trinket was torn from it and I fear that one of those horrid Kromzek has stolen it and taken it back to Kael. Before you give it to Xygoz, please retrieve the power source and reunite it with the trinket. I wish Xygoz my best and hope he will be most pleased with this token of my fondness for him.");
+      quest::say("What is this? A letter from Xygoz, my student? I am impressed you have been able to take this dangerous journey from Veeshan's Peak to here without any conflict. Oh, and he scribed it with our magic. Thank you for this letter. Now, take this trinket. It's a gift I would like you to bestow upon Xygoz for me. He was my favorite student, yet I never told him that directly. This trinket will surely deliver that message to him. However, there is one problem. The trinket has been damaged slightly because of an attack in Western Wastes. The magic from this trinket was torn from it and I fear that one of those horrid Kromzek has stolen it and taken it back to Kael. Before you give it to Xygoz, please retrieve the power source and reunite it with the trinket. I wish Xygoz my best and hope he will be most pleased with this token of my fondness for him.");
       quest::summonitem(69334);
     }
   }

@@ -12,7 +12,7 @@ sub EVENT_TIMER {
 
 sub EVENT_SAY {
 	if($text=~/hail/i  && !defined($qglobals{pop_hoh_trell})) {
-			plugin::DiaWind("Congratulations... Two other trials and you may have proven yourself worthy to stand before Lord Marr.");
+			quest::say("Congratulations... Two other trials and you may have proven yourself worthy to stand before Lord Marr.");
 			quest::setglobal("pop_hoh_trell", 1, 5, "F");
 			$client->Message(4,"You receive a character flag!");
 	}

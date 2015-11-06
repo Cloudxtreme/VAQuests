@@ -1,9 +1,9 @@
 sub EVENT_SAY {
   if($text=~/hail/i && $faction <= 5) {
-    plugin::DiaWind("Uggg. You needz [keyz]? Rrrrrrr.");
+    quest::say("Uggg. You needz [keyz]? Rrrrrrr.");
   }
   if($text=~/key/i && $faction <= 5) {
-    plugin::DiaWind("Uggggg. Take dis keyz.");
+    quest::say("Uggggg. Take dis keyz.");
     quest::summonitem(6378);
   }
 }

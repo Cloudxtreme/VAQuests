@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Uuuhh, this be a private room, me friend. Mayhap ye should leave before somethin' unfortunate happens.");
+    quest::say("Uuuhh, this be a private room, me friend. Mayhap ye should leave before somethin' unfortunate happens.");
   }
 }
 

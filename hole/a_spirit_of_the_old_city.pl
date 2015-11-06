@@ -2,19 +2,19 @@ sub EVENT_AGGRO {
 	my $mgender = $npc->GetBaseGender();
 	my $mclass = $npc->GetClass();
 	if($mlevel==51) {
-		plugin::DiaWind("We will protect our city at all costs.");
+		quest::say("We will protect our city at all costs.");
 	}
 	if(($mclass==1) && ($mgender==0) && ($mlevel !=51)){
-		plugin::DiaWind("You fail to understand our devotion to this ruined city!");
+		quest::say("You fail to understand our devotion to this ruined city!");
 	}
 	if(($mclass==3) && ($mgender==0) && ($mlevel !=51)){
-		plugin::DiaWind("You will not leave here alive!  You should not have come.");
+		quest::say("You will not leave here alive!  You should not have come.");
 	}
 	if(($mclass==3) && ($mgender==1) && ($mlevel !=51)){	
 		quest::emote("glides forward with a ferocious hiss.");
 	}
 	if(($mclass==1) && ($mgender==1) && ($mlevel !=51)){	
-		plugin::DiaWind("There are no invitations to our city!");
+		quest::say("There are no invitations to our city!");
 	}
 }
 

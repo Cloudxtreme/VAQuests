@@ -1,7 +1,7 @@
 sub EVENT_SAY {
 
 	if($text=~/hail/i && defined $qglobals{pop_ponb_terris} && !defined $qglobals{pop_ponb_poxbourne}) {
-		plugin::DiaWind("Finally, after all this time, my mind is at peace... thank you, $name, Subduer of Torment.");
+		quest::say("Finally, after all this time, my mind is at peace... thank you, $name, Subduer of Torment.");
 		quest::setglobal("pop_ponb_poxbourne", 1, 5, "F");
 		$client->Message(4,"You receive a character flag!");
 		}

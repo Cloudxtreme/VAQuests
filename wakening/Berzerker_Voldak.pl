@@ -15,7 +15,7 @@ sub EVENT_SIGNAL {
 		quest::signalwith(119168,1,300);
 	}
 	if($signal == 2) {
-		plugin::DiaWind("Woah! we're being ambushed!!");
+		quest::say("Woah! we're being ambushed!!");
 		quest::signalwith(119168,2,300);
 	}
 }

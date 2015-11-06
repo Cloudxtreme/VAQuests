@@ -6,10 +6,10 @@ sub EVENT_SAY {
     quest::emote("brushes pollen off of his tunic. 'Aachoo!! Oh!! Hello. Please look around. Unless you are a [druid looking for work].'");
   }
   if ($text=~/druid looking for work/i) {
-    plugin::DiaWind("Good. I need a stout adventurer to go to the wilds and find me a few items. I need some tump stumps - one Kromdul and one Kromdek type. I also need a mantrap root. Get me those three things and I will give you this handy shillelagh I found in the forest.");
+    quest::say("Good. I need a stout adventurer to go to the wilds and find me a few items. I need some tump stumps - one Kromdul and one Kromdek type. I also need a mantrap root. Get me those three things and I will give you this handy shillelagh I found in the forest.");
   }
   if ($text=~/fertile crop/i) {
-    plugin::DiaWind("Looking to get hold of my family druid spell, ehh? It doesn't come without a price. Lucky for you all I need is for you to run a small errand for me. Go fetch me a Sarnak farsight crystal, some Sarnak nightdust, some strathebone heal silk and some powder of Tsu. Do that and I will give you a copy of my family secret.");
+    quest::say("Looking to get hold of my family druid spell, ehh? It doesn't come without a price. Lucky for you all I need is for you to run a small errand for me. Go fetch me a Sarnak farsight crystal, some Sarnak nightdust, some strathebone heal silk and some powder of Tsu. Do that and I will give you a copy of my family secret.");
   }
 }
 
@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     quest::faction(250,-30); #pirates of gunthak
   }
   elsif (plugin::check_handin(\%itemcount, 11579 => 1, 12753 => 1, 12957 => 1, 12959 => 1)) {
-    plugin::DiaWind("Great work! I wish I had the coin to hire you on permanently. Maybe I will, when I find the lost trade city of Torsis. Here is the spell I copied for you. Careful, the ink is still drying.");
+    quest::say("Great work! I wish I had the coin to hire you on permanently. Maybe I will, when I find the lost trade city of Torsis. Here is the spell I copied for you. Careful, the ink is still drying.");
     quest::summonitem(12954);
     quest::exp(25000);
     quest::faction(418,10); #inhabitants of firiona

@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Greetings. $name. I am Grandmaster Haloriki of House Midst. I am the resident guildmaster of this quarter in charge of training all new recruits that wish to serve the Midst."); }
+quest::say("Greetings. $name. I am Grandmaster Haloriki of House Midst. I am the resident guildmaster of this quarter in charge of training all new recruits that wish to serve the Midst."); }
 }
 
 sub EVENT_ITEM {

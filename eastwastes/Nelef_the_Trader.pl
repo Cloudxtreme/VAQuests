@@ -3,16 +3,16 @@
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
-		plugin::DiaWind("Good day to you, friend! Tell me, have you [traversed the cold] and the muck to forge through the forsaken tomb of the sleeping dragon? Perhaps you've come across mighty beasts with [prismatic power] beyond imagination?!");
+		quest::say("Good day to you, friend! Tell me, have you [traversed the cold] and the muck to forge through the forsaken tomb of the sleeping dragon? Perhaps you've come across mighty beasts with [prismatic power] beyond imagination?!");
 	}
 	if($text=~/traversed the cold/i){
-		plugin::DiaWind("Aha! I knew you looked like a daring and intrepid adventurer! I've been looking for someone like yourself who has made it through that wretched place alive. I haven't had the privelege of coming across any that have had any [proof] they've been there though, so I'm a little skeptical when someone says they have been there, as you can rightly imagine.");
+		quest::say("Aha! I knew you looked like a daring and intrepid adventurer! I've been looking for someone like yourself who has made it through that wretched place alive. I haven't had the privelege of coming across any that have had any [proof] they've been there though, so I'm a little skeptical when someone says they have been there, as you can rightly imagine.");
 	}
 	if($text=~/proof/i){
-		plugin::DiaWind("What proof? Well, let's see. . . Perhaps you can provide me with some kind of trinket that came from the prismatic dragon himself? I'd be most interested in a scale if you were able to get ahold of one.");
+		quest::say("What proof? Well, let's see. . . Perhaps you can provide me with some kind of trinket that came from the prismatic dragon himself? I'd be most interested in a scale if you were able to get ahold of one.");
 	}
 	if($text=~/prismatic power/i){
-		plugin::DiaWind("Well, I have heard stories of a dragon who was after a prismatic scale and the key to enter the tomb as proof that the sleeping beast had been released. When he took them from the daring adventurers, he destroyed the key because he didn't want those people to return to the tomb. I have no idea why he did this, but if you were one of those unlucky few, please return to me the trinket he gave you and I'll return to you the key to regain entrance to that place.");
+		quest::say("Well, I have heard stories of a dragon who was after a prismatic scale and the key to enter the tomb as proof that the sleeping beast had been released. When he took them from the daring adventurers, he destroyed the key because he didn't want those people to return to the tomb. I have no idea why he did this, but if you were one of those unlucky few, please return to me the trinket he gave you and I'll return to you the key to regain entrance to that place.");
 	}
 }
 

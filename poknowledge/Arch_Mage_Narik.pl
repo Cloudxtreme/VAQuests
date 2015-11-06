@@ -14,7 +14,7 @@ sub EVENT_SAY {
   
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 28087 => 1)) {#Narik's Ring
-    plugin::DiaWind("This is truly excellent. You have done well recovering this for me. You may take Onirelin's jewel and also tell him never to set foot near me again. Leave me now, I have much work to do.");
+    quest::say("This is truly excellent. You have done well recovering this for me. You may take Onirelin's jewel and also tell him never to set foot near me again. Leave me now, I have much work to do.");
     quest::summonitem(28088);#Onirelin's Jewel
     quest::exp(250);
   }
@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 				(plugin::check_handin(\%itemcount, 1244 => 1)) ||
 				(plugin::check_handin(\%itemcount, 1245 => 1))) {#Apothic Armor
     
-    			plugin::DiaWind("Thank you, $name.");#Text made up
+    			quest::say("Thank you, $name.");#Text made up
     			quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     			quest::exp(698775);
   }

@@ -8,35 +8,35 @@
 sub EVENT_SAY {
   if ($faction == 1) { #req ally CoV
     if($text=~/hail/i) {
-      plugin::DiaWind("Greetings, I seek the ones who stalk through the forests protecting it. If you are one known as a ranger, submit to my will and become stronger. The tasks I set forth will not be easy. Are you ready to submit to my will?");
+      quest::say("Greetings, I seek the ones who stalk through the forests protecting it. If you are one known as a ranger, submit to my will and become stronger. The tasks I set forth will not be easy. Are you ready to submit to my will?");
     }
     if ($text=~/submit to your will/i) {
-      plugin::DiaWind("That is good, for there is nothing like the wrath of nature, woodland warrior. And Nature's wrath shall you be, with this armor to protect you in your struggle. I shall forge a coif, breastplate, sleeves, bracers, gauntlets, leggings, and boots for you.");
+      quest::say("That is good, for there is nothing like the wrath of nature, woodland warrior. And Nature's wrath shall you be, with this armor to protect you in your struggle. I shall forge a coif, breastplate, sleeves, bracers, gauntlets, leggings, and boots for you.");
     }
     if ($text=~/coif/i) {
-      plugin::DiaWind("This coif shall protect you from battle and the elements. What I require of you are these: an unadorned chain coif and three pieces of crushed coral. Do not waste precious time!");
+      quest::say("This coif shall protect you from battle and the elements. What I require of you are these: an unadorned chain coif and three pieces of crushed coral. Do not waste precious time!");
     }
     if ($text=~/breastplate/i) {
-      plugin::DiaWind("Even as the hardest tree in the forest gains protection from its bark, so shall you gain the protection of this breastplate. Bring these components for me - an unadorned chain tunic and three flawless diamonds.");
+      quest::say("Even as the hardest tree in the forest gains protection from its bark, so shall you gain the protection of this breastplate. Bring these components for me - an unadorned chain tunic and three flawless diamonds.");
     }
     if ($text=~/sleeves/i) {
-      plugin::DiaWind("I require unadorned chain sleeves, as well as three flawed emeralds. Do this so that I may grant you them as a gift for your diligence.");
+      quest::say("I require unadorned chain sleeves, as well as three flawed emeralds. Do this so that I may grant you them as a gift for your diligence.");
     }
     if ($text=~/bracer/i) {
-      plugin::DiaWind("This shall help shield your forearms from any stray blows. Bring me an unadorned chain bracelet and three crushed flame emeralds.");
+      quest::say("This shall help shield your forearms from any stray blows. Bring me an unadorned chain bracelet and three crushed flame emeralds.");
     }
     if ($text=~/gauntlet/i) {
-      plugin::DiaWind("Bring me these items, for I will not grant you your pair until then - a pair of unadorned chain gauntlets and a set of three crushed topaz.");
+      quest::say("Bring me these items, for I will not grant you your pair until then - a pair of unadorned chain gauntlets and a set of three crushed topaz.");
     }
     if ($text=~/leggings/i) {
-      plugin::DiaWind("A pair of leggings you seek? I seek something as well. Bring me a pair of unadorned chain leggings and three flawed sea sapphires. Go now. The struggle continues as we speak.");
+      quest::say("A pair of leggings you seek? I seek something as well. Bring me a pair of unadorned chain leggings and three flawed sea sapphires. Go now. The struggle continues as we speak.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("For the boots, I shall require a pair of unadorned chain boots as well as three pieces of crushed black marble.");
+      quest::say("For the boots, I shall require a pair of unadorned chain boots as well as three pieces of crushed black marble.");
     }
   }
   else {
-    plugin::DiaWind("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
+    quest::say("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
   }
 }
 
@@ -68,14 +68,14 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::emote("smiles warmly as he hands you your reward.");
-    plugin::DiaWind("Well done, $name.");
+    quest::say("Well done, $name.");
     quest::exp(175000);
     quest::faction(42,30); # CoV
     quest::faction(362,30); # Yelinak
     quest::faction(189,-60); # Kromzek
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust such an item to you, yet.");
+    quest::say("I do not know you well enough to entrust such an item to you, yet.");
     plugin::return_items(\%itemcount);
   }
 }

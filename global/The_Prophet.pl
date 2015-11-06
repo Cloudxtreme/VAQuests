@@ -21,20 +21,20 @@ sub EVENT_SPAWN {
 	&set_data;
 	my $min = 3;
 	quest::settimer("pay$mname", $min*60);
-	plugin::DiaWind("$mname at your service, I need payment within $min minutes.");
+	quest::say("$mname at your service, I need payment within $min minutes.");
 #	quest::setglobal("balance", $balance, 2, "H6");
 }
 
 sub EVENT_TIMER {
 	&set_data;
 	if($balance < $wage_rate) {
-		plugin::DiaWind("Goodbye.");
+		quest::say("Goodbye.");
 		quest::depop_withtimer();
 		quest::stoptimer("pay$mname");
 	} else {
 		$balance -= $wage_rate;
 		quest::settimer("pay$mname", $wage_duration*60);
-		plugin::DiaWind("Payment received, im yours for another $wage_duration minutes.");
+		quest::say("Payment received, im yours for another $wage_duration minutes.");
 		quest::setglobal("balance", $balance, 2, "H6");
 	}
 }
@@ -46,7 +46,7 @@ sub EVENT_SAY {
 	}
 	
 	if($text =~ /bye/i) {
-		plugin::DiaWind("Goodbye.");
+		quest::say("Goodbye.");
 		quest::depop_withtimer();
 		quest::stoptimer("pay$mname");
 	} elsif($text =~ /follow/i) {
@@ -59,12 +59,12 @@ sub EVENT_SAY {
 		foreach $s (@spells) {
 			if($s->[0] eq $1) {
 				if($balance < $s->[2]) {
-					plugin::DiaWind("You do have not paid me enough to cast that.");
+					quest::say("You do have not paid me enough to cast that.");
 					last;
 				}
 				$balance -= $s->[2];
 				quest::setglobal("balance", $balance, 2, "H6");
-				plugin::DiaWind("Casting spell ".$s->[1]." named ".$s->[0]." for ".$s->[2]." platinum.");
+				quest::say("Casting spell ".$s->[1]." named ".$s->[0]." for ".$s->[2]." platinum.");
 				#have the client self-cast to allow beneficial spells.
 				$client->CastSpell($s->[1], $client->GetID());
 				$found = 1;
@@ -72,23 +72,23 @@ sub EVENT_SAY {
 			}
 		}
 		if(!$found) {
-			plugin::DiaWind("Unable to find a spell named $1");
+			quest::say("Unable to find a spell named $1");
 		}
 	} elsif($text =~ /balance/i) {
-		plugin::DiaWind("You have a balance of $balance platinum avaliable");
+		quest::say("You have a balance of $balance platinum avaliable");
 	} elsif($text =~ /spells/i) {
 		my $s;
 		foreach $s (@spells) {
-			plugin::DiaWind("I can cast spell ".$s->[1]." named ".$s->[0]." for ".$s->[2]." platinum.");
+			quest::say("I can cast spell ".$s->[1]." named ".$s->[0]." for ".$s->[2]." platinum.");
 		}
 	} elsif($text =~ /help/i) {
-		plugin::DiaWind("follow|stop - tell the npc to follow you or stop following you.");
-		plugin::DiaWind("balance - report your balance");
-		plugin::DiaWind("spells - list the spells avaliable for casting");
-		plugin::DiaWind("cast [spellname] - request a spell casting");
-		plugin::DiaWind("bye - tell the npc to go away");
+		quest::say("follow|stop - tell the npc to follow you or stop following you.");
+		quest::say("balance - report your balance");
+		quest::say("spells - list the spells avaliable for casting");
+		quest::say("cast [spellname] - request a spell casting");
+		quest::say("bye - tell the npc to go away");
 	} else {
-		plugin::DiaWind("I dont understand that, just ask for [help] if you need it.");
+		quest::say("I dont understand that, just ask for [help] if you need it.");
 	}
 }
 
@@ -97,7 +97,7 @@ sub EVENT_ITEM {
 	my $money = ($copper + $silver*10 + $gold*100 + $platinum*1000)/1000;
 	$balance = $balance + $money;
 	
-	plugin::DiaWind("You have a balance of $balance platinum avaliable");
+	quest::say("You have a balance of $balance platinum avaliable");
 }
 
 

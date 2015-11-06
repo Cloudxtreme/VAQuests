@@ -2,7 +2,7 @@
 #Part of Innoruuk Disciple
 
 sub EVENT_SPAWN{
-	plugin::DiaWind("I have been discovered!!! You will never stop us from reclaiming the Nektulos for Karana, $name!!");
+	quest::say("I have been discovered!!! You will never stop us from reclaiming the Nektulos for Karana, $name!!");
 	quest::settimer("depop", 3600);
 }#Done
 

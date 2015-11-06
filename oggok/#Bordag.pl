@@ -12,7 +12,7 @@ sub EVENT_ENTER {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 18846 =>1)) { #A tattered note
-    plugin::DiaWind("You strong and mean like bear!  You wear bear fur so all know you beastlord o' da Feerrott!  Talk to Grapok and get to work!"); 
+    quest::say("You strong and mean like bear!  You wear bear fur so all know you beastlord o' da Feerrott!  Talk to Grapok and get to work!"); 
     quest::summonitem(13575); #Bear Fur Tunic
 		quest::ding();
 		quest::faction(295,15); # Shaman of War

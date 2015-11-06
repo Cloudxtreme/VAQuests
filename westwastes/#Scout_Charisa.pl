@@ -3,7 +3,7 @@
 sub EVENT_ITEM { 
   if ($faction <= 2) {
     if (plugin::check_handin(\%itemcount, 29683 => 1)) { #Scout Tools
-      plugin::DiaWind("Great! I was wondering when they would send someone out to give me these. In my haste and excitement of this new assignment I forgot these. This scout business is great I must say. It sure beats setting in Southern Ro studying the ruins. I've been following these Storm Giants for days. They've been wandering up and down the coast looking for something."); 
+      quest::say("Great! I was wondering when they would send someone out to give me these. In my haste and excitement of this new assignment I forgot these. This scout business is great I must say. It sure beats setting in Southern Ro studying the ruins. I've been following these Storm Giants for days. They've been wandering up and down the coast looking for something."); 
       quest::faction(42,30);   #Claws of Veeshan
       quest::faction(362,30);  #Yelinak
       quest::faction(189,-20); #Kromzek

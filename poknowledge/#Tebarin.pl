@@ -3,16 +3,16 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Hello, $name."); #Real text still needed
+    quest::say("Hello, $name."); #Real text still needed
   }
   if(($text=~/special box/i) && plugin::check_hasitem($client, 11406)) {
-    plugin::DiaWind("I must have a box made to protect the tome from these thieves! In addition to the rune-covered insert I have given you, you will also need one piece of gnarled wood, and one elaborate hinge. Find those items and combine them in a forge to make the box. If you fail, Kazen and I will not be pleased. Now go!");
+    quest::say("I must have a box made to protect the tome from these thieves! In addition to the rune-covered insert I have given you, you will also need one piece of gnarled wood, and one elaborate hinge. Find those items and combine them in a forge to make the box. If you fail, Kazen and I will not be pleased. Now go!");
   }
 }
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10138 => 1)) { #Ruandia's Instructions
-    plugin::DiaWind("Kazen informed me that you would be coming. Ruandia deciphered the rune for you? Good. That witch better be accurate or Kazen will have her head. I need you to find two balls of elemental clay and combine them in this box. Return them to me when you have them.");
+    quest::say("Kazen informed me that you would be coming. Ruandia deciphered the rune for you? Good. That witch better be accurate or Kazen will have her head. I need you to find two balls of elemental clay and combine them in this box. Return them to me when you have them.");
     quest::summonitem(16689); #Intricately Carved Box
   }
   elsif(plugin::check_handin(\%itemcount, 27282 => 1)) { #Sealed Intricately Carved Box
@@ -30,11 +30,11 @@ sub EVENT_ITEM {
     quest::summonitem(11406); #Rune Covered Insert
   }
   elsif(plugin::check_handin(\%itemcount, 13620 => 1)) { #Glowing Box of Protection
-    plugin::DiaWind("This should do nicely. At least I hope so, for your sake. Now that the box is secure, I want revenge on the paladins who took the staff! Find all four of the paladins and take their heads! Once you have their heads, combine them in this sack and hand it to me. I will make sure they are reanimated and suffer for many, many years for what they have done. Now leave me. I must ponder the turn of events that have taken place here.");
+    quest::say("This should do nicely. At least I hope so, for your sake. Now that the box is secure, I want revenge on the paladins who took the staff! Find all four of the paladins and take their heads! Once you have their heads, combine them in this sack and hand it to me. I will make sure they are reanimated and suffer for many, many years for what they have done. Now leave me. I must ponder the turn of events that have taken place here.");
     quest::summonitem(11517); #Paladin Headhunting Satchel
   }
   elsif(plugin::check_handin(\%itemcount, 24630 => 1)) { #Full Paladin Headhunting Satchel
-    plugin::DiaWind("Your donation will please my masters greatly. I have a special reanimation spell reserved just for these do-gooders. Now you are to travel to Natimbi and find the paladin who has the staff. You might want to talk to the dead you come across as they often have valuable information. Take this orb to help enhance your natural abilities to communicate with the dead.");
+    quest::say("Your donation will please my masters greatly. I have a special reanimation spell reserved just for these do-gooders. Now you are to travel to Natimbi and find the paladin who has the staff. You might want to talk to the dead you come across as they often have valuable information. Take this orb to help enhance your natural abilities to communicate with the dead.");
     quest::summonitem(15784); #Orb of Deathspeaking
   }
   plugin::return_items(\%itemcount);

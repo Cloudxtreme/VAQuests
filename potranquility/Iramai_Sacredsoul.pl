@@ -7,19 +7,19 @@
 sub EVENT_SAY
 {
    if ($text=~/Hail/i) {
-      plugin::DiaWind("Oh, hello. I am sorry, I did not see you approach. I have been giving all of my attention to poor [" . quest::saylink("Phanti") . "] here.");
+      quest::say("Oh, hello. I am sorry, I did not see you approach. I have been giving all of my attention to poor [" . quest::saylink("Phanti") . "] here.");
    }
    
    if ($text=~/Phanti/i) {
-      plugin::DiaWind("A few days ago Phanti started to get very ill, while she was preparing herself for another trip into [Saryrn's domain]. We are not sure exactly was caused her to fall into this malaise, although we do have our [" . quest::saylink("suspicions") . "].");
+      quest::say("A few days ago Phanti started to get very ill, while she was preparing herself for another trip into [Saryrn's domain]. We are not sure exactly was caused her to fall into this malaise, although we do have our [" . quest::saylink("suspicions") . "].");
    }
    
    if ($text=~/suspicions/i) {
-      plugin::DiaWind("Torment, the Plane of Pain. She was doing some research on the denizens there, should you [" . quest::saylink("help") . "] us, I could grant you and your companions entry. The key will not do Phanti any good for quite some time.");
+      quest::say("Torment, the Plane of Pain. She was doing some research on the denizens there, should you [" . quest::saylink("help") . "] us, I could grant you and your companions entry. The key will not do Phanti any good for quite some time.");
    }
    
    if ($text=~/help/i) {
-      plugin::DiaWind("Recently, the portal from the Plane of Disease has been unusually active. People have been reporting strange sounds from around the portal at night, and a few of our trackers have seen strange, almost rodent like, footprints. Our best guess is that one of the denizens of the Plane of Disease managed to make its way into our plane. If this is true, it may explain the unnaturally quick manifestation of the disease. Perhaps, the bile from one of the rodents will help us learn of the cause, and hopefully a cure.");
+      quest::say("Recently, the portal from the Plane of Disease has been unusually active. People have been reporting strange sounds from around the portal at night, and a few of our trackers have seen strange, almost rodent like, footprints. Our best guess is that one of the denizens of the Plane of Disease managed to make its way into our plane. If this is true, it may explain the unnaturally quick manifestation of the disease. Perhaps, the bile from one of the rodents will help us learn of the cause, and hopefully a cure.");
    }
 
 }
@@ -27,8 +27,8 @@ sub EVENT_SAY
 sub EVENT_ITEM
 {
    if(plugin::check_handin(\%itemcount, 29295 => 1, 29302 => 1)) {#Vial of Opaque Fluid, Purified Bubonian Bile
-      plugin::DiaWind("Hmm, it looks like I will need both the cure and the purified bile in order to heal Phanti.");
-      plugin::DiaWind("You've done it! Praise the Tranquil! I can already see Phanti's condition improving. Take these, Phanti is not going to be doing any planar exploration any time soon. She was planning on using them to bring her research party into Torment, make good use of them, and stay safe. Thank you again for your help.");
+      quest::say("Hmm, it looks like I will need both the cure and the purified bile in order to heal Phanti.");
+      quest::say("You've done it! Praise the Tranquil! I can already see Phanti's condition improving. Take these, Phanti is not going to be doing any planar exploration any time soon. She was planning on using them to bring her research party into Torment, make good use of them, and stay safe. Thank you again for your help.");
 
       my @grp = plugin::GetGroupMembers($client);
       foreach $ent (@grp)

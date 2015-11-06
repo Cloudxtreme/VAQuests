@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_AGGRO {
-  plugin::DiaWind("Crush, maim, kill, and defy! For dinner tonight, your brains we shall fry!");
+  quest::say("Crush, maim, kill, and defy! For dinner tonight, your brains we shall fry!");
 }
 
 # Quest by mystic414

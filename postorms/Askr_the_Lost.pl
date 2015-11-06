@@ -7,33 +7,33 @@ sub EVENT_SAY {
 		}
 
 		if($text=~/what problem/i){
-			plugin::DiaWind("Askr points drunkenly towards the exit of the cave. 'Have you not seen the foul denizens of destruction outside? Hrmph! Going everywhere they please, pillaging, plundering. . . I'm lucky to have survived this long. Bah, it doesn't matter, there's nothing that anyone can do to stop them, and that is why I'm still stuck here with my *hic* potions.'");
+			quest::say("Askr points drunkenly towards the exit of the cave. 'Have you not seen the foul denizens of destruction outside? Hrmph! Going everywhere they please, pillaging, plundering. . . I'm lucky to have survived this long. Bah, it doesn't matter, there's nothing that anyone can do to stop them, and that is why I'm still stuck here with my *hic* potions.'");
 		}
 
 		if(defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 2 && $text=~/continue/i){
-			plugin::DiaWind("I must know if you are truly capable of defeating the storm giants that abound here. To do this, you must slay one of each of the three factions and return to me something specific to each tribe: from the Srerendi storm giants, return their shorn beard; from the Krendic storm giants, a piece of their rocky carcass; from the Kelek`Vor storm giants, the crest from their warrior garments. These three items will ensure that you indeed do have the ability to defeat the foul denizens that have seized control of these lands. When you have acquired the three of these items, seal them in this bag and return them to me, so that I know that you are indeed capable of fulfilling a hero's destiny.");
+			quest::say("I must know if you are truly capable of defeating the storm giants that abound here. To do this, you must slay one of each of the three factions and return to me something specific to each tribe: from the Srerendi storm giants, return their shorn beard; from the Krendic storm giants, a piece of their rocky carcass; from the Kelek`Vor storm giants, the crest from their warrior garments. These three items will ensure that you indeed do have the ability to defeat the foul denizens that have seized control of these lands. When you have acquired the three of these items, seal them in this bag and return them to me, so that I know that you are indeed capable of fulfilling a hero's destiny.");
 			quest::summonitem(17192);	#Askr's bag of verity
 		}		
 
 		if(defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 1){	#checks for giant head handin
 		
 			if($text=~/It was me/i){
-				plugin::DiaWind("Truly, I am amazed that someone of your caliber was able to do what I could not. I have been stuck in these desolate caves for so long, I had almost lost hope that I would ever find a way to get rid of those accursed giants. But you. . . you have been able to best at least one of them. It is reasonable to suggest that if you are able to dispatch one, you may be able to dispatch others. I need to know for sure if you are as capable an individual as it appears you are. This is very important, so are you paying attention?");
+				quest::say("Truly, I am amazed that someone of your caliber was able to do what I could not. I have been stuck in these desolate caves for so long, I had almost lost hope that I would ever find a way to get rid of those accursed giants. But you. . . you have been able to best at least one of them. It is reasonable to suggest that if you are able to dispatch one, you may be able to dispatch others. I need to know for sure if you are as capable an individual as it appears you are. This is very important, so are you paying attention?");
 			}
 			
 			if($text=~/I am paying attention/i){
-				plugin::DiaWind("This place was once beautiful and serene, with the great Karana's showers falling day and night soothing the lands and the creatures that inhabit it. Alas, there was an invasion of a superior force -- the storm giants which you have encountered. They laid waste to the lands, burned down trees, and have caused so much havoc I don't even know what is to become of it. Originally, they came as one group and crossed the breadth of the land pillaging and plundering all that they could find. Over time, though, they grew apart and distinct factions grew around Mount Grenidor.' [" . quest::saylink("continue") . "]");
+				quest::say("This place was once beautiful and serene, with the great Karana's showers falling day and night soothing the lands and the creatures that inhabit it. Alas, there was an invasion of a superior force -- the storm giants which you have encountered. They laid waste to the lands, burned down trees, and have caused so much havoc I don't even know what is to become of it. Originally, they came as one group and crossed the breadth of the land pillaging and plundering all that they could find. Over time, though, they grew apart and distinct factions grew around Mount Grenidor.' [" . quest::saylink("continue") . "]");
 			}
 
 			if($text=~/continue/i){
-				plugin::DiaWind("To the south of Grenidor lay Srerendi, Shores of the Lost and the Srerendi storm giants. Born of the ocean and the cool air, they lay claim to the shores and the plains inland as their own. To the west of Grenidor lay Krendic, Sands of Chaos and the Krendic storm giants. They have skin that is thick as dirt and blend in well with their surroundings. To the north of the great mount lay Kelek`Vor, the Forest of Tears and the Kelek`Vor storm giants. They are born of the wood and take great pleasure in seeing it used to their own purposes.' [" . quest::saylink("continue") . "]");
+				quest::say("To the south of Grenidor lay Srerendi, Shores of the Lost and the Srerendi storm giants. Born of the ocean and the cool air, they lay claim to the shores and the plains inland as their own. To the west of Grenidor lay Krendic, Sands of Chaos and the Krendic storm giants. They have skin that is thick as dirt and blend in well with their surroundings. To the north of the great mount lay Kelek`Vor, the Forest of Tears and the Kelek`Vor storm giants. They are born of the wood and take great pleasure in seeing it used to their own purposes.' [" . quest::saylink("continue") . "]");
 				quest::setglobal("pop_pos_askr_the_lost", 2, 5, "F");	#used to differentiate between the two [continue] statements
 			}
 		}
 		
 
 		if(defined $qglobals{pop_pos_askr_the_lost} && $qglobals{pop_pos_askr_the_lost} == 3 && $text=~/Bastion of Thunder/i){
-			plugin::DiaWind("To be honest, I cannot say that it is entirely possible, what with the ferocity of the giants and their reluctance to leave the lands they now inhabit. From what I do know, each of the Leaders of each tribe has one piece to allow entrance into the Bastion of Thunder. When two of these pieces are combined, they form an esoteric medallion that allows instant passage to the thunderous plains beyond. If you can find and seal two pieces of the medallion in this bag, I will be able to forge them into the medallion that will help you on your journey.");
+			quest::say("To be honest, I cannot say that it is entirely possible, what with the ferocity of the giants and their reluctance to leave the lands they now inhabit. From what I do know, each of the Leaders of each tribe has one piece to allow entrance into the Bastion of Thunder. When two of these pieces are combined, they form an esoteric medallion that allows instant passage to the thunderous plains beyond. If you can find and seal two pieces of the medallion in this bag, I will be able to forge them into the medallion that will help you on your journey.");
 			quest::summonitem(17192);
 		}
 	}
@@ -97,7 +97,7 @@ sub EVENT_ITEM {
 	if(defined $qglobals{pop_poj_valor_storms} && $qglobals{pop_poj_valor_storms} == 1) {
 
 		if(!defined $qglobals{pop_pos_askr_the_lost} && (plugin::check_handin(\%itemcount, 11486 => 1) || plugin::check_handin(\%itemcount,28749 => 1) || plugin::check_handin(\%itemcount,28781 => 1) || plugin::check_handin(\%itemcount,28782 => 1))){	#check for any of the 4 storm giant heads in the database
-			plugin::DiaWind("The drunken stupor that Askr had been in earlier appears to vanish in an instant; a glimmer of hope now flashes in the depths of his eyes. 'This is the head of a giant. . . a storm giant from outside the caves.' Askr ponders what this revelation could mean. He mutters to himself, 'If it is possible that someone has indeed bested a giant here in the planes, then perhaps it is possible. . .' He looks back at you very sternly and asks, 'Tell me now and be truthful, was it you who severed the head of this giant from his body?'");
+			quest::say("The drunken stupor that Askr had been in earlier appears to vanish in an instant; a glimmer of hope now flashes in the depths of his eyes. 'This is the head of a giant. . . a storm giant from outside the caves.' Askr ponders what this revelation could mean. He mutters to himself, 'If it is possible that someone has indeed bested a giant here in the planes, then perhaps it is possible. . .' He looks back at you very sternly and asks, 'Tell me now and be truthful, was it you who severed the head of this giant from his body?'");
 			
 			quest::setglobal("pop_pos_askr_the_lost", 1, 5, "F");
 #handed in giant head

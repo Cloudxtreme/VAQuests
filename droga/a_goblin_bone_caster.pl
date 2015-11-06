@@ -2,7 +2,7 @@
 # Angelox
 
 sub EVENT_COMBAT{
- plugin::DiaWind("Your soul shall be mine!");
+ quest::say("Your soul shall be mine!");
 }
 
 sub EVENT_DEATH_COMPLETE{

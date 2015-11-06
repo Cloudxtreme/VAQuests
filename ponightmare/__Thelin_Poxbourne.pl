@@ -17,7 +17,7 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i)
        {
-       plugin::DiaWind("She lied! She said she would release me if I found my way through the maze! Please, you must defeat her. It is the only way I will ever be free. I can help you escape this maze if you would like to [return]");
+       quest::say("She lied! She said she would release me if I found my way through the maze! Please, you must defeat her. It is the only way I will ever be free. I can help you escape this maze if you would like to [return]");
        $client->Message(4,"You receive a character flag!");
        quest::setglobal("pop_pon_construct", 1, 5, "F");
        }

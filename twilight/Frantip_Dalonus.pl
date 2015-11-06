@@ -14,28 +14,28 @@ sub EVENT_SAY {
 	quest::emote("smiles briefly. ''Greetings to ye. If you be needin' the goods Ive got 'em.'");
  }
  if($text =~ /armor/i) {
-	plugin::DiaWind("Ah yes, I've been trying to get rid of this armor for some time. Do you happen to be a necromancer?");
+	quest::say("Ah yes, I've been trying to get rid of this armor for some time. Do you happen to be a necromancer?");
  }
  if($text =~ /I am a necromancer/i) {
-	plugin::DiaWind("Very good! I have the veil, cloak, gloves, choker, belt, and staff. Which do you want?");
+	quest::say("Very good! I have the veil, cloak, gloves, choker, belt, and staff. Which do you want?");
  }
  if($text =~ /veil/i) {
-	plugin::DiaWind("For the veil of pestilence you will have to go retrieve for me a sky jewel, a jeweled rod, and a bronze brazier.");
+	quest::say("For the veil of pestilence you will have to go retrieve for me a sky jewel, a jeweled rod, and a bronze brazier.");
  }
  if($text =~ /cloak/i) {
-	plugin::DiaWind("For the cloak of pestilence you will have to go retrieve for me a meteor jewel, a hardened agate, a veiled lantern, and a white garnet.");
+	quest::say("For the cloak of pestilence you will have to go retrieve for me a meteor jewel, a hardened agate, a veiled lantern, and a white garnet.");
  }
  if($text =~ /gloves/i) {
-	plugin::DiaWind("For the gloves of pestilence you will have to go retrieve for me an astral jewel, an antique lantern, and a glowing meteor fragment.");
+	quest::say("For the gloves of pestilence you will have to go retrieve for me an astral jewel, an antique lantern, and a glowing meteor fragment.");
  }
  if($text =~ /choker/i) {
-	plugin::DiaWind("For the choker of pestilence you will have to go retrieve for me a sun jewel, an ancient relic of Tzon, and a fluorescent gem.");
+	quest::say("For the choker of pestilence you will have to go retrieve for me a sun jewel, an ancient relic of Tzon, and a fluorescent gem.");
  }
  if($text =~ /belt/i) {
-	plugin::DiaWind("For the belt of pestilence you will have to go retrieve for me a moon jewel, an ancestral statuette, some dark hued wood, and an ocher gem.");
+	quest::say("For the belt of pestilence you will have to go retrieve for me a moon jewel, an ancestral statuette, some dark hued wood, and an ocher gem.");
  }
  if($text =~ /staff/i) {
-	plugin::DiaWind("For the staff of pestilence you will have to go retrieve for me a star jewel, some cultured spirits, some golden mushrooms, and a gem of awe.");
+	quest::say("For the staff of pestilence you will have to go retrieve for me a star jewel, some cultured spirits, some golden mushrooms, and a gem of awe.");
  }
 }
 

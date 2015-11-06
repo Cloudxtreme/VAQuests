@@ -1,6 +1,6 @@
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 55272 => 1)) { #Jilsua's Note
-    plugin::DiaWind("Ahoy there! Dahdd Jonne, tailor extraordinaire at your service! What's this? A note from, Jilsua? Always a pleasure!");
+    quest::say("Ahoy there! Dahdd Jonne, tailor extraordinaire at your service! What's this? A note from, Jilsua? Always a pleasure!");
     quest::emote("stuffs a whole bixie berry bun into his mouth. 'Mrpmpphh. Says you are on a quest to upgrade your Satchel of Abu-Kar. Very interesting!'");
     quest::emote("wipes his hands on his clothes. 'Let's see here. I think I can do this. Hand me your Rujarkian Orc Hide, Stone Frog Skin, and your Bloodguard Crypt Mummy Wrappings, oh and of course your Satchel of Abu-Kar. Don't worry, I won't ruin it. At least I don't think I will.'");
   }

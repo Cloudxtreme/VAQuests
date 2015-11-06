@@ -10,12 +10,12 @@ sub EVENT_SAY
 		}
 		
 		elsif($text=~/prepared/i) {
-			plugin::DiaWind("Very well. When you are ready, you may begin the trial of flame. You must endure the heat of the fire and be sure not to let its creatures reach the center. We shall judge the mark of your success.");
+			quest::say("Very well. When you are ready, you may begin the trial of flame. You must endure the heat of the fire and be sure not to let its creatures reach the center. We shall judge the mark of your success.");
 		}
 		
 		elsif($text=~/begin the trial of flame/i) {
 			if (!defined $flame) {
-				plugin::DiaWind("Then begin.");
+				quest::say("Then begin.");
 				#Cast Penance of Flame
         #quest::selfcast(1124);
         $group = $entity_list->GetGroupByClient($client);
@@ -35,14 +35,14 @@ sub EVENT_SAY
 				quest::spawn2(201417, 0, 0, 880, -729, 55, 0);
 			}
 			else {
-				plugin::DiaWind("I'm sorry, the Trial of Flame is currently unavilable to you.");
+				quest::say("I'm sorry, the Trial of Flame is currently unavilable to you.");
 				#if (($flame > 0) && ($flame < 6)) {
 				#	$npc->CastSpell(1124, $userid);
-				#	plugin::DiaWind("Then begin.");		
+				#	quest::say("Then begin.");		
 				#	$flame++;
 				#}
 				#else {
-				#	plugin::DiaWind("I'm sorry, the Trial of Flame is currently unavilable to you.");
+				#	quest::say("I'm sorry, the Trial of Flame is currently unavilable to you.");
 				#}
 			}
 		}
@@ -96,7 +96,7 @@ sub EVENT_SAY
 					quest::summonitem(31599);
 				} 
 			}elsif (plugin::check_hasitem($client, 31842) || plugin::check_hasitem($client, 31796) || plugin::check_hasitem($client, 31960) || plugin::check_hasitem($client, 31845) || plugin::check_hasitem($client, 31844) || plugin::check_hasitem($client, 31846) ) { 
-				plugin::DiaWind("You have done well, mortal, but there are more trials yet for you to complete.");
+				quest::say("You have done well, mortal, but there are more trials yet for you to complete.");
 			}
 		}
 	}

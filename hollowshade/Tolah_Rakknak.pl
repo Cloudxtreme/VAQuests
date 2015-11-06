@@ -17,7 +17,7 @@ sub	EVENT_WAYPOINT_ARRIVE
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Hello. $name. you may call me Tolah. Please feel free to peruse my wares. I think you'll find my prices very fair considering the risk I am taking to bring them here. If not. you can always go all the way to town to do your shopping.");
+quest::say("Hello. $name. you may call me Tolah. Please feel free to peruse my wares. I think you'll find my prices very fair considering the risk I am taking to bring them here. If not. you can always go all the way to town to do your shopping.");
 	quest::SetRunning(1);
  }
 }

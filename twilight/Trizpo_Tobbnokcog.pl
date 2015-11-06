@@ -1,36 +1,36 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Hi there. who are you?  What are you doing here? Oh I'm one of Vornol's four apprentices.  I specialize in the element of earth.'"); }
+quest::say("Hi there. who are you?  What are you doing here? Oh I'm one of Vornol's four apprentices.  I specialize in the element of earth.'"); }
   if ($text=~/Gazoon sent me/i) {
-    plugin::DiaWind("Oh you've been to see Gazoon on his island. Yep he gave me some of his fancy finger waggler armor, are ya a wizard?");
+    quest::say("Oh you've been to see Gazoon on his island. Yep he gave me some of his fancy finger waggler armor, are ya a wizard?");
       }
   if ($text=~/wizard/i) {
-    plugin::DiaWind("Cool then you'll probably be wanting the [mask], [cloak], [gloves], [choker], [belt] and [staff] I have.");
+    quest::say("Cool then you'll probably be wanting the [mask], [cloak], [gloves], [choker], [belt] and [staff] I have.");
       }
   if ($text=~/mask/i) {
-    plugin::DiaWind("For the mask you'll have to get me a meteor jewel, a mark of potential, and an iron tipped wand.");
+    quest::say("For the mask you'll have to get me a meteor jewel, a mark of potential, and an iron tipped wand.");
   }
   if ($text=~/cloak/i) {
-    plugin::DiaWind("For the cloak you'll have to get me an astral jewel, a mark of temper, a vial of firewater, and some iced nectar.");
+    quest::say("For the cloak you'll have to get me an astral jewel, a mark of temper, a vial of firewater, and some iced nectar.");
   }
   if ($text=~/gloves/i) {
-    plugin::DiaWind("For the gloves you'll have to get me a sun jewel, a mark of might, and a book of solutions.");
+    quest::say("For the gloves you'll have to get me a sun jewel, a mark of might, and a book of solutions.");
   }
   if ($text=~/choker/i) {
-    plugin::DiaWind("For the choker you'll have to get me a moon jewel, a mark of destruction, and a stick of mastery.");
+    quest::say("For the choker you'll have to get me a moon jewel, a mark of destruction, and a stick of mastery.");
   }
   if ($text=~/belt/i) {
-    plugin::DiaWind("For the belt you'll have to get me a star jewel, a mark of thaumaturgy, a loop of energy, and a small magnifying lens.");
+    quest::say("For the belt you'll have to get me a star jewel, a mark of thaumaturgy, a loop of energy, and a small magnifying lens.");
   }
   if ($text=~/staff/i) {
-    plugin::DiaWind("For the staff you'll have to get me a cloud jewel, a mark of detonation, opaque glasses, and a pyro wand.");
+    quest::say("For the staff you'll have to get me a cloud jewel, a mark of detonation, opaque glasses, and a pyro wand.");
   }  
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4736 => 1, 4735 => 1, 4738 => 1, 4490 => 1)) { #belt
     quest::summonitem(3721);
-    plugin::DiaWind("Ah! Now I can return to my studies!"); #made up
+    quest::say("Ah! Now I can return to my studies!"); #made up
     quest::exp(75000);
   }
   elsif (plugin::check_handin(\%itemcount, 4374 => 1, 4489 => 1, 4737 => 1)) { #choker

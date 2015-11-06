@@ -1,10 +1,10 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Avast you! Ya best be shoving off if ye knows whats good for you. We be pirate raiders and ya best not be messing with the likes of us!");
+    quest::say("Avast you! Ya best be shoving off if ye knows whats good for you. We be pirate raiders and ya best not be messing with the likes of us!");
     quest::settimer("ritap1", 2);
   }
   if ($text=~/tinkered rope/i) {
-    plugin::DiaWind("Batten down yer yapper! Ahl be doin the talking here. We be needin the rope to tie ye down fer ransom. Now fetch me the beard of a frost giant scout so's I can make some more rope to tie ye up with.");
+    quest::say("Batten down yer yapper! Ahl be doin the talking here. We be needin the rope to tie ye down fer ransom. Now fetch me the beard of a frost giant scout so's I can make some more rope to tie ye up with.");
   }
 }
 
@@ -14,15 +14,15 @@ sub EVENT_SIGNAL {
   }
     # shawl signal
   elsif($signal == 101) {
-    plugin::DiaWind("Arrrrrrrrrrr!");
+    quest::say("Arrrrrrrrrrr!");
   } 
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30048 => 1)) {
-    plugin::DiaWind("Arg! By blubberbeards nostril! Ye'v done it!'");
+    quest::say("Arg! By blubberbeards nostril! Ye'v done it!'");
     quest::emote("He braids the beard together into a sturdy rope.");
-    plugin::DiaWind("Now take this here rope and tie yerself up! Come lets go tell the cap'n we've captured us some prisoners!");
+    quest::say("Now take this here rope and tie yerself up! Come lets go tell the cap'n we've captured us some prisoners!");
     quest::summonitem(30049);
     quest::faction(251, 30);
     quest::exp(1000);
@@ -53,9 +53,9 @@ sub EVENT_TIMER {
   }
   if ($timer eq "ritap2") {
     quest::stoptimer("ritap2");
-    plugin::DiaWind("The cap'n said PIRATES! Not parrots, ye knucklehead!");
+    quest::say("The cap'n said PIRATES! Not parrots, ye knucklehead!");
     quest::emote("whacks the other raider upside the head.");
-    plugin::DiaWind("Now whar's the tinkered rope!?");
+    quest::say("Now whar's the tinkered rope!?");
     quest::settimer("ritap3", 2);
   }
   if ($timer eq "ritap3") {

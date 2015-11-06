@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
   if ($text=~/trick or treat/i) {
-    plugin::DiaWind("Hah! Here's the tastiest treat of them all! Enjoy!");
+    quest::say("Hah! Here's the tastiest treat of them all! Enjoy!");
     quest::summonitem(quest::ChooseRandom(84091, 84092, 84093, 84088, 84088, 84088, 84088, 84088, 84088, 84088));
     quest::updatetaskactivity(220, 2);
   }

@@ -18,7 +18,7 @@ sub EVENT_ITEM {
   quest::spawn2(85223,0,0,$x,$y,$z,$h);  
  }
   else {
-    plugin::DiaWind("I have no use for this, $name.");
+    quest::say("I have no use for this, $name.");
     quest::return_items(\%itemcount);
   }
 }

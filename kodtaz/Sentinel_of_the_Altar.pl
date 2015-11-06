@@ -10,7 +10,7 @@ sub EVENT_ITEM {
 			  if($InInstanceIkky7 == 0){
 				$Instance = quest::CreateInstance("ikkinz", 6, 21600);
 				quest::AssignRaidToInstance($Instance);	
-				plugin::DiaWind("Instance added.");
+				quest::say("Instance added.");
 			  } else {
 				$client->Message(13, "You are already in an instance!");
 			  }

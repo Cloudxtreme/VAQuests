@@ -3,10 +3,10 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Welcome, adventurous one. You wouldn't happen to be interested in a little [paranormal research] would you?"); 
+    quest::say("Welcome, adventurous one. You wouldn't happen to be interested in a little [paranormal research] would you?"); 
   }
   if ($text=~/paranormal research/i) {
-    plugin::DiaWind("That is wonderful. There are some ruins on the other bank of this channel. They appear to be quite old and are covered in strange markings. It is my theory that they were some form of religious or supernatural ritual area. I don't know what happened, but there are ghostly sightings there nearly every night. I have been studying them but thus far have had no luck in gaining anything solid that I can bring back for extensive study. I have seen some strange essence left behind, however. If you could bring me a few of those, say four? It would be most helpful. I may even have a mace in it for you."); 
+    quest::say("That is wonderful. There are some ruins on the other bank of this channel. They appear to be quite old and are covered in strange markings. It is my theory that they were some form of religious or supernatural ritual area. I don't know what happened, but there are ghostly sightings there nearly every night. I have been studying them but thus far have had no luck in gaining anything solid that I can bring back for extensive study. I have seen some strange essence left behind, however. If you could bring me a few of those, say four? It would be most helpful. I may even have a mace in it for you."); 
   }
 }
 

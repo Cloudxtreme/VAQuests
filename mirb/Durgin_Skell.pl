@@ -39,36 +39,36 @@ sub EVENT_SAY {
       $tasks_done = 1;
     }
     if ($tasks_done && !$Laskuth_spawned) {
-      plugin::DiaWind("Fantastic work, friends. I'm not sure how, but you have accomplished the impossible by ridding the Menagerie of the most horrible abominations imaginable. You've done a great service for the brotherhood. I'm sure Morden will reward you handsomely for . . . Wait, what was that noise?' The caverns tremble and fragments of ice rain down like hail. A deep, thundering roar rumbles from the northeast. 'Oh dear. It sounds like our work is not quite finished. I'll just . . . wait here if you don't mind.");
+      quest::say("Fantastic work, friends. I'm not sure how, but you have accomplished the impossible by ridding the Menagerie of the most horrible abominations imaginable. You've done a great service for the brotherhood. I'm sure Morden will reward you handsomely for . . . Wait, what was that noise?' The caverns tremble and fragments of ice rain down like hail. A deep, thundering roar rumbles from the northeast. 'Oh dear. It sounds like our work is not quite finished. I'll just . . . wait here if you don't mind.");
       quest::spawn2(237797, 0, 0, 216.00, 397.00, -9.75, 128.00); #spawn Laskuth the Colossus
       $Laskuth_spawned = 1;
     } else {
-      plugin::DiaWind("Greetings adventurer, and welcome to this horrid nightmare. In order to fully understand Miragul and escape this horrid place, I ask that you aid me in some [tasks].");
+      quest::say("Greetings adventurer, and welcome to this horrid nightmare. In order to fully understand Miragul and escape this horrid place, I ask that you aid me in some [tasks].");
       if ($task1 == 1) {
-        plugin::DiaWind("The sludge no longer blocks the passage ahead.");
+        quest::say("The sludge no longer blocks the passage ahead.");
       }
       if ($task2 == 1) {
-        plugin::DiaWind("The skeletons no longer haunt my dream. Thank you!");
+        quest::say("The skeletons no longer haunt my dream. Thank you!");
       }
       if ($task3 == 1) {
-        plugin::DiaWind("The monstrosity of bone is no more.");
+        quest::say("The monstrosity of bone is no more.");
       }
       if ($task4 == 2) {
-        plugin::DiaWind("Sharalla rests peacefully.");
+        quest::say("Sharalla rests peacefully.");
       }
     }
   }
   if ($text=~/tasks/i) {
-    plugin::DiaWind("The first task is to dispatch the slime just beyond here. Once completed, proceed to the [second] task.");
+    quest::say("The first task is to dispatch the slime just beyond here. Once completed, proceed to the [second] task.");
   }
   if ($text=~/second/i) {
-    plugin::DiaWind("Some animated skeletons haunt these caverns. The heat of battle is their weakness, but their strength lies in numbers. Destroy all four together so they may not aid each other in their ethereal forms. When this terror is gone, prepare for the [third] task.");
+    quest::say("Some animated skeletons haunt these caverns. The heat of battle is their weakness, but their strength lies in numbers. Destroy all four together so they may not aid each other in their ethereal forms. When this terror is gone, prepare for the [third] task.");
   }
   if ($text=~/third/i) {
-    plugin::DiaWind("An abomination named Marrow the Broken spreads dismay throughout these cold regions. Destroy the vile beast, then I will have one [final] task.");
+    quest::say("An abomination named Marrow the Broken spreads dismay throughout these cold regions. Destroy the vile beast, then I will have one [final] task.");
   }
   if ($text=~/final/i) {
-    plugin::DiaWind("My dear, Sharalla, passed on within these caves. I ask that you only protect her form from the beasts until the nightmare ends.");
+    quest::say("My dear, Sharalla, passed on within these caves. I ask that you only protect her form from the beasts until the nightmare ends.");
   }
 }
 

@@ -13,7 +13,7 @@ my %DeathText = (
 );
 
 sub EVENT_AGGRO { 
-  plugin::DiaWind($AggroText{int(rand(4)) + 1});
+  quest::say($AggroText{int(rand(4)) + 1});
 }
 
 sub EVENT_DEATH_COMPLETE {

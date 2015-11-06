@@ -2,7 +2,7 @@
 # Angelox
 
 sub EVENT_COMBAT{
- plugin::DiaWind("The time has come for you to taste the might of my magic");
+ quest::say("The time has come for you to taste the might of my magic");
 }
 
 sub EVENT_DEATH_COMPLETE{

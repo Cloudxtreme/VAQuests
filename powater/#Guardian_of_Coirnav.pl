@@ -8,11 +8,11 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_AGGRO {
-  plugin::DiaWind("We are the protectors and guardians of this domain, death is all you will find here.");
+  quest::say("We are the protectors and guardians of this domain, death is all you will find here.");
 }
 
 sub EVENT_DEATH_COMPLETE {
-  plugin::DiaWind("Even now Coirnav awaits to deal swift death to you. Flee, weaklings.");
+  quest::say("Even now Coirnav awaits to deal swift death to you. Flee, weaklings.");
   quest::signalwith(216107,1,0);
 }
 

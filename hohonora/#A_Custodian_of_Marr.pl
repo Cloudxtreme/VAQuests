@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-plugin::DiaWind("Fools!");
+quest::say("Fools!");
 }
 
 sub EVENT_DEATH_COMPLETE {

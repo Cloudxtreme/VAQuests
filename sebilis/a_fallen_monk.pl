@@ -8,7 +8,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if($itemcount{4199} == 1){
-  plugin::DiaWind("Earn what is mine. Show me you have the power worthy to wield what I possess.");
+  quest::say("Earn what is mine. Show me you have the power worthy to wield what I possess.");
   my $x = $npc->GetX();
   my $y = $npc->GetY();
   my $z = $npc->GetZ();

@@ -1,6 +1,6 @@
 sub EVENT_SAY{
         if($text=~/hail/i){
-plugin::DiaWind("mysterious {bullet} Would you like to enter: <br> {in} {bullet} {y}Sanctum Somnium~?<br>
+quest::say("mysterious {bullet} Would you like to enter: <br> {in} {bullet} {y}Sanctum Somnium~?<br>
                                         {linebreak}<br>
                                         <table><tr><td>
                                         <tr><td>{in}</td><td>{gold}Expansion:~          </td><td>Visions of Morell</td>

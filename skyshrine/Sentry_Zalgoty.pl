@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Don't mind the velium in next room. They are too caught up in their duty to pay attention to anything else.");
+    quest::say("Don't mind the velium in next room. They are too caught up in their duty to pay attention to anything else.");
   }
 }
 

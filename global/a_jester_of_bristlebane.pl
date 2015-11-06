@@ -48,44 +48,44 @@ sub EVENT_TIMER {
                 if($ClientID > 0) {
                         $c = $entity_list->GetClientByID($ClientID);
                         if($c) {
-                                plugin::DiaWind("How about a little wine to quench your thirst?");
+                                quest::say("How about a little wine to quench your thirst?");
                                 $c->SummonItem(quest::ChooseRandom(64046, 64047), 10);
                         }
                 }
         }
         elsif($action == 2) {
-                plugin::DiaWind("I used to work nights as an entertainer for Fennin Ro. . .then he fired me.");
+                quest::say("I used to work nights as an entertainer for Fennin Ro. . .then he fired me.");
         }
         elsif($action == 3) {
-                plugin::DiaWind("My puns seem to get worse the older I get.  I guess I'm groaning up.");
+                quest::say("My puns seem to get worse the older I get.  I guess I'm groaning up.");
         }
         elsif($action == 4) {
                 $ClientID = GetRandomClient();
                 if($ClientID > 0) {
-                        plugin::DiaWind("You need to be more down to earth.");
+                        quest::say("You need to be more down to earth.");
                         $npc->CastSpell(345, $ClientID);
                 }
         }
         elsif($action == 5) {
-                plugin::DiaWind("You have the life expectancy of a blind elf in Kelethin.");
+                quest::say("You have the life expectancy of a blind elf in Kelethin.");
         }
         elsif($action == 6) {
-                plugin::DiaWind("What do you call an angry Berserker?  Anything they want you to!");
+                quest::say("What do you call an angry Berserker?  Anything they want you to!");
         }
         elsif($action == 7) {
-                plugin::DiaWind("What did one ranger say to the other ranger at the local pub?  Bind here often?");
+                quest::say("What did one ranger say to the other ranger at the local pub?  Bind here often?");
         }
         elsif($action == 8) {
                 $ClientID = GetRandomClient();
                 if($ClientID > 0) {
-                        plugin::DiaWind("How's the weather up there?");
+                        quest::say("How's the weather up there?");
                         $npc->CastSpell(2522, $ClientID);
                 }
         }
         elsif($action == 9) {
                 $c = GetRandomClient();
                 if($c > 0) {
-                        plugin::DiaWind("You look exhausted.");
+                        quest::say("You look exhausted.");
                         $npc->CastSpell(6897, $c, 10, 0);
                 }
         }
@@ -94,17 +94,17 @@ sub EVENT_TIMER {
                 if($ClientID > 0) {
                         $c = $entity_list->GetClientByID($ClientID);
                         if($c) {
-                                plugin::DiaWind("Try a bite of my tasty bread.  I make it myself.");
+                                quest::say("Try a bite of my tasty bread.  I make it myself.");
                                 $c->SummonItem(quest::ChooseRandom(64044, 64045), 10);
                         }
                 }
         }
         elsif($action == 11) {
-                plugin::DiaWind("This place really needs to lighten up.");
+                quest::say("This place really needs to lighten up.");
                 $npc->CastSpell(30, 0, 10, 0);
         }
         elsif($action == 12) {
-                plugin::DiaWind("I've always heard that change must come from within but this is ridiculous.");
+                quest::say("I've always heard that change must come from within but this is ridiculous.");
                 $ClientID = GetRandomClient();
                 if($ClientID > 0) {
                         $c = $entity_list->GetClientByID($ClientID);
@@ -116,10 +116,10 @@ sub EVENT_TIMER {
                 }
         }
         elsif($action == 13) {
-                plugin::DiaWind("I think monks use that 'weight thing' as an excuse to make me carry their bags.");
+                quest::say("I think monks use that 'weight thing' as an excuse to make me carry their bags.");
         }
         elsif($action == 14) {
-                plugin::DiaWind("Next time you visit the Plane of Mischief, say hello to the merry mushroom men for me.  Fun guys, all of them.");
+                quest::say("Next time you visit the Plane of Mischief, say hello to the merry mushroom men for me.  Fun guys, all of them.");
         }
         else {
         }

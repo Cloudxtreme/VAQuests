@@ -2,7 +2,7 @@
 
 sub EVENT_SAY {
  if($text =~ /hail/i) {
-  plugin::DiaWind("Greetings, $name. May I interest you in one of the tomes of our history?"); #Made this up
+  quest::say("Greetings, $name. May I interest you in one of the tomes of our history?"); #Made this up
  }
 }
 

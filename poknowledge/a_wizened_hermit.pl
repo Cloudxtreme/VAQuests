@@ -11,29 +11,29 @@ sub EVENT_SAY {
                                 $client->NukeItem(54725);
 			}
       			else {
-      				plugin::DiaWind("Bring me back some toadstools from Toxxulia, if you dare!");
+      				quest::say("Bring me back some toadstools from Toxxulia, if you dare!");
       			}
       		}
       	}
 	elsif(!quest::istaskactive(217)){
 		if(!defined $qglobals{halloween_mushroom}){
 			if($text=~/Hail/i) {
-   				plugin::DiaWind("I don't understand what all the fuss is about. This should be a day of [fear], not celebration!");
+   				quest::say("I don't understand what all the fuss is about. This should be a day of [fear], not celebration!");
       			}
       			if($text=~/Fear/i) {
-      				plugin::DiaWind("Yes! All should be afraid! Er, well I can't think of anything in particular they should be scared of come to think of it. I just know that when the [masses] are fearful they stay home, and out of my hair!");
+      				quest::say("Yes! All should be afraid! Er, well I can't think of anything in particular they should be scared of come to think of it. I just know that when the [masses] are fearful they stay home, and out of my hair!");
       			}	
 			if($text=~/Masses/i) {
-      				plugin::DiaWind("Far too many people out and about today if you ask me. I have half a mind to turn them all into [toadstools].");
+      				quest::say("Far too many people out and about today if you ask me. I have half a mind to turn them all into [toadstools].");
 			}
 			if($text=~/Toadstools/i) {
-      				plugin::DiaWind("It's a neat trick actually. Since it seems there won't be any peace for me today regardless, I suppose I could show it to you. Bring me back some toadstools from Toxxulia, if you dare!");
+      				quest::say("It's a neat trick actually. Since it seems there won't be any peace for me today regardless, I suppose I could show it to you. Bring me back some toadstools from Toxxulia, if you dare!");
                                 quest::assigntask(219);
 				quest::assigntask(217);
 			}
 		}
 		else {
-			plugin::DiaWind("Thank you for finding them!");
+			quest::say("Thank you for finding them!");
 		}		
 	}	
 }

@@ -1,17 +1,17 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("You be tinking you be [real tuff Craknek]?");
+quest::say("You be tinking you be [real tuff Craknek]?");
 }
 if($text=~/i am a real tuff craknek/i){
-plugin::DiaWind("Me not tinking so. but maybe me wrongs.. no.. me neber wrongs.  You no tuff. only liddle Craknek is you.  You tink you be tuff Craknek. you bringed me four lizard meats.  Me like lizard meats.  You no tuff.  You bringed me lizard [meats].  I make you tuffer Craknek.  Me bestest Craknek."); }
+quest::say("Me not tinking so. but maybe me wrongs.. no.. me neber wrongs.  You no tuff. only liddle Craknek is you.  You tink you be tuff Craknek. you bringed me four lizard meats.  Me like lizard meats.  You no tuff.  You bringed me lizard [meats].  I make you tuffer Craknek.  Me bestest Craknek."); }
 }
 if ($text=~/meats/i) {
-  plugin::DiaWind("Yup, meats.  You brings me four, me gives you sumting.");
+  quest::say("Yup, meats.  You brings me four, me gives you sumting.");
 }
 
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 13410 => 4)) {
-  plugin::DiaWind("Yous really did it. Mebbe you tuff Craknek after all.");
+  quest::say("Yous really did it. Mebbe you tuff Craknek after all.");
   quest::faction( 46, 15);
   quest::faction( 57, 15);
 }

@@ -11,5 +11,5 @@ sub EVENT_COMBAT {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	plugin::DiaWind("Destroy my corpse or my misery will never end!");
+	quest::say("Destroy my corpse or my misery will never end!");
 }

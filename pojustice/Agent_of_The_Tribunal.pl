@@ -14,7 +14,7 @@ my $hold_torture = 0;
 
 sub EVENT_SAY {
    if ($text =~ /hail/i) {
-      plugin::DiaWind("Do you wish to [return]?");
+      quest::say("Do you wish to [return]?");
    }
    
    elsif($text =~ /return/i) {
@@ -24,61 +24,61 @@ sub EVENT_SAY {
       #Execution
       if (($x == 141) && ($y == -1045)) {
          if ($hold_execution == 0) {
-            plugin::DiaWind("Very well.");
+            quest::say("Very well.");
             quest::movepc(201,456,825,9);
          }
          else {
-            plugin::DiaWind("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
+            quest::say("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
          }
       }
       #Flame
       elsif (($x == 911) && ($y == -794)) {
          if ($hold_flame == 0) {
-            plugin::DiaWind("Very well.");
+            quest::say("Very well.");
             quest::movepc(201,456,825,9);
          }
          else {
-            plugin::DiaWind("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
+            quest::say("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
          }
       }
       #Hanging
       elsif (($x == 490) && ($y == -1047)) {
          if ($hold_hanging == 0) {
-            plugin::DiaWind("Very well.");
+            quest::say("Very well.");
             quest::movepc(201,456,825,9);
          }
          else {
-            plugin::DiaWind("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
+            quest::say("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
          }
       }
       #Lashing
       elsif (($x == 1343) && ($y == -1138)) {
          if ($hold_lashing == 0) {
-            plugin::DiaWind("Very well.");
+            quest::say("Very well.");
             quest::movepc(201,456,825,9);
          }
          else {
-            plugin::DiaWind("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
+            quest::say("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
          }
       }
       #Stoning
       elsif (($x == -149) && ($y == -1196)) {
          if ($hold_stoning == 0) {
-            plugin::DiaWind("Very well.");
+            quest::say("Very well.");
             quest::movepc(201,456,825,9);
          }
          else {
-            plugin::DiaWind("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
+            quest::say("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
          }
       }
       #Torture
       elsif (($x == 772) && ($y == -1148)) {
          if ($hold_torture == 0) {
-            plugin::DiaWind("Very well.");
+            quest::say("Very well.");
             quest::movepc(201,456,825,9);
          }
          else {
-            plugin::DiaWind("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
+            quest::say("You have gotten this far, mortal, you must finish this or die trying.");#Text made up
          }
       }
    }

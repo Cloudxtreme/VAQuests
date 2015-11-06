@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Hello, $name."); #Real text still needed
+    quest::say("Hello, $name."); #Real text still needed
   }
 }
 

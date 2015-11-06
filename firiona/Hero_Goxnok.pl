@@ -2,10 +2,10 @@
 
 sub EVENT_SAY {
  if($text=~/news of the charasis tome/i){
-  plugin::DiaWind("The Charasis Tome has been scribed and now another copy exists. The traitor obviously wants to keep a copy for himself. I am told you will deliver both copies to Lord Qyzar along with your zealot khukri and you shall be awarded that of a crusader. Let us rest for a minute and then I shall show you the meeting place.");
+  quest::say("The Charasis Tome has been scribed and now another copy exists. The traitor obviously wants to keep a copy for himself. I am told you will deliver both copies to Lord Qyzar along with your zealot khukri and you shall be awarded that of a crusader. Let us rest for a minute and then I shall show you the meeting place.");
   quest::start(215);
   $npc->SetAppearance(1); 
-  plugin::DiaWind("Come along. If we get separated, look for the humanoid wolf camp and beyond the tunnel, you shall find the meeting place of the spider riders and the traitor.");
+  quest::say("Come along. If we get separated, look for the humanoid wolf camp and beyond the tunnel, you shall find the meeting place of the spider riders and the traitor.");
   quest::settimer("Talk1",180);
   }
 }

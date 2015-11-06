@@ -1,9 +1,9 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) { #Did not respond to hail on live 01/22/2014
-    plugin::DiaWind("Greetings, citizen. Looking for healing or other such services? If so, then I urge you to seek out the Temple of Terror. The hierophants will see to it for you.");
+    quest::say("Greetings, citizen. Looking for healing or other such services? If so, then I urge you to seek out the Temple of Terror. The hierophants will see to it for you.");
   }
   if ($text=~/sign the restraining order/i) {
-    plugin::DiaWind("I knew my wicked ways would eventually come to an end. Very well, then. Hand me the legion order and I shall sign it.");
+    quest::say("I knew my wicked ways would eventually come to an end. Very well, then. Hand me the legion order and I shall sign it.");
   }
 }
 

@@ -4,55 +4,55 @@ sub EVENT_SAY {
 
 if($text=~/hail/i) {
 
-plugin::DiaWind("Another traveler to our fair city of Katta Castellum, you be careful now.");
+quest::say("Another traveler to our fair city of Katta Castellum, you be careful now.");
 
 }
 
 if($text=~/what armor/i){
 
-plugin::DiaWind("Yes I am one of the keepers of the soldier's armor. The pieces I have are the helm, breastplate, vambraces, greaves, pauldrons, bracer, and boots. Eandalion keeps the other pieces just ask him about armor.");
+quest::say("Yes I am one of the keepers of the soldier's armor. The pieces I have are the helm, breastplate, vambraces, greaves, pauldrons, bracer, and boots. Eandalion keeps the other pieces just ask him about armor.");
 
 }
 
 if($text=~/what boots/i){
 
-plugin::DiaWind("For the boots you will have to bring to me a cloud jewel, a mark of the martial, and a hope ruby.");
+quest::say("For the boots you will have to bring to me a cloud jewel, a mark of the martial, and a hope ruby.");
 
 }
 
 if($text=~/what bracer/i){
 
-plugin::DiaWind("For the bracer you will have to bring to me a star jewel, a mark of the siege, and a blue egg.");
+quest::say("For the bracer you will have to bring to me a star jewel, a mark of the siege, and a blue egg.");
 
 }
 
 if($text=~/what breastplate/i){
 
-plugin::DiaWind("For the breastplate you will have to bring to me a meteor jewel, a mark of war, a weathered yew wand, and some dew of dawn.");
+quest::say("For the breastplate you will have to bring to me a meteor jewel, a mark of war, a weathered yew wand, and some dew of dawn.");
 
 }
 
 if($text=~/what greaves/i){
 
-plugin::DiaWind("For the greaves you will have to bring to me a sun jewel, a mark of archery, a golden torch, and a small meteor fragment.");
+quest::say("For the greaves you will have to bring to me a sun jewel, a mark of archery, a golden torch, and a small meteor fragment.");
 
 }
 
 if($text=~/what helm/i){
 
-plugin::DiaWind("For the helm you will have to bring to me a sky jewel, a mark of battle, some petrified toes, and a fire blossom.");
+quest::say("For the helm you will have to bring to me a sky jewel, a mark of battle, some petrified toes, and a fire blossom.");
 
 }
 
 if($text=~/what pauldrons/i){
 
-plugin::DiaWind("For the pauldrons you will have to bring to me a moon jewel, a mark of swordsmanship, and a water blossom."); 
+quest::say("For the pauldrons you will have to bring to me a moon jewel, a mark of swordsmanship, and a water blossom."); 
 
 }
 
 if($text=~/vambraces/i){
 
-plugin::DiaWind("For the vambraces you will have to bring to me an astral jewel, a mark of arms, a small sponge, and a scorched rock.");
+quest::say("For the vambraces you will have to bring to me an astral jewel, a mark of arms, a small sponge, and a scorched rock.");
 
 
 }

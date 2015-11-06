@@ -12,31 +12,31 @@
 
 sub EVENT_SAY {
  if($text =~/hail/i) {
-	plugin::DiaWind("Ah hello and welcome $name. tis a pleasure to see some new faces.  I have the finest wares to be found. be sure to check them out. Are ya by chance a [necromancer]");
+	quest::say("Ah hello and welcome $name. tis a pleasure to see some new faces.  I have the finest wares to be found. be sure to check them out. Are ya by chance a [necromancer]");
  }
  if($text =~ /necromancer/i) {
-	plugin::DiaWind("I have a cap, robes, sleeves, pants, shawl, bracer, and sandals for a necromancer. Frantip has the rest just ask him about armor and I'm sure he'll help you. Which are you interested in?");
+	quest::say("I have a cap, robes, sleeves, pants, shawl, bracer, and sandals for a necromancer. Frantip has the rest just ask him about armor and I'm sure he'll help you. Which are you interested in?");
  }
  if($text =~ /cap/i) {
-	plugin::DiaWind("For the cap of pestilence you'll have to bring me a sky jewel, an aged gold coin, a dark gem, and a priceless book.");
+	quest::say("For the cap of pestilence you'll have to bring me a sky jewel, an aged gold coin, a dark gem, and a priceless book.");
  }
  if($text =~ /robe/i) {
-	plugin::DiaWind("For the robe of pestilence you'll have to bring me a meteor jewel, a miniature armband, a mark of fortune, and a sun wraith eye.");
+	quest::say("For the robe of pestilence you'll have to bring me a meteor jewel, a miniature armband, a mark of fortune, and a sun wraith eye.");
  }
  if($text =~ /sleeves/i) {
-	plugin::DiaWind("For the sleeves of pestilence you'll have to bring me an astral jewel, a petrified totem, a frozen hailstone, and a glowing crystal.");
+	quest::say("For the sleeves of pestilence you'll have to bring me an astral jewel, a petrified totem, a frozen hailstone, and a glowing crystal.");
  }
  if($text =~ /pants/i) {
-	plugin::DiaWind("For the pants of pestilence you'll have to bring me a sun jewel, a divining rod, an aged platinum symbol, and a silver sign.");
+	quest::say("For the pants of pestilence you'll have to bring me a sun jewel, a divining rod, an aged platinum symbol, and a silver sign.");
  }
  if($text =~ /shawl/i) {
-	plugin::DiaWind("For the shawl of pestilence you'll have to bring me a moon jewel an ancient fossil, and some wrought iron shavings.");
+	quest::say("For the shawl of pestilence you'll have to bring me a moon jewel an ancient fossil, and some wrought iron shavings.");
  }
  if($text =~ /bracer/i) {
-	plugin::DiaWind("For the bracer of pestilence you'll have to bring me a star jewel, a granite idol, and an ancient silver coin.");
+	quest::say("For the bracer of pestilence you'll have to bring me a star jewel, a granite idol, and an ancient silver coin.");
  }
  if($text =~ /sandals/i) {
-	plugin::DiaWind("For the sandals of pestilence you'll have to bring me a cloud jewel, a blackened ornament, and a snake scale sceptre.");
+	quest::say("For the sandals of pestilence you'll have to bring me a cloud jewel, a blackened ornament, and a snake scale sceptre.");
  }
 }
 

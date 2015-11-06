@@ -9,36 +9,36 @@ sub EVENT_SAY {
   if ($faction == 1) { #req ally CoV
     if($text=~/hail/i) {
       quest::emote("looks around.");
-      plugin::DiaWind("Who dares address me? Oh, it is you. What is it you want? Some armor perhaps? To make a pretty corpse? There is something exquisite about a well-dressed meal. If you are not a shadowknight leave me now or you may end up as my next meal.");
+      quest::say("Who dares address me? Oh, it is you. What is it you want? Some armor perhaps? To make a pretty corpse? There is something exquisite about a well-dressed meal. If you are not a shadowknight leave me now or you may end up as my next meal.");
     }
     if ($text=~/armor/i) {
       quest::emote("laughs deeply.");
-      plugin::DiaWind("You manlings are so transparent. Well, if armor is what you wish, then only the best shall you have for I will not waste my time on less than the best. This is what I will make for you, granted that you can acquire the components for me - a helm, breastplate, armplates, bracers, gauntlets, leggings, and boots.");
+      quest::say("You manlings are so transparent. Well, if armor is what you wish, then only the best shall you have for I will not waste my time on less than the best. This is what I will make for you, granted that you can acquire the components for me - a helm, breastplate, armplates, bracers, gauntlets, leggings, and boots.");
     }
     if ($text=~/helm/i) {
-      plugin::DiaWind("For the helm I shall require an unadorned plate helmet and three pieces of crushed coral for my trouble. Does your tiny mind comprehend the task set before you? If so, then get them immediately! I am beginning to get hungry and you are looking all the better as a snack.");
+      quest::say("For the helm I shall require an unadorned plate helmet and three pieces of crushed coral for my trouble. Does your tiny mind comprehend the task set before you? If so, then get them immediately! I am beginning to get hungry and you are looking all the better as a snack.");
     }
     if ($text=~/breastplate/i) {
-      plugin::DiaWind("For the breastplate, I require an unadorned breastplate and three flawless diamonds. Nothing more, nothing less. For perfection, there is a price, insignificant one.");
+      quest::say("For the breastplate, I require an unadorned breastplate and three flawless diamonds. Nothing more, nothing less. For perfection, there is a price, insignificant one.");
     }
     if ($text=~/armplate/i) {
-      plugin::DiaWind("For the armplates, I need these components - unadorned plate vambraces as well as three flawed emeralds. Now go and fetch them before I change my mind.");
+      quest::say("For the armplates, I need these components - unadorned plate vambraces as well as three flawed emeralds. Now go and fetch them before I change my mind.");
     }
     if ($text=~/bracer/i) {
-      plugin::DiaWind("For the bracers, I will require an unadorned plate bracer and a set of three crushed flame emeralds. Now go away before I use your insides as decoration for my gullet.");
+      quest::say("For the bracers, I will require an unadorned plate bracer and a set of three crushed flame emeralds. Now go away before I use your insides as decoration for my gullet.");
     }
     if ($text=~/gauntlet/i) {
-      plugin::DiaWind("Your hands are quite important, aren't they? For without them, you cannot use your precious weapons or shields to protect yourselves. You humor me with your feeble attempts. Fetch me a set of unadorned plate gauntlets and three crushed topaz for your precious little gauntlets.");
+      quest::say("Your hands are quite important, aren't they? For without them, you cannot use your precious weapons or shields to protect yourselves. You humor me with your feeble attempts. Fetch me a set of unadorned plate gauntlets and three crushed topaz for your precious little gauntlets.");
     }
     if ($text=~/legging/i) {
-      plugin::DiaWind("Legs?? They are my favorite part of a meal. Some of my brethren consider them too tough, but I like them chewy. Don't you agree? Oh, yes, where was I? The leggings. Go and retrieve unadorned plate greaves as well as three flawed sea sapphires. Leave my sight before I sample one of yours.");
+      quest::say("Legs?? They are my favorite part of a meal. Some of my brethren consider them too tough, but I like them chewy. Don't you agree? Oh, yes, where was I? The leggings. Go and retrieve unadorned plate greaves as well as three flawed sea sapphires. Leave my sight before I sample one of yours.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("You wish to have a pair of boots? Then acquire these items for me. Three pieces of crushed black marble and a pair of unadorned plate boots. I tire of your prattle. Go away now.");
+      quest::say("You wish to have a pair of boots? Then acquire these items for me. Three pieces of crushed black marble and a pair of unadorned plate boots. I tire of your prattle. Go away now.");
     }
   }
   else {
-    plugin::DiaWind("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
+    quest::say("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
   }
 }
 
@@ -70,14 +70,14 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::emote("smiles warmly as he hands you your reward.");
-    plugin::DiaWind("Well done, $name.");
+    quest::say("Well done, $name.");
     quest::exp(175000);
     quest::faction(42,30); # CoV
     quest::faction(362,30); # Yelinak
     quest::faction(189,-60); # Kromzek
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust such an item to you, yet.");
+    quest::say("I do not know you well enough to entrust such an item to you, yet.");
     plugin::return_items(\%itemcount);
   }
 }

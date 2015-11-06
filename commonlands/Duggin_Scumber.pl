@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
    quest::emote("runs up and steals the note.");
-  plugin::DiaWind("Aha!! Foolish Qeynite or whatever you call yourself!! I have found the note and now I shall take it to my superior!! Just try and catch me!!");
+  quest::say("Aha!! Foolish Qeynite or whatever you call yourself!! I have found the note and now I shall take it to my superior!! Just try and catch me!!");
   quest::faction( 184,1 );
     quest::faction( 86,-1 );
     quest::faction( 105,-1 );
@@ -21,7 +21,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  plugin::DiaWind("Your name shall be added to the most wanted list of the Freeport Militia!!");
+  quest::say("Your name shall be added to the most wanted list of the Freeport Militia!!");
 }
 
 

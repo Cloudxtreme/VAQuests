@@ -19,10 +19,10 @@ sub DoRandomPatchwork {
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
-		plugin::DiaWind("How are you, my friend?  You must be a [new scout of Kelethin].  I would hope so.  We dearly need more recruits.  Most of the Fier'Dal choose the path of the ranger.");
+		quest::say("How are you, my friend?  You must be a [new scout of Kelethin].  I would hope so.  We dearly need more recruits.  Most of the Fier'Dal choose the path of the ranger.");
 	}
 	if($text=~/new scout of Kelethin/i){
-		plugin::DiaWind("Good.  I have an easy, but very important, task for you.  We require all young members to cleanse these woods of the troublesome pixie tricksters.  Take this pouch, fill it, and when it is combined, return it to me.  I just may have some used armor lying around for you.");
+		quest::say("Good.  I have an easy, but very important, task for you.  We require all young members to cleanse these woods of the troublesome pixie tricksters.  Take this pouch, fill it, and when it is combined, return it to me.  I just may have some used armor lying around for you.");
 		quest::summonitem(17957);#Empty Pouch
 	}
 	if($text=~/dark assassin/i) {
@@ -33,14 +33,14 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM { 
 	if(plugin::check_handin(\%itemcount, 12109 => 1)) {#Pouch of Pixie Dust
-		plugin::DiaWind("Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
+		quest::say("Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
 		&DoRandomPatchwork();
 		quest::givecash("0","2","0","0");
 		quest::faction(283, 10);#Scouts of Tunare
 		quest::exp(800);#10% of level 3 experience.  Newbie quest, being a bit generous compared to the guidelines.
 	} 
 	if(plugin::check_handin(\%itemcount, 16390 => 1)) {#Crumpled Piece of Paper
-		plugin::DiaWind("Ahhh! You found it! Here let me make you a copy and put this in a secure spot so I don't lose it again.");
+		quest::say("Ahhh! You found it! Here let me make you a copy and put this in a secure spot so I don't lose it again.");
 		quest::summonitem(24098);#Remiss Sketch
 		quest::exp(5061818);#This is 2% of level 53 xp.
 	}

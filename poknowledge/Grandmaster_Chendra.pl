@@ -15,13 +15,13 @@ sub EVENT_ITEM {
 		(plugin::check_handin(\%itemcount, 1205 => 1)) ||
 		(plugin::check_handin(\%itemcount, 1206 => 1))) {#Shiverback-hide Armor
     
-    	plugin::DiaWind("Thank you, $name.");#Text made up
+    	quest::say("Thank you, $name.");#Text made up
     	quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     	quest::exp(698775);
   }	
 	
 		plugin::try_tome_handins(\%itemcount, $class, 'Monk');
 		plugin::return_items(\%itemcount);
-		#plugin::DiaWind("I don't need this.");#Text made up
+		#quest::say("I don't need this.");#Text made up
 	}
 #END of FILE Zone:poknowledge  ID:202010 -- Grandmaster_Chendra 

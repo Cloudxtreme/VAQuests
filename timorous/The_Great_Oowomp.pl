@@ -33,28 +33,28 @@
 sub EVENT_SAY {
   if($text =~ /hail/i) {
     quest::emote("gestures as if casting a powerful spell...");
-    plugin::DiaWind("Come forward, adventurer! Come and [see the dancing skeleton]. I shall cast a powerfull spell and bring forth this operatic, clattering jumble of bones and he shall do a fine dance for you. From the nether regions and planes beyond, I call forth this bardic, magical, rhyming, tap-dancing hunk of undead!! I am Oowomp the Great!!");
+    quest::say("Come forward, adventurer! Come and [see the dancing skeleton]. I shall cast a powerfull spell and bring forth this operatic, clattering jumble of bones and he shall do a fine dance for you. From the nether regions and planes beyond, I call forth this bardic, magical, rhyming, tap-dancing hunk of undead!! I am Oowomp the Great!!");
   }
   if($text=~/see the dancing skeleton/i){
-    plugin::DiaWind("Oh!!  You wish to see the great Oowomp perform his magic!! I have studied with the grand mages and wise [McMerin clan] of Norrath. as my speech implies. I can call forth the skeleton with but a twinkling of my power and five of your gold.");
+    quest::say("Oh!!  You wish to see the great Oowomp perform his magic!! I have studied with the grand mages and wise [McMerin clan] of Norrath. as my speech implies. I can call forth the skeleton with but a twinkling of my power and five of your gold.");
   }
   if($text=~/McMerin clan/i){
-    plugin::DiaWind("Clan McMerin were wise shamans from the North. They allowed me to study with them. I learned many spells while I communed with them.  From them, I sto.., I mean, I learned the secret of McMerin's Feast. If you want to know the secret, you could [help gather components] for future rituals.");
+    quest::say("Clan McMerin were wise shamans from the North. They allowed me to study with them. I learned many spells while I communed with them.  From them, I sto.., I mean, I learned the secret of McMerin's Feast. If you want to know the secret, you could [help gather components] for future rituals.");
   }
   if($text=~/help gather components/i){
-    plugin::DiaWind("Actually... Not so much help as do - ALL - of the gathering. In the lands of Kunark are clay of Ghiosk, crushed dread diamond and powder of Yun. A rare find would be the bones of one who touched the Bath of Obulus. Find and return these to me and the shaman secret of McMerin's Feast is yours.");
+    quest::say("Actually... Not so much help as do - ALL - of the gathering. In the lands of Kunark are clay of Ghiosk, crushed dread diamond and powder of Yun. A rare find would be the bones of one who touched the Bath of Obulus. Find and return these to me and the shaman secret of McMerin's Feast is yours.");
   }
 }
 
 sub EVENT_ITEM {
   if($gold == 5) {
     quest::emote("flings the coins into the air and they all fall neatly into his oversized coin pouch. <Tink, tink, tink, tink, TINK!!>");
-    plugin::DiaWind("Gaze upon my awsome powers of the arcane!! You, a simple $race, shall see my power. Allakabam!!");
+    quest::say("Gaze upon my awsome powers of the arcane!! You, a simple $race, shall see my power. Allakabam!!");
     quest::spawn2("96088","0","0","3122.8","5725.2","7.9","13.0");
     quest::settimer(1,3);
   }
   elsif (plugin::check_handin(\%itemcount, 12942=>1, 12945 => 1, 12944 => 1, 12943 =>1)){
-    plugin::DiaWind("Ahh, you've gathered all the ritual components. Very good, as promised, a cop...I mean, priceless scroll of McMerin's Feast for you!");
+    quest::say("Ahh, you've gathered all the ritual components. Very good, as promised, a cop...I mean, priceless scroll of McMerin's Feast for you!");
     quest::summonitem(12941);
     quest::exp(45000);
   }

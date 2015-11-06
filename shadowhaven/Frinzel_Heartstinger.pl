@@ -1,7 +1,7 @@
 
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
-	plugin::DiaWind('Hello. I am the guild master.'); #fake
+	quest::say('Hello. I am the guild master.'); #fake
  }
 }
 

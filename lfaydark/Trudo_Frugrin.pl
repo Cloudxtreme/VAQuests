@@ -7,10 +7,10 @@
 
 sub EVENT_SAY {
    if($text=~/Hail/i){
-      plugin::DiaWind("What. what?!! I am quite busy here. I have studies to complete and charts to make!");
+      quest::say("What. what?!! I am quite busy here. I have studies to complete and charts to make!");
    }
    if($text=~/lens/i){
-      plugin::DiaWind("Yes, of course. Here you are. Now be off.");
+      quest::say("Yes, of course. Here you are. Now be off.");
       quest::summonitem(13275); #telescope lens [trudo's lens]
    }
 }

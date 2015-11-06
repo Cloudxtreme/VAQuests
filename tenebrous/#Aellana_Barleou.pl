@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
 	if($text=~/hail/i) {
-		plugin::DiaWind("The Coterie of the Eternal Night is holding us captive! We can not leave until all the vampyres that reside in this village have been destroyed! If any of them are missing I assure you they will return! My brother Johanius is an experienced vampyre slayer and will coming for us soon!");
+		quest::say("The Coterie of the Eternal Night is holding us captive! We can not leave until all the vampyres that reside in this village have been destroyed! If any of them are missing I assure you they will return! My brother Johanius is an experienced vampyre slayer and will coming for us soon!");
 	}
 }
 
@@ -16,7 +16,7 @@ sub EVENT_TIMER {
 sub EVENT_SIGNAL {
 	if($signal == 1) {
 		quest::start(3);
-		plugin::DiaWind("Dearest brother, how releaved I am to see you again!");
+		quest::say("Dearest brother, how releaved I am to see you again!");
 	}
 	if($signal == 2) {
 		quest::depop();
@@ -25,6 +25,6 @@ sub EVENT_SIGNAL {
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp == 21) {
-		plugin::DiaWind("We will see you at home Johanius, please hurry.");
+		quest::say("We will see you at home Johanius, please hurry.");
 	}
 }

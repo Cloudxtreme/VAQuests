@@ -12,7 +12,7 @@ sub EVENT_ENTER {
 
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
-		plugin::DiaWind("You want join us?  Read dat note you have and den give to me.  I decide if you be strong enough to join us.  Umm...sumting else I supposed to tell you...Oh ya!  Ask me dat [tome] you have there in yer inventory.");
+		quest::say("You want join us?  Read dat note you have and den give to me.  I decide if you be strong enough to join us.  Umm...sumting else I supposed to tell you...Oh ya!  Ask me dat [tome] you have there in yer inventory.");
 	}
 	if($text =~/tome/i) {
 		my $Indent = plugin::PWIndent();
@@ -34,7 +34,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {  
 	if(plugin::check_handin(\%itemcount, 36002  =>1)) { #Smelly Crumbled Note
-		plugin::DiaWind("Ok I tink you strong enough to start training wit us.  I gots some gud stuffs for you, little berserker!  You smart to join Dethslashers guild.  Daboo gots a pretty shirt for you -- well, not so pretty.  Me gots some lunch on it.  Don't worry, dat dwarf pie stain will come off.  Now you go fight da stuffs in da forest or in da city.  Or you talk to me friend Grigdor and help him with stuffs.  Come see me again when you done some stuffs and gots experience.  Daboo can teach you more den."); 
+		quest::say("Ok I tink you strong enough to start training wit us.  I gots some gud stuffs for you, little berserker!  You smart to join Dethslashers guild.  Daboo gots a pretty shirt for you -- well, not so pretty.  Me gots some lunch on it.  Don't worry, dat dwarf pie stain will come off.  Now you go fight da stuffs in da forest or in da city.  Or you talk to me friend Grigdor and help him with stuffs.  Come see me again when you done some stuffs and gots experience.  Daboo can teach you more den."); 
 		quest::summonitem(36008); # Gore-Covered Tunic
 		quest::ding();
 		quest::exp(100);

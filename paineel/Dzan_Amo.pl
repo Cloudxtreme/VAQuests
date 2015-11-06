@@ -1,15 +1,15 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Welcome to the Tabernacle of Terror. Perhaps you can control your fear long enough to be of [service] to us.");
+    quest::say("Welcome to the Tabernacle of Terror. Perhaps you can control your fear long enough to be of [service] to us.");
   }
   if($text=~/service/i) {
-    plugin::DiaWind("I need some things fetched from the creatures just outside our city for some ritual experimentation. Bring me two tufts of bat fur and two fire beetle legs and I will school you in the ways of terror.");
+    quest::say("I need some things fetched from the creatures just outside our city for some ritual experimentation. Bring me two tufts of bat fur and two fire beetle legs and I will school you in the ways of terror.");
   }
 }
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13069 => 2, 13250 => 2)) { #Bat Fur x 2, Fire Beetle Leg x 2
-    plugin::DiaWind("Very good young one. Here is something to assist in your studies of the principles of terror.");
+    quest::say("Very good young one. Here is something to assist in your studies of the principles of terror.");
     #quest::summonitem(); #Cleric scroll? Still need to figure out true reward.
     quest::faction(143, 5);  #Heretics
     quest::faction(79, -5);  #Deepwater Knights

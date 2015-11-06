@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   $count++;
   if($count == 1) {
-    plugin::DiaWind("So mate, are you just in from a patrol?");
+    quest::say("So mate, are you just in from a patrol?");
   }
   if($count == 2) {
     quest::signalwith(155122,1,1);
@@ -19,20 +19,20 @@ sub EVENT_TIMER {
     quest::signalwith(155122,2,1);
   }
   if($count == 5) {
-    plugin::DiaWind("Sure thing, mate. You know I'm sucker for good gossip.");
+    quest::say("Sure thing, mate. You know I'm sucker for good gossip.");
   }
   if($count == 6) {
     quest::signalwith(155122,3,1);
   }
   if($count == 7) {
-    plugin::DiaWind("Oh my! Did ya kill 'em!");
+    quest::say("Oh my! Did ya kill 'em!");
     quest::signalwith(155259,2,1);
   }
   if($count == 8) {
     quest::signalwith(155122,4,1);
   }
   if($count == 9) {
-    plugin::DiaWind("Bah! It couldn't get weirder. That's weird enough! Take a moment to finish your drink and then tell me what happened.");
+    quest::say("Bah! It couldn't get weirder. That's weird enough! Take a moment to finish your drink and then tell me what happened.");
     quest::settimer("themoor",300);
   }
   if($count == 10) {

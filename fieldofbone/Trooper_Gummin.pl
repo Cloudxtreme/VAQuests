@@ -1,9 +1,9 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Beware the bone field beyond the path. It is said that the bones of a thousand fallen warriors walk its grounds at night.");
+    quest::say("Beware the bone field beyond the path. It is said that the bones of a thousand fallen warriors walk its grounds at night.");
   }
   if ($text=~/sign the restraining order/i) {
-    plugin::DiaWind("Blast! The masters have condemned me to a life of sobriety and bloodshed! At least I still have bloodshed. But I would like one last drink. I would like a bottle of Legion Lager from Cabilis. Bring me the lager and the legion order and then I shall sign it.");
+    quest::say("Blast! The masters have condemned me to a life of sobriety and bloodshed! At least I still have bloodshed. But I would like one last drink. I would like a bottle of Legion Lager from Cabilis. Bring me the lager and the legion order and then I shall sign it.");
   }
 }
 
@@ -19,11 +19,11 @@ sub EVENT_ITEM {
     quest::exp(500);
   }
   elsif (plugin::check_handin(\%itemcount, 18242 => 1)) {
-    plugin::DiaWind("What?! I need the Legion Lager and the legion order.");
+    quest::say("What?! I need the Legion Lager and the legion order.");
     quest::summonitem(18242);
   }
   elsif (plugin::check_handin(\%itemcount, 12463 => 1)) {
-    plugin::DiaWind("What?! I need the Legion Lager and the legion order.");
+    quest::say("What?! I need the Legion Lager and the legion order.");
     quest::summonitem(12463);
   }
   plugin::return_items(\%itemcount);

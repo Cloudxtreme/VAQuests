@@ -1,9 +1,9 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hail, citizen! Have you been fishing lately? The water is alive with sewer catfish. Unfortunately, there are also the barracudas!");
+    quest::say("Hail, citizen! Have you been fishing lately? The water is alive with sewer catfish. Unfortunately, there are also the barracudas!");
   }
   if ($text=~/sign the restraining order/i) {
-    plugin::DiaWind("Alas. The masters have learned of my long evenings in the tavern. Ok... Long mornings and afternoons too. Heh heh. Can't fight authority! Hand me the... Wait. I do not have my quill with me. Go and fetch me a writing quill and hand it to me along with the legion order and then I shall sign it.");
+    quest::say("Alas. The masters have learned of my long evenings in the tavern. Ok... Long mornings and afternoons too. Heh heh. Can't fight authority! Hand me the... Wait. I do not have my quill with me. Go and fetch me a writing quill and hand it to me along with the legion order and then I shall sign it.");
   }
 }
 

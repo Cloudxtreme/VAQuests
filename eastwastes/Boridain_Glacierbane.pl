@@ -4,13 +4,13 @@ my $boridain = 0;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hello stranger, I am Boridain, master hunter of the Coldain. Glad to meet you.");
+    quest::say("Hello stranger, I am Boridain, master hunter of the Coldain. Glad to meet you.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30265 => 1)) {
-    plugin::DiaWind("Say! This looks just like the axe my uncle uses. With this I can kill the beast for sure! Now please, be very quiet, I must track my prey. I won't return to Thurgadin without the hide of the rabid tundra kodiak!");
+    quest::say("Say! This looks just like the axe my uncle uses. With this I can kill the beast for sure! Now please, be very quiet, I must track my prey. I won't return to Thurgadin without the hide of the rabid tundra kodiak!");
     $mobid = quest::spawn2(116191, 0, 0, 1547, -2459, 306.5, 0);
     $mob = $entity_list->GetMobID($mobid);
     $mobnpc = $mob->CastToNPC();
@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::depop_withtimer();
   }
   elsif (plugin::check_handin(\%itemcount, 30266 => 1) && ($boridain == 18)) {
-    plugin::DiaWind("Yes! I've done it! The vile beast is finally dead. I will at last be revered as the mighty hunter I am. Here is your axe back, I broke it on the killing blow. Take it as proof that you are a friend of the greatest hunter in the history of the Coldain!");
+    quest::say("Yes! I've done it! The vile beast is finally dead. I will at last be revered as the mighty hunter I am. Here is your axe back, I broke it on the killing blow. Take it as proof that you are a friend of the greatest hunter in the history of the Coldain!");
     quest::summonitem(30267);
     quest::exp(1000);
   }
@@ -33,7 +33,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
 
   elsif ($boridain == 1) { #loc 1760 -2468 192
-    plugin::DiaWind("Hmmm, fresh prints. They're HUGE! This must be it! This hunting stuff is easier than I thought.");
+    quest::say("Hmmm, fresh prints. They're HUGE! This must be it! This hunting stuff is easier than I thought.");
     $boridain = 2;
     quest::moveto(2325, -2134, 185);
   }
@@ -53,7 +53,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
 
   elsif ($boridain == 5) { #loc 973 -1131 212
-    plugin::DiaWind("Boy, all this hunting sure does make ya hungry! Time for a snack.");
+    quest::say("Boy, all this hunting sure does make ya hungry! Time for a snack.");
     $npc->SetAppearance(1);
     quest::settimer(1,120);
   }
@@ -89,7 +89,7 @@ sub EVENT_WAYPOINT_DEPART {
 
   elsif ($boridain == 12) { #loc 1286 -1786 175
     quest::emote("yawns.");
-    plugin::DiaWind("All this tracking is makin me mighty sleepy. Time for a little nap. You keep a lookout.");
+    quest::say("All this tracking is makin me mighty sleepy. Time for a little nap. You keep a lookout.");
     $npc->SetAppearance(3);
     quest::settimer(1,120);
   }
@@ -120,7 +120,7 @@ sub EVENT_WAYPOINT_DEPART {
   }
 
   elsif ($boridain == 18) {  #loc 1530 -2491 306
-    plugin::DiaWind("Who am I kidding, I'm no hunter. I'll never be a hunter. I may as well give up and become a miner like dad.");
+    quest::say("Who am I kidding, I'm no hunter. I'll never be a hunter. I may as well give up and become a miner like dad.");
     $npc->SetAppearance(1);
     $kodiak = quest::spawn2(116545, 231, 0, 1559, -2304, 313, 125.5);
     $mob = $entity_list->GetMobID($kodiak);
@@ -146,20 +146,20 @@ sub EVENT_TIMER {
   }
 
   elsif ($boridain == 3) { #loc 2902 -1770 146
-    plugin::DiaWind("Hmm, that wasn't him. Let's see now, if I were a rabid tundra beast where would I go? This way!");
+    quest::say("Hmm, that wasn't him. Let's see now, if I were a rabid tundra beast where would I go? This way!");
     $boridain = 4;
     quest::moveto(1942, -1497, 211);
   }
 
   elsif ($boridain == 5) { #loc 973 -1131 212
     $npc->SetAppearance(0);
-    plugin::DiaWind("Ahh, that's better. Back to the hunt... I think I hear something over yonder. Stay low.");
+    quest::say("Ahh, that's better. Back to the hunt... I think I hear something over yonder. Stay low.");
     $boridain = 6;
     quest::moveto(929, -1049, 218);
   }
 
   elsif ($boridain == 9) { #loc 277 -6 -5
-    plugin::DiaWind("Where did that vile beast go now? Wait, what's that over there? Could it be? Only one way to find out!");
+    quest::say("Where did that vile beast go now? Wait, what's that over there? Could it be? Only one way to find out!");
     $boridain = 10;
     quest::moveto(350, -264, 78);
   }
@@ -167,13 +167,13 @@ sub EVENT_TIMER {
   elsif ($boridain == 12) { #loc 1286 -1786 175
     $npc->SetAppearance(0);
     quest::emote("stretches.");
-    plugin::DiaWind("Ahh, refreshing! Back to work... I think I smell the beast! This way.");
+    quest::say("Ahh, refreshing! Back to work... I think I smell the beast! This way.");
     $boridain = 13;
     quest::moveto(946, -2245, 205);
   }
 
   elsif ($boridain == 15) {  #loc 424 -3464 145
-    plugin::DiaWind("I just don't get it. I thought that was him for sure. I don't see any sign of him now.");
+    quest::say("I just don't get it. I thought that was him for sure. I don't see any sign of him now.");
     $boridain = 16;
     quest::moveto(857, -3150, 230);
   }

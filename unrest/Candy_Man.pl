@@ -18,7 +18,7 @@ sub EVENT_TIMER {
 sub EVENT_SAY {
 	if ($text=~/Hail/i && !defined $qglobals{halloween_candyman}) {
 		$prize = int(rand(100));
-		plugin::DiaWind("Here you go $name. Enjoy!");
+		quest::say("Here you go $name. Enjoy!");
                 quest::setglobal("halloween_candyman",1,0,"D30");
 		quest::summonitem(87312,10);
 		quest::summonitem(85062);
@@ -26,6 +26,6 @@ sub EVENT_SAY {
 		if($prize == 20){quest::summonitem(124688);}
 	}
         if ($text=~/Hail/i && defined $qglobals{halloween_candyman}) {
-                plugin::DiaWind("Changing your costume isn't going to work! I already gave you your candy!");
+                quest::say("Changing your costume isn't going to work! I already gave you your candy!");
 	}
 }

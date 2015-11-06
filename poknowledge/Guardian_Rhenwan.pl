@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Welcome to the Selia district of [New Tanaan].  Be sure to help us to keep it clean!"); }
+quest::say("Welcome to the Selia district of [New Tanaan].  Be sure to help us to keep it clean!"); }
 }
 
 sub EVENT_SPAWN

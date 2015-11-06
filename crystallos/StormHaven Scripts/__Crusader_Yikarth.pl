@@ -44,7 +44,7 @@ sub EVENT_COMBAT {
 
 
   if ($combat_state == 1)  {
-  plugin::DiaWind("My Marr guide me to victory!");
+  quest::say("My Marr guide me to victory!");
   quest::settimer("ArmorBreak", 89 );
   quest::settimer("Dark_Bal", 30 );
   quest::settimer("AE_Ice", 49 );
@@ -177,7 +177,7 @@ my $Spell_Target = $npc->GetTarget();
 }
 
 sub EVENT_DEATH {
-plugin::DiaWind("I die for the honor of the Dragorn...");
+quest::say("I die for the honor of the Dragorn...");
 quest::signalwith(859011,1,0);
 quest::emote("armor lets out a loud clank as it hits the ground.");
 }

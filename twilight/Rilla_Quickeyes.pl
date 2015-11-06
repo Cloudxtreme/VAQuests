@@ -1,33 +1,33 @@
 sub EVENT_SAY {
  if($text =~ /Hail/i) {
-   plugin::DiaWind("OH HI! This is soooo boring, I wish I had something else to do.");
+   quest::say("OH HI! This is soooo boring, I wish I had something else to do.");
  }
  if($text =~ /armor/i) {
-   plugin::DiaWind("Oh you want me to make some armor? If you're a druid I could make you some.");
+   quest::say("Oh you want me to make some armor? If you're a druid I could make you some.");
  }
  if($text =~ /I am a druid/i) {
-   plugin::DiaWind("can make you a cap, tunic, sleeves, leggings, mantle, bracer, and boots. If you want other druid armor you'll have to talk to Edgar.");
+   quest::say("can make you a cap, tunic, sleeves, leggings, mantle, bracer, and boots. If you want other druid armor you'll have to talk to Edgar.");
  }
  if($text =~ /cap/i) {
-   plugin::DiaWind("For the earth blessed cap you will have to go get me a moon jewel, a mark of the wild, a braided vine bracelet, and an aged dark wood shaft.");
+   quest::say("For the earth blessed cap you will have to go get me a moon jewel, a mark of the wild, a braided vine bracelet, and an aged dark wood shaft.");
  }
  if($text =~ /tunic/i) {
-   plugin::DiaWind("For the earth blessed tunic you will have to go get me a star jewel, a mark of nature, a primal earth rune, and a growth stone.");
+   quest::say("For the earth blessed tunic you will have to go get me a star jewel, a mark of nature, a primal earth rune, and a growth stone.");
  }
  if($text =~ /sleeves/i) {
-   plugin::DiaWind("For the earth blessed sleeves you will have to go get me a cloud jewel, a mark of vitality, an etched diamond of nature, and a storm filled vial.");
+   quest::say("For the earth blessed sleeves you will have to go get me a cloud jewel, a mark of vitality, an etched diamond of nature, and a storm filled vial.");
  }
  if($text =~ /leggings/i) {
-   plugin::DiaWind("For the earth blessed leggings you will have to go get me a sky jewel, a mark of life, an etched emerald of nature, and a sack of purified soil.");
+   quest::say("For the earth blessed leggings you will have to go get me a sky jewel, a mark of life, an etched emerald of nature, and a sack of purified soil.");
  }
  if($text =~ /mantle/i) {
-   plugin::DiaWind("For the earth blessed mantle you will have to go get me a meteor jewel, a mark of regeneration, and an etched sapphire of nature.");
+   quest::say("For the earth blessed mantle you will have to go get me a meteor jewel, a mark of regeneration, and an etched sapphire of nature.");
  }
  if($text =~ /bracer/i) {
-   plugin::DiaWind("For the earth blessed bracer you will have to go get me an astral jewel, a mark of growth, and an etched ruby of nature.");
+   quest::say("For the earth blessed bracer you will have to go get me an astral jewel, a mark of growth, and an etched ruby of nature.");
  }
  if($text =~ /boots/i) {
-   plugin::DiaWind("For the earth blessed boots you will have to go get me a sun jewel, a mark of weather, and an etched star ruby of nature.");
+   quest::say("For the earth blessed boots you will have to go get me a sun jewel, a mark of weather, and an etched star ruby of nature.");
  }
 }
 

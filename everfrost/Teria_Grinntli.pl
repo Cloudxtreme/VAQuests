@@ -7,33 +7,33 @@ sub EVENT_SAY {
   if ($ulevel >= 15) {
     if (defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 1)) { #PC has spoken to home town Wayfarer recruiter but not received Adventurer's Stone
       if ($text=~/hail/i) {
-        plugin::DiaWind("Welcome stranger. I'm afraid you must answer some questions before I can consider opening our wealth of skill and knowledge to you. First, what does the Wayfarers Brotherhood call the tasks they will ask you to do for them?");
+        quest::say("Welcome stranger. I'm afraid you must answer some questions before I can consider opening our wealth of skill and knowledge to you. First, what does the Wayfarers Brotherhood call the tasks they will ask you to do for them?");
       }
       if ($text=~/adventures/i) {
         $client->Message(15, "You have completed a step toward becoming a great adventurer. Well done!");
-        plugin::DiaWind("We will reward based on your improving position with the Wayfarers Brotherhood. We keep a certain type of log that records how often and well you help us. What is it called?");
+        quest::say("We will reward based on your improving position with the Wayfarers Brotherhood. We keep a certain type of log that records how often and well you help us. What is it called?");
       }
       if ($text=~/favor journal/i) {
         $client->Message(15, "You have completed a step toward becoming a great adventurer. Well done!");
-        plugin::DiaWind("Who discovered that some treasures have strange magical properties by poking one with his dagger?");
+        quest::say("Who discovered that some treasures have strange magical properties by poking one with his dagger?");
       }
       if ($text=~/morden rasp/i) {
         $client->Message(15, "You have completed a step toward becoming a great adventurer. Well done!");
-        plugin::DiaWind("Our brilliant magi use a special kind of magic to help teleport us between camps. What is it called?");
+        quest::say("Our brilliant magi use a special kind of magic to help teleport us between camps. What is it called?");
       }
       if ($text=~/farstone/i) {
         $client->Message(15, "You have completed a step toward becoming a great adventurer. Well done!");
-        plugin::DiaWind("Congratulations! I believe now that you are trustworthy enough to take on some of the adventures the Wayfarers Brotherhood have to give. We will be able to continue with our discussions once you complete some adventures. We can also help you with travel between our camps. Be well, fair $name. I'm sure, someday, you will be a great addition to the Wayfarers Brotherhood.");
+        quest::say("Congratulations! I believe now that you are trustworthy enough to take on some of the adventures the Wayfarers Brotherhood have to give. We will be able to continue with our discussions once you complete some adventures. We can also help you with travel between our camps. Be well, fair $name. I'm sure, someday, you will be a great addition to the Wayfarers Brotherhood.");
         quest::faction(356,50); #Wayfarers Brotherhood
         quest::setglobal("Wayfarer",2,5,"F");
-        plugin::DiaWind("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
+        quest::say("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
         quest::summonitem(41000); #Adventurer's Stone
         $client->KeyRingAdd(41000);
       }
     }
     elsif (defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 2)) { #PC is ready for Adventurer's Stone
       if (!plugin::check_hasitem($client,41000)) { #PC does not have an Adventurer's Stone
-        plugin::DiaWind("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
+        quest::say("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
         quest::summonitem(41000); #Adventurer's Stone
       }
       else { #PC has an Adventurer's Stone already
@@ -42,11 +42,11 @@ sub EVENT_SAY {
           quest::setglobal("MIRtalk",0,5,"F");
         }
         if ($mir_wins < 2) {
-          plugin::DiaWind("Cold here, wouldn't you agree?"); #text made up
+          quest::say("Cold here, wouldn't you agree?"); #text made up
         }
         elsif ($mir_wins >= 2 && $qglobals{MIRtalk} == 0) { #2 wins
           quest::setglobal("MIRtalk",1,5,"F");
-          plugin::DiaWind("Can you believe it's true? Miragul's Menagerie has been found. I remember all the stories I heard after I came to Norrath from Luclin, but the ones that really captured my attention were those about Miragul. Even though I enjoyed the mystery around the tales, I couldn't be more thrilled to actually set foot in that world of madness. I will share the stories with you.");
+          quest::say("Can you believe it's true? Miragul's Menagerie has been found. I remember all the stories I heard after I came to Norrath from Luclin, but the ones that really captured my attention were those about Miragul. Even though I enjoyed the mystery around the tales, I couldn't be more thrilled to actually set foot in that world of madness. I will share the stories with you.");
           $client->Message(15, "You have received an invaluable piece of information!");
           if ($mir_wins >= 4) {
             $client->Message(13, "You have additional information to uncover! Try speaking to this adventurer again.");
@@ -96,7 +96,7 @@ sub EVENT_SAY {
         }
         elsif ($mir_wins >= 14 && $qglobals{MIRtalk} == 6) { #14 wins
           quest::setglobal("MIRtalk",7,5,"F");
-          plugin::DiaWind("I spent some time with a good friend of mine, Ubzial Iyeaql, in the Qeynos Hills. He has the whole story about Miragul and is probably better suited to telling you the whole story. I'm certain he would be pleased to share the tale with you. Take care on your journey, friend.");
+          quest::say("I spent some time with a good friend of mine, Ubzial Iyeaql, in the Qeynos Hills. He has the whole story about Miragul and is probably better suited to telling you the whole story. I'm certain he would be pleased to share the tale with you. Take care on your journey, friend.");
           $client->Message(15, "You have received an invaluable piece of information!");
           if ($mir_wins >= 16) {
             $client->Message(13, "You have additional information to uncover! You must speak to Ubzial Iyeaql to find out more.");
@@ -225,7 +225,7 @@ sub EVENT_SAY {
           }
         }
         elsif ($mir_wins >= 68 && $qglobals{MIRtalk} == 34) { #Theme done
-          plugin::DiaWind("I would wager that you know more about those lost dungeons than I do at this stage, $name. I have no more to tell you.");
+          quest::say("I would wager that you know more about those lost dungeons than I do at this stage, $name. I have no more to tell you.");
         }
         else {
           $client->Message(9, "You need to adventure some more in Miragul's Menagerie."); #text made up
@@ -233,18 +233,18 @@ sub EVENT_SAY {
       }
     }
     elsif (defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 3)) {
-      plugin::DiaWind("Well, I must say I'm impressed! You know as much as the Wayfarers Brotherhood about these dungeons that have been uncovered. Nicely done, $name!"); #text made up
+      quest::say("Well, I must say I'm impressed! You know as much as the Wayfarers Brotherhood about these dungeons that have been uncovered. Nicely done, $name!"); #text made up
     }
     elsif (defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 4) && !plugin::check_hasitem($client, 40999)) { #PC has earned Wayfarers Brotherhood Emblem
-      plugin::DiaWind("I see you may have lost or misplaced your emblem. Here, take this replacement."); #Text made up
+      quest::say("I see you may have lost or misplaced your emblem. Here, take this replacement."); #Text made up
       quest::summonitem(40999); #Wayfarers Brotherhood Emblem
     }
     else { #PC has not talked to hometown Wayfarer recruiter yet
-      plugin::DiaWind("You will have to excuse me, I am quite busy. Maybe you can talk to a Wayfarer in your home town?"); #text copied from Vual's completed MMC line until we know what it should be
+      quest::say("You will have to excuse me, I am quite busy. Maybe you can talk to a Wayfarer in your home town?"); #text copied from Vual's completed MMC line until we know what it should be
     }
   }
   else {
-    plugin::DiaWind("You will have to excuse me, I am quite busy."); #Text made up
+    quest::say("You will have to excuse me, I am quite busy."); #Text made up
   }
 }
 

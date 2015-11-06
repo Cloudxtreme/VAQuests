@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if ($text=~/Hail/i) {
-    plugin::DiaWind("Oh hello there, I'm in charge of the docks here and wife to Alton.");
+    quest::say("Oh hello there, I'm in charge of the docks here and wife to Alton.");
   }
   if ($text=~/ranger/i) {
     quest:say("Very well. If you want the Woodsman's [Mantle], Woodsman's [Mask], Woodsman's [Cape], Woodsman's [Guantlets], Woodsman's [Choker], or Woodsman's [Belt] I have some errands that need to be done.");
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 5850 => 1, 5849 => 1, 5848 => 1, 4489 => 1)) { #belt
     quest::summonitem(3957);
     quest::emote("smiles at you.");
-    plugin::DiaWind("Thank You! Here is your payment.");
+    quest::say("Thank You! Here is your payment.");
     quest::exp(25000);
   }
   if (plugin::check_handin(\%itemcount, 5844 => 1, 5698 => 1, 4492 => 1, 5699 => 1)) { #cape

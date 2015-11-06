@@ -4,10 +4,10 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
     if(quest::istaskactivityactive(14,0)) {
-      plugin::DiaWind("Thank you for contacting me. Your information on this matter has been most useful.");
+      quest::say("Thank you for contacting me. Your information on this matter has been most useful.");
     }
     else {
-      plugin::DiaWind("Hello, $name");
+      quest::say("Hello, $name");
     }
   }
 }

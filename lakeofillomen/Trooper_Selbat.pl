@@ -1,9 +1,9 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Good evening, citizen! It is a fine night for a stroll, but not in the woods. No, no! That would be far too dangerous!");
+    quest::say("Good evening, citizen! It is a fine night for a stroll, but not in the woods. No, no! That would be far too dangerous!");
   }
   if ($text=~/sign the restraining order/i) {
-    plugin::DiaWind("I knew this time would come. I will slay you for bringing this to me... No... I'd best not make the officers angry. <sigh> Hand me the order and I shall sign it.");
+    quest::say("I knew this time would come. I will slay you for bringing this to me... No... I'd best not make the officers angry. <sigh> Hand me the order and I shall sign it.");
   }
 }
 

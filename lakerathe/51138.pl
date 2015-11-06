@@ -7,13 +7,13 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("The Riptide goblins must have their crown returned to them. If you would be so kind as to give me the crown I will make sure that it reaches them. Hopefully they are capable enough to repair the damage that has been done to it.");
+    quest::say("The Riptide goblins must have their crown returned to them. If you would be so kind as to give me the crown I will make sure that it reaches them. Hopefully they are capable enough to repair the damage that has been done to it.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,28046=>1)) { # damage goblin crown
-    plugin::DiaWind("I will have this crown returned to the Riptide Goblins immediately! Should you ever come across an Erudite named Omat Vastsea, give him this sea shell. The waters of Norrath shimmer with awareness of your deeds here today!"); 
+    quest::say("I will have this crown returned to the Riptide Goblins immediately! Should you ever come across an Erudite named Omat Vastsea, give him this sea shell. The waters of Norrath shimmer with awareness of your deeds here today!"); 
     quest::summonitem(28047); # Ornate Sea Shell (I)
     quest::depop();
   } 
@@ -23,11 +23,11 @@ sub EVENT_ITEM {
 
 sub EVENT_SIGNAL {
   if ($signal == 199) {
-    plugin::DiaWind("Enough!! Your existence has come to an end!");
+    quest::say("Enough!! Your existence has come to an end!");
     quest::signalwith(51012,299,2000);
   }
   if ($signal == 399) {
-    plugin::DiaWind("This conflict has been destined by the waters of the Triumvirate!");
+    quest::say("This conflict has been destined by the waters of the Triumvirate!");
     quest::signalwith(51012,499,2000);
   }
   if ($signal == 599) {

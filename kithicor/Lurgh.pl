@@ -10,31 +10,31 @@ sub EVENT_SAY {
 	}
 	elsif(quest::istaskactive(215)){
 		if($text=~/Hail/i) {
-      			plugin::DiaWind("Find skeleton make Lurgh laugh and Lurgh help you, too.");
+      			quest::say("Find skeleton make Lurgh laugh and Lurgh help you, too.");
       		}
       	}
 	elsif(!quest::istaskactive(215)){
 		if(!defined $qglobals{halloween_monster_mash}){
 			if($text=~/Hail/i) {
-   				plugin::DiaWind("Lurgh miss [friend].");
+   				quest::say("Lurgh miss [friend].");
       			}
       			if($text=~/Friend/i) {
-      				plugin::DiaWind("Lurgh had friend that battle hard. We fight lots. Skeleton friend [dance] for me, but he gone now.");
+      				quest::say("Lurgh had friend that battle hard. We fight lots. Skeleton friend [dance] for me, but he gone now.");
 			}
 			if($text=~/Dance/i) {
-   				plugin::DiaWind("Lurgh laugh when skeleton dance. But now sad, [skeleton] ate by bear and no more dancin' for Lurgh.");
+   				quest::say("Lurgh laugh when skeleton dance. But now sad, [skeleton] ate by bear and no more dancin' for Lurgh.");
       			}
 			if($text=~/Skeleton/i) {
-   				plugin::DiaWind("Lurgh see lots of skeleton here. Maybe one be friend? You [help] Lurgh find friend?");
+   				quest::say("Lurgh see lots of skeleton here. Maybe one be friend? You [help] Lurgh find friend?");
       			}
 			if($text=~/Help/i) {
-   				plugin::DiaWind("Gud. Find skeleton make Lurgh laugh and Lurgh help you, too.");
+   				quest::say("Gud. Find skeleton make Lurgh laugh and Lurgh help you, too.");
                                 quest::assigntask(219);
       				quest::assigntask(215);
       			}	
 		}
 		else {
-			plugin::DiaWind("Thank you for finding friend!");
+			quest::say("Thank you for finding friend!");
 		}		
 	}	
 }

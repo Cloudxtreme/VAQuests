@@ -3,7 +3,7 @@
 
 sub EVENT_SIGNAL {
   if ($signal == 99) {
-    plugin::DiaWind("Chita ve ni ne, ni ne Neb!");
+    quest::say("Chita ve ni ne, ni ne Neb!");
     quest::signalwith(123045,101,1000);
   }
 }

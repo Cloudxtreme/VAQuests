@@ -7,6 +7,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	plugin::DiaWind("You don't want to be my friend?");
+	quest::say("You don't want to be my friend?");
 	quest::signalwith(20260,1);
 }

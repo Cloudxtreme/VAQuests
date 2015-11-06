@@ -8,7 +8,7 @@ my $h;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("The living fire. I seek the fires of life. Bring them.");
+    quest::say("The living fire. I seek the fires of life. Bring them.");
   }
 }
 

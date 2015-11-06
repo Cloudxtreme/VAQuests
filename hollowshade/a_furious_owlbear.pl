@@ -37,12 +37,12 @@ sub EVENT_SAY
 	{
 	if ($text=~/hail/i) 
 		{
-		plugin::DiaWind("Get out of my way two legs, my den is taking over the zone and I have no time to eat you!");
+		quest::say("Get out of my way two legs, my den is taking over the zone and I have no time to eat you!");
 		}
 	}
 
 sub EVENT_DEATH_COMPLETE
 		{
 		quest::stoptimer("ArrivalCheck");
-		plugin::DiaWind("GRRR!  My Den will avenge me.");
+		quest::say("GRRR!  My Den will avenge me.");
 		}

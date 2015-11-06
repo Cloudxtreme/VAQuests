@@ -3,31 +3,31 @@ sub EVENT_SAY {
 	quest::emote("piercing eyes meets yours. ''Are ye a guest of Vornol's too? Have faith my friend but don't let that durn mage fool you, I know him better than anyone else. Well except for Valana of course.''");
  }
  if($text =~ /I am a cleric/i) {
-	plugin::DiaWind("I thought you might be. I have some armor to reward those that prove to be most holy.");
+	quest::say("I thought you might be. I have some armor to reward those that prove to be most holy.");
  }
  if($text =~ /armor/i) {
-	plugin::DiaWind("The armor I have is a helm, breastplate, vambraces, greaves, pauldrons, bracer, and boots. The rest you will have to get from my friend and guard Kayn. Just ask him about armor.");
+	quest::say("The armor I have is a helm, breastplate, vambraces, greaves, pauldrons, bracer, and boots. The rest you will have to get from my friend and guard Kayn. Just ask him about armor.");
  }
  if($text =~ /boots/i) {
-	plugin::DiaWind("For the boots you must prove yourself by bringing me a star jewel, a mark of belief and a light etched sapphire.");
+	quest::say("For the boots you must prove yourself by bringing me a star jewel, a mark of belief and a light etched sapphire.");
  }
  if($text =~ /bracer/i) {
-	plugin::DiaWind("For the bracer you must prove yourself by bringing me a moon jewel, a mark of truth, and a light etched ruby.");
+	quest::say("For the bracer you must prove yourself by bringing me a moon jewel, a mark of truth, and a light etched ruby.");
  }
  if($text =~ /breastplate/i) {
-	plugin::DiaWind("For the breastplate you must prove yourself by bringing me a sky jewel, a mark of faith, genuine leather padding, and a brazier of light.");
+	quest::say("For the breastplate you must prove yourself by bringing me a sky jewel, a mark of faith, genuine leather padding, and a brazier of light.");
  }
  if($text =~ /greaves/i) {
-	plugin::DiaWind("For the greaves you must prove yourself by bringing me an astral jewel, a mark of purity, a lexicon of omens, and a candle of rites.");
+	quest::say("For the greaves you must prove yourself by bringing me an astral jewel, a mark of purity, a lexicon of omens, and a candle of rites.");
  }
  if($text =~ /helm/i) {
-	plugin::DiaWind("For the helm you must prove yourself by bringing me a cloud jewel, a mark of remedy, a vial of holy water, and a holy statuette.");
+	quest::say("For the helm you must prove yourself by bringing me a cloud jewel, a mark of remedy, a vial of holy water, and a holy statuette.");
  }
  if($text =~ /pauldrons/i) {
-	plugin::DiaWind("For the pauldrons you must prove yourself by bringing me a sun jewel, a mark of the divine, and decorative bracers of wistfulness.");
+	quest::say("For the pauldrons you must prove yourself by bringing me a sun jewel, a mark of the divine, and decorative bracers of wistfulness.");
  }
  if($text =~ /vambraces/i) {
-	plugin::DiaWind("For the vambraces you must prove yourself by bringing me a meteor jewel, a mark of the holy, a tome of deities, and a restored tapestry.");
+	quest::say("For the vambraces you must prove yourself by bringing me a meteor jewel, a mark of the holy, a tome of deities, and a restored tapestry.");
  }
 }
 

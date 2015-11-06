@@ -19,7 +19,7 @@ sub EVENT_COMBAT {
 	if ($combat_state == 1)
 	{
 		quest::shout("You dare enter the Chapel of the Third Order! You will no salvation here!");
-		plugin::DiaWind("Cleanse them of their sin...");
+		quest::say("Cleanse them of their sin...");
 		quest::settimer("Check_HP", 6);
 		quest::settimer("Black_Pox", 10);
 		quest::settimer("Duck", 25);
@@ -449,7 +449,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_DEATH {
 
-	plugin::DiaWind("I may have failed but others will not...");
+	quest::say("I may have failed but others will not...");
 	quest::emote("falls silent.");
 	quest::delglobal("Rev_Door_Close");
 	$timestamp = localtime(time);

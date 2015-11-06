@@ -7,16 +7,16 @@
 
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Hail. $name - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
+quest::say("Hail. $name - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
 }
 if($text=~/what mail/i){
-plugin::DiaWind("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices.  Are you [interested]?");
+quest::say("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices.  Are you [interested]?");
 }
 if($text=~/i am interested/i){
-plugin::DiaWind("I have messages that need to go to - well. right now I have one that needs to go to Kelethin.  Will you [deliver] mail to [Kelethin] for me?");
+quest::say("I have messages that need to go to - well. right now I have one that needs to go to Kelethin.  Will you [deliver] mail to [Kelethin] for me?");
 }
 if($text=~/deliver to Kelethin/i){
-plugin::DiaWind("Take this letter to Jakum Webdancer in Kelethin.  You can find him at the bard guild hall.  I am sure he will compensate you for your troubles.");
+quest::say("Take this letter to Jakum Webdancer in Kelethin.  You can find him at the bard guild hall.  I am sure he will compensate you for your troubles.");
 quest::summonitem(18162); }
 }
 

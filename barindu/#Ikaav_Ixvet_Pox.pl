@@ -1,10 +1,10 @@
 sub EVENT_SIGNAL {
   if($signal == 1) { # signal from #Abena_Taifa
-    plugin::DiaWind("Be gone. I've no interest in your fruits today.");
+    quest::say("Be gone. I've no interest in your fruits today.");
     # signal the Aneuk Controller
     quest::signalwith(283047,1,10);
   } elsif($signal == 2) { # signal from Aneuk_Controller
-    plugin::DiaWind("What have you done, slave! Try to poison me? You will pay for your insolence!");
+    quest::say("What have you done, slave! Try to poison me? You will pay for your insolence!");
 	# attack #Abena_Taifa
     quest::attacknpctype(283081);
     # signal the Aneuk Controller

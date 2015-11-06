@@ -1,6 +1,6 @@
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		plugin::DiaWind("Over my dead body!");
+		quest::say("Over my dead body!");
 	}
 	if($signal==2) {
 		quest::SetRunning(1);

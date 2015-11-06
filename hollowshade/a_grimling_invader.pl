@@ -37,12 +37,12 @@ sub EVENT_SAY
 	{
 	if ($text=~/hail/i) 
 		{
-		plugin::DiaWind("ey hthje jewjin hothjsn, ehjrio hjriosn sioowejn!!");
+		quest::say("ey hthje jewjin hothjsn, ehjrio hjriosn sioowejn!!");
 		}
 	}
 
 sub EVENT_DEATH_COMPLETE
 		{
 		quest::stoptimer("ArrivalCheck");
-		plugin::DiaWind("Ayeeeeeee!!");
+		quest::say("Ayeeeeeee!!");
 		}

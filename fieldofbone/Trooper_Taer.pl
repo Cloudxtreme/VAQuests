@@ -1,15 +1,15 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hail! I suggest you stay within the walls of Cabilis. This is no place for you. The Field of Bone is far too close.");
+    quest::say("Hail! I suggest you stay within the walls of Cabilis. This is no place for you. The Field of Bone is far too close.");
   }
   if ($text=~/sign the restraining order/i) {
-    plugin::DiaWind("Oh, no! My good times have come to an end. Hand me the note and I shall sign it.");
+    quest::say("Oh, no! My good times have come to an end. Hand me the note and I shall sign it.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18249 => 1)) { #Legion Order (9 signed)
-    plugin::DiaWind("Ha ha! Look at all the names. Ozlot and Frogzin. What lushes. Here you are. I can't imagine there being any others to sign. This is the entire Cabilis brew brigade. Alas... Disbanded forever.");
+    quest::say("Ha ha! Look at all the names. Ozlot and Frogzin. What lushes. Here you are. I can't imagine there being any others to sign. This is the entire Cabilis brew brigade. Alas... Disbanded forever.");
     quest::summonitem(18250); #Legion Order (all signed)
     quest::faction(193,5); #Legion of Cabilis
     quest::faction(30,5); #Cabilis Residents

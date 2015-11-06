@@ -7,10 +7,10 @@ sub EVENT_SIGNAL {
 		quest::emote("snores loudly");
 	}
 	if($signal==2) {
-		plugin::DiaWind("OWW!");
+		quest::say("OWW!");
 	}
 	if($signal==3) {
-		plugin::DiaWind("Yes, Grand Historian Thoridain");
+		quest::say("Yes, Grand Historian Thoridain");
 		quest::start(11);
 	}
 }

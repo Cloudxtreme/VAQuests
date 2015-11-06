@@ -17,9 +17,9 @@ sub EVENT_COMBAT {
   # Talkative when he enters combat IF he has the map.
   $myhasmap=plugin::REV($npc, "hasmap");
   if ($myhasmap && $combat_state == 1) {
-    plugin::DiaWind("Join.. Glug.. Tombor in his.. watery grave!!");
+    quest::say("Join.. Glug.. Tombor in his.. watery grave!!");
     $classplural = "${class}s";
-    plugin::DiaWind("$classplural like you always bring out the worst in me.");
+    quest::say("$classplural like you always bring out the worst in me.");
   }
 }
 
@@ -27,6 +27,6 @@ sub EVENT_DEATH_COMPLETE {
   # Talkative when he dies IF he has the map.
   $myhasmap = plugin::REV($npc, "hasmap");
   if ($myhasmap) {
-    plugin::DiaWind("My map!! You have my.. map.");
+    quest::say("My map!! You have my.. map.");
   }
 }

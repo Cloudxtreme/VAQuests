@@ -6,19 +6,19 @@ sub EVENT_SPAWN {
          my @task_list = ();
 sub EVENT_SAY   {
       if($text=~/hail/i) {
-         plugin::DiaWind("Hello there $name! Do you happen to have the [time]?");
+         quest::say("Hello there $name! Do you happen to have the [time]?");
             if(plugin::check_hasitem($client, 80026)) {#Level 65 Reward-Dusty Golden Statue
-               plugin::DiaWind("Congratulations on completing the last quest! If you do not like the reward I have given you I will gladly exchange it for your services!");# Made up Text
+               quest::say("Congratulations on completing the last quest! If you do not like the reward I have given you I will gladly exchange it for your services!");# Made up Text
             }
          }
       if($text=~/time/i) {
-         plugin::DiaWind("Yes, the time of day. You see I usually keep a number of watches with me at all times so I always know what time it is but I recently [lost], well, all of them.");
+         quest::say("Yes, the time of day. You see I usually keep a number of watches with me at all times so I always know what time it is but I recently [lost], well, all of them.");
       }
       if($text=~/lost/i) {
-         plugin::DiaWind("I lost them when I was travelling last week. I wanted to visit some of the places in Norrath that were special to me but I seemed to run into trouble everywhere I visited! And wouldn't you know it but everytime I stopped for a bit I managed to lose one of my [watches]!");
+         quest::say("I lost them when I was travelling last week. I wanted to visit some of the places in Norrath that were special to me but I seemed to run into trouble everywhere I visited! And wouldn't you know it but everytime I stopped for a bit I managed to lose one of my [watches]!");
       }
       if($text=~/watches/i) {
-         plugin::DiaWind("That's what I said, watches! Are you hard of hearing? I don't suppose you would like to [look] for my watches? I hate not knowing what time it is! I'm sure I could find something in my backpack to interest you if you found one of my watches!");
+         quest::say("That's what I said, watches! Are you hard of hearing? I don't suppose you would like to [look] for my watches? I hate not knowing what time it is! I'm sure I could find something in my backpack to interest you if you found one of my watches!");
       }
 # Opens task window with the proper task for the proper class.
       if($text=~/look/i) {

@@ -5,44 +5,44 @@
 sub EVENT_SAY {
   if ($faction <= 3) { # Require Warmly and greater faction
     if($text=~/Hail/i){
-      plugin::DiaWind("Greetings to you. You are far away from your homelands, stranger. I am looking for someone. We here at the Temple of Lore are always seeking fellow priests of various faiths. Tell me, $race, are you a cleric?");
+      quest::say("Greetings to you. You are far away from your homelands, stranger. I am looking for someone. We here at the Temple of Lore are always seeking fellow priests of various faiths. Tell me, $race, are you a cleric?");
     }
     if ($text=~/i am a cleric/i) {
-      plugin::DiaWind("Ah, a most pious one indeed. I sense the aura of your devotion and conviction and they are strong about you. A shame you are so short-lived. But I see potential in you and for that I shall aid you in your calling, cleric. Do you wish my aid?");
+      quest::say("Ah, a most pious one indeed. I sense the aura of your devotion and conviction and they are strong about you. A shame you are so short-lived. But I see potential in you and for that I shall aid you in your calling, cleric. Do you wish my aid?");
     }
     if ($text=~/i wish your aid/i) {
-      plugin::DiaWind("Then I have a set of goals for you.  Once you have achieved them, you shall be rewarded with such as these: a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots.  May they protect you from your enemies.");
+      quest::say("Then I have a set of goals for you.  Once you have achieved them, you shall be rewarded with such as these: a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots.  May they protect you from your enemies.");
     }
     if ($text=~/helm/i) {
-      plugin::DiaWind("Those who are wise as we are know that protection of the head is most important.  I may be able to forge you something most interesting if you were to bring me a corroded plate helm and three pieces of crushed onyx sapphire.");
+      quest::say("Those who are wise as we are know that protection of the head is most important.  I may be able to forge you something most interesting if you were to bring me a corroded plate helm and three pieces of crushed onyx sapphire.");
     }
     if ($text=~/breastplate/i) {
-      plugin::DiaWind("If you find a corroded breastplate and three pieces of black marble bring them to me and I shall attempt to create an enchanted breastplate that will serve you well.");
+      quest::say("If you find a corroded breastplate and three pieces of black marble bring them to me and I shall attempt to create an enchanted breastplate that will serve you well.");
     }
     if ($text=~/armplates/i) {
-      plugin::DiaWind("Three jaundice gems and a set of corroded plate vambraces might be an interesting combination.  The powers of the gems may be harvested to imbue the vambraces.");
+      quest::say("Three jaundice gems and a set of corroded plate vambraces might be an interesting combination.  The powers of the gems may be harvested to imbue the vambraces.");
     }
     if ($text=~/bracers/i) {
-      plugin::DiaWind("Bracers are quite easy to imbue.  Simply find three crushed opals and a corroded plate bracer and I will complete the ritual to enchant them.");
+      quest::say("Bracers are quite easy to imbue.  Simply find three crushed opals and a corroded plate bracer and I will complete the ritual to enchant them.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("Simply bring me a set of three crushed flame emeralds and a pair of corroded plate boots and I will imbue them.  I bid you good luck in finding such things.");
+      quest::say("Simply bring me a set of three crushed flame emeralds and a pair of corroded plate boots and I will imbue them.  I bid you good luck in finding such things.");
     }
     if ($text=~/gauntlets/i) {
-      plugin::DiaWind("Strong protection for one's hands is important.  I may be able to craft you a set of powerful plate gauntlets if you find a set of corroded plate gauntlets and three crushed lava rubies.");
+      quest::say("Strong protection for one's hands is important.  I may be able to craft you a set of powerful plate gauntlets if you find a set of corroded plate gauntlets and three crushed lava rubies.");
     }
     if ($text=~/greaves/i) {
-      plugin::DiaWind("'A set of corroded greaves might be salvageable if you were to find three chipped onyx sapphires. With the right techniques almost anything is possible.");
+      quest::say("'A set of corroded greaves might be salvageable if you were to find three chipped onyx sapphires. With the right techniques almost anything is possible.");
     }
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust you with such a quest, yet.");
+    quest::say("I do not know you well enough to entrust you with such a quest, yet.");
   }
 }
 
 sub EVENT_SIGNAL {
   if ($signal == 99) {
-    plugin::DiaWind("The Grand Historian cannot be disturbed right now. Loremaster Borannin will assist you if you seek to perform duties for the crown. If you wish to learn more of our history and culture please speak to the loremasters in the Temple's library here.");
+    quest::say("The Grand Historian cannot be disturbed right now. Loremaster Borannin will assist you if you seek to perform duties for the crown. If you wish to learn more of our history and culture please speak to the loremasters in the Temple's library here.");
   }
 }
 
@@ -79,10 +79,10 @@ sub EVENT_ITEM {
     quest::faction(188,-60); # Kromrif
     quest::faction(189,-60); # Kromzek
     quest::emote("smiles warmly as she hands you your reward.");
-    plugin::DiaWind("You have done well.");
+    quest::say("You have done well.");
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust you with such an item, yet.");
+    quest::say("I do not know you well enough to entrust you with such an item, yet.");
   }
 }
 

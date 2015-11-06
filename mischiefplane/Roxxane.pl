@@ -1,6 +1,6 @@
 sub EVENT_SAY {
     if ($text=~/hail/i) {
-        plugin::DiaWind("Well hello! We are great dancers. Would you like to see us dance? Or maybe you would like us to teach you to dance?");
+        quest::say("Well hello! We are great dancers. Would you like to see us dance? Or maybe you would like us to teach you to dance?");
     } 
 	
 	elsif($text=~/see you dance/i) {
@@ -8,7 +8,7 @@ sub EVENT_SAY {
     } 
 	
 	elsif($text=~/teach me dance/i) {
-        plugin::DiaWind("Look at you! You can dance! Go, go, go! That's the spirit, you got it! Keep up the good work! Don't get too tired now, you are looking a little pale!");
+        quest::say("Look at you! You can dance! Go, go, go! That's the spirit, you got it! Keep up the good work! Don't get too tired now, you are looking a little pale!");
         quest::selfcast(1246);
     }    
 }

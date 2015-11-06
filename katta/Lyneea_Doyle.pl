@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
-		plugin::DiaWind("Greetings! You look like a healthy $race. We should play a game of coppers some time! You wouldn't be afraid to drink against a woman would ya?"); 
+		quest::say("Greetings! You look like a healthy $race. We should play a game of coppers some time! You wouldn't be afraid to drink against a woman would ya?"); 
 	}
 }
 
@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-	plugin::DiaWind("You ready for some coppers Olam? I've got a fresh mug of Loyalist Ale waitin ta be drunk!");
+	quest::say("You ready for some coppers Olam? I've got a fresh mug of Loyalist Ale waitin ta be drunk!");
 	quest::signalwith(160223,1,8000);
 	quest::stoptimer(1);
 }
@@ -42,11 +42,11 @@ sub EVENT_SIGNAL {
 		quest::signalwith(160223,8,8000);
 	}
 	if($signal == 8) {
-		plugin::DiaWind("Are you feeling all right?");
+		quest::say("Are you feeling all right?");
 		quest::signalwith(160223,9,8000);
 	}
 	if($signal == 9) {
-		plugin::DiaWind("You never can hold your liquor Olam!");
+		quest::say("You never can hold your liquor Olam!");
 		quest::settimer(1,540);
 	}
 }

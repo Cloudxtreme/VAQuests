@@ -6,13 +6,13 @@ sub EVENT_SAY {
 	my $InstId = quest::GetInstanceID("crushbone", $version);
 
 	if($text=~/hail/i){
-	plugin::DiaWind("Thank Tunare you're here, $name!  Something dreadful is taking place inside Castle Crushbone.  Yes, yes, I realize that the whole place is dreadful to begin with.  But it's much [$worse] now.");
+	quest::say("Thank Tunare you're here, $name!  Something dreadful is taking place inside Castle Crushbone.  Yes, yes, I realize that the whole place is dreadful to begin with.  But it's much [$worse] now.");
 	}
 	if($text=~/worse/i){
-	plugin::DiaWind("Some new evil has moved in and set up shop, destroying everything inside.  Where the Crushbone Orcs were destructive and chaotic, this new [$evil] is much more of a threat to all of Tunare's creatures.");
+	quest::say("Some new evil has moved in and set up shop, destroying everything inside.  Where the Crushbone Orcs were destructive and chaotic, this new [$evil] is much more of a threat to all of Tunare's creatures.");
 	}
 	if($text=~/evil/i){
-	plugin::DiaWind("if you are willing to assist us, I will need to ensure your safe passage.  The new evil inside Crushbone has not yet reached our dimension.  However, he has infilftrated alternate diminsions.  If we can defeat him in these other planes of existence, perhaps we can prevent him from finding our current diminsion.  Just say when you are ready and I can open a portal enabling you to [$EnterInst].  Also, if you are done fighting, or wish to start over, I can [$Destroy] any old instances that may be lingering. ");
+	quest::say("if you are willing to assist us, I will need to ensure your safe passage.  The new evil inside Crushbone has not yet reached our dimension.  However, he has infilftrated alternate diminsions.  If we can defeat him in these other planes of existence, perhaps we can prevent him from finding our current diminsion.  Just say when you are ready and I can open a portal enabling you to [$EnterInst].  Also, if you are done fighting, or wish to start over, I can [$Destroy] any old instances that may be lingering. ");
 	}
 	if ($text =~/Enter the Instance/i) {
 		my $j;

@@ -9,7 +9,7 @@ sub EVENT_DEATH_COMPLETE {
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hail, good $name!! Be wary near the waters of Lake Rathe! The Riptide goblin king, Lord Bergurgle, has been commanding his minions to murder and rob all who come near it! I am here seeking his death but I am afraid I am no match for all of his subjects. I shall reward you greatly for the death of Lord Bergurgle. I simply ask that you bring me his crown as proof.");
+    quest::say("Hail, good $name!! Be wary near the waters of Lake Rathe! The Riptide goblin king, Lord Bergurgle, has been commanding his minions to murder and rob all who come near it! I am here seeking his death but I am afraid I am no match for all of his subjects. I shall reward you greatly for the death of Lord Bergurgle. I simply ask that you bring me his crown as proof.");
   }
 }
 
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 
 sub EVENT_SIGNAL {
   if ($signal == 99) {
-    plugin::DiaWind("I'll slay you like I slaughtered your fellow missionaries! The Triumvirate can not decide the fate of a follower of the Tyrant!!");
+    quest::say("I'll slay you like I slaughtered your fellow missionaries! The Triumvirate can not decide the fate of a follower of the Tyrant!!");
     quest::signalwith(51138,199,2000);
   }
   if ($signal == 299) {

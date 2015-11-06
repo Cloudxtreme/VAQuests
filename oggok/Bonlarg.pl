@@ -1,9 +1,9 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Shadowknight master me be!!  $name prove to me that $name be worthy to be one with Greenblood and me give $name black shadow tunic.  You [want black shadow tunic]?");
+quest::say("Shadowknight master me be!!  $name prove to me that $name be worthy to be one with Greenblood and me give $name black shadow tunic.  You [want black shadow tunic]?");
 }
 if($text=~/i want black shadow tunic/i){
-plugin::DiaWind("Help Greenbloods you will. Give lizard tails to Grevak.  Den maybe we trust."); }
+quest::say("Help Greenbloods you will. Give lizard tails to Grevak.  Den maybe we trust."); }
 }
 
 sub EVENT_ITEM {

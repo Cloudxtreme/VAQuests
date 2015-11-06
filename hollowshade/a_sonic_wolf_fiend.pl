@@ -37,12 +37,12 @@ sub EVENT_SAY
 	{
 	if ($text=~/hail/i) 
 		{
-		plugin::DiaWind("Get out of my way weakling, my pack is taking over the zone and I have no time for you");
+		quest::say("Get out of my way weakling, my pack is taking over the zone and I have no time for you");
 		}
 	}
 
 sub EVENT_DEATH_COMPLETE
 		{
 		quest::stoptimer("ArrivalCheck");
-		plugin::DiaWind("Awooooooooooo.....");
+		quest::say("Awooooooooooo.....");
 		}

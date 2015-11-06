@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
   if(($text=~/hail/i) && (defined($qglobals{Soulwhisper}) && ($qglobals{Soulwhisper} == 2))) {
-    plugin::DiaWind("I wonder how much I could get for the tongue of a blithering fool..leave before I decide to find out for myself.");
+    quest::say("I wonder how much I could get for the tongue of a blithering fool..leave before I decide to find out for myself.");
     $boss = quest::unique_spawn(283156,0,0,$x,$y,$z,$h); #Viarglug (Active)
     $bossobj = $entity_list->GetMobID($boss);
     $bossnpc = $bossobj->CastToNPC();

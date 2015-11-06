@@ -3,10 +3,10 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Enough with the chit chat. Are you or are you not a rogue?");
+    quest::say("Enough with the chit chat. Are you or are you not a rogue?");
   }
   if ($text=~/am a rogue/i) {
-    plugin::DiaWind("Good, I need you to serve Seru. There is a member of the Shoulder that is cutting the delivery of supplies to us and he must be stopped. He is a traitor to this city. He must be a sympathizer with the loyalists of Katta. What I need from you is poison. Go make me four vials of Aching Blood. We will see how he likes his wine with some of that in it!");
+    quest::say("Good, I need you to serve Seru. There is a member of the Shoulder that is cutting the delivery of supplies to us and he must be stopped. He is a traitor to this city. He must be a sympathizer with the loyalists of Katta. What I need from you is poison. Go make me four vials of Aching Blood. We will see how he likes his wine with some of that in it!");
   }
 }
 
@@ -16,7 +16,7 @@ sub EVENT_ITEM {
     quest::summonitem(67010);
   }
   elsif (plugin::check_handin(\%itemcount, 29863 => 1)) {
-    plugin::DiaWind("Ha! His gaudy ring! You have done well young rogue. Perhaps you would be an asset to the Eye after all. You can have his nasty ring back, I am sure that it is worthless. Darn thing weighs as much as a Netherbian and is twice as ugly!");
+    quest::say("Ha! His gaudy ring! You have done well young rogue. Perhaps you would be an asset to the Eye after all. You can have his nasty ring back, I am sure that it is worthless. Darn thing weighs as much as a Netherbian and is twice as ugly!");
     quest::summonitem(29864);
     quest::faction(96,10); #eye of seru
     quest::faction(139,10); #hand of seru

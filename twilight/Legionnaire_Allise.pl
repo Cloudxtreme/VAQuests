@@ -11,28 +11,28 @@
 
 sub EVENT_SAY {
  if($text =~ /armor/i) {
-	plugin::DiaWind("Valana must have sent you here. Tell me are you a monk?");
+	quest::say("Valana must have sent you here. Tell me are you a monk?");
  }
  if($text =~ /i am a monk/i) {
-	plugin::DiaWind("Good the pieces I have are the veil, cloak, hand wraps, choker, belt, and a bo stick.");
+	quest::say("Good the pieces I have are the veil, cloak, hand wraps, choker, belt, and a bo stick.");
  }
  if($text =~ /veil/i) {
-	plugin::DiaWind("To receive the veil you must retrieve for me a sun jewel, a mark of discipline, and some oiled scales.");
+	quest::say("To receive the veil you must retrieve for me a sun jewel, a mark of discipline, and some oiled scales.");
  }
  if($text =~ /cloak/i) {
-	plugin::DiaWind("To receive the cloak you must retrieve for me a moon jewel, a mark of training, a scorched idol, and a gem of longevity.");
+	quest::say("To receive the cloak you must retrieve for me a moon jewel, a mark of training, a scorched idol, and a gem of longevity.");
  }
  if($text =~ /hand wraps/i) {
-	plugin::DiaWind("To receive the hand wraps you must retrieve for me a star jewel, a mark of rank, and a golden gem.");
+	quest::say("To receive the hand wraps you must retrieve for me a star jewel, a mark of rank, and a golden gem.");
  }
  if($text =~ /choker/i) {
-	plugin::DiaWind("To receive the choker you must retrieve for me a cloud jewel, a mark of aggression, and some sun fiend bones.");
+	quest::say("To receive the choker you must retrieve for me a cloud jewel, a mark of aggression, and some sun fiend bones.");
  }
  if($text =~ /belt/i) {
-	plugin::DiaWind("To receive the belt you must retrieve for me a sky jewel, a mark of defense, a protector gem, and an indigo sapphire.");
+	quest::say("To receive the belt you must retrieve for me a sky jewel, a mark of defense, a protector gem, and an indigo sapphire.");
  }
  if($text =~ /bo stick/i) {
-	plugin::DiaWind("To receive the bo stick you must retrieve for me a meteor jewel, a mark of the dragon, an embedded gravel tablet, and a gilded wrist chain.");
+	quest::say("To receive the bo stick you must retrieve for me a meteor jewel, a mark of the dragon, an embedded gravel tablet, and a gilded wrist chain.");
  }
 }
 

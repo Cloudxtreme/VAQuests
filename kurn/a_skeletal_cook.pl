@@ -1,7 +1,7 @@
 sub EVENT_SAY {
   if($text=~/hail/i){
    #Mirgon Dower's Head (START)
-   plugin::DiaWind("Some cracked old bone's, two zombie flesh, and a salt minnow make up the rest. Throw inside a skull and mix, and I would have a delightful dish. But with no eye's I have no sight to make Kurn's delicious delight. And if I could I would not eat without a tongue behind my teeth.");
+   quest::say("Some cracked old bone's, two zombie flesh, and a salt minnow make up the rest. Throw inside a skull and mix, and I would have a delightful dish. But with no eye's I have no sight to make Kurn's delicious delight. And if I could I would not eat without a tongue behind my teeth.");
   }
 }
 sub EVENT_ITEM {

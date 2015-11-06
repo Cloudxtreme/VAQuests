@@ -888,17 +888,17 @@ sub EVENT_SAY {
 
    if($text=~/Hail/i)
       {
-      plugin::DiaWind("Do you wish to [return]?");
+      quest::say("Do you wish to [return]?");
       }
    
    {if($text=~/return/i && !defined $pumpkin)
       {
-      plugin::DiaWind("The trial is currently underway.");
+      quest::say("The trial is currently underway.");
       }
 
    {if($text=~/return/i && !defined $pumpkin)
       {
-      plugin::DiaWind("Very well.");
+      quest::say("Very well.");
       quest::movepc(201,456,825,9);
       }
    }}} 

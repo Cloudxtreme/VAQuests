@@ -5,12 +5,12 @@ sub EVENT_SAY {
       quest::emote("blinks at you a few times then speaks in a strangely musical, draconic voice. 'You vish to azzizt ze count of ze Tunarean Faerie Dragons?");      
     }
     if ($text=~/assist/i) {
-      plugin::DiaWind("I vish to ztop ze Kromzek Foreman from continuing ta deztroy thiz land. Iv you vish to azzizt you can zlay ze Foreman and bring me hiz helm az proof.");
+      quest::say("I vish to ztop ze Kromzek Foreman from continuing ta deztroy thiz land. Iv you vish to azzizt you can zlay ze Foreman and bring me hiz helm az proof.");
     }
   }
   else {
     # Made text up
-    plugin::DiaWind("You are no friend of the Tunarean Court.  Leave me.");
+    quest::say("You are no friend of the Tunarean Court.  Leave me.");
   }
 }
 
@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   if ($faction < 5) {
     if (plugin::check_handin(\%itemcount, 24873 => 1)) {
       # Made text up
-      plugin::DiaWind("Good, ze Foreman iz dead and now we will be left in peazz.  Take diz az a zign of my friendship.");
+      quest::say("Good, ze Foreman iz dead and now we will be left in peazz.  Take diz az a zign of my friendship.");
       quest::summonitem(24868);
       quest::faction(344, 30); # +Tunarean Court
       quest::exp(100);
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
   }
   else {
     # Made text up
-    plugin::DiaWind("I will not aid someone who is not a friend of the Tunarean Court.");
+    quest::say("I will not aid someone who is not a friend of the Tunarean Court.");
   }
 }
 

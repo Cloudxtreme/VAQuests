@@ -30,12 +30,12 @@ sub EVENT_SAY
       }
       
       elsif($text=~/prepared/i) {
-         plugin::DiaWind("Very well. When you are ready, you may begin the trial of execution. The victim will perish should the hooded executioner reach him. Its life will end only when all of the nemeses which accompany it also perish. We shall judge the mark of your success.");
+         quest::say("Very well. When you are ready, you may begin the trial of execution. The victim will perish should the hooded executioner reach him. Its life will end only when all of the nemeses which accompany it also perish. We shall judge the mark of your success.");
       }
       
       elsif($text=~/begin the trial of execution/i) {
          if (!defined $in_progress) {
-            plugin::DiaWind("Then begin.");
+            quest::say("Then begin.");
             $in_progress = 1;
             quest::settimer("delay_start", 30);
             #Tell Event_Execution_Control about it
@@ -58,7 +58,7 @@ sub EVENT_SAY
          }
          
          else {
-            plugin::DiaWind("I'm sorry, the Trial of Execution is currently unavailable to you.");
+            quest::say("I'm sorry, the Trial of Execution is currently unavailable to you.");
          }
       }
       
@@ -111,7 +111,7 @@ sub EVENT_SAY
 					quest::summonitem(31599);
 				} 
 			}elsif (plugin::check_hasitem($client, 31842) || plugin::check_hasitem($client, 31796) || plugin::check_hasitem($client, 31960) || plugin::check_hasitem($client, 31845) || plugin::check_hasitem($client, 31844) || plugin::check_hasitem($client, 31846) ) { 
-				plugin::DiaWind("You have done well, mortal, but there are more trials yet for you to complete.");
+				quest::say("You have done well, mortal, but there are more trials yet for you to complete.");
 			}
 		}
    }

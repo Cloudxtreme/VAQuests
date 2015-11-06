@@ -103,7 +103,7 @@ sub EVENT_TIMER {
    }
    elsif ($timer eq "do_execution") {
       quest::stoptimer("do_execution");
-      plugin::DiaWind("Very well.");
+      quest::say("Very well.");
       #Signal prisoner death. (depop)
       quest::signalwith(201424,0,5);
       #Executed - Let controller know this was a fail

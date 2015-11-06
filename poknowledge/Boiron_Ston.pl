@@ -4,10 +4,10 @@
 
 sub EVENT_SAY {
 	if($text=~/Hail/i) {
-    plugin::DiaWind("Welcome to New Tanaan. traveler.  The practice of smithing is a time-honored tradition for my people.  My particular specialty is craftsmanship of plate armor for the larger races of Norrath.  Feel free to search my stock for anything you might need to help aid your pursuit of this skill.");
+    quest::say("Welcome to New Tanaan. traveler.  The practice of smithing is a time-honored tradition for my people.  My particular specialty is craftsmanship of plate armor for the larger races of Norrath.  Feel free to search my stock for anything you might need to help aid your pursuit of this skill.");
   }
   if($text=~/like elisha dirtyshoes/i) {
-    plugin::DiaWind("Aye, she's a pretty lass. And I am aware of her feelings toward me. I haven't had the courage to approach her though. My family standard has recently disappeared, and no dwarf is the same when their standard is in jeopardy. Seek out Caden Zharik and demand my standard back, I believe he may have lifted it from me.");
+    quest::say("Aye, she's a pretty lass. And I am aware of her feelings toward me. I haven't had the courage to approach her though. My family standard has recently disappeared, and no dwarf is the same when their standard is in jeopardy. Seek out Caden Zharik and demand my standard back, I believe he may have lifted it from me.");
   }
 }
   

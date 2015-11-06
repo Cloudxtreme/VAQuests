@@ -22,10 +22,10 @@ my $depopnpc5;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hello, friend. Beautiful is what I would call such a day normally but lately?");
+    quest::say("Hello, friend. Beautiful is what I would call such a day normally but lately?");
   }
   if ($text=~/your eyes/i) {
-    plugin::DiaWind("Yes. I cannot see any longer, my sight long since lost in the march of years. By the blessings of Tunare and Karana, though, I still make myself useful.");
+    quest::say("Yes. I cannot see any longer, my sight long since lost in the march of years. By the blessings of Tunare and Karana, though, I still make myself useful.");
   }
 }
 
@@ -94,7 +94,7 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {  
   if ($timer eq "prep") { # gives the last druid, teloa, time to walk to the gathering
     quest::stoptimer("prep");    
-    plugin::DiaWind("Great mother of life and father of sky, growth and spirit, Tunare and Karana. Innoruuk once again schemes and we have failed in our duties to protect our land. We give our powers in sacrifice for your help. Heed our call and send us your wisdom.");
+    quest::say("Great mother of life and father of sky, growth and spirit, Tunare and Karana. Innoruuk once again schemes and we have failed in our duties to protect our land. We give our powers in sacrifice for your help. Heed our call and send us your wisdom.");
     quest::signalwith(15178,99,3);
     quest::signalwith(15167,99,6);
     quest::signalwith(15170,99,9);

@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
 sub EVENT_DEATH_COMPLETE {
   my $werewolf = $entity_list->GetMobByNpcTypeID(12183);
   if (!$werewolf) { #All werewolves dead
-    plugin::DiaWind("Your attack was in vain, fool. The staff was stolen from us by a bandit only hours ago.");
+    quest::say("Your attack was in vain, fool. The staff was stolen from us by a bandit only hours ago.");
     quest::spawn2(12185,186,0,-11080,-2920,38,0); #Shady Bandit
   }
 }

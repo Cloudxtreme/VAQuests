@@ -35,25 +35,25 @@
 
 sub EVENT_SAY {
   if($text =~ /hail/i) {
-    plugin::DiaWind("Greetings hearty adventurer. Searching for the components necessary for fine shaman spells are we? I have come to Kunark in search of [rare alchemy components], but I have found the dangers of Kunark are far too great for me.");
+    quest::say("Greetings hearty adventurer. Searching for the components necessary for fine shaman spells are we? I have come to Kunark in search of [rare alchemy components], but I have found the dangers of Kunark are far too great for me.");
   }
   if($text=~/rare alchemy components/i){
-    plugin::DiaWind("Grand!! I have heard word of [four rare components]. Collect them for me and I will share with you a rare scroll of [McMerin's Feast].");
+    quest::say("Grand!! I have heard word of [four rare components]. Collect them for me and I will share with you a rare scroll of [McMerin's Feast].");
   }
   if($text=~/McMerins Feast/i){
-    plugin::DiaWind("Clan McMerin are wise shamans from the North. The secret of McMerin's Feast won't be understandable unless you're a shaman, but you can always pass it on to one.");
+    quest::say("Clan McMerin are wise shamans from the North. The secret of McMerin's Feast won't be understandable unless you're a shaman, but you can always pass it on to one.");
   }
   if($text=~/McMerin's Feast/i){
-    plugin::DiaWind("Clan McMerin are wise shamans from the North. The secret of McMerin's Feast won't be understandable unless you're a shaman, but you can always pass it on to one.");
+    quest::say("Clan McMerin are wise shamans from the North. The secret of McMerin's Feast won't be understandable unless you're a shaman, but you can always pass it on to one.");
   }
   if($text=~/four rare components/i){
-    plugin::DiaWind("From the lands of Kunark we require some clay of Ghiosk, crushed dread diamond and some powder of a Yun shaman. The rarest component is the bones of one who touched the Bath of Obulus. Find these things, return them to me and the secret of [McMerin's Feast] is yours.");
+    quest::say("From the lands of Kunark we require some clay of Ghiosk, crushed dread diamond and some powder of a Yun shaman. The rarest component is the bones of one who touched the Bath of Obulus. Find these things, return them to me and the secret of [McMerin's Feast] is yours.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12942=>1, 12945 => 1, 12944 => 1, 12943 =>1)){
-    plugin::DiaWind("What's this? This is amazing - you collected them all! To think, the power that these items hold if properly used. Never mind that now, here, take the scroll. You've certainly earned it.");
+    quest::say("What's this? This is amazing - you collected them all! To think, the power that these items hold if properly used. Never mind that now, here, take the scroll. You've certainly earned it.");
     quest::exp(45000);
     quest::summonitem(12941);
   }

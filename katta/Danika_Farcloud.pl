@@ -1,4 +1,4 @@
 sub EVENT_SIGNAL {
-	plugin::DiaWind("I think you should take it easy with that ale there, Yavik.");
+	quest::say("I think you should take it easy with that ale there, Yavik.");
 }
 

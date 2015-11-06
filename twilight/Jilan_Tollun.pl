@@ -2,39 +2,39 @@ sub EVENT_SAY {
 
 if($text=~/Hail/i){
 
-plugin::DiaWind("Hello there. please leave me alone I would like some peace and quiet.'");
+quest::say("Hello there. please leave me alone I would like some peace and quiet.'");
 }
 
 if($text=~/armor/i){
-plugin::DiaWind("amben must have told you about the old beastlord we came upon. So tell me are you a worthy beastlord?");
+quest::say("amben must have told you about the old beastlord we came upon. So tell me are you a worthy beastlord?");
 }
 
 if($text=~/worthy beastlord/i){
-plugin::DiaWind("Then you must want the armor I have. I have the veil, cape, gloves, talisman, belt, and claws.");
+quest::say("Then you must want the armor I have. I have the veil, cape, gloves, talisman, belt, and claws.");
 }
 
 if($text=~/belt/i){
-plugin::DiaWind("For the belt you must bring me a sky jewel, a mark of the wolf, an embedded steel figurine, and ancient wrappings.");
+quest::say("For the belt you must bring me a sky jewel, a mark of the wolf, an embedded steel figurine, and ancient wrappings.");
 }
 
 if($text=~/cape/i){
-plugin::DiaWind("For the cape you must bring me a moon jewel, a mark of the panther, an iridescent crystal, and an embedded bronze figurine.");
+quest::say("For the cape you must bring me a moon jewel, a mark of the panther, an iridescent crystal, and an embedded bronze figurine.");
 }
 
 if($text=~/claw/i){
-plugin::DiaWind("For the claws you must bring me a meteor jewel, a mark of the bestial, an embedded adamantium figurine, and a roaring idol.");
+quest::say("For the claws you must bring me a meteor jewel, a mark of the bestial, an embedded adamantium figurine, and a roaring idol.");
 }
 
 if($text=~/glove/i){
-plugin::DiaWind("For the gloves you must bring me a star jewel, a mark of the alligator, and embedded electrum figurine.");
+quest::say("For the gloves you must bring me a star jewel, a mark of the alligator, and embedded electrum figurine.");
 }
 
 if($text=~/talisman/i){
-plugin::DiaWind("For the talisman you must bring me a cloud jewel, a mark of the shark, and an embedded silver figurine. ");
+quest::say("For the talisman you must bring me a cloud jewel, a mark of the shark, and an embedded silver figurine. ");
 }
 
 if($text=~/veil/i){
-plugin::DiaWind("For the veil you must bring me a sun jewel, a mark of the tiger, and an embedded wooden figurine.");
+quest::say("For the veil you must bring me a sun jewel, a mark of the tiger, and an embedded wooden figurine.");
 }
 
 

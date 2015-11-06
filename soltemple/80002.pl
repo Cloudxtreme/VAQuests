@@ -31,17 +31,17 @@ sub EVENT_DEATH_COMPLETE {
  
 sub EVENT_SAY {
   if ($text=~/solusek ro/i) {
-    plugin::DiaWind("Solusek Ro is the Master of Fire and the Keeper of Power.");
+    quest::say("Solusek Ro is the Master of Fire and the Keeper of Power.");
   }
   if ($text=~/plasmatic priest/i) {
-    plugin::DiaWind("You speak of things that should not be spoken! It would be in your best interest to leave this temple at once and return to lands less consumed by flame!");
+    quest::say("You speak of things that should not be spoken! It would be in your best interest to leave this temple at once and return to lands less consumed by flame!");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 28051 => 1)) { #Coral Statue of Tarew
     quest::emote("shakes violently as his hand closes on the coral statue and flames dance in the depths of his eyes! The statue begins to emit a reddish glow then shatters in a burst of fire and smoke! The flames in the plasmatic priest's eyes vanish with the explosion and only madness remains!");
-    plugin::DiaWind("The Triumvirate thinks that destroying my spirit of flame will stop me?!! I will kill you all now, the goblins will continue to war, and when my spirit is restored I will ensure that Ixiblat Fer consumes all of Norrath in his flames!!");
+    quest::say("The Triumvirate thinks that destroying my spirit of flame will stop me?!! I will kill you all now, the goblins will continue to war, and when my spirit is restored I will ensure that Ixiblat Fer consumes all of Norrath in his flames!!");
     $priest = quest::spawn2(80042,0,0,$x,$y,$z,0); #a_plasmatic_priest
     $attack = $entity_list->GetMobID($priest);
     $priestattack = $attack->CastToNPC();

@@ -7,6 +7,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	plugin::DiaWind("Haha! Silly mortals! You cannot kill me! I'm immor...");
+	quest::say("Haha! Silly mortals! You cannot kill me! I'm immor...");
 	quest::signalwith(20260,5);
 }

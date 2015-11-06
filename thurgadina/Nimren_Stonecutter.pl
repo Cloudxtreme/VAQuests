@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("The finest ore fresh from the mines I have! Take a look, why don't ye, $name. I'm sure I've got somethin' ye be needin'.");
+    quest::say("The finest ore fresh from the mines I have! Take a look, why don't ye, $name. I'm sure I've got somethin' ye be needin'.");
   }
 }
 

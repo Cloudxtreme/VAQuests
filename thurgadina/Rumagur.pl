@@ -1,6 +1,6 @@
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		plugin::DiaWind("Hey Fronden, I want a double of whatever you've been serving him!");
+		quest::say("Hey Fronden, I want a double of whatever you've been serving him!");
 		quest::signalwith(115013,1,9000);
 	}
 	if($signal==2) {
@@ -8,11 +8,11 @@ sub EVENT_SIGNAL {
 		quest::start(7);
 	}
 	if($signal==3) {
-		plugin::DiaWind("Aye Sara, much better indeed. With the help of good Fronden here I think I've finally figured out what was causing the alarming condition under me left arm. I must admit it was givin me quite a scare for a while, not to mention the pain was drivin me to drink.");
+		quest::say("Aye Sara, much better indeed. With the help of good Fronden here I think I've finally figured out what was causing the alarming condition under me left arm. I must admit it was givin me quite a scare for a while, not to mention the pain was drivin me to drink.");
 		quest::signalwith(115010,4,8000);
 	}
 	if($signal==4) {
-		plugin::DiaWind("Every day I come here to wet me whistle and I stand in the same spot, facin' the same way. As yer good wares take effect on me I lean more and more upon the bar here. The constant pressure was causin' me to develop... well... barsores. So I'll just have to face the other way from now on.");
+		quest::say("Every day I come here to wet me whistle and I stand in the same spot, facin' the same way. As yer good wares take effect on me I lean more and more upon the bar here. The constant pressure was causin' me to develop... well... barsores. So I'll just have to face the other way from now on.");
 		quest::signalwith(115014,2,8000);
 	}
 	if($signal==5) {
@@ -25,11 +25,11 @@ sub EVENT_SIGNAL {
 		quest::signalwith(115014,5,50000);
 	}
 	if($signal==8) {
-		plugin::DiaWind("Say, Fronden, ya got anything stronger lyin' around back there?");
+		quest::say("Say, Fronden, ya got anything stronger lyin' around back there?");
 		quest::signalwith(115014,6,8000);
 	}
 	if($signal==9) {
-		plugin::DiaWind("I'd be honored to try your family recipe. Thank ye.");
+		quest::say("I'd be honored to try your family recipe. Thank ye.");
 		quest::signalwith(115014,7,8000);
 	}
 	if($signal==10) {

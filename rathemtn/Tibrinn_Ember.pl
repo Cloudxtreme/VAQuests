@@ -8,10 +8,10 @@
 sub EVENT_SAY {
 
    if($text=~/Hail/i){
-      plugin::DiaWind("I am Tibrinn Ember, forest friend and Unkempt Druid. Aid us in our [conflict] against the polluters of nature and I will reward you.");
+      quest::say("I am Tibrinn Ember, forest friend and Unkempt Druid. Aid us in our [conflict] against the polluters of nature and I will reward you.");
    }
    if($text=~/conflict/i){
-      plugin::DiaWind("Grazhak the Berzerker is a powerful orc who roams these mountains. Slay him and bring me his Mithril Plated Girth. The gorge tyrant himself, King Xorbb, has plagued my halfling brothers for ages. Dispatch this beast and bring me his Slime Crystal Staff as proof of your deed. After you have brought me these items I will give you a weapon as reward for your feats.");
+      quest::say("Grazhak the Berzerker is a powerful orc who roams these mountains. Slay him and bring me his Mithril Plated Girth. The gorge tyrant himself, King Xorbb, has plagued my halfling brothers for ages. Dispatch this beast and bring me his Slime Crystal Staff as proof of your deed. After you have brought me these items I will give you a weapon as reward for your feats.");
    }
 }
 
@@ -24,7 +24,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 
    if(plugin::check_handin(\%itemcount,4310=>1,6335=>1)) {
-     plugin::DiaWind("You have done well. Here is the reward for your deeds.");
+     quest::say("You have done well. Here is the reward for your deeds.");
      quest::summonitem(6364);
      quest::exp(25000);
    }

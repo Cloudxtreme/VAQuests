@@ -11,15 +11,15 @@ sub EVENT_SAY {
 				$client->AddLevelBasedExp(10, 0);
 				quest::setglobal("halloween_race_complete",1,0,"D30");
 				quest::delglobal("halloween_race_victory");
-				plugin::DiaWind("Amazing! You rode swiftly and true... few could rival your speed! Take this cloak, and wear it to commemorate this day.");
+				quest::say("Amazing! You rode swiftly and true... few could rival your speed! Take this cloak, and wear it to commemorate this day.");
 				quest::updatetaskactivity(216,10);
 			}
 			elsif(defined $qglobals{"halloween_race_victory"} && defined $qglobals{halloween_race_complete}){
-				plugin::DiaWind("Amazing! You rode swiftly and true... few could rival your speed!");
+				quest::say("Amazing! You rode swiftly and true... few could rival your speed!");
 				quest::updatetaskactivity(216,10);
 			}
 			else {
-				plugin::DiaWind("You managed to find your way through Nektulos to Neriak, but you did not as quickly as you could have... Let me know if you would like to [try] again.");
+				quest::say("You managed to find your way through Nektulos to Neriak, but you did not as quickly as you could have... Let me know if you would like to [try] again.");
 				quest::failtask(216);
 			}
 		}
@@ -27,7 +27,7 @@ sub EVENT_SAY {
 	}
 	elsif(quest::istaskactive(216)){
 		if($text=~/Hail/i) {
-      			plugin::DiaWind("What are you waiting for? Get going!");
+      			quest::say("What are you waiting for? Get going!");
       		}
 		if(!defined $qglobals{halloween_race_start}) {
 			if($text=~/Ready/i) {
@@ -54,7 +54,7 @@ sub EVENT_SAY {
    			quest::emote("chuckles, 'Using his new power drained his energy, leaving him weak and vulnerable. With his son, he moved towards his mount, a powerful black warhorse, a single enemy blocked his path... Ritrim reached out again with his power, killing his foe, but not quickly enough... a shout was given, and he felt a searing pain as his [eyes] were burned away.'");
 		}
 		if($text=~/Eyes/i) {
-   			plugin::DiaWind("Blinded, and in great pain, Ritrim mounted his steed to make his escape, the voice of his son guiding him as he charged through the forest of Nektulos weaving a [crooked path] in order to evade his pursuers, and return to Neriak.");
+   			quest::say("Blinded, and in great pain, Ritrim mounted his steed to make his escape, the voice of his son guiding him as he charged through the forest of Nektulos weaving a [crooked path] in order to evade his pursuers, and return to Neriak.");
 		}
 		if($text=~/Crooked/i) {
    			quest::emote("smiles, 'If you are really that interested, I will summon you a dark [mount] so that you may follow the path for yourself.'");

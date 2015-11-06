@@ -7,10 +7,10 @@
 
 sub EVENT_SAY {
    if($text=~/Hail/i){
-      plugin::DiaWind("Hello, $name. Oh, I wish I had a prickly pear. I just have this insatiable craving for a prickly pear. But Permafrost is just so far! <Sigh.>");
+      quest::say("Hello, $name. Oh, I wish I had a prickly pear. I just have this insatiable craving for a prickly pear. But Permafrost is just so far! <Sigh.>");
    }
    if($text=~/prickly pear/i){
-      plugin::DiaWind("Yes, yes! Prickly pears! Do you have any? I just love prickly pears but Permafrost is just so far away even for us druids.");
+      quest::say("Yes, yes! Prickly pears! Do you have any? I just love prickly pears but Permafrost is just so far away even for us druids.");
    }
 }
 
@@ -30,7 +30,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 
    if(plugin::check_handin(\%itemcount,10195=>1)) {
-      plugin::DiaWind("Prickly pears! I just love prickly pears!! Thank you so much for getting these for me. I really, really appreciate your gift and I shall not.. OWW!! I hate it when I stick myself with the needles! Oh look, I am bleeding now! <Sigh.> Can you hold this note for a moment, please? My hands are full and I must clean up.");
+      quest::say("Prickly pears! I just love prickly pears!! Thank you so much for getting these for me. I really, really appreciate your gift and I shall not.. OWW!! I hate it when I stick myself with the needles! Oh look, I am bleeding now! <Sigh.> Can you hold this note for a moment, please? My hands are full and I must clean up.");
       quest::summonitem(10196);
       quest::exp(1000);
    }

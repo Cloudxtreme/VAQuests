@@ -3,20 +3,20 @@ sub EVENT_SAY {
 	if((($text=~/hail/i) || ($text=~/seeking work/i)) && ($faction > 5)) {
 		my $random = int(rand(3));
 		if ($random == 0) {
-			plugin::DiaWind("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.");
+			quest::say("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.");
 		}
 		if ($random == 1) {
-			plugin::DiaWind("Is that your BREATH, or did something die in here?  Now go away!");
+			quest::say("Is that your BREATH, or did something die in here?  Now go away!");
 		}
 		if ($random == 2) {
-			plugin::DiaWind("I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.");
+			quest::say("I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.");
 		}
 	}
 	if(($text=~/hail/i) && ($faction <= 5)) {
 		quest::emote("glances over at you with a sneer and says, 'I have much to do and organize. If you have anything of importance to say you had best speak up now or leave before I lose my patience.'");
 	}
 	if(($text=~/seeking work/i) && ($faction == 5)) {
-		plugin::DiaWind("You need to prove your dedication to our cause before I can discuss such matters with you.");
+		quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
 	}
 	if(($text=~/seeking work/i) && ($faction < 5)) {
 		quest::emote("stops looking over his papers and takes a moment to size you up. You fight the urge to run in fear as the collosal humanoid considers you. After a moment he says, 'Very well. Our campaign to conquer the so called Tunarean Court has need of reinforcements. The Kromrif are already spread to thinly in the Eastern Wastes so mercenaries will have to do. Take these orders to the commanding officer in the field and follow his orders. Payment will be discussed after you complete your assignment.'");

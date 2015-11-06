@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-	plugin::DiaWind("Who is the most fearless [vampyre slayer] of your fellowship?");
+	quest::say("Who is the most fearless [vampyre slayer] of your fellowship?");
 	quest::settimer(1,300);
 }
 
@@ -17,7 +17,7 @@ sub EVENT_TIMER {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 2690 => 1)) {
-		plugin::DiaWind("On behalf of the citizens of Katta Castellum I extend our gratitude for your assistance in our war with the Coterie of the Eternal Night!");
+		quest::say("On behalf of the citizens of Katta Castellum I extend our gratitude for your assistance in our war with the Coterie of the Eternal Night!");
 		quest::summonitem(2689); #Johanius Stake of Slaying
 		quest::exp(500);
 		quest::ding();

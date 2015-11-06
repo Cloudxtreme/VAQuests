@@ -2,11 +2,11 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Hello. I am the guildmaster.");
+    quest::say("Hello. I am the guildmaster.");
  }
   if($text=~/note/i) {
     quest::emote("fingers his belt pouch.");
-    plugin::DiaWind("I don't know what you're talking about, if you know what I mean. You should leave now, if you know what's good for you. Don't make me sic the crew on you.");
+    quest::say("I don't know what you're talking about, if you know what I mean. You should leave now, if you know what's good for you. Don't make me sic the crew on you.");
 
  }
 }

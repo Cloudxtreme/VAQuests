@@ -5,9 +5,9 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER { 
 my $random = int(rand(2));	
 	if($random == 0){
-	plugin::DiaWind("Wow...It looks like I pinned that one to the ground pretty good!"); 
+	quest::say("Wow...It looks like I pinned that one to the ground pretty good!"); 
 	}
 	if($random == 1){
-	plugin::DiaWind("Nice, another grimling kill for my daily report"); 
+	quest::say("Nice, another grimling kill for my daily report"); 
 	}
 }

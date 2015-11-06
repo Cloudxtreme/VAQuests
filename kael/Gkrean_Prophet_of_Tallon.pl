@@ -3,20 +3,20 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("You have entered the sacred temple of Tallon Zek. This is the Temple of Tactics, where we teach what must be done to achieve goals in the most efficient manner.");
+    quest::say("You have entered the sacred temple of Tallon Zek. This is the Temple of Tactics, where we teach what must be done to achieve goals in the most efficient manner.");
   }
   if ($text=~/teach me/i) {
-    plugin::DiaWind("I cannot teach one of your kind the arts of war. I must teach the other Kromzek at this time. If you were to serve the Temple of Tactics I might consider giving you a few words of wisdom.");
+    quest::say("I cannot teach one of your kind the arts of war. I must teach the other Kromzek at this time. If you were to serve the Temple of Tactics I might consider giving you a few words of wisdom.");
   }
   if ($text=~/serve the temple/i) {
-    plugin::DiaWind("The great father of war, Rallos Zek, wishes the destruction of the inferior race known as the Coldain. As the high priest of Tallon Zek, I see that they use great tactics to evade destruction. Find the ones who teach these tactics to the other Coldain and bring back the books that contain the ancient
+    quest::say("The great father of war, Rallos Zek, wishes the destruction of the inferior race known as the Coldain. As the high priest of Tallon Zek, I see that they use great tactics to evade destruction. Find the ones who teach these tactics to the other Coldain and bring back the books that contain the ancient
 Coldain tactics and strategies. Do not waste my time without a scroll or book that those tiny beasts hold");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 24987 => 1) || plugin::check_handin(\%itemcount, 24988 => 1)) {
-    plugin::DiaWind("You are a brave little beast to gain this tome. Let me impart a bit of wisdom to you. Tactics must change - if you do not ever adapt to new surroundings, environments and rules, you will surely perish.");
+    quest::say("You are a brave little beast to gain this tome. Let me impart a bit of wisdom to you. Tactics must change - if you do not ever adapt to new surroundings, environments and rules, you will surely perish.");
     quest::summonitem(quest::ChooseRandom(25037,25038,25039,25042));
     quest::exp(50000);
     quest::faction(188,30); #kromrif

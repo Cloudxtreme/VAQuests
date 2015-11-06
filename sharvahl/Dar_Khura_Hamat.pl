@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("How may I help you? What are you looking for?");
+    quest::say("How may I help you? What are you looking for?");
   }
 }
 

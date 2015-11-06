@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("King Tormax must be stopped, no matter what the cost."); }
+quest::say("King Tormax must be stopped, no matter what the cost."); }
 }
 
 sub EVENT_SIGNAL {

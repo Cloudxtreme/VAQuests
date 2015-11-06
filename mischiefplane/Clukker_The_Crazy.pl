@@ -3,10 +3,10 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Ha ha! Hello to you too! I have got this crazy deck that I'm willing to give to those [looking for a deck]. Ha ha! Oo!");
+    quest::say("Ha ha! Hello to you too! I have got this crazy deck that I'm willing to give to those [looking for a deck]. Ha ha! Oo!");
   }
   if ($text=~/looking for a deck/i) {
-     plugin::DiaWind("You're looking for a DECK? Ha ha ha! Well, bring me a fishing grub, tee hee, and I'll give you a nifty deck");
+     quest::say("You're looking for a DECK? Ha ha ha! Well, bring me a fishing grub, tee hee, and I'll give you a nifty deck");
   }
 }
 

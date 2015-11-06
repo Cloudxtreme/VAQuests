@@ -16,16 +16,16 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
 	if($text=~/Hail/i) {
-		plugin::DiaWind("Be like the water $name. The water spirits have fortold of your coming. I am a fishlord, summoner of the [dwellers] of the deep.");
+		quest::say("Be like the water $name. The water spirits have fortold of your coming. I am a fishlord, summoner of the [dwellers] of the deep.");
 	} 
 	elsif($text=~/dwellers/i) {
-		plugin::DiaWind("These are great creatures that dwell in the nether reaches of this reef. For 100 platinum I will summon them forth.");
+		quest::say("These are great creatures that dwell in the nether reaches of this reef. For 100 platinum I will summon them forth.");
 	}
 }
 
 sub EVENT_ITEM {
 	if($platinum == 100 && !defined$qglobals{fishlord}) {
-		plugin::DiaWind("Very well, I will summon forth the creatures of the deep. They do not like being disturbed so you must protect me from harm. I am very vulnerable when summoning the dwellers of the deep. If death claims me the summoning will be finished. During the course of the summoning many powerful dwellers will appear. You must watch for them.");
+		quest::say("Very well, I will summon forth the creatures of the deep. They do not like being disturbed so you must protect me from harm. I am very vulnerable when summoning the dwellers of the deep. If death claims me the summoning will be finished. During the course of the summoning many powerful dwellers will appear. You must watch for them.");
 		
 		quest::settimer("Trash", 420);
 		
@@ -41,7 +41,7 @@ sub EVENT_ITEM {
 
 sub EVENT_TIMER {
 	if($timer eq "Trash") {
-		plugin::DiaWind("Listen oh spirits of water! I summon forth the dwellers of the deep.' He then begins to hum softly closing his eyes and seemingly settling into a deep focus. Suddenly he shouts a mystical chant saying, 'XAX XAX tomae tomae XAX podiggle podiggle XAX AZKHAZKKKY!");
+		quest::say("Listen oh spirits of water! I summon forth the dwellers of the deep.' He then begins to hum softly closing his eyes and seemingly settling into a deep focus. Suddenly he shouts a mystical chant saying, 'XAX XAX tomae tomae XAX podiggle podiggle XAX AZKHAZKKKY!");
 		
 		$trashCount = int(rand(3));
 
@@ -91,7 +91,7 @@ sub EVENT_TIMER {
 	
 	elsif($timer eq "MiniNamed") {
 		if($miniNamedCount <= 9) {
-			plugin::DiaWind("A dweller of some power comes, prepare yourself.");
+			quest::say("A dweller of some power comes, prepare yourself.");
 			
 			if($miniNamedCount == 1) {
 				$spawnNpcID = 216082;#hungry
@@ -150,7 +150,7 @@ sub EVENT_TIMER {
 		}
 	}
 	elsif($timer eq "FinalNamed") {
-		plugin::DiaWind("I sense a creature of immense power has been summoned forth. My job here is finished. You all have done very well for mortals.");
+		quest::say("I sense a creature of immense power has been summoned forth. My job here is finished. You all have done very well for mortals.");
 		
 		quest::spawn2(216088, 0, 0, $x, $y, $z, $h);#supreme
 		quest::depop_withtimer();

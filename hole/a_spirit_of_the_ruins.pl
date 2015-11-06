@@ -2,7 +2,7 @@ sub EVENT_AGGRO {
 	my $mgender = $npc->GetBaseGender();
 	my $mclass = $npc->GetClass();
 	if($mlevel==45) {
-		plugin::DiaWind("You had best prepare yourself for the fury of the heretics!");
+		quest::say("You had best prepare yourself for the fury of the heretics!");
 	}
 	if(($mclass==1) && ($mgender==0) && ($mlevel !=45)){
 		quest::emote("glares with soulful hatred at the invaders of the ruins.");
@@ -22,7 +22,7 @@ sub EVENT_DEATH_COMPLETE {
 	my $mgender = $npc->GetBaseGender();
 	my $mclass = $npc->GetClass();
 	if($mlevel==45) {
-		plugin::DiaWind("Even with my death, you will never take the city from us!");
+		quest::say("Even with my death, you will never take the city from us!");
 	}
 	if(($mclass==1) && ($mgender==0) && ($mlevel !=45)){
 		quest::emote("shrieks as his hollow ghostly form falls gently to the ground.");

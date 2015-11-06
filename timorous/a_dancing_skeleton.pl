@@ -28,7 +28,7 @@
 sub EVENT_SAY {
   if($text=~/gomoz/i) {
     quest::emote("stops in suprise.");
-    plugin::DiaWind("Gomoz!! Why, that is me! I was heading off to be with the elements when I was captured by this smelly ogre. Actually, he is not as smelly as most.");
+    quest::say("Gomoz!! Why, that is me! I was heading off to be with the elements when I was captured by this smelly ogre. Actually, he is not as smelly as most.");
     quest::stoptimer(10);
     quest::stoptimer(11);
     quest::stoptimer(12);
@@ -36,12 +36,12 @@ sub EVENT_SAY {
     quest::settimer(100,40); # Get the conversation out the way in 40s, or depop
   }
   if($text=~/talon southpaw/i) {
-    plugin::DiaWind("Master Talon Southpaw!! He was my master. Dead, he became. Off to the elements. I keep his special hand with me. Perhaps I should have it returned. Maybe I shall find a young adventurer to [return the hand to Cabilis].");
+    quest::say("Master Talon Southpaw!! He was my master. Dead, he became. Off to the elements. I keep his special hand with me. Perhaps I should have it returned. Maybe I shall find a young adventurer to [return the hand to Cabilis].");
     quest::stoptimer(100);
     quest::settimer(100,30); # Get the conversation out the way in 30s, or depop
   }
   if($text=~/return the hand to cabilis/i) {
-    plugin::DiaWind("Yes!! Return the hand. Here it is. Missing four it is. Within the tower of past pain and torture is where the four lie. Taken by bones similar to myself.");
+    quest::say("Yes!! Return the hand. Here it is. Missing four it is. Within the tower of past pain and torture is where the four lie. Taken by bones similar to myself.");
     quest::summonitem(17037); # hand with one only a thumb
     quest::settimer(100,4);
   }

@@ -8,35 +8,35 @@
 sub EVENT_SAY {
   if ($faction == 1) { #req ally CoV
     if($text=~/hail/i) {
-      plugin::DiaWind("Greetings to you. I seek those who call themselves magicians. Are you a magician, little one?");
+      quest::say("Greetings to you. I seek those who call themselves magicians. Are you a magician, little one?");
     }
     if ($text=~/i am a magician/i) {
-      plugin::DiaWind("I thought so. I have several tasks for you accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.");
+      quest::say("I thought so. I have several tasks for you accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.");
     }
     if ($text=~/cap/i) {
-      plugin::DiaWind("For you to receive my gift, I shall require three crushed flame opals and a tattered silk turban.");
+      quest::say("For you to receive my gift, I shall require three crushed flame opals and a tattered silk turban.");
     }
     if ($text=~/robe/i) {
-      plugin::DiaWind("This exquisite robe shall be yours in exchange for a tattered silk robe and three pristine emeralds.");
+      quest::say("This exquisite robe shall be yours in exchange for a tattered silk robe and three pristine emeralds.");
     }
     if ($text=~/sleeves/i) {
-      plugin::DiaWind("For these durable sleeves, you must fetch me a pair of tattered silk sleeves and three flawed topaz.");
+      quest::say("For these durable sleeves, you must fetch me a pair of tattered silk sleeves and three flawed topaz.");
     }
     if ($text=~/wristband/i) {
-      plugin::DiaWind("The crafting of this wristband requires that you bring me a tattered silk wristband and three crushed onyx sapphires.");
+      quest::say("The crafting of this wristband requires that you bring me a tattered silk wristband and three crushed onyx sapphires.");
     }
     if ($text=~/glove/i) {
-      plugin::DiaWind("For this fine pair of gloves you must seek out and return to me a pair of tattered silk gloves and three crushed topaz.");
+      quest::say("For this fine pair of gloves you must seek out and return to me a pair of tattered silk gloves and three crushed topaz.");
     }
     if ($text=~/leggings/i) {
-      plugin::DiaWind("This pair of leggings will be yours provided you supply me with a pair of tattered silk pantaloons and three nephrite.");
+      quest::say("This pair of leggings will be yours provided you supply me with a pair of tattered silk pantaloons and three nephrite.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("These supple boots shall be yours upon receipt of a pair of tattered silk boots and three crushed jaundice gems.");
+      quest::say("These supple boots shall be yours upon receipt of a pair of tattered silk boots and three crushed jaundice gems.");
     }
   }
   else {
-    plugin::DiaWind("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
+    quest::say("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
   }
 }
 
@@ -68,14 +68,14 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::emote("smiles warmly as he hands you your reward.");
-    plugin::DiaWind("Well done, $name.");
+    quest::say("Well done, $name.");
     quest::exp(175000);
     quest::faction(42,30); # CoV
     quest::faction(362,30); # Yelinak
     quest::faction(189,-60); # Kromzek
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust such an item to you, yet.");
+    quest::say("I do not know you well enough to entrust such an item to you, yet.");
     plugin::return_items(\%itemcount);
   }
 }

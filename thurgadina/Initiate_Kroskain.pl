@@ -5,5 +5,5 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  plugin::DiaWind("Sir, you said Royt face. Guard Royt is just on the other side of this wall!");
+  quest::say("Sir, you said Royt face. Guard Royt is just on the other side of this wall!");
 }

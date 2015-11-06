@@ -9,7 +9,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 4901 => 1) || plugin::check_handin(\%itemcount, 4902 => 1) || plugin::check_handin(\%itemcount, 4903 => 1) || plugin::check_handin(\%itemcount, 4904 => 1) || plugin::check_handin(\%itemcount, 4905 => 1) || plugin::check_handin(\%itemcount, 4906 => 1) || plugin::check_handin(\%itemcount, 4907 => 1)) { #Woven Shadow Armor
-    plugin::DiaWind("Thank you, $name."); #Text made up
+    quest::say("Thank you, $name."); #Text made up
     quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981)); #Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     quest::exp(698775);
   }

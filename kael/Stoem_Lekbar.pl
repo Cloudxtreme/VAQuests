@@ -8,35 +8,35 @@
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction
     if ($text=~/hail/i) {
-      plugin::DiaWind("Greetings to you. I seek those who call themselves enchanters. Are you an enchanter?");
+      quest::say("Greetings to you. I seek those who call themselves enchanters. Are you an enchanter?");
     }
     if ($text=~/i am an enchanter/i) {
-      plugin::DiaWind("I thought so. I have several tasks for you to accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.");
+      quest::say("I thought so. I have several tasks for you to accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.");
     }
     if ($text=~/cap/i) {
-      plugin::DiaWind("For you to receive my gift, I shall require an ancient silk turban and three crushed flame opals.");
+      quest::say("For you to receive my gift, I shall require an ancient silk turban and three crushed flame opals.");
     }
     if ($text=~/robe/i) {
-      plugin::DiaWind("This exquisite robe shall be yours in exchange for an ancient silk robe and three pristine emeralds.");
+      quest::say("This exquisite robe shall be yours in exchange for an ancient silk robe and three pristine emeralds.");
     }
     if ($text=~/sleeves/i) {
-      plugin::DiaWind("For these durable sleeves, you must fetch me a pair of ancient silk sleeves and three flawed topazes.");
+      quest::say("For these durable sleeves, you must fetch me a pair of ancient silk sleeves and three flawed topazes.");
     }
     if ($text=~/wristband/i) {
-      plugin::DiaWind("The crafting of this wristband requires that you bring me an ancient silk wristband and three crushed pieces of onyx sapphire.");
+      quest::say("The crafting of this wristband requires that you bring me an ancient silk wristband and three crushed pieces of onyx sapphire.");
     }
     if ($text=~/gloves/i) {
-      plugin::DiaWind("For this fine pair of gloves you must seek out and return to me three crushed topazes and a pair of ancient silk gloves.");
+      quest::say("For this fine pair of gloves you must seek out and return to me three crushed topazes and a pair of ancient silk gloves.");
     }
     if ($text=~/leggings/i) {
-      plugin::DiaWind("This pair of leggings will be yours provided you supply me with a pair of ancient silk pantaloons as well as three nephrites.");
+      quest::say("This pair of leggings will be yours provided you supply me with a pair of ancient silk pantaloons as well as three nephrites.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("These supple boots shall be yours upon receipt of a pair of ancient silk boots and a trilogy of crushed jaundice gems.");
+      quest::say("These supple boots shall be yours upon receipt of a pair of ancient silk boots and a trilogy of crushed jaundice gems.");
     }
   }
   else {
-    plugin::DiaWind("You must prove your dedication to Kael Drakkal and the Kromzek clan before I will speak to you.");
+    quest::say("You must prove your dedication to Kael Drakkal and the Kromzek clan before I will speak to you.");
   }
 }
 
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24921 => 1)) { # bp
       quest::summonitem(25427);
@@ -60,7 +60,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24923 => 1)) { # sleeves
       quest::summonitem(25428);
@@ -70,7 +70,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as she hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24925 => 1)) { # wrist
       quest::summonitem(25429);
@@ -80,7 +80,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24927 => 1)) { # gloves
       quest::summonitem(25430);
@@ -90,7 +90,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24922 => 1)) { # legs
       quest::summonitem(25431);
@@ -100,7 +100,7 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24924 => 1)) { # boots
       quest::summonitem(25432);
@@ -110,14 +110,14 @@ sub EVENT_ITEM {
       quest::faction(42,-20); # Claws of Veeshan
       quest::faction(49,-60); # Coldain
       quest::emote("smiles warmly as he hands you your reward.");
-      plugin::DiaWind("You have done well.");
+      quest::say("You have done well.");
     }
     else {
       plugin::return_items(\%itemcount); 
     }
   }
   else {
-    plugin::DiaWind("I do not know you well enough to entrust you with such an item, yet.");
+    quest::say("I do not know you well enough to entrust you with such an item, yet.");
   }
 }
 

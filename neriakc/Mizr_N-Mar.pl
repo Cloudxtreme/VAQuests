@@ -8,10 +8,10 @@
 
 sub EVENT_SAY {
   if($text=~/Hail/i){
-    plugin::DiaWind("Have you come to buy a scroll from me?");
+    quest::say("Have you come to buy a scroll from me?");
   }
   elsif ($text=~/coin/i){
-    plugin::DiaWind("So, you want a coin do you?")
+    quest::say("So, you want a coin do you?")
   }
 }
 
@@ -19,7 +19,7 @@ sub EVENT_ITEM {
 
   # Rune of Fortune (Bottom)
   if($gold == 50) {
-    plugin::DiaWind("I see that Sultin has sent you to me.  Very well, here is your rune."); # Made this text up
+    quest::say("I see that Sultin has sent you to me.  Very well, here is your rune."); # Made this text up
     quest::summonitem(10532);
   }
 
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
   # experience received:
   #     1000
   elsif($itemcount{10791} == 1) {
-    plugin::DiaWind("Ah - the Coin of Tash - and already enchanted by.. ? Tarn? Very good! I have enchanted it further - you must now take the coin to Raine Beteria in the Library of Erudin to get the final enchantment.");
+    quest::say("Ah - the Coin of Tash - and already enchanted by.. ? Tarn? Very good! I have enchanted it further - you must now take the coin to Raine Beteria in the Library of Erudin to get the final enchantment.");
     quest::summonitem(10792);
     quest::faction(442,  10);
     quest::faction(291, -10);

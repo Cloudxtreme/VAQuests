@@ -4,13 +4,13 @@
 
 sub EVENT_SAY { 
 	if(($text=~/hail/i) && ($faction < 6)) { 
-		plugin::DiaWind("What is it you want, $race?  I have no time to speak with your kind.");
+		quest::say("What is it you want, $race?  I have no time to speak with your kind.");
 	} 
 }
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 25266 =>1)) { # Giant Sack of Supplies
-		plugin::DiaWind("Thank you for bringing the supplies, $name. This season has not treated my clan well.  The winds have grown colder and the Coldain are now brazen enough to hunt the same animals we do.  Take this torque back to Svekk and he will repay you for the supplies.");
+		quest::say("Thank you for bringing the supplies, $name. This season has not treated my clan well.  The winds have grown colder and the Coldain are now brazen enough to hunt the same animals we do.  Take this torque back to Svekk and he will repay you for the supplies.");
 		quest::ding();
 		quest::faction(189,10); # Kromzek
 		quest::faction(188,10); # Kromrif

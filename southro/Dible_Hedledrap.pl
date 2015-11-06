@@ -3,7 +3,7 @@ sub EVENT_SAY {
         quest::emote(
             "puffs up his chest and lifts his chin with hearty arrogance."
         );
-        plugin::DiaWind(
+        quest::say(
             "Greetings, $name. It seems some of the strange minerals the "    .
             "Wayfarers Brotherhood sold have broken or stopped working as "   .
             "they should. Luckily, I alone have been tasked by Morden Rasp "  .
@@ -257,7 +257,7 @@ sub EVENT_ITEM {
         my ( $count, $theme, $points ) = @{ $handin->{$itemID} };
         if ( plugin::check_handin(\%itemcount, $itemID => $count ) ) {
             quest::emote("takes the item and tosses it into his satchel.");
-            plugin::DiaWind(
+            quest::say(
                 "Very well, $name. Go ahead and find something else you'd like."
             );
             quest::addldonpoints( $theme, $points );

@@ -3,14 +3,14 @@ sub EVENT_COMBAT {
 	my $cur_target = $npc->GetHateTop();
 		if($cur_target) {
 		my $target_name = $cur_target->GetCleanName();
-		plugin::DiaWind("Time to die $target_name!");
+		quest::say("Time to die $target_name!");
 		}
 	}
 }
 
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount,16165=> 1)){
-plugin::DiaWind("Daleen sent you? She is so sweet. If she wasn't married.. ehem.. Thanks.");
+quest::say("Daleen sent you? She is so sweet. If she wasn't married.. ehem.. Thanks.");
 quest::faction(133, 5);
 quest::faction(208, 5);
 quest::faction(316, 5);

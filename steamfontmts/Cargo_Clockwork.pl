@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
   quest::emote("Chuga.. Chug..Chug..");
-  plugin::DiaWind("This unit requires maintenance.");
+  quest::say("This unit requires maintenance.");
 }
 
 sub EVENT_TIMER {
@@ -22,7 +22,7 @@ sub EVENT_TIMER {
     $delivery = 0;
   }
   if($x == 550 && $y == -830) {
-    plugin::DiaWind("kachunk .. kachunk..");
+    quest::say("kachunk .. kachunk..");
     quest::signal(56066,1); #Watchman Grep
   }
   if($x == 90 && $y == -700 && $delivery == 0) {
@@ -45,7 +45,7 @@ sub EVENT_TIMER {
     $bandit3npc = $bandit3obj->CastToNPC();
     $bandit3npc->AddToHateList($npc,1);
 
-    plugin::DiaWind("This is highway robbery.");
+    quest::say("This is highway robbery.");
   }
   if ($targetname=~/highway_bandit/i) {
     $npc->WipeHateList();

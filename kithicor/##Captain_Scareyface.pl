@@ -7,6 +7,6 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH_COMPLETE {
-	plugin::DiaWind("Church..the AI..its gone");
+	quest::say("Church..the AI..its gone");
 	quest::signalwith(20260,2);
 }

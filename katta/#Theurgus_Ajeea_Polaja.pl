@@ -8,7 +8,7 @@ sub EVENT_TIMER {
 
 sub EVENT_ITEM{
 	if(plugin::check_handin(\%itemcount, 7779 => 1)){
-		plugin::DiaWind("Perfect. We shall begin the summoning and questioning. This enchanted scroll will magically scribe all that transpires within its radius of perception. Take it to Magistrate Phenic after the summoning and questioning are completed.");
+		quest::say("Perfect. We shall begin the summoning and questioning. This enchanted scroll will magically scribe all that transpires within its radius of perception. Take it to Magistrate Phenic after the summoning and questioning are completed.");
 		quest::faction(206,10);
 		quest::faction(168,10);
 		quest::faction(350,10);
@@ -24,7 +24,7 @@ sub EVENT_ITEM{
 
 sub EVENT_SIGNAL{
 	if($signal == 1){
-		plugin::DiaWind("How was it that you came to be imprisoned in the mansion of Nathyn Illuminious?");
+		quest::say("How was it that you came to be imprisoned in the mansion of Nathyn Illuminious?");
 		quest::signalwith(160458,4,5000);
 	}
 	if($signal == 2){

@@ -3,50 +3,50 @@ sub EVENT_SAY {
 
 if($text=~/hail/i) {
 
-plugin::DiaWind("Salutations to you and your own. On your way to Katta are ya?");
+quest::say("Salutations to you and your own. On your way to Katta are ya?");
 
 }
 
 if($text=~/what armor/i) {
 
-plugin::DiaWind("Frank must have told ya about the soldier's armor that we both keep to give to those worthy of wearing it. I have the mask, cloak, gauntlets, gorget, girdle, and swords.");
+quest::say("Frank must have told ya about the soldier's armor that we both keep to give to those worthy of wearing it. I have the mask, cloak, gauntlets, gorget, girdle, and swords.");
 
 }
 
 if($text=~/what cloak/i){
 
-plugin::DiaWind("To get the cloak you will need to get me a meteor jewel, a mark of glory, a ring of wit, and some twilight fish scales.");
+quest::say("To get the cloak you will need to get me a meteor jewel, a mark of glory, a ring of wit, and some twilight fish scales.");
 
 }
 
 if($text=~/what Gauntlets/i){
 
-plugin::DiaWind("To get the gauntlets you will need to get me an astral jewel, a mark of opposition, and a hope quartz.");
+quest::say("To get the gauntlets you will need to get me an astral jewel, a mark of opposition, and a hope quartz.");
 
 }
 
 if($text=~/what girdle/i){
 
-plugin::DiaWind("To get the girdle you will need to get me a moon jewel, a mark of contention, a fire scorched stick, and a hope star ruby.");
+quest::say("To get the girdle you will need to get me a moon jewel, a mark of contention, a fire scorched stick, and a hope star ruby.");
 
 }
 
 if($text=~/what gorget/i){
 
-plugin::DiaWind("To get the gorget you will need to get me a sun jewel, a mark of pride, and some star dust.");
+quest::say("To get the gorget you will need to get me a sun jewel, a mark of pride, and some star dust.");
 
 }
 
 
 if($text=~/what mask/i){
 
-plugin::DiaWind("To get the mask you will need to get me a sky jewel, a mark of defiance, and a bag of scarlet sand.");
+quest::say("To get the mask you will need to get me a sky jewel, a mark of defiance, and a bag of scarlet sand.");
 
 }
 
 if($text=~/what sword/i){
 
-plugin::DiaWind("To get the sword you will need to get me a star jewel, a mark of warfare, a hope fire opal, and some fire powder."); 
+quest::say("To get the sword you will need to get me a star jewel, a mark of warfare, a hope fire opal, and some fire powder."); 
 
 }
 

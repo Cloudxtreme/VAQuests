@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_AGGRO {
-  plugin::DiaWind("Good, your sense of timing is correct. Now begin! Show me that your training has not been wasted.");
+  quest::say("Good, your sense of timing is correct. Now begin! Show me that your training has not been wasted.");
 }
 
 sub EVENT_TIMER {
@@ -16,7 +16,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  plugin::DiaWind("Your ability is strong, may you serve Cazic Thule with all your might.");
+  quest::say("Your ability is strong, may you serve Cazic Thule with all your might.");
 }
 
 #Submitted by: Jim Mills

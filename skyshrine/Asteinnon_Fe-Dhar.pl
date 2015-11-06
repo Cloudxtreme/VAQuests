@@ -9,35 +9,35 @@ sub EVENT_SAY {
   if ($faction == 1) { #req ally CoV
     if($text=~/hail/i) {
       quest::emote("speaks in a deep tone.");
-      plugin::DiaWind("Greetings. I wish to speak only to a shaman, so I might aid them with protection from the world in the form of armor.");
+      quest::say("Greetings. I wish to speak only to a shaman, so I might aid them with protection from the world in the form of armor.");
     }
     if ($text=~/armor/i) {
-      plugin::DiaWind("For you I shall make a coif, breastplate, sleeves, bracers, gauntlets, leggings, and boots. Each piece is a quest unto itself. To seek the components, you must search the lands for them and test the power of the spirit within.");
+      quest::say("For you I shall make a coif, breastplate, sleeves, bracers, gauntlets, leggings, and boots. Each piece is a quest unto itself. To seek the components, you must search the lands for them and test the power of the spirit within.");
     }
     if ($text=~/coif/i) {
-      plugin::DiaWind("The coif I shall make will be comprised of an unadorned chain coif and three crushed onyx sapphires. I shall be waiting.");
+      quest::say("The coif I shall make will be comprised of an unadorned chain coif and three crushed onyx sapphires. I shall be waiting.");
     }
     if ($text=~/breastplate/i) {
-      plugin::DiaWind("A breastplate to protect the spirit within. I shall make one for you granted that you retrieve the components I shall need. An unadorned chain tunic and three pieces of black marble. I await your return.");
+      quest::say("A breastplate to protect the spirit within. I shall make one for you granted that you retrieve the components I shall need. An unadorned chain tunic and three pieces of black marble. I await your return.");
     }
     if ($text=~/sleeves/i) {
-      plugin::DiaWind("Sleeves I shall make upon receipt of unadorned chain sleeves and a set of three jaundice gems. Complete this simple task and they are yours.");
+      quest::say("Sleeves I shall make upon receipt of unadorned chain sleeves and a set of three jaundice gems. Complete this simple task and they are yours.");
     }
     if ($text=~/bracer/i) {
-      plugin::DiaWind("A bracer of mystic power I shall grant you. All I require is the acquisition of an unadorned chain bracer and three crushed opals.");
+      quest::say("A bracer of mystic power I shall grant you. All I require is the acquisition of an unadorned chain bracer and three crushed opals.");
     }
     if ($text=~/gauntlet/i) {
-      plugin::DiaWind("I shall require three crushed lava rubies and an unadorned pair of chain gauntlets to complete my ritual.");
+      quest::say("I shall require three crushed lava rubies and an unadorned pair of chain gauntlets to complete my ritual.");
     }
     if ($text=~/leggings/i) {
-      plugin::DiaWind("You seek leggings? Then provide for me unadorned chain leggings and three chipped onyx sapphires and I will give them to you for your service.");
+      quest::say("You seek leggings? Then provide for me unadorned chain leggings and three chipped onyx sapphires and I will give them to you for your service.");
     }
     if ($text=~/boots/i) {
-      plugin::DiaWind("These boots will help you in your never-ending quest. I shall grant them upon receipt of a pair of unadorned chain boots and three crushed flame emeralds.");
+      quest::say("These boots will help you in your never-ending quest. I shall grant them upon receipt of a pair of unadorned chain boots and three crushed flame emeralds.");
     }
   }
   else {
-    plugin::DiaWind("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
+    quest::say("You must prove your dedication to the Claws of Veeshan before I will speak to you.");
   }
 }
 
@@ -69,7 +69,7 @@ sub EVENT_ITEM {
       return 1;
     }
     quest::emote("smiles warmly as he hands you your reward.");
-    plugin::DiaWind("Well done, $name.");
+    quest::say("Well done, $name.");
     quest::exp(175000);
     quest::faction(42,30); # CoV
     quest::faction(362,30); # Yelinak

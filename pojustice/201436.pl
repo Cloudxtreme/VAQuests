@@ -9,12 +9,12 @@ sub EVENT_SAY
 		}
 		
 		elsif($text=~/prepared/i) {
-			plugin::DiaWind("Very well. When you are ready, you may begin the trial of hanging. Act quickly to destroy the spirits of suffocation before their victims perish. We shall judge the mark of your success.");
+			quest::say("Very well. When you are ready, you may begin the trial of hanging. Act quickly to destroy the spirits of suffocation before their victims perish. We shall judge the mark of your success.");
 		}
 		
 		elsif($text=~/begin the trial of hanging/i) {
 			if (!defined $hanging) {
-				plugin::DiaWind("Then begin.");
+				quest::say("Then begin.");
 				quest::movepc(201,500,-1045,73.1);
 				quest::settimer(301,30);
 				#quest::signal(201076,15000);
@@ -24,12 +24,12 @@ sub EVENT_SAY
 			else {
 				if (($hanging > 0) && ($hanging < 6)) {
 					quest::movepc(201,500,-1045,73.1);
-					plugin::DiaWind("Then begin.");		
+					quest::say("Then begin.");		
 					$hanging++;
 				}
 				
 				else {
-					plugin::DiaWind("I'm sorry, the Trial of Hanging is currently unavilable to you.");
+					quest::say("I'm sorry, the Trial of Hanging is currently unavilable to you.");
 				}
 			}
 		}

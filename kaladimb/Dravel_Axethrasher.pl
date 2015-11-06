@@ -12,7 +12,7 @@ sub EVENT_ENTER {
 
 sub EVENT_SAY {
 	if($text =~ /hail/i) {
-		plugin::DiaWind("Greetin's $name! You say ye wish to join up with us? That be great! Read the note in yer inventory and then hand it to me and we can start yer trainin! I almost forgot. Ask me about that [tome] in yer inventory if ye want to know how to use it.");
+		quest::say("Greetin's $name! You say ye wish to join up with us? That be great! Read the note in yer inventory and then hand it to me and we can start yer trainin! I almost forgot. Ask me about that [tome] in yer inventory if ye want to know how to use it.");
 	}
 	if($text =~/tome/i) {
 		my $Indent = plugin::PWIndent();
@@ -34,7 +34,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 36000 => 1)) {  # Blood-Smeared Note
-   	plugin::DiaWind("Tis a good thing ye're doing by joining up with us, $name. As a member, ye get a wee gift. Take this tunic. Now, take that rage that rushes through yer veins and go kill some of the vermin around the city! Take a good look around ye as well. Grab some ale or talk to some of the miners. Lots to do around 'ere, me friend. Oh, and Goriba over there wanted to talk to ya. Now, off with ye! Come back when ye've cut a few creatures down and gotten some experience with yer blade. I'll be able to educate ye a bit about the ways of the berserker.");
+   	quest::say("Tis a good thing ye're doing by joining up with us, $name. As a member, ye get a wee gift. Take this tunic. Now, take that rage that rushes through yer veins and go kill some of the vermin around the city! Take a good look around ye as well. Grab some ale or talk to some of the miners. Lots to do around 'ere, me friend. Oh, and Goriba over there wanted to talk to ya. Now, off with ye! Come back when ye've cut a few creatures down and gotten some experience with yer blade. I'll be able to educate ye a bit about the ways of the berserker.");
     quest::ding();
     quest::summonitem(36006); # Tattered Miner's Tunic*
     quest::exp(100);

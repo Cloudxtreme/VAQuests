@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Welcome to the island. If you want to try your hand at fishing I have everything you need.");
+    quest::say("Welcome to the island. If you want to try your hand at fishing I have everything you need.");
   }
 }
 sub EVENT_ITEM {

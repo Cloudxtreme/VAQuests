@@ -1,31 +1,31 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("Welcome, $name. The Cathedral of Underfoot welcomes all good persons. May you find peace from the dangers of Butcherblock within these walls. The paladins of this holy place are very much aware of the evils outside Kaladim. The threat of goblins and [birdmen] has increased.");
+    quest::say("Welcome, $name. The Cathedral of Underfoot welcomes all good persons. May you find peace from the dangers of Butcherblock within these walls. The paladins of this holy place are very much aware of the evils outside Kaladim. The threat of goblins and [birdmen] has increased.");
   }
   elsif($text=~/birdmen/i) {
-    plugin::DiaWind("The birdmen I speak of are the aviak krags. These vile creatures have desecrated our land. They have dared to perch upon our great statue. The king has instructed all noble paladins in this order to [destroy the krag chicks].");
+    quest::say("The birdmen I speak of are the aviak krags. These vile creatures have desecrated our land. They have dared to perch upon our great statue. The king has instructed all noble paladins in this order to [destroy the krag chicks].");
   }
   elsif($text=~/destroy the krag chicks/i) {
     if ($faction <= 4) {
-       plugin::DiaWind("Yes. You are known to have aided our cause. You shall continue by returning any aviak chick talons to me. I will reward you for the return of no fewer than four at a time. Go, and serve the will of the king!");
+       quest::say("Yes. You are known to have aided our cause. You shall continue by returning any aviak chick talons to me. I will reward you for the return of no fewer than four at a time. Go, and serve the will of the king!");
     }
     else {
-       plugin::DiaWind("The Clerics of Underfoot have yet to see your faith directed towards our wills. Perhaps you should assist Master Gunlok Jure in the crusade against the undead.");
+       quest::say("The Clerics of Underfoot have yet to see your faith directed towards our wills. Perhaps you should assist Master Gunlok Jure in the crusade against the undead.");
     }  
   }
   elsif ($text=~/elders/i) {
     if ($faction <= 4) {
-      plugin::DiaWind("The krag elders are the strongest of the aviaks. Their might has been well-documented by our order. Our high ranking paladins are ordered to slay the eagles. If you are with us, return four aviak talons to me and a fine reward shall be yours. Perhaps even our cathedral tailors and scribes may donate to your quest.");
+      quest::say("The krag elders are the strongest of the aviaks. Their might has been well-documented by our order. Our high ranking paladins are ordered to slay the eagles. If you are with us, return four aviak talons to me and a fine reward shall be yours. Perhaps even our cathedral tailors and scribes may donate to your quest.");
     }
     else {
-      plugin::DiaWind("The Clerics of Underfoot have yet to see your faith directed towards our wills. Perhaps you should assist Master Gunlok Jure in the crusade against the undead.");
+      quest::say("The Clerics of Underfoot have yet to see your faith directed towards our wills. Perhaps you should assist Master Gunlok Jure in the crusade against the undead.");
     }
   }
 }
 
 sub EVENT_ITEM {
    if (($faction <= 4) && (plugin::check_handin(\%itemcount, 12157 => 4))) {
-      plugin::DiaWind("You have done well. Your deeds shall be recorded within our journals. Here, then, is your reward. May you strive to serve us to the full extent of your powers. The [elders] must also die.");
+      quest::say("You have done well. Your deeds shall be recorded within our journals. Here, then, is your reward. May you strive to serve us to the full extent of your powers. The [elders] must also die.");
       quest::faction(44, 20);  #Clerics Of Underfoot
       quest::faction(169, 20); #Kazon Stormhammer
       quest::faction(219, 20); #Miner's Guild 249
@@ -34,7 +34,7 @@ sub EVENT_ITEM {
       quest::ding();
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12158 => 4))) {
-      plugin::DiaWind("Ahh! you are truly brave, $name!");
+      quest::say("Ahh! you are truly brave, $name!");
       quest::faction(44, 40);  #Clerics Of Underfoot
       quest::faction(169, 40); #Kazon Stormhammer
       quest::faction(219, 40); #Miner's Guild 249

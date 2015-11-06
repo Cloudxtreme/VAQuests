@@ -8,31 +8,31 @@ sub EVENT_WAYPOINT_ARRIVE{
 			quest::emote("hums a little as she drops off supplies for the deputies.");
 		}
 		if($random == 1) {
-			plugin::DiaWind("Hope things are going well here.");
+			quest::say("Hope things are going well here.");
 		}
 		if($random == 2) {
-			plugin::DiaWind("Air's nice as always out here.");
+			quest::say("Air's nice as always out here.");
 		}
 	}
 }
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("Hi, hi. I've got a lot to do, many mouths to feed, some filthy goblins to smack. If you don't need me for something, please let me go back to my work. Karana watch over you.");
+    quest::say("Hi, hi. I've got a lot to do, many mouths to feed, some filthy goblins to smack. If you don't need me for something, please let me go back to my work. Karana watch over you.");
   }
   if (($text=~/two tasks/i) && (defined $qglobals{shiny_tin_bowl})) {
-    plugin::DiaWind("Well, ya ask before ya act. That's a good sign. What I need isn't easy to find. First, I need a mixture. Plain sounding enough but it's a special one. Cleanses the mind and focuses the earth's energies into a forest walker's mind. I don't know how to make it. I don't even know what it's called. I merely know it exists and we'll be needing it for our task. When ya do find how to make it ya can mix it in that bowl. Keep it when you're done, it's a good bowl.");
+    quest::say("Well, ya ask before ya act. That's a good sign. What I need isn't easy to find. First, I need a mixture. Plain sounding enough but it's a special one. Cleanses the mind and focuses the earth's energies into a forest walker's mind. I don't know how to make it. I don't even know what it's called. I merely know it exists and we'll be needing it for our task. When ya do find how to make it ya can mix it in that bowl. Keep it when you're done, it's a good bowl.");
 	quest::summonitem(17860);
 	quest::delglobal("shiny_tin_bowl");
   }
   if ($text=~/second task/i) {
-    plugin::DiaWind("Good, ya didn't run off without finding out what else ya need to do. Second, I need a special type of bowl. An ancient type of bowl, which strengthened the food placed inside it, once made by the elves of old. Again, I cannot tell ya how it is made for the making was lost to the ages. Seek this knowledge and these items out in the lands. Come to me when ya have found both.");
+    quest::say("Good, ya didn't run off without finding out what else ya need to do. Second, I need a special type of bowl. An ancient type of bowl, which strengthened the food placed inside it, once made by the elves of old. Again, I cannot tell ya how it is made for the making was lost to the ages. Seek this knowledge and these items out in the lands. Come to me when ya have found both.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18959 => 1)) {
-    plugin::DiaWind("Hmmm. I've been waiting for someone to bring me this. I'm sorry such a young one as you has taken up this task. Maybe the sky god blesses ya though. Aye, ya have that look in your eye. Our task is to focus the blessings of the gods and cleanse the filth from the land. I have two tasks for ya.");
+    quest::say("Hmmm. I've been waiting for someone to bring me this. I'm sorry such a young one as you has taken up this task. Maybe the sky god blesses ya though. Aye, ya have that look in your eye. Our task is to focus the blessings of the gods and cleanse the filth from the land. I have two tasks for ya.");
     quest::setglobal("shiny_tin_bowl", 1, 0, "F");
   }
   elsif (plugin::check_handin(\%itemcount, 20473 => 1, 20460 => 1)) {

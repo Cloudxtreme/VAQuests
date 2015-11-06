@@ -4,7 +4,7 @@
 
 sub EVENT_SPAWN {
   quest::settimer(1,300);
-  plugin::DiaWind("Thank you, $name. I am not long for this world. Before I leave, I would like to reward the one who helped me have my revenge. Please, hand me the token of my God, of Cazic-Thule, and I shall pass you the spear I once used. You've earned it."); #Text is made up
+  quest::say("Thank you, $name. I am not long for this world. Before I leave, I would like to reward the one who helped me have my revenge. Please, hand me the token of my God, of Cazic-Thule, and I shall pass you the spear I once used. You've earned it."); #Text is made up
 }
 
 sub EVENT_ITEM {

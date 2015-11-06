@@ -3,11 +3,11 @@
 
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
-		plugin::DiaWind("Greetings, $name. Are you here to help us? We recieved word that an undead army is planning an attack on Freeport, and we are here to hold them off. If you need any [defensive magics] cast on you, do not hesitate to ask.");
+		quest::say("Greetings, $name. Are you here to help us? We recieved word that an undead army is planning an attack on Freeport, and we are here to hold them off. If you need any [defensive magics] cast on you, do not hesitate to ask.");
 	}
 	
 	if ($text=~/defensive/i) {
-		plugin::DiaWind("For those of you new to Norrath, Jack will be able to improve your [valor]. For those who have lasted more than 30 seasons, Tricksy can protect you with an [aegolism]. For the rest of you, I can bestow upon you a greater [virtue]");
+		quest::say("For those of you new to Norrath, Jack will be able to improve your [valor]. For those who have lasted more than 30 seasons, Tricksy can protect you with an [aegolism]. For the rest of you, I can bestow upon you a greater [virtue]");
 	}
 	
 	if ($text=~/valor/i) {
@@ -18,7 +18,7 @@ sub EVENT_SAY {
 		if ($ulevel>29) {
 			$npc->CastSpell(1447,$userid);
 		} else {
-			plugin::DiaWind("You are not ready for what I have to offer");
+			quest::say("You are not ready for what I have to offer");
 		}
 	}
 
@@ -26,7 +26,7 @@ sub EVENT_SAY {
 		if ($ulevel>50) {
 			$npc->CastSpell(3467,$userid);
 		} else {
-			plugin::DiaWind("You are not ready for what I have to offer");
+			quest::say("You are not ready for what I have to offer");
 		}
 	}
 }

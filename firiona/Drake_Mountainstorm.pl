@@ -7,7 +7,7 @@ sub EVENT_ITEM {
     quest::summonitem(10013); #A Special Fire Emerald
   }
   else {
-    plugin::DiaWind("I have no need for this, $name.");
+    quest::say("I have no need for this, $name.");
     quest::return_items(\%itemcount);
   }
 }

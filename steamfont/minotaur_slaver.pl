@@ -12,5 +12,5 @@ sub EVENT_DEATH_COMPLETE{
   elsif($random_result >= 88 && $random_result < 94){
     quest::unique_spawn(56161,0,0,-2179,1319,-101.2);
   }
-  plugin::DiaWind("I die soon! Meldrath, help me!");
+  quest::say("I die soon! Meldrath, help me!");
 }

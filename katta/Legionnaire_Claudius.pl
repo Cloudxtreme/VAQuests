@@ -1,10 +1,10 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    plugin::DiaWind("ZZZzzzzzzzzzzz");
+    quest::say("ZZZzzzzzzzzzzz");
   }
   sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29845 => 1)) {#Field Orders
-    plugin::DiaWind("Huh? What? Oh, umm, let's see here... OK I best get these taken care of right away. Thank you.");
+    quest::say("Huh? What? Oh, umm, let's see here... OK I best get these taken care of right away. Thank you.");
     quest::faction( 350, 20);
     quest::faction( 168, 20);
     quest::faction( 206, 20);

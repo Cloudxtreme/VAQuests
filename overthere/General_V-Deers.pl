@@ -10,13 +10,13 @@ sub EVENT_SIGNAL {
 
 sub EVENT_TIMER {
 	quest::stoptimer("getset");
-	plugin::DiaWind("Dragoons!!  Attention!!  Right face!!");
+	quest::say("Dragoons!!  Attention!!  Right face!!");
 	quest::start(277);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
 	if($wp==1) {
-		plugin::DiaWind("Forward.. march!!  Your left.. Your.. left, right, march!  Eighty.. second.. dragoon soldier!!  Pick up your weapon and follow me!!");
+		quest::say("Forward.. march!!  Your left.. Your.. left, right, march!  Eighty.. second.. dragoon soldier!!  Pick up your weapon and follow me!!");
 		quest::signalwith(93186,3);
 		quest::signalwith(93124,3);
 		quest::signalwith(93088,3);

@@ -20,7 +20,7 @@ sub EVENT_ENTER {
 
 sub EVENT_DEATH_COMPLETE {
   # MonkEpic 1.0
-  plugin::DiaWind("Foolish mortal! you think you have defeated me? Now, witness the true power of Rallos Zek!");
+  quest::say("Foolish mortal! you think you have defeated me? Now, witness the true power of Rallos Zek!");
   # Spawn: Xenevorash
   quest::spawn(85208,0,0,-542,-807,79.12);
 }

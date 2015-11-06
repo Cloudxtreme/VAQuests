@@ -7,23 +7,23 @@ sub EVENT_SAY {
   my $InInstanceMirB = quest::GetInstanceID("mirb",50);
   $ClientNotAdded = 0;
   if ($text=~/hail/i && $client->KeyRingCheck(41000)) {
-    plugin::DiaWind("I am busy building a strategy to take on those oddities deep under the ice here. If you need something, speak up now. I have little time for pleasantries. However, if you can rally the call of your friends perhaps you can help us with a serious [problem].");
-    plugin::DiaWind("Do you need to leave an [instance]?");
+    quest::say("I am busy building a strategy to take on those oddities deep under the ice here. If you need something, speak up now. I have little time for pleasantries. However, if you can rally the call of your friends perhaps you can help us with a serious [problem].");
+    quest::say("Do you need to leave an [instance]?");
   }
   if ($text=~/instance/i) {
     if ($InInstanceMirB > 0) {
       quest::DestroyInstance($InInstanceMirB);
       quest::delglobal($InInstanceMirB.'_mirb_status');
       quest::delglobal($InInstanceMirB.'_mirb_event');
-      plugin::DiaWind("Frozen Nightmare Instance Destroyed");
+      quest::say("Frozen Nightmare Instance Destroyed");
       $client->ClearCompassMark();
     } else {
-      plugin::DiaWind("You are not assigned the quest Frozen Nightmare.");
+      quest::say("You are not assigned the quest Frozen Nightmare.");
     }
   }
 
   if ($text=~/problem/i && $client->KeyRingCheck(41000)) {
-    plugin::DiaWind("It is terrible that we are losing so many faithful Wayfarers to the chaos of Miragul's Menagerie. As experienced as you are, I hesitate to burden you with this task. It would require you to venture into an extremely dangerous area in the menagerie from which you may not return. I implore you to go deep into an area known as the Frozen Nightmare. It is through there that you would be dropped into the heart of the pandemonium where we have lost our best comrades. I need you to locate and exterminate whatever is killing our people. Are you [interested]?");
+    quest::say("It is terrible that we are losing so many faithful Wayfarers to the chaos of Miragul's Menagerie. As experienced as you are, I hesitate to burden you with this task. It would require you to venture into an extremely dangerous area in the menagerie from which you may not return. I implore you to go deep into an area known as the Frozen Nightmare. It is through there that you would be dropped into the heart of the pandemonium where we have lost our best comrades. I need you to locate and exterminate whatever is killing our people. Are you [interested]?");
   }
   if ($text=~/interested/i && $client->KeyRingCheck(41000)) {
     $raid = $entity_list->GetRaidByClient($client);
@@ -53,7 +53,7 @@ sub EVENT_SAY {
       }
     }
     if ($NewInstance > 0) {
-      plugin::DiaWind("Keep an eye out for the lost members while you're there, and always be on your toes. Miragul's oddities are as strange as they are deadly. These caves are not called the Frozen Nightmare for nothing.");
+      quest::say("Keep an eye out for the lost members while you're there, and always be on your toes. Miragul's oddities are as strange as they are deadly. These caves are not called the Frozen Nightmare for nothing.");
       quest::targlobal($NewInstance.'_mirb_status',0,"H3",0,0,0);
       quest::targlobal($NewInstance.'_mirb_event',0,"H3",0,0,0);
     }

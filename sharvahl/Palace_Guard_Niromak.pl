@@ -3,7 +3,7 @@ sub EVENT_WAYPOINT_ARRIVE {
     $npc->SetAppearance(3);
 	}
 	if($wp == 32) {
-    plugin::DiaWind("reporting for duty m'lord. I will defend Shar Vahl with your blessing.");
+    quest::say("reporting for duty m'lord. I will defend Shar Vahl with your blessing.");
 	$npc->SetAppearance(4);
 	}
 }

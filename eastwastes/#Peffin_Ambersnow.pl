@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   if($timer==50) {
     quest::stoptimer(50);
-    plugin::DiaWind("The cowards seem to have fled friends, thank you for your protection.");
+    quest::say("The cowards seem to have fled friends, thank you for your protection.");
     quest::depopall(116182);
     quest::depop();
   }

@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Welcome to the Furrier Royale. Here you will find the finest skins from a variety of Norraths lesser creatures."); }
+quest::say("Welcome to the Furrier Royale. Here you will find the finest skins from a variety of Norraths lesser creatures."); }
 }
 
 sub EVENT_ITEM { 

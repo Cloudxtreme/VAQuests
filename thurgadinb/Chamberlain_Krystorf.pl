@@ -1,11 +1,11 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
-plugin::DiaWind("Greetings and welcome to Thurgadin, $name. I am Chamberlain Krystorf and it is my duty to assist the Dain in the management of Icewell Keep and the Royal Court. One could say that Seneschal Aldikar is the Sword of the Dain while I am the Shield, protecting all of his interests and those of the kingdom."); 
+quest::say("Greetings and welcome to Thurgadin, $name. I am Chamberlain Krystorf and it is my duty to assist the Dain in the management of Icewell Keep and the Royal Court. One could say that Seneschal Aldikar is the Sword of the Dain while I am the Shield, protecting all of his interests and those of the kingdom."); 
 }
  }
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 29062 => 4)){
-  plugin::DiaWind("Well done, $name, the Dain is pleased with your efforts. With a few more brave allies like you, we'll soon be tearing down the halls of Kael Drakkel.");
+  quest::say("Well done, $name, the Dain is pleased with your efforts. With a few more brave allies like you, we'll soon be tearing down the halls of Kael Drakkel.");
   quest::summonitem(quest::ChooseRandom(30215,30219,30212,30263));
   quest::faction(49, 10);
   quest::faction(67, 10);
@@ -20,10 +20,10 @@ if(plugin::check_handin(\%itemcount, 29062 => 4)){
       # with 1199
       my $mob = $entity_list->GetMobByNpcTypeID(129003);
       if ($mob) {
-         plugin::DiaWind("The Dain has been waiting for you, show your shawl to him."); #text made up.
+         quest::say("The Dain has been waiting for you, show your shawl to him."); #text made up.
          quest::summonitem(8895);
       } else {
-         plugin::DiaWind("One moment the Dain has been waiting for you. I will call for him.. oh here he is now, show your shawl to him.");
+         quest::say("One moment the Dain has been waiting for you. I will call for him.. oh here he is now, show your shawl to him.");
          quest::summonitem(8895);
          quest::spawn2(129003, 0, 0, 4.0, 690.0, 68.38, 128.0);
       }

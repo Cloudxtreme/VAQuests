@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
  if ($text=~/Hail/i){
-	plugin::DiaWind("Bring to me that which was taken.")
+	quest::say("Bring to me that which was taken.")
  }
 }
 

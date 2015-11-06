@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    plugin::DiaWind("There are many places for the likes of you. Why don't you go find one right now and leave me alone.");
+    quest::say("There are many places for the likes of you. Why don't you go find one right now and leave me alone.");
   }
 }
 
