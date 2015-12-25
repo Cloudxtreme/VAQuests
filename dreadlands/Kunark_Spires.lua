@@ -5,13 +5,13 @@ function event_spawn(e)
 	eq.set_proximity(x - 120, x + 120, y - 120, y + 120);
 end
 
-function event_enter(e)
-	e.other:SetGlobal("spire_dre", "1", 1, "F");
-end
+--function event_enter(e)
+--	e.other:SetGlobal("spire_dre", "1", 1, "F");
+--end
 
-function event_exit(e)
-	e.self:SetGlobal("spire_dre", "0", 1, "F");
-end
+--function event_exit(e)
+--	e.self:SetGlobal("spire_dre", "0", 1, "F");
+--end
 
 function event_signal(e)
 	if (e.signal == 101) then

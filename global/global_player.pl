@@ -24,6 +24,26 @@ sub EVENT_SAY{
 #	}
 #}
 sub EVENT_CONNECT {
+    my %vet_aa = (481 => [1, 1, 1]); ## Lesson of the Devote 1 yr
+#    482 => [63072000, 1, 1], ## Infusion of the Faithful 2 yr
+#    483 => [94608000, 1, 1], ## Chaotic Jester 3 yr
+#    484 => [126144000, 1, 1], ## Expedient Recovery 4 yr
+#    485 => [157680000, 1, 1], ## Steadfast Servant 5 yr
+#    486 => [189216000, 1, 1], ## Staunch Recovery 6 yr
+#    487 => [220752000, 1, 1], ## Intensity of the Resolute 7 yr
+#    511 => [252288000, 1, 1], ## Throne of Heroes 8 yr
+#    2000 => [283824000, 1, 1], ## Armor of Experience 9 yr
+#    8081 => [315360000, 1, 1], ## Summon Resupply Agent 10 yr
+#    8130 => [346896000, 1, 1], ## Summon Clockwork Banker 11 yr
+#    453 => [378432000, 1, 1], ## Summon Permutation Peddler 12 yr
+#    182 => [409968000, 1, 1], ## Summon Personal Tribute Master 13 yr
+#    600 => [441504000, 1, 1]); ## Blessing of the Devoted 14 yr
+    my $age = $client->GetAccountAge();
+    foreach my $key (keys %vet_aa) {
+        if ($vet_aa{$key}[2] && ($vet_aa{$key}[2] || $age >= $vet_aa{$key}[0])) {
+            $client->GrantAlternateAdvancementAbility($key, 1);
+        }
+    }
     if($ulevel < 11){
         quest::settimer("999",10);
     }
@@ -40,26 +60,6 @@ sub EVENT_ENTERZONE {
             quest::enabletitle($key);
         }
     }
-#	plugin::ManaCalc();
-# Apprentice Artisan
-#        if ($client->GetRawSkill(60) > 99 && $client->GetRawSkill(61) > 99 && $client->GetRawSkill(63) > 99 && $client->GetRawSkill(68) > 99 && $client->GetRawSkill(65) > 99 && $client->GetRawSkill(69) > 99 && $client->GetRawSkill(64) > 99) {
-#                quest::removetitle(7);
-#        }
-
-# Journeyman Artisan
-#        if ($client->GetRawSkill(60) > 199 && $client->GetRawSkill(61) > 199 && $client->GetRawSkill(63) > 199 && $client->GetRawSkill(68) > 199 && $client->GetRawSkill(65) > 199 && $client->GetRawSkill(69) > 199 && $client->GetRawSkill(64) > 199) {
-#                quest::removetitle(8);
-#        }
-#
-## Expert Artisan
-#        if ($client->GetRawSkill(60) > 249 && $client->GetRawSkill(61) > 249 && $client->GetRawSkill(63) > 249 && $client->GetRawSkill(68) > 249 && $client->GetRawSkill(65) > 249 && $client->GetRawSkill(69) > 249 && $client->GetRawSkill(64) > 249) {
-#                quest::removetitle(9);
-#        }
-
-# Master Artisan
-#        if ($client->GetRawSkill(60) > 299 && $client->GetRawSkill(61) > 299 && $client->GetRawSkill(63) > 299 && $client->GetRawSkill(68) > 299 && $client->GetRawSkill(65) > 299 && $client->GetRawSkill(69) > 299 && $client->GetRawSkill(64) > 299) {
-#		quest::removetitle(10);	
-#    }
 }
 
 sub CheckSkills {

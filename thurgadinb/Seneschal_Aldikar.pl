@@ -3,6 +3,7 @@ my $dainring = undef;
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		quest::moveto(5,780,38,130,1);
+#		quest::start(34);
 	}
 	if($signal==2) {
 		quest::moveto(-3,693,69,126,1);
@@ -26,6 +27,14 @@ sub EVENT_SAY{
     quest::summonitem("17055"); 
 #    quest::settimer("thurgdaynight",5);
   }
+  if($text=~/1/i){
+   quest::signalwith(129000,1); 
+   quest::signalwith(129003,1);
+  }
+  if($text=~/2/i){
+   quest::sigalwith(129000,2); 
+   quest::stop();
+  }
 }
 
 sub EVENT_ITEM {
@@ -33,28 +42,9 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 30164 => 1) && (quest::get_spawn_condition("thurgadinb",2) == 1)) {
     quest::say("Well done %t, I have heard of your victory over the Ry'Gorr. If you are willing to assist the crown further please follow me.");
     quest::summonitem(30164);
-    quest::stop();
-#    quest::signalwith(129000,1,0);
-    quest::moveto(-3.32909,694.677,69.7207);
-    quest::moveto(5.10136,687.487,68.6393);
-    quest::moveto(5.48169,656.502,63.7207);
-    quest::moveto(-37.5086,604.156,63.7207);
-    quest::moveto(-103.722,603.927,53.7207);
-    quest::moveto(-103.932,584.837,48.7207);
-    quest::moveto(-23.1887,585.836,38.752);
-    quest::moveto(-22.5928,712.132,38.752);
-    quest::moveto(4.53335,714.458,38.752);
-    quest::moveto(5,780,38);
+    quest::start(34);
     quest::settimer(10,60);
-#    quest::resume();
-#    quest::start(31);
-#    quest::pause(30);
-#    quest::movepc(129, 5.30, 771.86, 38.73, 253);
-#    quest::stoptimer("thurgdaynight");
-#######    quest::settimer(10,10);
   }
-#  elsif(plugin::check_handin(\%itemcount, 30164 => 1) && $x == 3.25 && $y == 773.25 && $z == 35) {
-#  elsif(plugin::check_handin(\%itemcount, 30164 => 1) && (quest::get_spawn_condition("thurgadinb",1) == 1)) {
   elsif(plugin::check_handin(\%itemcount, 30164 => 1) && (quest::get_spawn_condition("thurgadinb",1) == 1)) {
     quest::say("I must speak to the Dain before I instruct you further. Please speak to me while the royal court is in session.");
     quest::summonitem(30164);
