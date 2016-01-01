@@ -24,5 +24,8 @@ sub EVENT_ITEM {
   }
 }
 
-# EOF zone: karnor ID: 102099 NPC: Venril_Sathirs_remains
+#sub EVENT_DEATH_COMPLETE {
+#  quest::signalwith(111702096,2,0); #VSCont
+#}
 
+# EOF zone: karnor ID: 102099 NPC: Venril_Sathirs_remains

@@ -1,0 +1,23 @@
+my $VSCoolDownTime = int(rand(120)) + 120;
+my $RemainsRepop = int(rand(120)) + 1200;
+
+sub EVENT_SPAWN {
+  quest::settimer("VSCheck",60);
+}
+
+sub EVENT_TIMER {
+  if ($timer eq "VSCheck") {
+    if (!$entity_list->GetNPCByNPCTypeID(102112) && !defined $qglobals{VSDead} && !defined $qglobals{VSRemains}) {
+      quest::spawn2(102099);
+    }
+  }
+}
+  
+sub EVENT_SIGNAL {
+  if ($signal == 1) { #VS is dead
+    quest::setglobal("VSDead",1,3,"M$VSCoolDownTime"); #Cooldown timer
+  }
+  if ($signal == 2) { #Remains dead
+    quest::setglobal("VSRemains",1,3,"M$RemainsRepop"); #Remains repop
+  }
+}
