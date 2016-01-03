@@ -16,12 +16,11 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_ENTERZONE {
-$client->BuffFadeByEffect(113);
-}
+  $client->BuffFadeByEffect(113);
 
-  if(($ulevel >= 15) && (!defined($qglobals{Wayfarer})) && ($client->GetStartZone()==$zoneid)) {
-    $client->Message(15, "A mysterious voice whispers to you, 'Kwilrz Vn`Ycxa has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
-  }
+#  if(($ulevel >= 15) && (!defined($qglobals{Wayfarer})) && ($client->GetStartZone()==$zoneid)) {
+#    $client->Message(15, "A mysterious voice whispers to you, 'Kwilrz Vn`Ycxa has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
+#  }
 }
 
 #Submitted by Jim Mills

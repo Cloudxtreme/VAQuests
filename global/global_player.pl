@@ -60,6 +60,9 @@ sub EVENT_ENTERZONE {
             quest::enabletitle($key);
         }
     }
+    if ($class == CLERIC && $ulevel >= 56) {
+      quest::settimer("cleric",2);
+    }
 }
 
 sub CheckSkills {
@@ -113,6 +116,13 @@ sub EVENT_TIMER {
                 </td></tr></table>
           {linebreak}");
     }
+  }
+  if ($timer eq "cleric") {
+    quest::stoptimer("cleric");
+    if ($client->IsSitting() && $client->FindBuff(2326)) {
+      $client->BuffFadeBySpellID(2326);
+    }
+    quest::settimer("cleric",1);
   }
 }
 
