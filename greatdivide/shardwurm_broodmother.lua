@@ -19,6 +19,10 @@ function event_waypoint_arrive(e)
 	elseif(e.wp == 19) then
 		-- clear proximity and if the giants spawned then attack Gralk Dwarfkiller and send signal for Fergul Frostsky to run away.
 		eq.clear_proximity();
+		eq.depop_with_timer(118090);
+		eq.depop_with_timer(118091);
+		eq.spawn2(118207,0,0,-2397,-2615,294,0);
+		eq.spawn2(118208,0,0,-2391,-2569,299,0);
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(118208)) then
 			eq.attack_npc_type(118208);
 			eq.signal(118207,1);
@@ -27,11 +31,11 @@ function event_waypoint_arrive(e)
 end
 
 -- if Player enter the proximity then spawns the 2 giants and clear proximity.
-function event_enter(e)
-	eq.spawn2(118207,0,0,-2397,-2615,294,0);
-	eq.spawn2(118208,0,0,-2391,-2569,299,0);
-	eq.clear_proximity();
-end
+--function event_enter(e)
+--	eq.spawn2(118207,0,0,-2397,-2615,294,0);
+--	eq.spawn2(118208,0,0,-2391,-2569,299,0);
+--	eq.clear_proximity();
+--end
 
 function event_signal(e)
 	-- signal to depop from Fergul Frostsky once he either reached the end of his path (waypoint 6) or on death

@@ -60,7 +60,8 @@ sub EVENT_ENTERZONE {
             quest::enabletitle($key);
         }
     }
-    if ($class == CLERIC && $ulevel >= 56) {
+#    if ($class = CLERIC && $ulevel >= 56) {
+    if($class eq "Cleric" && $ulevel >= 56) {
       quest::settimer("cleric",2);
     }
 }
