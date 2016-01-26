@@ -33,23 +33,7 @@ sub EVENT_ITEM {
     quest::faction(391,30);
     quest::exp(30);
   }
-  if (plugin::check_handin(\%itemcount, 1787 => 1)) {
-    quest::say("Oh wow! Yooz found a fish card! Tanks!");
-    quest::faction(391,10);
-  }
-  if (plugin::check_handin(\%itemcount, 1788 => 1)) {
-    quest::say("Oh wow! Yooz found a fish card! Tanks!");
-    quest::faction(391,10);
-  }
-  if (plugin::check_handin(\%itemcount, 1789 => 1)) {
-    quest::say("Oh wow! Yooz found a fish card! Tanks!");
-    quest::faction(391,10);
-  }
-  if (plugin::check_handin(\%itemcount, 1790 => 1)) {
-    quest::say("Oh wow! Yooz found a fish card! Tanks!");
-    quest::faction(391,10);
-  }
-  if (plugin::check_handin(\%itemcount, 1791 => 1)) {
+  if ((plugin::check_handin(\%itemcount, 1787 => 1)) || (plugin::check_handin(\%itemcount, 1788 => 1)) || (plugin::check_handin(\%itemcount, 1789 => 1)) || (plugin::check_handin(\%itemcount, 1790 => 1)) || (plugin::check_handin(\%itemcount, 1791 => 1))) {
     quest::say("Oh wow! Yooz found a fish card! Tanks!");
     quest::faction(391,10);
   }
