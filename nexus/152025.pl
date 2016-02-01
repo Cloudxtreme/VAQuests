@@ -35,7 +35,7 @@ sub EVENT_ITEM {
   } elsif(plugin::check_handin(\%itemcount, 76010 => 1)){
 # Stonebrunt Mountaints
     quest::movegrp(100,673,-4531,0);
-  } elsif(plugin::check_handin(\%itemcount, 11274 => 1)){
+  } elsif(plugin::check_handin(\%itemcount, 132519 => 1)){
 #    if (defined($qglobals{"gh$char"})) {
 #      $ghinstance = $qglobals{"gh$char"};
 #      quest::AssignToInstance($ghinstance);

@@ -44,7 +44,8 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(162260,1,0); #EmpCycle
+#  quest::signalwith(162260,1,0); #EmpCycle
+  quest::signalwith(10,1,0); #EmpCycle
 }
 
 #END File: ssratemple\#Ssraeshzian_Blood_Golem.pl (162064)

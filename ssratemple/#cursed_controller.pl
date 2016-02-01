@@ -1,6 +1,6 @@
 my $check;
 my $variance = int(rand(600));
-my $spawntime = 4320 + $variance;
+my $spawntime = 5760 + $variance;
 
 sub EVENT_SPAWN {
   quest::settimer("cursed",60);
@@ -87,7 +87,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(162206,0,0,-51,-9,-218.1,63);#Cursed
   }
   if ($signal == 3) {	
-    quest::setglobal("cursed_dead",1,3,"M$spawntime");
+    quest::setglobal("cursed_dead",1,3,"D4");
     quest::stoptimer("one");
     quest::depop_withtimer();
   }

@@ -44,7 +44,8 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::signalwith(162260,3,0); #EmpCycle
+#  quest::signalwith(162260,3,0); #EmpCycle
+  quest::signalwith(10,3,0); #zone_controller
 }
 
 #END File: ssratemple\#Blood_of_Ssraeshza.pl (162189)
