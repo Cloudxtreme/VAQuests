@@ -5,14 +5,15 @@ my $engaged;
 sub EVENT_SPAWN {
   $engaged = 0;
   quest::settimer("EmpDepop", 1800);
-  quest::enable_spawn2(20000);
-  quest::enable_spawn2(20001);
-  quest::enable_spawn2(19997);
-  quest::enable_spawn2(19996);
-  quest::enable_spawn2(20002);
-  quest::enable_spawn2(20003);
-  quest::enable_spawn2(19998);
-  quest::enable_spawn2(19999);
+  quest::enable_spawn2(34138);
+  quest::enable_spawn2(34139);
+  quest::enable_spawn2(34140);
+  quest::enable_spawn2(34141);
+  quest::enable_spawn2(34142);
+  quest::enable_spawn2(34143);
+  quest::enable_spawn2(34144);
+  quest::enable_spawn3(34145);
+  quest::depop_with_timer(162065);
 }
 
 sub EVENT_TIMER {

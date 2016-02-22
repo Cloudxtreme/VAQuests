@@ -8,7 +8,7 @@ my $EmpPrep;
 sub EVENT_SPAWN {
   $EmpPrep = 0;
   quest::settimer("EmpCycle",10); #Cyclical Timer
-  quest::settimer("CheckAdds",10); #Get rid of Emp guards if they need to be gone
+#  quest::settimer("CheckAdds",10); #Get rid of Emp guards if they need to be gone
 }
 
 sub EVENT_TIMER {
@@ -37,26 +37,26 @@ sub EVENT_TIMER {
     }
   }
 
-  if ($timer eq "CheckAdds") {
-    quest::stoptimer("CheckAdds");
-    plugin::debug("Yo Fool");
-    quest::disable_spawn2(20000);
-    quest::disable_spawn2(20001);
-    quest::disable_spawn2(19997);
-    quest::disable_spawn2(19996);
-    quest::disable_spawn2(20002);
-    quest::disable_spawn2(20003);
-    quest::disable_spawn2(19998);
-    quest::disable_spawn2(19999);
-    quest::depop(162123);
-    quest::depop(162124);
-    quest::depop(162125);
-    quest::depop(162126);
-    quest::depop(162127);
-    quest::depop(162128);
-    quest::depop(162129);
-    quest::depop(162130);
-  }
+#  if ($timer eq "CheckAdds") {
+#    quest::stoptimer("CheckAdds");
+#    plugin::debug("Yo Fool");
+#    quest::disable_spawn2(20000);
+#    quest::disable_spawn2(20001);
+#    quest::disable_spawn2(19997);
+#    quest::disable_spawn2(19996);
+#    quest::disable_spawn2(20002);
+#    quest::disable_spawn2(20003);
+#    quest::disable_spawn2(19998);
+#    quest::disable_spawn2(19999);
+#    quest::depop(162123);
+#    quest::depop(162124);
+#    quest::depop(162125);
+#    quest::depop(162126);
+#    quest::depop(162127);
+#    quest::depop(162128);
+#    quest::depop(162129);
+#    quest::depop(162130);
+#  }
 
   if ($timer eq "EmpPrep") {
     quest::stoptimer("EmpPrep");
@@ -75,6 +75,7 @@ sub EVENT_SIGNAL {
     $EmpPrep = 1;
   }
   if ($signal == 2) { #Emperor is dead
+    quest::delglobal("Emperor");
     quest::setglobal("Emperor",3,0,"M$EmpRepopTime"); #Emp respawn timer
   }
   if ($signal == 3) { #Blood is dead

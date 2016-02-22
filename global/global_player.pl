@@ -50,20 +50,26 @@ sub EVENT_CONNECT {
 }
 
 sub EVENT_ENTERZONE {
+  if ($status < 2) {
     plugin::LeaderBoardsUpdate();
-    my %h = (7 => 99,
-    8 => 199,
-    9 => 249,
-    10 => 299);
-    foreach my $key (keys %h) {
-        if (CheckSkills($client, $h{$key})) {
-            quest::enabletitle($key);
-        }
+  }
+  my %h = (7 => 99,
+  8 => 199,
+  9 => 249,
+  10 => 299);
+  foreach my $key (keys %h) {
+    if (CheckSkills($client, $h{$key})) {
+      quest::enabletitle($key);
     }
+  }
 #    if ($class = CLERIC && $ulevel >= 56) {
-    if($class eq "Cleric" && $ulevel >= 56) {
-      quest::settimer("cleric",2);
-    }
+  if($class eq "Cleric" && $ulevel >= 56) {
+    quest::settimer("cleric",2);
+  }
+  if($ulevel < 11){
+    quest::settimer("popup",10);
+    quest::settimer("popup2",15);
+  }
 }
 
 sub CheckSkills {
@@ -88,7 +94,6 @@ sub EVENT_TIMER {
                 <tr><td>{bullet}</td><td>{g}Current expansion is Luclin~ - Future expansions are planned through PoP, LoY and LDoN.</td>
                 <tr><td>{bullet}</td><td>{g}Client Support~ - RoF2 client required. {r}(See MoTD)~</td>
                 <tr><td>{bullet}</td><td>{g}4-box limit~ - An additional, locked account can be used for a Bazaar trader.</td>
-                <tr><td>{bullet}</td><td>{g}Bots enabled~ - 2 per client allowed active (10 total per character). Use {lb}#bot help {gold}~ for information.</td>
                 </td></tr></table>
                 <table><tr><td>
                 <tr><td>{bullet}</td><td>{y}Many zones have been modified in one way or another. Some information about them:</td>
@@ -124,6 +129,14 @@ sub EVENT_TIMER {
       $client->BuffFadeBySpellID(2326);
     }
     quest::settimer("cleric",1);
+  }
+  if ($timer eq "popup") {
+    quest::stoptimer("popup");
+    plugin::MM("Please go to www.vegarlson-server.org for information about our server! You can find our patcher there to get the correct files (zones,spells,etc.) for the VA Server!");
+  }
+  if ($timer eq "popup2") {
+    quest::stoptimer("popup2");
+    plugin::MM("Please go to www.vegarlson-server.org for information about our server! You can find our patcher there to get the correct files (zones,spells,etc.) for the VA Server!");
   }
 }
 

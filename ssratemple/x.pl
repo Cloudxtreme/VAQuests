@@ -9,48 +9,10 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   $check = 0;
   if($timer eq "cursed") {
-    $check_boss = $entity_list->GetMobByNpcTypeID(162270);#cursed_one
-    if ($check_boss) {
+    if($entity_list->GetMobByNpcTypeID(162270) || $entity_list->GetMobByNpcTypeID(162271) || $entity_list->GetMobByNpcTypeID(162272) || $entity_list->GetMobByNpcTypeID(162273) || $entity_list->GetMobByNpcTypeID(162274) || $entity_list->GetMobByNpcTypeID(162275) || $entity_list->GetMobByNpcTypeID(162276) || $entity_list->GetMobByNpcTypeID(162277) || $entity_list->GetMobByNpcTypeID(162278) || $entity_list->GetMobByNpcTypeID(162279)) {
       $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162271);#cursed_two
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162272);#cursed_three
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162273);#cursed_four
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162274);#cursed_five
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162275);#cursed_six
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162276);#cursed_seven
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162277);#cursed_eight
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162278);#cursed_nine
-    if ($check_boss) {
-      $check = 1;
-    }
-    $check_boss = $entity_list->GetMobByNpcTypeID(162279);#cursed_ten
-    if ($check_boss) {
-      $check = 1;
-    }
-    if ($check == 1) {
-    quest::settimer("cursed",60);
+#    }
+      quest::settimer("cursed",10);
     }
     if ($check == 0 && defined $qglobals{cursed_dead}) {
     }
@@ -78,6 +40,8 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_SIGNAL {
+#  if ($signal == 0) {
+#    quest::
   if ($signal == 1 && defined $qglobals{exiled_dead}) {
     quest::spawn2(162214,0,0,-51,-9,-218.1,63);#Banished
   }
