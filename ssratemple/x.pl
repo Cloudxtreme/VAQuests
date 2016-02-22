@@ -11,7 +11,6 @@ sub EVENT_TIMER {
   if($timer eq "cursed") {
     if($entity_list->GetMobByNpcTypeID(162270) || $entity_list->GetMobByNpcTypeID(162271) || $entity_list->GetMobByNpcTypeID(162272) || $entity_list->GetMobByNpcTypeID(162273) || $entity_list->GetMobByNpcTypeID(162274) || $entity_list->GetMobByNpcTypeID(162275) || $entity_list->GetMobByNpcTypeID(162276) || $entity_list->GetMobByNpcTypeID(162277) || $entity_list->GetMobByNpcTypeID(162278) || $entity_list->GetMobByNpcTypeID(162279)) {
       $check = 1;
-#    }
       quest::settimer("cursed",10);
     }
     if ($check == 0 && defined $qglobals{cursed_dead}) {
