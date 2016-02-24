@@ -8,6 +8,40 @@ sub EVENT_SAY{
     if($status > 200){
         plugin::Doors_Manipulation_EVENT_SAY(); # Door Manipulation Plugin
     }
+        if($text=~/#links/i){
+        my $Veg = plugin::PWHyperLink("http://www.vegarlson-server.org", "www.vegarlson-server.org");
+        my $Bugs = plugin::PWHyperLink("http://www.vegarlson-server.org/index.php?action=helpdesk;sa=main", "Report a Bug");
+        my $Chars = plugin::PWHyperLink("http://www.vegarlson-server.org/index.php?action=charbrowser", "Character Browser");
+        my $Alla = plugin::PWHyperLink("http://www.vegarlson-server.org/index.php?action=alla", "Alla Clone");
+        my $Forum = plugin::PWHyperLink("http://www.vegarlson-server.org/index.php?action=forum", "Forums");
+        my $Link = plugin::PWHyperLink("http://www.vegarlson-server.org", "www.vegarlson-server.org");
+        my $Chat = plugin::PWHyperLink("https://discord.gg/0or8hogCf1ZflK7L", "Server Chat");
+        my $ServerInfo = plugin::PWHyperLink("http://www.vegarlson-server.org/index.php?topic=165.0", "Server Information");
+        my $TextToCenter = plugin::PWAutoCenter("Hello there, <c \"#33FF00\">$name</c>!");
+        my $TextToCenter2 = plugin::PWAutoCenter("Here are some helpful links:");
+        my $TextToCenter3 = plugin::PWAutoCenter("<c \"#33FF00\">Our main website - $Veg</c>");
+        my $TextToCenter4 = plugin::PWAutoCenter("<c \"#33FF00\">$Forum");
+        my $TextToCenter5 = plugin::PWAutoCenter("$Bugs");
+        my $TextToCenter6 = plugin::PWAutoCenter("$Chars");
+        my $TextToCenter7 = plugin::PWAutoCenter("$Alla");
+        my $TextToCenter8 = plugin::PWAutoCenter("$Chat");
+        my $TextToCenter9 = plugin::PWAutoCenter("$ServerInfo");
+        my $Indent = plugin::PWIndent();
+        my $Yel = plugin::PWColor("Yellow");
+        my $Blu = plugin::PWColor("Light Blue");
+        my $Red = plugin::PWColor("Red");
+        my $grn = plugin::PWColor("Forest Green");
+        quest::popup("Web Links", "$TextToCenter <br><br>
+        $TextToCenter3 <br><br>
+        $TextToCenter9 <br><br>
+        $TextToCenter4 <br><br>
+        $TextToCenter5 <br><br>
+        $TextToCenter6 <br><br>
+        $TextToCenter7 <br><br>
+        $TextToCenter8 <br><br>
+        ");
+        }
+
 }
 #	if ($text=~/#iteminfo/i) {
 #		if ($client->GetItemAt(30)) {
