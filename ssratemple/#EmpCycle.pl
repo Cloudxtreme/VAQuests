@@ -8,7 +8,6 @@ my $EmpPrep;
 sub EVENT_SPAWN {
   $EmpPrep = 0;
   quest::settimer("EmpCycle",10); #Cyclical Timer
-#  quest::settimer("CheckAdds",10); #Get rid of Emp guards if they need to be gone
 }
 
 sub EVENT_TIMER {
@@ -37,33 +36,11 @@ sub EVENT_TIMER {
     }
   }
 
-#  if ($timer eq "CheckAdds") {
-#    quest::stoptimer("CheckAdds");
-#    plugin::debug("Yo Fool");
-#    quest::disable_spawn2(20000);
-#    quest::disable_spawn2(20001);
-#    quest::disable_spawn2(19997);
-#    quest::disable_spawn2(19996);
-#    quest::disable_spawn2(20002);
-#    quest::disable_spawn2(20003);
-#    quest::disable_spawn2(19998);
-#    quest::disable_spawn2(19999);
-#    quest::depop(162123);
-#    quest::depop(162124);
-#    quest::depop(162125);
-#    quest::depop(162126);
-#    quest::depop(162127);
-#    quest::depop(162128);
-#    quest::depop(162129);
-#    quest::depop(162130);
-#  }
-
   if ($timer eq "EmpPrep") {
     quest::stoptimer("EmpPrep");
     quest::depop(162065); ##Emperor_Ssraeshza (No Target)
     quest::spawn2(162227,0,0,990.0,-325.0,415.0,192.0); ##Emperor_Ssraeshza_ (Real)
     quest::setglobal("Emperor",2,0,"F");
-#  quest::setglobal("BloodCoolDown",0,0,"M$BloodCoolDownTime"); #Cooldown timer
     $EmpPrep = 0;
   }
 }
