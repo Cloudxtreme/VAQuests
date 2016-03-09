@@ -20,7 +20,8 @@ sub EVENT_ITEM {
     $z = $npc->GetZ();
     $h = $npc->GetHeading();
     quest::spawn2(102123,0,0,$x,$y,$z,$h);
-    quest::depop_withtimer();
+#    quest::depop_withtimer();
+    quest::depop();
   }
 }
 

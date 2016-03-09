@@ -134,32 +134,32 @@ sub EVENT_SAY {
 		if($args[1] =~ /check/i)
 		{
 			$client->SetEntityVariable("DoorCommand", "Info");
-			quest::signalwith(1000505, $client->GetID());
+			quest::signalwith(10, $client->GetID());
 		}
 		if($args[1] =~ /buy/i)
 		{
 			$client->SetEntityVariable("DoorCommand", "BuyHouse");
-			quest::signalwith(1000505, $client->GetID());
+			quest::signalwith(10, $client->GetID());
 		}
 		if($args[1] =~ /purchase/i)
 		{
 			$client->SetEntityVariable("DoorCommand", "PurchaseHouse");
-			quest::signalwith(1000505, $client->GetID());
+			quest::signalwith(10, $client->GetID());
 		}
 		if($args[1] =~ /sell/i)
 		{
 			$client->SetEntityVariable("DoorCommand", "SellHouse");
-			quest::signalwith(1000505, $client->GetID());
+			quest::signalwith(10, $client->GetID());
 		}
 		if($args[1] =~ /relinquish/i)
 		{
 			$client->SetEntityVariable("DoorCommand", "RelinquishHouse");
-			quest::signalwith(1000505, $client->GetID());
+			quest::signalwith(10, $client->GetID());
 		}
 		if($args[1] =~ /payrent/i)
 		{
 			$client->SetEntityVariable("DoorCommand", "PayRent");
-			quest::signalwith(1000505, $client->GetID());
+			quest::signalwith(10, $client->GetID());
 		}
 		
 	}
@@ -182,7 +182,7 @@ sub EVENT_SAY {
 		{
 			$client->SetEntityVariable("DoorCommand",  $args[0]);
 		}
-		quest::signalwith(1000505, $client->GetID());
+		quest::signalwith(10, $client->GetID());
 	}
 
 }
@@ -331,7 +331,7 @@ sub EVENT_CAST
 		if($zonesn eq "neighborhood" && !plugin::HasRadius($client->GetEntityVariable("PlacingItemID")))
 		{
 			$client->SetEntityVariable("DoorCommand", "PlaceItem");
-			quest::signalwith(1000505, $client->GetID());
+			quest::signalwith(10, $client->GetID());
 		}
 		else
 		{
@@ -489,7 +489,7 @@ sub EVENT_CAST
 						$object->SetEntityVariable("PlacingEffect", (plugin::HasEffect($object->GetItemID()) ? plugin::GetEffectData($object->GetItemID(), "spell_id") : (defined($object->GetEntityVariable("ClickEffect")) ? $object->GetEntityVariable("ClickEffect") : 0)));
 						$object->SetEntityVariable("Owner", $client->AccountID());
 						plugin::InsertTreeProcedure($object);
-						quest::signalwith(1000503,$spawnid);
+						quest::signalwith(10,$spawnid);
 					}
 					else
 					{

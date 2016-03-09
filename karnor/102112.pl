@@ -4,10 +4,11 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
   if ($timer eq "VSCheck") {
-    quest::disable_spawn2(102099);
+    quest::stoptimer("VSCheck");
+    quest::depop(102099);
   }
 }
   
 sub EVENT_DEATH_COMPLETE {
-  quest::enable_spawn2(102099);
+  quest::spawn2(102099,0,0,-553,-77.0,15.0,192.0); ##Spawn Venril's remains
 }
