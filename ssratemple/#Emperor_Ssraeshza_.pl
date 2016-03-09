@@ -5,21 +5,13 @@ my $engaged;
 sub EVENT_SPAWN {
   $engaged = 0;
   quest::settimer("EmpDepop", 1800);
-  quest::enable_spawn2(34138);
-  quest::enable_spawn2(34139);
-  quest::enable_spawn2(34140);
-  quest::enable_spawn2(34141);
-  quest::enable_spawn2(34142);
-  quest::enable_spawn2(34143);
-  quest::enable_spawn2(34144);
-  quest::enable_spawn3(34145);
   quest::depop_with_timer(162065);
 }
 
 sub EVENT_TIMER {
   quest::stoptimer("EmpDepop");
 #  quest::signalwith(162260,3,0); #EmpCycle
-  quest::signalwith(10,3,0); #EmpCycle
+  quest::signalwith(162260,3,0); #EmpCycle
   quest::depop();
 }
 
@@ -39,7 +31,7 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(162210,0,0,937,-324,403.1,190);
   quest::spawn2(162210,0,0,937,-316,403.1,190);
 #  quest::signalwith(162260,2,0); #EmpCycle
-  quest::signalwith(10,2,0); #EmpCycle
+  quest::signalwith(162260,2,0); #EmpCycle
   quest::disable_spawn2(20000);
   quest::disable_spawn2(20001);
   quest::disable_spawn2(19997);
