@@ -1,0 +1,15 @@
+sub EVENT_SAY { 
+  if($text=~/Hail/i){
+    plugin::Whisper("Greetings, $name. I am Collector Dannel. I am searching for tokens commemorating the first year of the Vegarlson Asylum server. If you happen to find any, please bring then to me. I will reward you based on the quality of the token. Good luck!"); 
+    quest::assigntask(272);
+  }
+}
+
+sub EVENT_ITEM {
+ if($client->IsTaskActive(272)) {
+    plugin::Debug("Test");
+ } elsif (!$client->IsTaskActive(272)) {
+   plugin::return_items(\%itemcount);
+  
+ }
+}

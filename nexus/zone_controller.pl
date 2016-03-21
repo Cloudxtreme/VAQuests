@@ -23,4 +23,7 @@ sub EVENT_TIMER {
     }
     $connect->disconnect;
     return
+  if ($timer eq "buff") {
+    quest::stoptimer("buff");
+  }
 }

@@ -27,10 +27,10 @@
 ############################################# 
 
 sub EVENT_DEATH_COMPLETE {
-    if(!defined $qglobals{"Rockhopper_Sambata"}) {
-        quest::spawn_condition($zonesn, 2, 0);
-        quest::spawn_condition($zonesn, 1, 1);
-    }
+#    if(!defined $qglobals{"Rockhopper_Sambata"}) {
+        quest::spawn_condition(dawnshroud, 2, 0);
+        quest::spawn_condition(dawnshroud, 1, 1);
+#    }
 }
 
 # END of FILE Zone:dawnshroud  ID:174316 -- #An_Age_Old_Rockhopper

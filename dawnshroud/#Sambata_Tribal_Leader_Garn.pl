@@ -27,10 +27,10 @@
 ############################################# 
 
 sub EVENT_DEATH_COMPLETE {
-    if(!defined $qglobals{"Rockhopper_Sambata"}) {
-        quest::spawn_condition($zonesn, 2, 1);
-        quest::spawn_condition($zonesn, 1, 0);
-    }
+#    if(!defined $qglobals{"Rockhopper_Sambata"}) {
+        quest::spawn_condition(dawnshroud, 2, 1);
+        quest::spawn_condition(dawnshroud, 1, 0);
+#    }
 }
 
 # END of FILE Zone:dawnshroud  ID:174277 -- #Sambata_Tribal_Leader_Garn
