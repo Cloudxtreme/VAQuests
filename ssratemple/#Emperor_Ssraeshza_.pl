@@ -32,14 +32,14 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(162210,0,0,937,-316,403.1,190);
 #  quest::signalwith(162260,2,0); #EmpCycle
   quest::signalwith(162260,2,0); #EmpCycle
-  quest::disable_spawn2(20000);
-  quest::disable_spawn2(20001);
-  quest::disable_spawn2(19997);
-  quest::disable_spawn2(19996);
-  quest::disable_spawn2(20002);
-  quest::disable_spawn2(20003);
-  quest::disable_spawn2(19998);
-  quest::disable_spawn2(19999);
+  quest::disable_spawn2(34138);
+  quest::disable_spawn2(34139);
+  quest::disable_spawn2(34140);
+  quest::disable_spawn2(34141);
+  quest::disable_spawn2(34142);
+  quest::disable_spawn2(34143);
+  quest::disable_spawn2(34144);
+  quest::disable_spawn2(34145);
 }
 
 sub EVENT_SLAY {
