@@ -9,6 +9,7 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
   $check = 0;
   if($timer eq "cursed") {
+#  if($entity_list->GetMobByNpcTypeID(162270) || $entity_list->GetMobByNpcTypeID(162271) || $entity_list->GetMobByNpcTypeID(162272) || $entity_list->GetMobByNpcTypeID(162273) || $entity_list->GetMobByNpcTypeID(162274) || $entity_list->GetMobByNpcTypeID(162275) || $entity_list->GetMobByNpcTypeID(162276) || $entity_list->GetMobByNpcTypeID(162277) || $entity_list->GetMobByNpcTypeID(162278) || $entity_list->GetMobByNpcTypeID(162279)) {
     $check_boss = $entity_list->GetMobByNpcTypeID(162270);#cursed_one
     if ($check_boss) {
       $check = 1;
@@ -52,6 +53,7 @@ sub EVENT_TIMER {
     if ($check == 1) {
     quest::settimer("cursed",60);
     }
+
     if ($check == 0 && defined $qglobals{cursed_dead}) {
     }
     elsif ($check == 0) {

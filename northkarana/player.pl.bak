@@ -17,7 +17,8 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_TIMER {
   if (defined $qglobals{nexus} && defined $qglobals{spire_nk} && $qglobals{spire_nk} == 1 && plugin::check_hasitem($client, 19720)) {
-    quest::selfcast(2433); #self only to avoid AE
+#    quest::selfcast(2433); #self only to avoid AE
+    quest::movepc(152,0,0,-30,0);
     quest::setglobal(spire_nk,0,1,"F");
     quest::delglobal(message_nk);
     $client->NukeItem(19720); #removes stone from inventory.
