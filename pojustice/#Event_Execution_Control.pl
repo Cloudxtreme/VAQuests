@@ -189,7 +189,7 @@ sub EVENT_TIMER {
          $size = @trial_group;
          
          #Check if they are in the trial area
-         if ( $ent->CalculateDistance(194, -1120, 72) < 120 ) {
+         if ( $ent->CalculateDistance(194, -1120, 72) < 120 && status < 80) {
             if (!$in_allowed) {
                if ($allow_entry && $size < 6) {
                   push(@allowed, $ClientName);
