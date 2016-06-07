@@ -3,6 +3,12 @@ sub EVENT_CLICKDOOR{
         plugin::Doors_Manipulation_EVENT_CLICKDOOR(); # Door Manipulation Plugin
     }
 }
+
+sub EVENT_LOOT {
+  if($looted_id == 132522) {
+    $client->Message(15, "There's a collector in The Bazaar that would be very interested in this token...");
+  }
+}
  
 sub EVENT_SAY {
 	@args = split(' ', $text);
@@ -185,7 +191,10 @@ sub EVENT_SAY {
 		quest::signalwith(10, $client->GetID());
 	}
 
-}
+#}
+	if ($text=~/#website/i) {
+		$client->SendWebLink("http://www.vegarlson-server.org/index.php");
+	}
 #	if ($text=~/#iteminfo/i) {
 #		if ($client->GetItemAt(30)) {
 #			$client->SendWebLink(""http://everquest.allakhazam.com/db/item.html?item="" . $client->GetItemIDAt(30));
@@ -199,7 +208,7 @@ sub EVENT_SAY {
 #			$client->SendWebLink("http://va.bladesofwrath.org/magelo-clone/character.php?char=" . $client->GetTarget()->GetCleanName());
 #		}
 #	}
-#}
+}
 sub EVENT_CONNECT {
     my %vet_aa = (481 => [1, 1, 1]); ## Lesson of the Devote 1 yr
 #    482 => [63072000, 1, 1], ## Infusion of the Faithful 2 yr
