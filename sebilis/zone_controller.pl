@@ -1,6 +1,6 @@
 #BEGIN File: sebilis\zone_controller.pl
 
-my $UndeadBardTimer = int(rand(14400)) + 57600; #Respawn time for Emp after success (Current setting: 3-5 days)
+my $UndeadBardTimer = int(rand(14400)) + 43200; #Respawn time for Emp after success (Current setting: 3-5 days)
 
 sub EVENT_TIMER {
   if ($timer eq "UDB") {

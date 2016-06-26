@@ -192,9 +192,28 @@ sub EVENT_SAY {
 	}
 
 #}
-	if ($text=~/#website/i) {
-		$client->SendWebLink("http://www.vegarlson-server.org/index.php");
-	}
+  if ($text=~/#www/i || $text=~/#website/i || $text=~/#webpage/i) {
+    $client->SendWebLink("http://www.vegarlson-server.org");
+  }
+  if ($text=~/#forum/i || $text=~/#forums/i || $text=~/#board/i) {
+    $client->SendWebLink("http://www.vegarlson-server.org/index.php?action=forum");
+  }
+  if ($text=~/#alla/i || $text=~/#allaclone/i || $text=~/#clone/i) {
+    $client->SendWebLink("http://www.vegarlson-server.org/index.php?action=alla");
+  }
+  if ($text=~/#char/i || $text=~/#character/i || $text=~/#characters/i) {
+    $client->SendWebLink("http://www.vegarlson-server.org/index.php?action=charbrowser");
+  }
+  if ($text=~/#bug/i || $text=~/#bugs/i) {
+    $client->SendWebLink("http://www.vegarlson-server.org/index.php?action=helpdesk;sa=main");
+  }
+  if ($text=~/#messages/i || $text=~/#pm/i || $text=~/#message/i) {
+    $client->SendWebLink("http://www.vegarlson-server.org/index.php?action=pm");
+  }
+#	if ($text=~/#iteminfo/i) {
+#	if ($text=~/#iteminfo/i) {
+#	if ($text=~/#iteminfo/i) {
+#	if ($text=~/#iteminfo/i) {
 #	if ($text=~/#iteminfo/i) {
 #		if ($client->GetItemAt(30)) {
 #			$client->SendWebLink(""http://everquest.allakhazam.com/db/item.html?item="" . $client->GetItemIDAt(30));
