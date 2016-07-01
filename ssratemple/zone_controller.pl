@@ -54,9 +54,8 @@ sub EVENT_TIMER {
     quest::settimer("cursed",60);
     }
 
-    if ($check == 0 && defined $qglobals{cursed_dead}) {
-    }
-    elsif ($check == 0) {
+#    if ($check == 0 && defined $qglobals{cursed_dead}) {
+    if ($check == 0) {
       if (defined $qglobals{glyphed_dead}) {
         quest::spawn2(162253,0,0,-51,-9,-218.1,63);#runed
       }

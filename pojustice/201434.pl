@@ -27,11 +27,13 @@ sub EVENT_SAY
           }
         }
 				quest::settimer(201, 30);
+				#Spawn the event controller
+				quest::spawn2(201417, 0, 0, 880, -729, 55, 0);
 				#Tell event burning control about it, 30 second delay
 				quest::signalwith(201417, 1, 30);
 				$flame=1;
-				#Spawn the event controller
-				quest::spawn2(201417, 0, 0, 880, -729, 55, 0);
+				##Spawn the event controller
+				#quest::spawn2(201417, 0, 0, 880, -729, 55, 0);
 			}
 			else {
 				quest::say("I'm sorry, the Trial of Flame is currently unavilable to you.");

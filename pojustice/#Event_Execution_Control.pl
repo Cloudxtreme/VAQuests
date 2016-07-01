@@ -289,6 +289,7 @@ sub EVENT_TIMER {
    }
    elsif ($timer eq "execution_wave4") {
       quest::stoptimer("execution_wave4");
+      quest::settimer("loot_dropper", 100);
       SpawnExecutionMobs();      
       if (!defined $mob_check) {
          $mob_check = 1;
@@ -365,12 +366,17 @@ sub SpawnExecutionMobs {
    #Only allow a max of 1 of each named per wave
    my $herald = 0;
    my $priest = 0;
+   my $dropper = 0;
    
    #Loop And spawn, baby.
    for ($count = 0; $count <= 3; $count++) {
       my $test = int(rand(99));
       
-      if (($test >= 0) && ($test <=19)) {
+  if (($test > 90) && ($timer eq "loot_dropper") && (!$dropper)) {
+    quest::spawn2(201998, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+    $dropper = 1;
+  }
+      elsif (($test >= 0) && ($test <=19)) {
          quest::spawn2(201427, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
       }
       

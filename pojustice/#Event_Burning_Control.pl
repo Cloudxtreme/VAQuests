@@ -89,6 +89,11 @@ sub SpawnFlameMobs {
 	for ($count = 0; $count <= 3; $count++) {
 		my $test = rand(99);
 		
+                if (($test > 90) && ($timer eq "flame_boss")) {
+			#Burning nemesis, with loot
+			quest::spawn2(201999, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
+		}
+			
 		if ($test < 69) {
 			#Fiery Agressor, common mob
 			quest::spawn2(201420, 0, 0, $locX[$count], $locY[$count], $locZ[$count], $locH[$count]);
