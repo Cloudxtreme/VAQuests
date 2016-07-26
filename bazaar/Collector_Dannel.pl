@@ -11,7 +11,7 @@ my $random_result = int(rand(5000));
 
 # Buff Crystal - 0-3000
   if($itemcount{132520} && $random_result>=0 && $random_result<4501) {
-    quest::summonitem(132521,5);
+    quest::summonitem(132521,10);
     plugin::Whisper("This token is in fair condition. Use these crystals to fortify yourself and your companions.");
 #    quest::gmsay("$random_result");
   }
@@ -41,7 +41,7 @@ my $random_result = int(rand(5000));
 
 # Buff Crystal - 0-3000
   elsif($itemcount{132522} && $random_result>=0 && $random_result<4501) {
-    quest::summonitem(132521,5);
+    quest::summonitem(132521,10);
     plugin::Whisper("This token is in fair condition. Use these crystals to fortify yourself and your companions.");
 #    quest::gmsay("$random_result");
   }

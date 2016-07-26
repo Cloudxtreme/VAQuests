@@ -7,4 +7,3 @@ sub EVENT_DEATH_COMPLETE {
  }
   }
 }
-
