@@ -6,10 +6,10 @@ if($text=~/Hail/i && !defined $qglobals{pop_poj_mavuin})
 	}
 if($text=~/What information/i && !defined $qglobals{pop_poj_mavuin})
 	{
-	quest::say("Oh, excuse me... The Tribunal is not a being who deals with parchment and quills, he will test you to allow me to [" . quest::saylink("plea your case", 0, "plea my case") . "].  When you tell him of my request, be prepared, $name.");
+	quest::say("Oh, excuse me... The Tribunal is not a being who deals with parchment and quills, he will test you to allow me to [" . quest::saylink("plead your case", 0, "plead my case") . "].  When you tell him of my request, be prepared, $name.");
 	}
 
-if($text=~/plea your case/i && !defined $qglobals{pop_poj_mavuin})
+if($text=~/plead your case/i && !defined $qglobals{pop_poj_mavuin})
 	{
 	quest::say("Thank you! Oh I wish you luck.");
         quest::setglobal("pop_poj_mavuin", 1, 5, "F");
