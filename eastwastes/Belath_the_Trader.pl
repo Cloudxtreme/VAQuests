@@ -1,5 +1,4 @@
-#Nelef_the_Trader.pl
-#Trade with Nelef
+#Belath_the_Trader.pl
 
 sub EVENT_SAY { 
 	if($text=~/Hail/i){
@@ -23,4 +22,4 @@ sub EVENT_ITEM {
   	quest::summonitem(132524);#Essence of the Tomb
   }
   plugin::return_items(\%itemcount);
-}#END of FILE Zone:eastwastes  ID:116086 -- Nelef_the_Trader 
+}#END of FILE Zone:eastwastes  ID:116608 -- Belath_the_Trader 
