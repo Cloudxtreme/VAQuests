@@ -118,6 +118,32 @@ sub EVENT_SAY {
 			plugin::GetLeaderboard(%qglobals);
 			plugin::ShowLeaderboard("HP");
 		}
+	if ($text=~/#linked/i) {
+            if ($client->GetTarget()->IsClient()) {
+                $client->Message(11, "-------------------------------------------------------------------------");
+                $client->Message(11, "[GM:] Showing Linked Accounts for Targetted Player");
+                $client->Message(11, "-------------------------------------------------------------------------");
+                my $dbh = plugin::LoadMysql();
+                my $sth = $dbh->prepare("
+                                            SELECT accid, name
+                                            FROM account_ip
+                                            INNER JOIN character_data
+                                            ON account_ip.accid = character_data.account_id
+                                            WHERE account_ip.ip = ?
+                                        ");
+                $sth->bind_param(1,ConvertIP($client->GetTarget()->CastToClient->GetIP()));
+                $sth->execute();
+                while (my @row = $sth->fetchrow_array()) {
+                    my ($account_id, $playername ) = @row;
+                    quest::gmsay("    Account ID: ".$account_id." --- Name: ".$playername."", 11, 1);
+                }
+                $sth->finish();
+                $dbh->disconnect();
+            }
+            else {
+                $client->Message(15, "[GM:] You MUST target a PLAYER to use this command!");
+            }
+        }
 	if ($args[0]=~/#Leaderboard/i) {
 		
 		if(!defined($args[1]))
