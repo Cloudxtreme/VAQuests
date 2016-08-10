@@ -268,8 +268,8 @@ sub EVENT_ENTERZONE {
     }
   }
 #    if ($class = CLERIC && $ulevel >= 56) {
-  if($class eq "Cleric" && $ulevel >= 56) {
-    quest::settimer("cleric",2);
+  if($class eq "Cleric" || $class eq "Paladin") {
+    quest::settimer("yaulp",2);
   }
   if($ulevel < 11){
     quest::settimer("popup",10);
@@ -328,12 +328,17 @@ sub EVENT_TIMER {
           {linebreak}");
     }
   }
-  if ($timer eq "cleric") {
-    quest::stoptimer("cleric");
-    if ($client->IsSitting() && $client->FindBuff(2326)) {
+  if ($timer eq "yaulp") {
+    quest::stoptimer("yaulp");
+    if ($client->IsSitting() && ($client->FindBuff(3186) || $client->FindBuff(2326) || $client->FindBuff(1534) || $client->FindBuff(210) || $client->FindBuff(44) || $client->FindBuff(43))) {
+      $client->BuffFadeBySpellID(3186);
       $client->BuffFadeBySpellID(2326);
+      $client->BuffFadeBySpellID(1534);
+      $client->BuffFadeBySpellID(210);
+      $client->BuffFadeBySpellID(44);
+      $client->BuffFadeBySpellID(43);
     }
-    quest::settimer("cleric",1);
+    quest::settimer("yaulp",1);
   }
   if ($timer eq "popup") {
     quest::stoptimer("popup");
