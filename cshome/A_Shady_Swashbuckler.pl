@@ -1,10 +1,10 @@
-sub EVENT_DEATH_COMPLETE {
- if ($client->GetRaid()) {
-   for ($i = 0; $i < 72; $i++) {
-   if ($raid->GetRaid()->GetMember($i)) {
-     $raid->GetRaid()->GetMember($i)->SetGlobal("MoTG", 1, 5, "F");
-   }
- }
+sub EVENT_SAY {
+  if ($text=~/test/i) {
+    if($client->FindBuff(4520)) {
+      quest::gmsay("Success!", 13, 0, 0, 0);
+    } 
+    if (!$client->FindBuff(4520)) {
+      quest::gmsay("Fail!");
+    }
   }
 }
-

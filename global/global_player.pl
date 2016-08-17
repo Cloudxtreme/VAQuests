@@ -324,7 +324,7 @@ sub EVENT_TIMER {
                 <table><tr><td>
                 <tr><td>{bullet}</td><td>{g}Current expansion is Luclin~ - Future expansions are planned through PoP, LoY and LDoN.</td>
                 <tr><td>{bullet}</td><td>{g}Client Support~ - RoF2 client required. {r}(See MoTD)~</td>
-                <tr><td>{bullet}</td><td>{g}4-box limit~ - An additional, locked account can be used for a Bazaar trader.</td>
+                <tr><td>{bullet}</td><td>{g}6-box limit~ - An additional, locked account can be used for a Bazaar trader.</td>
                 </td></tr></table>
                 <table><tr><td>
                 <tr><td>{bullet}</td><td>{y}Many zones have been modified in one way or another. Some information about them:</td>

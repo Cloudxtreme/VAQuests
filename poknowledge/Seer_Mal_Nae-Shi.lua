@@ -522,6 +522,7 @@ function event_say(e)
 		end
 	elseif(e.message:findi("Halls of Honor") and (qglobals["pop_hoh_faye"] == "1") and (qglobals["pop_hoh_trell"] == "1") and (qglobals["pop_hoh_garn"] == "1")) then
 		e.other:Message(4,"You have completed all trials! Converse with the Projection by saying [I am ready to face Lord Mithaniel Marr]");
+		e.other:Message(4,"Congratulations! You have completed access to The Temple of Marr.");
 --------------------
 --------------------
 --PLANE OF TACTICS--
@@ -544,7 +545,7 @@ function event_say(e)
 			e.other:Message(9,"You have NOT killed Rallos Zek the Warlord.  Make sure you have completed the [Plane of Innovation] flags");
 		end
 	elseif(e.message:findi("Fortress of Zek") and (qglobals["pop_tactics_tallon"] == "1") and (qglobals["pop_tactics_vallon"] == "1") and (qglobals["pop_tactics_ralloz"] == "1") (qglobals["pop_pot_saryrn_final"] == "1") and (qglobals["pop_pot_saryrn"] == "1") and (qglobals["pop_hohb_marr"] == "1")) then
-		e.other:Message(4,"Congratulations! You have proven yourself in war, now let us see if you can prove yourself in fire! To gain access to the Tower of Solusek Ro, converse with the projection and say [No gladiator shall match me]");
+		e.other:Message(4,"Congratulations! You have completed access to The Tower of Solusek Ro.");
 -----------------------
 -----------------------
 --SOL RO INSTRUCTIONS--
@@ -582,7 +583,7 @@ function event_say(e)
 			e.other:Message(9,"You have NOT defeated Solusek Ro within the Tower of Solusek Ro.  Please make sure you've completed events in the [Plane of Innovation] and [Drunder, Fortress of Zek].");
 		end
 	elseif(e.message:findi("Tower of Solusek Ro") and (qglobals["pop_sol_ro_arlyxir"] == "1") and (qglobals["pop_sol_ro_dresolik"] == "1") and (qglobals["pop_sol_ro_jiva"] == "1") and (qglobals["pop_sol_ro_xuzl"]  == "1") and (qglobals["pop_sol_ro_rizlona"] == "1") and (qglobals["pop_sol_ro_solusk"] == "1")) then
-		e.other:Message(4,"Congratulations! You are now able to enter the Plane of Fire!  Converse with the Projection and tell him [I am a child of fire].");
+		e.other:Message(4,"Congratulations! You have completed access to The Plane of Fire.");
 ------------------------------
 ------------------------------
 --PLANE OF FIRE INSTRUCTIONS--

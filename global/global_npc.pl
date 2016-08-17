@@ -21,7 +21,7 @@ sub EVENT_HATE_LIST {
 	}
 }
 
-#sub EVENT_DEATH {
+#sub EVENT_DEATH_COMPLETE {
 #  if ($ulevel > ($mlevel + 15)) {
 #    $npc->RemoveItem(40605);
 #  }
