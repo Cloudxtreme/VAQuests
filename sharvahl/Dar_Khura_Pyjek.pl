@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30667 => 1)) {
     quest::say("Great spirit you've done it! Thank you $name, we are in your debt. You have earned this weapon of the venomous scourge. Wield it with honor and pride.");
     quest::summonitem(30783);
-    quest::exp(75000);
+    quest::exp(75);
     quest::ding();
     quest::faction(132,20);
   }

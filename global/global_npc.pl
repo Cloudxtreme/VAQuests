@@ -14,7 +14,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_HATE_LIST {
-	if ($hate_state == 1 && $client && $client->GetLevel() > ($mlevel + 15) && $npc->GetEntityVariable("removed") != 1) {
+	if ($hate_state == 1 && $client && $client->GetLevel() > ($mlevel + 10) && $npc->GetEntityVariable("removed") != 1) {
 		$npc->RemoveItem(132522);
 		$npc->RemoveItem(40605);
 		$npc->SetEntityVariable("removed", 1); #so it stops trying to remove the item when more people aggro it
