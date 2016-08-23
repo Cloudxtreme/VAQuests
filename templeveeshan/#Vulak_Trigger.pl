@@ -20,6 +20,7 @@ my $variance = int(rand(720));
 my $spawntime = 4320 + $variance;
 $check = 0;
   if($timer eq "vulak") {
+    quest::stoptimer("vulak");
     $check_boss = $entity_list->GetMobByNpcTypeID(124077);#Lady_Mirenilla
     if ($check_boss) {
       $check = 1
@@ -45,16 +46,21 @@ $check = 0;
       $check = 1
     }
     if ($check == 1) {
+      quest::settimer("vulak",60);
     } 
     if ($check == 0 && $entity_list->IsMobSpawnedByNpcTypeID(124155)) {
     }
     elsif ($check == 0 && !defined $qglobals{vulak}) {
       quest::spawn2(124155,0,0,-739.4,517.2,121,255);
-      quest::depop_withtimer();
-      quest::setglobal("vulak",1,2,"M$spawntime");
+#      quest::depop_withtimer();
     }
   }
  $qglobals{vulak} = undef;
 }      
+
+sub EVENT_DEATH_COMPLETE {
+      quest::setglobal("vulak",1,2,"M$spawntime");
+}
+
 
 #EOF

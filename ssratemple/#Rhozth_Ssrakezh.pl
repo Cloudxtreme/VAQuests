@@ -1,8 +1,10 @@
-
+#my $depop1
 sub EVENT_SPAWN {
 	#check for our event global and see if we should even be up
+#$depop1 = $entity_list->GetMobByNpcTypeID(162258);
 	if(defined $qglobals{cursed_dead}) {
-		quest::depop_withtimer();
+		$npc->Depop(7200);
+#		quest::depop_withtimer();
 	}
 }
 

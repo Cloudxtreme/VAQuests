@@ -118,32 +118,32 @@ sub EVENT_SAY {
 			plugin::GetLeaderboard(%qglobals);
 			plugin::ShowLeaderboard("HP");
 		}
-	if ($text=~/#linked/i) {
-            if ($client->GetTarget()->IsClient()) {
-                $client->Message(11, "-------------------------------------------------------------------------");
-                $client->Message(11, "[GM:] Showing Linked Accounts for Targetted Player");
-                $client->Message(11, "-------------------------------------------------------------------------");
-                my $dbh = plugin::LoadMysql();
-                my $sth = $dbh->prepare("
-                                            SELECT accid, name
-                                            FROM account_ip
-                                            INNER JOIN character_data
-                                            ON account_ip.accid = character_data.account_id
-                                            WHERE account_ip.ip = ?
-                                        ");
-                $sth->bind_param(1,ConvertIP($client->GetTarget()->CastToClient->GetIP()));
-                $sth->execute();
-                while (my @row = $sth->fetchrow_array()) {
-                    my ($account_id, $playername ) = @row;
-                    quest::gmsay("    Account ID: ".$account_id." --- Name: ".$playername."", 11, 1);
-                }
-                $sth->finish();
-                $dbh->disconnect();
-            }
-            else {
-                $client->Message(15, "[GM:] You MUST target a PLAYER to use this command!");
-            }
-        }
+#	if ($text=~/#linked/i) {
+#            if ($client->GetTarget()->IsClient()) {
+#                $client->Message(11, "-------------------------------------------------------------------------");
+#                $client->Message(11, "[GM:] Showing Linked Accounts for Targetted Player");
+#                $client->Message(11, "-------------------------------------------------------------------------");
+#                my $dbh = plugin::LoadMysql();
+#                my $sth = $dbh->prepare("
+#                                            SELECT accid, name
+#                                            FROM account_ip
+#                                            INNER JOIN character_data
+#                                            ON account_ip.accid = character_data.account_id
+#                                            WHERE account_ip.ip = ?
+#                                        ");
+#                $sth->bind_param(1,ConvertIP($client->GetTarget()->CastToClient->GetIP()));
+#                $sth->execute();
+#                while (my @row = $sth->fetchrow_array()) {
+#                    my ($account_id, $playername ) = @row;
+#                    quest::gmsay("    Account ID: ".$account_id." --- Name: ".$playername."", 11, 1);
+#                }
+#                $sth->finish();
+#                $dbh->disconnect();
+#            }
+#            else {
+#                $client->Message(15, "[GM:] You MUST target a PLAYER to use this command!");
+#            }
+#        }
 	if ($args[0]=~/#Leaderboard/i) {
 		
 		if(!defined($args[1]))
@@ -318,12 +318,12 @@ sub EVENT_TIMER {
   if ($timer eq "999") {
   quest::stoptimer("999");
     if ($ulevel < 11){
-          plugin::DiaWind("mysterious Hello there, {g}$name~!<br>
+          plugin::DiaWind("mysterious Hello there, {g}$name~!(Please resize this window to show all content. It's a little buggy when scrolling)<br>
           Please check out our forums @ {r}http://www.vegarlson-server.org/~ for full server information as well as to report any issues!
           {linebreak}<br>
                 <table><tr><td>
                 <tr><td>{bullet}</td><td>{g}Current expansion is Luclin~ - Future expansions are planned through PoP, LoY and LDoN.</td>
-                <tr><td>{bullet}</td><td>{g}Client Support~ - RoF2 client required. {r}(See MoTD)~</td>
+                <tr><td>{bullet}</td><td>{g}Client Support~ - RoF2 client required. {r}(See Forums)~</td>
                 <tr><td>{bullet}</td><td>{g}6-box limit~ - An additional, locked account can be used for a Bazaar trader.</td>
                 </td></tr></table>
                 <table><tr><td>
@@ -351,7 +351,8 @@ sub EVENT_TIMER {
                 <tr><td>{in}{bullet}</td><td>{gold}Nektulos Forest</td>
                 <tr><td>{in}{bullet}</td><td>{gold}Toxxulia Forest</td>
                 </td></tr></table>
-          {linebreak}");
+");
+#          {linebreak}");
     }
   }
   if ($timer eq "yaulp") {
