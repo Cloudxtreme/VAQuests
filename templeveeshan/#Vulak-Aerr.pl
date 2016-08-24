@@ -12,9 +12,12 @@ quest::spawn2(124157,0,0,-680,461,129,224);
 
 sub EVENT_AGGRO {
   my $guards = $entity_list->GetMobByNpcTypeID(124157);
-
   if ($guards) {
-  my $guards = $guards->CastToNPC();
-  $guards->AddToHateList($client, 1);
+    my $guards = $guards->CastToNPC();
+    $guards->AddToHateList($client, 1);
+  }
 }
- }
+
+sub EVENT_DEATH_COMPLETE {
+      quest::setglobal("vulak",1,2,"M$spawntime");
+}
