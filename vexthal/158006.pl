@@ -3,13 +3,13 @@ quest::settimer("atenha",1);
   }
 
 sub EVENT_TIMER {
-if ($timer eq "atenha") {
-if(defined $qglobals{aten}) { 
-  quest::stoptimer("atenha");
-  quest::depop_withtimer();
-  $qglobals{aten} = undef;
-  } 
-   }
+  if ($timer eq "atenha") {
+    if(defined $qglobals{aten}) { 
+      quest::stoptimer("atenha");
+      quest::depop_withtimer();
+      $qglobals{aten} = undef;
+  }
+}
     }
 
 sub EVENT_DEATH_COMPLETE {
