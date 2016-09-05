@@ -91,6 +91,8 @@ sub EVENT_SIGNAL {
       quest::signalwith(201432, 0, 5);
       #Despawn the boss if he's up
       quest::signalwith(201433, 0, 5);
+      quest::depop();
+
    }
    elsif ($signal == 3) {
       #fail message

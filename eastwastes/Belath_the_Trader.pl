@@ -25,7 +25,7 @@ sub EVENT_ITEM {
 if ($item1 ~~ [5835, 27320, 27321, 27322, 27323, 27324, 27325, 27326, 27327, 27328] && $item2 ~~ [5835, 27320, 27321, 27322, 27323, 27324, 27325, 27326, 27327, 27328] && $item3 ~~ [5835, 27320, 27321, 27322, 27323, 27324, 27325, 27326, 27327, 27328] && $item4 ~~ [5835, 27320, 27321, 27322, 27323, 27324, 27325, 27326, 27327, 27328]) {
   	quest::emote("smiles 'These should improve my skills nicely! Please tell your friends!'");
   	quest::summonitem(132524);#Essence of the Tomb
-	quest::setglobal("tomb_aug", 1,5,"F");
+	quest::setglobal("tomb_aug",1,5,"F");
 
   }
 }#END of FILE Zone:eastwastes  ID:116608 -- Belath_the_Trader 
