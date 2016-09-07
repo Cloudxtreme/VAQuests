@@ -6,10 +6,10 @@
 #NPC ID: 126268
 
 sub EVENT_SAY {
-  if ($text=~/hail/~) {
+  if ($text=~/hail/i) {
     quest::say("Ey yo. Ever read the book of mischief? The libraries full of em! Say... if you ever find the missin chapter on wealth, lemme know. I'll give ya this here pot o' gold I found.");
   }
-  elsif ($text=~/library/~) {
+  elsif ($text=~/library/i) {
     quest::say("I'd love ta check out a book... especially the book of mischief. Every time I get a library card, them freakin monkeys come and take it from me. Say, maybe you can get one from em!");
   }
 }
