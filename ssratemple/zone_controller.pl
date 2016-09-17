@@ -51,63 +51,57 @@ sub EVENT_TIMER {
       $check = 1;
     }
     if ($check == 1) {
-    quest::settimer("cursed",60);
+      quest::settimer("cursed",60);
     }
 
-#    if ($check == 0 && defined $qglobals{cursed_dead}) {
     if ($check == 0) {
-      if (defined $qglobals{glyphed_dead}) {
-        quest::spawn2(162253,0,0,-51,-9,-218.1,63);#runed
+      if (!defined $qglobals{glyphed_dead} && !defined $qglobals{cursed_dead} && !defined $qglobals{exiled_dead}) {
+        quest::spawn2(162261,0,0,-51,-9,-218.1,63);# Glyphed
       }
-      elsif (!defined $qglobals{glyphed_dead}) {
+      elsif (defined $qglobals{glyphed_dead} && !defined $qglobals{cursed_dead} && !defined $qglobals{exiled_dead}) {
+        quest::spawn2(162253,0,0,-51,-9,-218.1,63); # Runed
+      }
+      elsif (defined $qglobals{glyphed_dead} && !defined $qglobals{exiled_dead}) {
         quest::spawn2(162261,0,0,-51,-9,-218.1,63);#glyphed
       }
-      quest::stoptimer("cursed");
-      quest::stoptimer("one");
-      quest::settimer("one",21600);
     }
-  }
-  if ($timer eq "one" && !defined $qglobals{cursed_dead}) {
-    quest::stoptimer("one");
-    quest::depop(162206);
-    quest::depop(162232);
-    quest::depop(162214);
-    quest::depop(162261);
-    quest::depop(162253);
-    quest::depop_withtimer();
   }
 }
 
 sub EVENT_SIGNAL {
-  $check_rhag2 = $entity_list->GetMobByNpcTypeID(162192);# Rhag`Mozdezh
-  if ($signal == 1 && defined $qglobals{exiled_dead}) {
-    quest::spawn2(162214,0,0,-51,-9,-218.1,63);#Banished
+  if ($signal == 0) {
+    quest:;settimer("cursed",5");
   }
-  elsif ($signal == 1 && !defined $qglobals{exiled_dead}) {
-    quest::spawn2(162232,0,0,-51,-9,-218.1,63);#Exiled
+  if ($signal == 1) {
+    if(!defined $qglobals{exiled_dead}) {
+      quest::spawn2(162232,0,0,-51,-9,-218.1,63);#Exiled
+    } elsif (defined $qglobals{exiled_dead}) {
+      quest::spawn2(162214,0,0,-51,-9,-218.1,63);#Banished
+    }
   }
-  if ($signal == 2 && !defined $qglobals{cursed_dead}) {
-    quest::spawn2(162206,0,0,-51,-9,-218.1,63);#Cursed
+  if ($signal == 2) {
+    if(!defined $qglobals{cursed_dead}) {
+      quest::spawn2(162206,0,0,-51,-9,-218.1,63);#Cursed
+    }
   }
-  if ($signal == 3) {	
+  if ($signal == 3) {
+    # Cursed is dead. Set the global.
     quest::setglobal("cursed_dead",1,3,"D4");
-    quest::stoptimer("one");
-    quest::depop_withtimer();
+    quest::stoptimer("cursed");
   }
   if ($signal == 4) {
     # Rhag1 is dead - Enable Rhag2 spawn
     quest::setglobal("rhag1_dead",1,3,"S259200");
-    if (!defined $qglobals{rhag2_dead} && !$check_rhag2) {
-      quest::disable_spawn2(34226); # Disable Rhag1
+    if (!defined $qglobals{rhag2_dead}) {
       quest::enable_spawn2(382989); # Enable Rhag2
   }
   # If Rhag2 dies, check Rhag1 spawn before spawning Arch Lich. If both are dead, spawn him.
   if ($signal == 5) {
-      quest::setglobal("rhag2_dead",1,3,"S259200");
-    if (defined $qglobals{rhag2_dead} && !defined $qglobals{al_dead}) {
-      # Rhag2 is dead - Enable Arch Lich spawn
+    $check_rhag1 = $entity_list->GetMobByNpcTypeID(162178);# Rhag`Mozdezh
+    quest::setglobal("rhag2_dead",1,3,"S259200");
+    if (!defined $qglobals{al_dead} && !$check_rhag1) {
+      # Arch Lich global is clear - Enable Arch Lich spawn
       quest::enable_spawn2(382990); # Enable Arch Lich
-      quest::enable_spawn2(34226); # Enable Rhag1
       quest::disable_spawn2(382989); # Disable Rhag2
     }
   }
@@ -115,9 +109,6 @@ sub EVENT_SIGNAL {
       # Arch Lich is dead - Disable his spawn
       quest::setglobal("al_dead",1,3,"S259200");
       quest::disable_spawn2(382990); # Disable Arch Lich
-      quest::enable_spawn2(34226); # Enable Rhag1
     }
   }
 }
-
-162192
