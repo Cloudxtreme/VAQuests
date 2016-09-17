@@ -70,7 +70,7 @@ sub EVENT_TIMER {
 
 sub EVENT_SIGNAL {
   if ($signal == 0) {
-    quest:;settimer("cursed",5");
+    quest:;settimer("cursed",5);
   }
   if ($signal == 1) {
     if(!defined $qglobals{exiled_dead}) {
