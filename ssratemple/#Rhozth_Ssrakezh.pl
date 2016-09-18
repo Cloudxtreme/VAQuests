@@ -11,4 +11,5 @@ sub EVENT_SPAWN {
 sub EVENT_DEATH_COMPLETE {
 #  quest::signalwith(162279,1,0); #cursed_ten
   quest::depop_withtimer(162279); #cursed_ten
+  quest::signalwith(10,0,0);
 }

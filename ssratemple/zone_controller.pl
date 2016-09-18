@@ -91,24 +91,21 @@ sub EVENT_SIGNAL {
   }
   if ($signal == 4) {
     # Rhag1 is dead - Enable Rhag2 spawn
-    quest::setglobal("rhag1_dead",1,3,"S259200");
     if (!defined $qglobals{rhag2_dead}) {
       quest::enable_spawn2(382989); # Enable Rhag2
+    }
   }
-  # If Rhag2 dies, check Rhag1 spawn before spawning Arch Lich. If both are dead, spawn him.
+  # Rhag2 dead
   if ($signal == 5) {
-    $check_rhag1 = $entity_list->GetMobByNpcTypeID(162178);# Rhag`Mozdezh
-    quest::setglobal("rhag2_dead",1,3,"S259200");
-    if (!defined $qglobals{al_dead} && !$check_rhag1) {
+    if (!defined $qglobals{al_dead}) {
       # Arch Lich global is clear - Enable Arch Lich spawn
-      quest::enable_spawn2(382990); # Enable Arch Lich
       quest::disable_spawn2(382989); # Disable Rhag2
+      quest::enable_spawn2(382990); # Enable Arch Lich
     }
   }
-    if ($signal == 6) {
-      # Arch Lich is dead - Disable his spawn
-      quest::setglobal("al_dead",1,3,"S259200");
-      quest::disable_spawn2(382990); # Disable Arch Lich
-    }
+  if ($signal == 6) {
+    # Arch Lich is dead - Disable his spawn
+    quest::setglobal("al_dead",1,3,"S259200");
+    quest::disable_spawn2(382990); # Disable Arch Lich
   }
 }
