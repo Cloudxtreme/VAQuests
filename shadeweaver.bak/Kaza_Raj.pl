@@ -28,6 +28,10 @@ sub EVENT_SAY {
 		quest::say("Excellent work dispatching those Brigands! Now seek out Loda Kai thugs and return with four Insignia, I shall give you a useful cap if you serve me well!");
 	}
 	
+	if($text=~/pants/i) {
+		quest::say("Hmm, you are growing more mighty as time passes - Kill Saurek Claw Beasts and bring me four fangs, I have most excellent pants if you succeed.");
+	}
+	
 	if($text=~/tunic/i) {
 		quest::say("A breastplate shall complete your set! Bring me four carapaces from Cht'Thk Bloodbulks and I will give you a wonderful tunic!");
 	}

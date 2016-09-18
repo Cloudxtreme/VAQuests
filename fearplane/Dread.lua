@@ -15,12 +15,7 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-	local a = eq.ChooseRandom(72105,72105,72105,0);
-	-- local x = e.self:GetX();
-	-- local y = e.self:GetY();
-	-- local z = e.self:GetZ();
-	-- local h = e.self:GetHeading();
-	eq.spawn2(a,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	eq.spawn2(72105,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 end
 
 --Submitted by: Jim Mills (Gilmore Girls`Is`Awesome`XOXO)
