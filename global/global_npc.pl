@@ -2,12 +2,12 @@ sub EVENT_SPAWN {
   $roll = int(rand(1000)) + 1;
   $roll2 = int(rand(1000)) + 1;
 
-  if($roll >= 990 && $mlevel >= 46) {
+  if($roll >= 995 && $mlevel >= 46) {
     my $itemid=(132522);
     $npc->AddItem($itemid);
   }
 
-  if($roll >= 900 && $roll <= 920) {
+  if($roll >= 910 && $roll <= 920) {
     my $itemid=(40605);
     $npc->AddItem($itemid);
   }

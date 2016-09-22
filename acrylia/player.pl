@@ -1,5 +1,5 @@
 sub EVENT_ENTERZONE {
-$client->BuffFadeByEffect(113);
+  $client->BuffFadeByEffect(113);
 }
 
 #This quest file simply makes the fancy 4-paneled door operate properly.

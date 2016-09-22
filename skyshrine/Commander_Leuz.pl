@@ -3,10 +3,10 @@ sub EVENT_SAY {
     if ($text=~/hail/i) {
       quest::say("Welcome to Skyshrine. I have noticed a great deal more of your people joining the ranks of the shrine, hoping to assist in pushing back the giants for good. I am here as the commander of the militia set forth by Lord Yelinak himself. With that in mind, it is my duty to assign certain tasks to those who are willing to show their support to the kin, and to the shrine.");
     }
-    if ($text=~/what.*task/i) {
+    elsif ($text=~/what.*task/i) {
       quest::say("Well, for instance, we have recently acquired information from one of our scouts in the wastelands to the west that there have been storm giants wandering the coastal area nearby. We have not heard from this scout in some time however, and we are beginning to worry about their status. Your task, should you choose to accept it, is to deliver some tools to the scout so that they can communicate back to us with their status, and the status of those giants.");
     }
-    if ($text=~/accept.*task/i) {
+    elsif ($text=~/accept/i) {
       quest::say("Good. Please take these tools with haste to the western wastelands and find the scout. Strength be with you, and with the kin.");
       quest::summonitem(29683); # 29683  Scout Tools
     }
