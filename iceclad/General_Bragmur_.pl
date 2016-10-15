@@ -43,7 +43,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_WAYPOINT_ARRIVE {
    # Ambush 1
-   if ($wp eq "13") {
+   if ($wp eq "12") {
       # Commander Vjorik shout signal
       quest::signalwith(110096, 102);
       # 110097 - Kromif trackin wolf (first version)
@@ -53,7 +53,7 @@ sub EVENT_WAYPOINT_ARRIVE {
       quest::spawn2(110097, 0, 0, 7512.5, -3575.6, 165.3, 32.8);
    }
    # Ambush 2
-   elsif($wp eq "20") {
+   elsif($wp eq "19") {
       # 110120 - Frost Giant Skrimisher (level 54)
       quest::spawn2(110120, 0, 0, 7243.8, -2153.7, 150.2, 110.8);
       quest::spawn2(110120, 0, 0, 7211.8, -2204.5, 145.6, 69.9);
@@ -61,7 +61,7 @@ sub EVENT_WAYPOINT_ARRIVE {
       quest::spawn2(110120, 0, 0, 7324.7, -2196.4, 153.9, 188.1);
    }
    # Ambush 3
-   elsif($wp eq "33") {
+   elsif($wp eq "32") {
       # 110112 - Commander Kvarid
       # 110121 - Frost Giant Skirmisher (level 55)
       quest::spawn2(110112, 0, 0, 5923.9, -1015.7, 162.5, 129.3);
@@ -70,7 +70,7 @@ sub EVENT_WAYPOINT_ARRIVE {
       quest::spawn2(110121, 0, 0, 5973.3, -1041.8, 163.0, 177.6);
    }
    # Ambush 4
-   elsif($wp eq "68") {
+   elsif($wp eq "67") {
       # 110122 - Kromrif trackin wolf (second version)
       quest::spawn2(110122, 0, 0, 2265.1, 1530.2, 60.1, 142.6);
       quest::spawn2(110122, 0, 0, 2249.0, 1536.2, 56.0, 123.4);
@@ -79,7 +79,7 @@ sub EVENT_WAYPOINT_ARRIVE {
       quest::spawn2(110122, 0, 0, 2242.6, 1458.6, 52.0, 19.3);
    }
    # Ambush 5
-   elsif($wp eq "80") {
+   elsif($wp eq "79") {
       # 110121 - Frost Giant Skirmisher (level 55)
       # 110109 - Commander Vjorik
       quest::spawn2(110109, 0, 0, 2695.9, 3725.1, 249.2, 128.4);
@@ -90,13 +90,13 @@ sub EVENT_WAYPOINT_ARRIVE {
       quest::spawn2(110121, 0, 0, 2666.9, 3735.2, 247.8, 95.1);
    }
    # Hail gnome camp
-   elsif($wp eq "91") {
+   elsif($wp eq "90") {
       quest::say("Lo there gnomes! Tell me is your camp nearby?");
       # signal Ratop
       quest::signalwith(110052, 101, 500);
    }
    # avatar call conversation
-   elsif($wp eq "100") {
+   elsif($wp eq "99") {
       # signal Captain Nalot
       quest::signalwith(110069,1);
    }

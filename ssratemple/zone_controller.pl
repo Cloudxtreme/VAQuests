@@ -61,9 +61,9 @@ sub EVENT_TIMER {
       elsif (defined $qglobals{glyphed_dead} && !defined $qglobals{cursed_dead} && !defined $qglobals{exiled_dead}) {
         quest::spawn2(162253,0,0,-51,-9,-218.1,63); # Runed
       }
-      elsif (defined $qglobals{glyphed_dead} && !defined $qglobals{exiled_dead}) {
-        quest::spawn2(162261,0,0,-51,-9,-218.1,63);#glyphed
-      }
+#      elsif (defined $qglobals{glyphed_dead} && !defined $qglobals{exiled_dead}) {
+#        quest::spawn2(162261,0,0,-51,-9,-218.1,63);#glyphed
+#      }
     }
   }
 }
