@@ -28,8 +28,8 @@ local trial_wave		= 0;
 
 -- Time from when the 1st mob in a wave is killed till 
 -- the next wave spawns; ~90 seconds
-local wave_timer	= 90000;
-local first_wave 	= 20000;
+local wave_timer	= 120000;
+local first_wave 	= 60000;
 
 local trial_mobs	= { 201452, 201455, 201475, 201476, 201477, 201478, 201479, 201480, 201481, 201482, 201483, 201484, 201485, 201486, 201487, 201488, 201489, 201490, 201491, 201492};
 

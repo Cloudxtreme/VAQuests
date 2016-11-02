@@ -51,7 +51,7 @@ my $random_result = int(rand(5000));
 #  }
 
 # Illusions - 3001-4700
-  elsif($itemcount{132522} && $random_result>4500 && $random_result<4901){
+  elsif($itemcount{132522} && $random_result>4500 && $random_result<4951){
     quest::summonitem(quest::ChooseRandom(40612,40613,40684,40685,40714,40746,40778,40779,43971,43972,54833,54913,40638));
     plugin::Whisper("This token is in fine shape. Use this item to mask your appearance.");
 #    quest::gmsay("$random_result");
