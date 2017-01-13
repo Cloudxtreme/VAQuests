@@ -5,7 +5,7 @@ my $engaged;
 sub EVENT_SPAWN {
   $engaged = 0;
   quest::settimer("EmpDepop", 1800);
-  quest::depop_with_timer(162065);
+#  quest::depop_with_timer(162065);
 }
 
 sub EVENT_TIMER {

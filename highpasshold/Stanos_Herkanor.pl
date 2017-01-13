@@ -1,5 +1,9 @@
 # Rogue Epic NPC -- Stanos_Herkanor
 
+sub EVENT_SPAWN {
+  quest::settimer("Stanos",600); #Depop Timer
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     if((plugin::check_hasitem($client, 11057)) && (!defined $qglobals{Fatestealer})) { #Ragebringer
@@ -24,6 +28,14 @@ sub EVENT_SAY {
     quest::depop();
  }
 }
+
+sub EVENT_TIMER {
+  if ($timer eq "Stanos") {
+    quest::stoptimer("Stanos");
+    quest::depop();
+  }
+}
+
 sub EVENT_ITEM {
   if($itemcount {28010} && $itemcount {28011} == 1) {
     quest::say("Excellent! With this document I can. Damnation! Curse my tired old mind, I forgot that I could not read the document. It is written in some obscure code or language. I can't decipher it, but I know someone who can. Seek out one called Eldreth, an Erudite who used to do work for me. I know not where he may be found these days, only that he will not be found in Erudin, as they want his head for some misdeed in the past. Give him the complete parchment, and tell him I sent you. He owes me.");
