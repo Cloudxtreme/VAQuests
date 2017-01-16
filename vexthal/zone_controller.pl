@@ -15,7 +15,7 @@ sub EVENT_TIMER {
   ##     quest::depop_withtimer();
         }
         } elsif (!$entity_list->IsMobSpawnedByNpcTypeID(158006) && !$entity_list->IsMobSpawnedByNpcTypeID(158096)) {
-          quest::spawn2(158006,0,0,1412,0,248.63,192);
+          quest::spawn2(158096,0,0,1412,0,248.63,192);
         }
     }
   }
