@@ -8,7 +8,7 @@
 
 sub EVENT_SAY {
   $makepoison = $client->GetSkill(56);
-  if ($faction <= 2 && $makepoison >= 278) {
+  if ($faction <= 2 && $makepoison >= 250) {
     if($text=~/Hail/i) {
       quest::say("Master Hanns is going to kill me! I let that dark assassin look at his prized poison collection and he lifted it all when I wasn't looking! He even snatched his Grandmaster's Vial! Master Hanns was so furious he grabbed one of his old blades from his collection and jabbed it at the wall so hard it shattered! I really need some help replacing all that was [ruined] or I have a feeling Master Hanns is going to send me on a suicide mission!");
     }
@@ -24,7 +24,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   $makepoison = $client->GetSkill(56);
-  if ($faction <= 2 && $makepoison >= 278) {
+  if ($faction <= 2 && $makepoison >= 250) {
     if (plugin::check_handin(\%itemcount, 24072 => 1)) {
       quest::say("Great! Looks like everything is here! Hopefully Master Hanns won't send me to Steamfront now, I have a really bad feeling about that assignment. Here take this Seal, it was dropped by that dark stranger. It glows with a dark power I just don't understand. Be wary of further sightings of that dark assassin.");
       quest::summonitem(24073);

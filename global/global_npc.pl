@@ -7,6 +7,11 @@ sub EVENT_SPAWN {
     $npc->AddItem($itemid);
   }
 
+  if($roll >= 989 && $roll <= 994 && $mlevel >= 46) {
+    my $itemid=(132530);
+    $npc->AddItem($itemid);
+  }
+
   if($roll >= 910 && $roll <= 920) {
     my $itemid=(40605);
     $npc->AddItem($itemid);
