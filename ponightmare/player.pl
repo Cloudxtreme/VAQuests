@@ -8,3 +8,26 @@ sub EVENT_CLICKDOOR {
     }
   }
 }
+
+sub EVENT_LOOT {
+	if ($looted_id == 11474 && $class eq "Wizard") {  #Loot Fluxing Rune
+		if ($client->GetGlobal("wiz_epic") == "1" && undef == $client->GetGlobal("wiz_pon_chest")) {
+			my $x = $client->GetX();
+			my $y = $client->GetY();
+			my $z = $client->GetZ();
+			my $h = $client->GetHeading();
+			quest::spawn2(283157, 0, 0, $x, $y, $z, $h);
+			quest::setglobal("wiz_pon_chest","1",5,"F");
+		}
+	}
+}
+
+sub EVENT_LOOT {
+  if( ($looted_id == 69951) && !defined($qglobals{paladin_epic_pon}) && ($qglobals{paladin_epic} >= 5) ) { 
+    $x = $client->GetX();
+    $y = $client->GetY();
+    $z = $client->GetZ();
+    quest::spawn2(283157,0,0,$x,$y,$z,0); #a chest epic 1.5
+	quest::setglobal("paladin_epic_pon", 1, 0, "F");
+  }
+}

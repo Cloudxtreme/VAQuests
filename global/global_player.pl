@@ -275,7 +275,7 @@ sub EVENT_CONNECT {
             $client->GrantAlternateAdvancementAbility($key, 1);
         }
     }
-    if($ulevel < 11){
+    if($ulevel < 2){
         quest::settimer("999",10);
     }
 }
@@ -297,7 +297,7 @@ sub EVENT_ENTERZONE {
   if($class eq "Cleric" || $class eq "Paladin") {
     quest::settimer("yaulp",2);
   }
-  if($ulevel < 11){
+  if($ulevel < 2){
     quest::settimer("popup",10);
     quest::settimer("popup2",15);
   }

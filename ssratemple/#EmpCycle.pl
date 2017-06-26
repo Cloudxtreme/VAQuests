@@ -34,6 +34,9 @@ sub EVENT_TIMER {
       quest::depop(162064);
       quest::spawn2(162189,0,0,877.0,-325.0,400.5,192.0); ##Blood_of_Ssraeshza
     }
+    else {
+      quest::spawn2(162189,0,0,877.0,-325.0,400.5,192.0); ##Blood_of_Ssraeshza
+    }
   }
 
   if ($timer eq "EmpPrep") {
