@@ -1,4 +1,3 @@
-<<<<<<< HEAD
  # NPCID: Bastion of Thunder >> A_celestial_portal (209036) 
  sub EVENT_SIGNAL { 
  	#signals from Emmerik_Skyfury (209053) 
@@ -17,10 +16,3 @@
  		quest::spawn2(209116,0,0,$x,$y,$z,$h);  
  	}  
  } 
-=======
-sub EVENT_SIGNAL {
- if($signal == 1) {
-  quest::spawn2(209116,0,0,$x,$y,$z,$h);
- }
-}
->>>>>>> 273540a460ef9bfb28dee440e6d145b7c41af2d6

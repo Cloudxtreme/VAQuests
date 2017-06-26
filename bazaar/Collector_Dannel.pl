@@ -69,28 +69,4 @@ my $random_result = int(rand(5000));
 #    quest::gmsay("$random_result");
   }
 
-###NEW
-# Buff Crystal - 0-3000
-  elsif($itemcount{132530} && $random_result>=0 && $random_result<4501) {
-    quest::summonitem(132521,10);
-    plugin::Whisper("This token is in fair condition. Use these crystals to fortify yourself and your companions.");
-  }
-
-# Illusions - 3001-4700
-  elsif($itemcount{132530} && $random_result>4500 && $random_result<4951){
-    quest::summonitem(quest::ChooseRandom(40612,40613,40684,40685,40714,40746,40778,40779,43971,43972,54833,54913,40638));
-    plugin::Whisper("This token is in fine shape. Use this item to mask your appearance.");
-  }
-# Legacy Items - 4700-5000
-# Locket of Escape,
-# Circlet of Shadow
-# Guise of the Deceiver
-# Runed Fighter's Staff
-# Holgresh Elder Beads
-  elsif($itemcount{132530} && $random_result>4950 && $random_result<5001){
-    quest::summonitem(quest::ChooseRandom(14727,14730,2469,6630,24890));
-    plugin::Whisper("This token is in fantastic condition! Here's something from my private stock!");
-  }
-
-
 }
